@@ -1,0 +1,46 @@
+{
+  "name": "template_react",
+  "version": "0.1.0",
+  "homepage": "https://nuuuwan.github.io/template_react",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.3.1",
+    "@mui/material": "^5.4.0",
+    "@mui/styled-engine-sc": "^5.3.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "gh-pages": "^3.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.0",
+    "styled-components": "^5.3.3",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "BROWSER='firefox' react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "stylelint-config-hudochenkov": "^6.0.1",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.1.0"
+  }
+}
