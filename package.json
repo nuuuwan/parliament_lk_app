@@ -1,7 +1,7 @@
 {
-  "name": "template_react",
+  "name": "parliament_lk_app",
   "version": "0.1.0",
-  "homepage": "https://nuuuwan.github.io/template_react",
+  "homepage": "https://nuuuwan.github.io/parliament_lk_app",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",
