@@ -2,11 +2,10 @@ import { Component } from "react";
 import MP from "../../core/MP.js";
 import MPView from "../../nonstate/molecules/MPView.js";
 
-
 const STYLE = {
   height: 200,
-  backgroundColor: '#f8f8f8',
-}
+  backgroundColor: "#f8f8f8",
+};
 
 export default class MPListView extends Component {
   constructor(props) {
@@ -27,12 +26,10 @@ export default class MPListView extends Component {
 
     return (
       <div style={STYLE}>
-        {mpList.map(
-          function(mp, iMp) {
-            const key = `mp-${mp.urlNum}`;
-            return <MPView key={key} mp={mp} />
-          }
-        )}
+        {mpList.map(function (mp, iMp) {
+          const key = `mp-${mp.urlNum}`;
+          return <MPView key={key} mp={mp} />;
+        })}
       </div>
     );
   }
