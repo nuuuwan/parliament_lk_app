@@ -25,11 +25,9 @@ export default class MPListView extends Component {
       return "Loading...";
     }
 
-    const mpListSubset = mpList.splice(60, 10);
-
     return (
       <div style={STYLE}>
-        {mpListSubset.map(
+        {mpList.map(
           function(mp, iMp) {
             const key = `mp-${mp.urlNum}`;
             return <MPView key={key} mp={mp} />

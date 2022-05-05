@@ -1,6 +1,8 @@
-const SIZE = 100;
+const SIZE = 40;
+const [WIDTH, HEIGHT] = [window.innerWidth, window.innerHeight];
 
 const STYLE = {
+  position: 'absolute',
   height: SIZE,
   width: SIZE,
 };
@@ -8,7 +10,7 @@ const STYLE = {
 const STYLE_IMAGE = {
   borderRadius: SIZE,
   borderStyle: 'solid',
-  borderWidth: 10,
+  borderWidth: SIZE * 0.1,
   height: SIZE,
   width: SIZE,
 };
@@ -33,6 +35,14 @@ const PARTY_TO_COLOR = {
   'Ahila Ilankai Thamil Congress (AITC)': 'yellow',
 }
 
+function getRandomX() {
+  return parseInt(Math.random() * WIDTH / SIZE) * SIZE
+}
+
+function getRandomY() {
+  return parseInt(Math.random() * HEIGHT/ SIZE) * SIZE
+}
+
 function getPartyColor(party) {
   if (PARTY_TO_COLOR[party]) {
     return PARTY_TO_COLOR[party];
@@ -47,8 +57,13 @@ export default function MPView(props) {
   const styleImageCustom = {
     borderColor: getPartyColor(mp.party),
   }
+
+  const styleCustom = {
+    top: getRandomY(),
+    left: getRandomX(),
+  }
   return (
-    <div style={STYLE}>
+    <div style={{...STYLE, ...styleCustom}}>
       <img
         src={mp.imageURL}
         alt={mp.name}
