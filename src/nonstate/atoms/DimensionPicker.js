@@ -1,12 +1,4 @@
-const DIMENSIONS_LIST = [
-  "Age Group",
-  "Party",
-  "Is National List",
-  "Electoral District",
-  "Religion",
-  "Is Sinhala Buddhist",
-  "Profession",
-];
+import {DIMENSION_LIST} from '../../core/Dimensions.js';
 
 export default function DimensionPicker(props) {
   const { selectedDimension, onChange } = props;
@@ -16,7 +8,7 @@ export default function DimensionPicker(props) {
   };
   return (
     <select defaultValue={selectedDimension} onChange={onChangeInner}>
-      {DIMENSIONS_LIST.map(function (dimension, iDimension) {
+      {DIMENSION_LIST.map(function (dimension, iDimension) {
         const key = `option-${iDimension}`;
         return (
           <option key={key} value={dimension}>
