@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/parliament_lk_app/static/css/main.b2ec770e.css",
-    "main.js": "/parliament_lk_app/static/js/main.840a2c1e.js",
+    "main.js": "/parliament_lk_app/static/js/main.93e595df.js",
     "static/js/787.a01f7cff.chunk.js": "/parliament_lk_app/static/js/787.a01f7cff.chunk.js",
     "index.html": "/parliament_lk_app/index.html",
     "main.b2ec770e.css.map": "/parliament_lk_app/static/css/main.b2ec770e.css.map",
-    "main.840a2c1e.js.map": "/parliament_lk_app/static/js/main.840a2c1e.js.map",
+    "main.93e595df.js.map": "/parliament_lk_app/static/js/main.93e595df.js.map",
     "787.a01f7cff.chunk.js.map": "/parliament_lk_app/static/js/787.a01f7cff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b2ec770e.css",
-    "static/js/main.840a2c1e.js"
+    "static/js/main.93e595df.js"
   ]
 }
