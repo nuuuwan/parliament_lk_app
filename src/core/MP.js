@@ -45,8 +45,8 @@ export default class MP {
     return await WWW.json(URL_MP_LIST);
   }
 
-  static async getAll() {
-    const mpRawList = await MP.getAllRaw();
+  static async getMPList() {
+    const mpRawList = await MP.getRawMPList();
     return mpRawList.map(function (d) {
       return new MP(d);
     });
