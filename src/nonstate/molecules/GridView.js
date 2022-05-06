@@ -1,3 +1,5 @@
+import PctWidget from "../atoms/PctWidget.js";
+
 export default function GridView(props) {
   const { cells, xAxisLabels, yAxisLabels } = props;
 
@@ -38,9 +40,11 @@ export default function GridView(props) {
               {xAxisLabels.map(function (xLabel, iX) {
                 const key = `cell-${iX}-${iY}`;
                 const cellContents = cells[iX][iY];
+                const n = cellContents.length;
                 return (
                   <td key={key} style={styleCellCustom}>
                     {cellContents}
+                    <PctWidget n={n} />
                   </td>
                 );
               })}
