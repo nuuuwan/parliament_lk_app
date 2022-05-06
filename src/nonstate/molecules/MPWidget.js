@@ -43,13 +43,13 @@ function getPartyColor(party) {
 }
 
 export default function MPWidget(props) {
-  const { mp } = props;
+  const { mp, onClickMP } = props;
   const styleImageCustom = {
     borderColor: getPartyColor(mp.party),
   };
 
   const onClick = function (e) {
-    alert(JSON.stringify(mp.d));
+    onClickMP(mp.id);
   };
 
   return (
