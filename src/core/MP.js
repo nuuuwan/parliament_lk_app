@@ -73,6 +73,13 @@ export default class MP {
     return `${lower} - ${upper}`;
   }
 
+  isAgeOver(ageLimit) {
+    if (this.age > ageLimit) {
+      return `Age > ${ageLimit}`;
+    }
+    return `Age ≤ ${ageLimit}`;
+  }
+
   get isSinhalaBuddhist() {
     if (this.religion === "Buddhism") {
       return "Sinhala Buddhist";
