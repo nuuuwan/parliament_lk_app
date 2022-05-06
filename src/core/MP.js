@@ -6,16 +6,12 @@ const URL_MP_LIST =
   "nuuuwan/parliament_lk/data/" +
   "mp_list.json";
 
-function cleanName(nameRaw) {
-  return nameRaw.replace("Hon.", "").replace(", M.P.", "").trim();
-}
-
 export default class MP {
   constructor(d) {
     this.d = d;
 
     this.urlNum = parseInt(d.url_num);
-    this.name = cleanName(d.name);
+    this.nameData = d.name;
     this.imageURL = d.image_url;
     this.partyData = d.party;
     this.electoralDistrict = d.electoral_district;
@@ -35,6 +31,27 @@ export default class MP {
 
   get id() {
     return this.urlNum;
+  }
+
+  get gender() {
+    if (
+      this.nameData.includes("Mrs.") ||
+      this.nameData.includes("Miss.") ||
+      this.nameData.includes("Ms.")
+    ) {
+      return "Female";
+    }
+    return "Male";
+  }
+
+  get name() {
+    return this.nameData
+      .replace("Hon.", "")
+      .replace(", M.P.", "")
+      .replace("(Dr.)", "")
+      .replace("(Mrs.)", "")
+      .replace("(Ms.)", "")
+      .trim();
   }
 
   get firstNames() {
