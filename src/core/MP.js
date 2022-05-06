@@ -12,6 +12,8 @@ function cleanName(nameRaw) {
 
 export default class MP {
   constructor(d) {
+    this.d = d;
+
     this.urlNum = parseInt(d.url_num);
     this.name = cleanName(d.name);
     this.imageURL = d.image_url;
@@ -29,6 +31,8 @@ export default class MP {
     this.addressSitting = d.address_sitting;
     this.email = d.email;
     this.sourceURL = d.source_url;
+
+
   }
 
   get id() {
