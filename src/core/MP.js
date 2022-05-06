@@ -41,7 +41,7 @@ export default class MP {
     return age;
   }
 
-  static async getAllRaw() {
+  static async getRawMPList() {
     return await WWW.json(URL_MP_LIST);
   }
 
