@@ -13,17 +13,23 @@ const STYLE_IMAGE = {
 const PARTY_TO_COLOR = {
   "Sri Lanka Podujana Peramuna (SLPP)": "maroon",
   "Sri Lanka Freedom Party(SLFP)": "blue",
+  "Our Power of People Party (OPPP)": "brown",
 
   "Samagi Jana Balawegaya (SJB)": "green",
+  "United National Party (UNP)": "green",
 
   "Jathika Jana balawegaya (JJB)": "red",
 
   "Muslim National Alliance (MNA)": "darkgreen",
+  "All Ceylon Makkal Congress (ACMC)": "darkgreen",
+  "Sri Lanka Muslim Congress (SLMC)": "darkgreen",
   "National Congress (NC)": "darkgreen",
+  
   "Thamil Makkal Thesiya Kuttani (TMTK)": "yellow",
   "Illankai Tamil Arasu Kadchi (ITAK)": "yellow",
   "Eelam People's Democratic Party (EPDP)": "yellow",
   "Ahila Ilankai Thamil Congress (AITC)": "yellow",
+  "Thamil Makkal Viduthalai Pulikal (TMVP)": "yellow",
 };
 
 function getPartyColor(party) {
