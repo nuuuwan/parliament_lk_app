@@ -2,12 +2,13 @@ const STYLE = {
   position: "absolute",
 };
 
+const BORDER_WIDTH = 3;
 const STYLE_IMAGE = {
   maxWidth: "100%",
   maxHeight: "100%",
   borderStyle: "solid",
   borderRadius: "100%",
-  borderWidth: 3,
+  borderWidth: BORDER_WIDTH,
 };
 
 const PARTY_TO_COLOR = {
@@ -42,12 +43,13 @@ function getPartyColor(party) {
 
 export default function MPWidget(props) {
   const { mp, x, y, size } = props;
+  const innerSize = size - BORDER_WIDTH * 2;
 
   const styleCustom = {
-    left: x - size / 2,
-    top: y - size / 2,
-    width: size,
-    height: size,
+    left: x - innerSize / 2 + BORDER_WIDTH,
+    top: y - innerSize / 2 + BORDER_WIDTH,
+    width: innerSize,
+    height: innerSize,
   };
 
   const styleImageCustom = {

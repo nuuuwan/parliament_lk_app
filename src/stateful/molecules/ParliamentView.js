@@ -4,7 +4,8 @@ import MPWidget from "../../nonstate/molecules/MPWidget.js";
 
 const MARGIN = 20;
 const STYLE = {
-  backgroundColor: "#f8f8f8",
+  position: "relative",
+  backgroundColor: "#f0f0f8",
   borderRadius: MARGIN,
   margin: MARGIN,
 };
@@ -56,22 +57,21 @@ export default class ParliamentView extends Component {
     const nY = Object.values(categoryTompIds).reduce(function (nY, mpIds) {
       return Math.max(nY, mpIds.length);
     }, 0);
+
     const [xSpan, ySpan] = [width / nX, height / nY];
     const size = Math.min(xSpan, ySpan);
+    const [innerWidth, innerHeight] = [width - size, height - size];
 
-    const mpIdToXY = Object.keys(categoryTompIds)
+    const mpIdToPXY = Object.keys(categoryTompIds)
       .sort()
-      .reduce(function (mpIdToXY, category, iCategory) {
+      .reduce(function (mpIdToPXY, category, iCategory) {
         const mpIds = categoryTompIds[category];
-        const nMPs = mpIds.length;
-        return mpIds.reduce(function (mpIdToXY, mpId, iMP) {
-          mpIdToXY[mpId] = [
-            iCategory * xSpan + MARGIN,
-            height - (nMPs - iMP - 1) * ySpan + MARGIN,
-          ];
-          return mpIdToXY;
-        }, mpIdToXY);
+        return mpIds.reduce(function (mpIdToPXY, mpId, iMP) {
+          mpIdToPXY[mpId] = [iCategory / nX, iMP / nY];
+          return mpIdToPXY;
+        }, mpIdToPXY);
       }, {});
+
     const customStyle = {
       width,
       height,
@@ -81,7 +81,8 @@ export default class ParliamentView extends Component {
       <div style={{ ...STYLE, ...customStyle }}>
         {Object.values(mpIdx).map(function (mp, iMp) {
           const key = `mp-${mp.urlNum}`;
-          const [x, y] = mpIdToXY[mp.id];
+          const [px, py] = mpIdToPXY[mp.id];
+          const [x, y] = [px * innerWidth + size, (1 - py) * innerHeight];
           return <MPWidget key={key} mp={mp} x={x} y={y} size={size} />;
         })}
       </div>
