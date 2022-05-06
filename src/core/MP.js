@@ -34,6 +34,7 @@ export default class MP {
   get id() {
     return this.urlNum;
   }
+
   get age() {
     const utNow = TimeX.getUnixTime();
     const utDateOfBirth = TimeXFuture.parse(this.dateOfBirth);
@@ -50,5 +51,16 @@ export default class MP {
     return mpRawList.map(function (d) {
       return new MP(d);
     });
+  }
+
+  static async getMPIdx() {
+    const mpList = await MP.getMPList();
+    return mpList.reduce(
+      function(mpIdx, mp) {
+        mpIdx[mp.id] = mp;
+        return mpIdx;
+      },
+      {},
+    );
   }
 }
