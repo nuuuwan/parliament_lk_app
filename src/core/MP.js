@@ -58,6 +58,10 @@ export default class MP {
     return age;
   }
 
+  get isNationalList() {
+    return (this.electoralDistrict === 'National List') ? "National List": "Electoral Districts";
+  }
+
   getAgeGroup(groupYears) {
     const age = this.age;
     const lower = Math.floor(age / groupYears) * groupYears;
