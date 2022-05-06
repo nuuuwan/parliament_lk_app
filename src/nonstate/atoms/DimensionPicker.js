@@ -5,13 +5,6 @@ import Select from "@mui/material/Select";
 
 import { DIMENSION_LIST } from "../../core/Dimensions.js";
 
-const STYLE = {
-  padding: 6,
-  backgroundColor: "ghost",
-  borderRadius: 6,
-  borderStyle: "none",
-};
-
 export default function DimensionPicker(props) {
   const { label, selectedDimension, onChange } = props;
 

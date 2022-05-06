@@ -1,7 +1,6 @@
 import Grid from "@mui/material/Grid";
 import PctWidget from "../atoms/PctWidget.js";
 import Paper from "@mui/material/Paper";
-import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 
 const STYLE_PAPER = {
@@ -74,12 +73,6 @@ export default function GridView(props) {
                   const key = `cell-${iX}-${iY}`;
                   const cellContents = cells[iX][iY];
                   const count = cellContents.length;
-
-                  const countX = yAxisLabels.reduce(function (countX, __, iY) {
-                    const cellContents = cells[iX][iY];
-                    const count = cellContents.length;
-                    return countX + count;
-                  }, 0);
 
                   return (
                     <td key={key} style={STYLE_CELL}>
