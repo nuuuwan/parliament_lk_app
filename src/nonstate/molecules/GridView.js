@@ -1,4 +1,4 @@
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
 import PctWidget from "../atoms/PctWidget.js";
 
 const STYLE_GRID = {
