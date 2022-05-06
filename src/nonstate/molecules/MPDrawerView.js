@@ -34,7 +34,7 @@ function Address({ address, isSitting }) {
   const secondaryText = isSitting ? "Sitting" : "";
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={href}>
+      <ListItemButton component="a" href={href} target="_blank">
         <ListItemIcon>
           <HomeIcon color="disabled" />
         </ListItemIcon>
@@ -57,7 +57,7 @@ function Phone({ phone }) {
 
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={href}>
+      <ListItemButton component="a" href={href} target="_blank">
         <ListItemIcon>
           <PhoneIcon color="disabled" />
         </ListItemIcon>
@@ -75,7 +75,7 @@ function Email({ email }) {
   const href = "mailto:" + email;
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={href}>
+      <ListItemButton component="a" href={href} target="_blank">
         <ListItemIcon>
           <EmailIcon color="disabled" />
         </ListItemIcon>
@@ -95,7 +95,7 @@ function Wikipedia({ searchText }) {
     searchText.replaceAll(" ", "+");
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={href}>
+      <ListItemButton component="a" href={href} target="_blank">
         <ListItemIcon>
           <TravelExploreIcon color="disabled" />
         </ListItemIcon>
@@ -109,7 +109,7 @@ function Pariament({ id }) {
   const href = "https://www.parliament.lk/component/members/viewMember/" + id;
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={href}>
+      <ListItemButton component="a" href={href} target="_blank">
         <ListItemIcon>
           <GavelIcon color="disabled" />
         </ListItemIcon>
