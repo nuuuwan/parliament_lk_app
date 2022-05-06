@@ -24,7 +24,7 @@ const PARTY_TO_COLOR = {
   "All Ceylon Makkal Congress (ACMC)": "darkgreen",
   "Sri Lanka Muslim Congress (SLMC)": "darkgreen",
   "National Congress (NC)": "darkgreen",
-  
+
   "Thamil Makkal Thesiya Kuttani (TMTK)": "yellow",
   "Illankai Tamil Arasu Kadchi (ITAK)": "yellow",
   "Eelam People's Democratic Party (EPDP)": "yellow",
