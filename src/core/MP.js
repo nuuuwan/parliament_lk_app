@@ -55,11 +55,19 @@ export default class MP {
   }
 
   get firstNames() {
-    return this.name.split(" ").slice(0, -1).join(" ");
+    const tokens = this.name.split(" ");
+    if (tokens.slice(-2, -1).join(" ").toLowerCase() === "de") {
+      return tokens.slice(0, -2).join(" ");
+    }
+    return tokens.slice(0, -1).join(" ");
   }
 
   get lastName() {
-    return this.name.split(" ").slice(-1);
+    const tokens = this.name.split(" ");
+    if (tokens.slice(-2, -1).join(" ").toLowerCase() === "de") {
+      return "De " + tokens.slice(-1);
+    }
+    return tokens.slice(-1);
   }
 
   get party() {
