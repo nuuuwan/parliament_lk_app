@@ -23,6 +23,7 @@ function Address({ address, isSitting }) {
   if (!address) {
     return null;
   }
+  address = address.replace(",", ", ").replace("  ", " ");
   const href =
     "https://www.google.com/maps/search/" + address.replace(" ", "+");
   const secondaryText = isSitting ? "Sitting" : "";
@@ -43,6 +44,11 @@ function Phone({ phone }) {
     return null;
   }
   const href = "tel:" + phone;
+  const phoneStr = [
+    phone.substring(0, 3),
+    phone.substring(3, 6),
+    phone.substring(6, 10),
+  ].join("-");
 
   return (
     <ListItem disablePadding>
@@ -50,7 +56,7 @@ function Phone({ phone }) {
         <ListItemIcon>
           <PhoneIcon color="disabled" />
         </ListItemIcon>
-        <ListItemText primary={phone} />
+        <ListItemText primary={phoneStr} />
       </ListItemButton>
     </ListItem>
   );
