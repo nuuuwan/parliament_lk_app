@@ -50,7 +50,12 @@ export default class MP {
       .replace(", M.P.", "")
       .replace("(Dr.)", "")
       .replace("(Mrs.)", "")
+      .replace("(Major)", "")
+      .replace("Field Marshal", "")
       .replace("(Ms.)", "")
+      .replace(", PC", "")
+      .replace("Thero", "")
+      .replace("(Ven.) ", "")
       .trim();
   }
 
