@@ -1,4 +1,5 @@
-import { WWW } from "@nuuuwan/utils-js-dev";
+import { WWW, TimeX } from "@nuuuwan/utils-js-dev";
+import TimeXFuture, { SECONDS_IN } from "../base/TimeXFuture.js";
 
 const URL_MP_LIST =
   "https://raw.githubusercontent.com/" +
@@ -28,6 +29,13 @@ export default class MP {
     this.addressSitting = d.address_sitting;
     this.email = d.email;
     this.sourceURL = d.source_url;
+  }
+
+  get age() {
+    const utNow = TimeX.getUnixTime();
+    const utDateOfBirth = TimeXFuture.parse(this.dateOfBirth);
+    const age = (utNow - utDateOfBirth) / SECONDS_IN.YEAR;
+    return age;
   }
 
   static async getAllRaw() {
