@@ -4,59 +4,70 @@ import MP from "../../core/MP.js";
 import MPWidget from "../../nonstate/molecules/MPWidget.js";
 import GridView from "../../nonstate/molecules/GridView.js";
 
-function funcCategorizeMPByParty(mp) {
-  return mp.party;
-}
+function buildGrid(dataList, xMap, yMap, cellMap) {
+  const dxyList = dataList.map(function (d) {
+    return {
+      d,
+      x: xMap(d),
+      y: yMap(d),
+    };
+  });
 
-function categorizeMPs(mpIdx, funcCategorizeMP) {
-  return Object.values(mpIdx)
-    .sort(function (mpA, mpB) {
-      return mpA.age - mpB.age;
-    })
-    .reduce(function (categoryTompIds, mp) {
-      const category = funcCategorizeMP(mp);
-      if (!categoryTompIds[category]) {
-        categoryTompIds[category] = [];
-      }
-      categoryTompIds[category].push(mp.id);
-      return categoryTompIds;
-    }, {});
+  const xAxisLabels = DataStructuresFuture.unique(
+    dxyList.map((dxy) => dxy.x)
+  ).sort();
+  const yAxisLabels = DataStructuresFuture.unique(
+    dxyList.map((dxy) => dxy.y)
+  ).sort();
+
+  const nX = xAxisLabels.length;
+  const nY = yAxisLabels.length;
+
+  const xToIX = DataStructuresFuture.buildReverseIndex(xAxisLabels);
+  const yToIY = DataStructuresFuture.buildReverseIndex(yAxisLabels);
+
+  const cells = dxyList.reduce(
+    function (cells, dxy) {
+      const [iX, iY] = [xToIX[dxy.x], yToIY[dxy.y]];
+      cells[iX][iY].push(cellMap(dxy.d));
+      return cells;
+    },
+    DataStructuresFuture.initArray2D(nX, nY, (iX, iY) => [])
+  );
+
+  return { cells, xAxisLabels, yAxisLabels };
 }
 
 export default class ParliamentView extends Component {
   constructor(props) {
     super(props);
-    this.state = { mpIdx: undefined };
+    this.state = { mpList: undefined };
   }
 
   async componentDidMount() {
-    const mpIdx = await MP.getMPIdx();
-    this.setState({ mpIdx });
+    const mpList = await MP.getMPList();
+    this.setState({ mpList });
   }
 
   render() {
-    const { mpIdx } = this.state;
-    if (mpIdx === undefined) {
+    const { mpList } = this.state;
+    if (mpList === undefined) {
       return "Loading...";
     }
 
-    const categoryTompIds = categorizeMPs(mpIdx, funcCategorizeMPByParty);
-    const nX = Object.keys(categoryTompIds).length;
-    const nY = 1;
-
-    const categoryList = Object.keys(categoryTompIds).sort();
-    const cells = categoryList.reduce(
-      function (cells, category, iCategory) {
-        const mpIds = categoryTompIds[category];
-        return mpIds.reduce(function (cells, mpId) {
-          const cellContent = <MPWidget mp={mpIdx[mpId]} />;
-          cells[iCategory][0].push(cellContent);
-          return cells;
-        }, cells);
-      },
-      DataStructuresFuture.initArray2D(nX, nY, (iX, iY) => [])
+    const { cells, xAxisLabels, yAxisLabels } = buildGrid(
+      mpList,
+      (mp) => mp.party,
+      (mp) => mp.getAgeGroup(10),
+      (mp) => <MPWidget mp={mp} />
     );
 
-    return <GridView cells={cells} xAxisLabels={categoryList} />;
+    return (
+      <GridView
+        cells={cells}
+        xAxisLabels={xAxisLabels}
+        yAxisLabels={yAxisLabels}
+      />
+    );
   }
 }
