@@ -21,17 +21,28 @@ export default function GridView(props) {
         <tr>
           <th />
           {xAxisLabels.map(function (xLabel, iX) {
-            return <th style={styleCellCustom}>{xLabel}</th>;
+            const key = `x-label-${iX}`;
+            return (
+              <th key={key} style={styleCellCustom}>
+                {xLabel}
+              </th>
+            );
           })}
         </tr>
 
         {yAxisLabels.map(function (yLabel, iY) {
+          const key = `row-${iY}`;
           return (
-            <tr>
+            <tr key={key}>
               {<th style={styleCellCustom}>{yLabel}</th>}
               {xAxisLabels.map(function (xLabel, iX) {
+                const key = `cell-${iX}-${iY}`;
                 const cellContents = cells[iX][iY];
-                return <td style={styleCellCustom}>{cellContents}</td>;
+                return (
+                  <td key={key} style={styleCellCustom}>
+                    {cellContents}
+                  </td>
+                );
               })}
             </tr>
           );
