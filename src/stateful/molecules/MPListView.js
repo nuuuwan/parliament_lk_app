@@ -31,6 +31,17 @@ export default class MPListView extends Component {
       window.innerHeight - MARGIN * 2,
     ];
 
+    const size = 100;
+    const [innerWidth, innerHeight] = [width - size, height - size];
+
+    function getRandomX() {
+      return parseInt(Math.random() * innerWidth) + MARGIN + size / 2;
+    }
+
+    function getRandomY() {
+      return parseInt(Math.random() * innerHeight) + MARGIN + size / 2;
+    }
+
     const customStyle = {
       width,
       height,
@@ -40,7 +51,15 @@ export default class MPListView extends Component {
       <div style={{ ...STYLE, ...customStyle }}>
         {mpList.map(function (mp, iMp) {
           const key = `mp-${mp.urlNum}`;
-          return <MPWidget key={key} mp={mp} />;
+          return (
+            <MPWidget
+              key={key}
+              mp={mp}
+              x={getRandomX()}
+              y={getRandomY()}
+              size={size}
+            />
+          );
         })}
       </div>
     );

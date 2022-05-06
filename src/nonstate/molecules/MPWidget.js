@@ -1,18 +1,13 @@
-const SIZE = 40;
-const [WIDTH, HEIGHT] = [window.innerWidth, window.innerHeight];
-
 const STYLE = {
   position: "absolute",
-  height: SIZE,
-  width: SIZE,
 };
 
 const STYLE_IMAGE = {
-  borderRadius: SIZE,
+  maxWidth: "100%",
+  maxHeight: "100%",
   borderStyle: "solid",
-  borderWidth: SIZE * 0.1,
-  height: SIZE,
-  width: SIZE,
+  borderRadius: "100%",
+  borderWidth: 3,
 };
 
 const PARTY_TO_COLOR = {
@@ -31,14 +26,6 @@ const PARTY_TO_COLOR = {
   "Ahila Ilankai Thamil Congress (AITC)": "yellow",
 };
 
-function getRandomX() {
-  return parseInt((Math.random() * WIDTH) / SIZE) * SIZE;
-}
-
-function getRandomY() {
-  return parseInt((Math.random() * HEIGHT) / SIZE) * SIZE;
-}
-
 function getPartyColor(party) {
   if (PARTY_TO_COLOR[party]) {
     return PARTY_TO_COLOR[party];
@@ -48,15 +35,19 @@ function getPartyColor(party) {
 }
 
 export default function MPWidget(props) {
-  const { mp } = props;
+  const { mp, x, y, size } = props;
+
+  const styleCustom = {
+    left: x - size / 2,
+    top: y - size / 2,
+    width: size,
+    height: size,
+  };
+
   const styleImageCustom = {
     borderColor: getPartyColor(mp.party),
   };
 
-  const styleCustom = {
-    top: getRandomY(),
-    left: getRandomX(),
-  };
   return (
     <div style={{ ...STYLE, ...styleCustom }}>
       <img
