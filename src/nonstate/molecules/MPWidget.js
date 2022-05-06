@@ -48,12 +48,17 @@ export default function MPWidget(props) {
     borderColor: getPartyColor(mp.party),
   };
 
+  const onClick = function(e) {
+    alert(JSON.stringify(mp.d));
+  };
+
   return (
     <span style={STYLE}>
       <img
         src={mp.imageURL}
         alt={mp.name}
         style={{ ...STYLE_IMAGE, ...styleImageCustom }}
+        onClick={onClick}
       />
     </span>
   );
