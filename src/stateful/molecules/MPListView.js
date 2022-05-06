@@ -9,6 +9,14 @@ const STYLE = {
   margin: MARGIN,
 };
 
+function funcCategorizeMP(mp) {
+  const Q = 10;
+  const age = mp.age;
+  const lower = Math.floor(age / Q) * Q;
+  const upper = lower + Q;
+  return `${lower} - ${upper}`;
+}
+
 export default class MPListView extends Component {
   constructor(props) {
     super(props);
