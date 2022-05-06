@@ -27,8 +27,8 @@ function Address({ address, isSitting }) {
   const href =
     "https://www.google.com/maps/search/" + address.replaceAll(" ", "+");
 
-  const renderedAddress = address.split(", ").map(function (line) {
-    return <div>{line}</div>;
+  const renderedAddress = address.split(", ").map(function (line, i) {
+    return <div key={i}>{line}</div>;
   });
 
   const secondaryText = isSitting ? "Sitting" : "";
