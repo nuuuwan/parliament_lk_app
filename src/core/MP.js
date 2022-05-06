@@ -31,6 +31,9 @@ export default class MP {
     this.sourceURL = d.source_url;
   }
 
+  get id() {
+    return this.urlNum;
+  }
   get age() {
     const utNow = TimeX.getUnixTime();
     const utDateOfBirth = TimeXFuture.parse(this.dateOfBirth);
