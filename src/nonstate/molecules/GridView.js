@@ -12,7 +12,7 @@ const STYLE_CELL = {
   borderColor: "lightgray",
   overflow: "hidden",
   textAlign: "center",
-  fontSize: 9,
+  fontSize: 12,
 };
 
 export default function GridView(props) {
@@ -25,9 +25,17 @@ export default function GridView(props) {
           <th />
           {xAxisLabels.map(function (xLabel, iX) {
             const key = `x-label-${iX}`;
+
+            const countX = yAxisLabels.reduce(function (countX, __, iY) {
+              const cellContents = cells[iX][iY];
+              const count = cellContents.length;
+              return countX + count;
+            }, 0);
+
             return (
               <th key={key} style={STYLE_CELL}>
                 {xLabel}
+                <PctWidget count={countX} />
               </th>
             );
           })}
@@ -35,17 +43,42 @@ export default function GridView(props) {
 
         {yAxisLabels.map(function (yLabel, iY) {
           const key = `row-${iY}`;
+
+          const countY = xAxisLabels.reduce(function (countY, __, iX) {
+            const cellContents = cells[iX][iY];
+            const count = cellContents.length;
+            return countY + count;
+          }, 0);
+
           return (
             <tr key={key}>
-              {<th style={STYLE_CELL}>{yLabel}</th>}
+              {
+                <th style={STYLE_CELL}>
+                  {yLabel}
+                  <PctWidget count={countY} />
+                </th>
+              }
               {xAxisLabels.map(function (xLabel, iX) {
                 const key = `cell-${iX}-${iY}`;
                 const cellContents = cells[iX][iY];
-                const n = cellContents.length;
+                const count = cellContents.length;
+
+                const countX = yAxisLabels.reduce(function (countX, __, iY) {
+                  const cellContents = cells[iX][iY];
+                  const count = cellContents.length;
+                  return countX + count;
+                }, 0);
+
                 return (
                   <td key={key} style={STYLE_CELL}>
                     {cellContents}
-                    <PctWidget n={n} />
+                    <PctWidget
+                      count={count}
+                      countY={countY}
+                      countX={countX}
+                      xLabel={xLabel}
+                      yLabel={yLabel}
+                    />
                   </td>
                 );
               })}
