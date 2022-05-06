@@ -1,21 +1,21 @@
+import DataStructuresFuture from '../../base/DataStructuresFuture.js';
 import { Component } from "react";
 import MP from "../../core/MP.js";
 import MPWidget from "../../nonstate/molecules/MPWidget.js";
+import GridView from "../../nonstate/molecules/GridView.js";
 
-const MARGIN = 20;
-const STYLE = {
-  position: "relative",
-  backgroundColor: "#fcfcfc",
-  borderRadius: MARGIN,
-  margin: MARGIN,
-};
+const MARGIN = 0;
 
-function funcCategorizeMP(mp) {
+function funcCategorizeMP2(mp) {
   const Q = 2;
   const age = mp.age;
   const lower = Math.floor(age / Q) * Q;
   const upper = lower + Q;
   return `${lower} - ${upper}`;
+}
+
+function funcCategorizeMP(mp) {
+  return mp.party;
 }
 
 export default class ParliamentView extends Component {
@@ -53,62 +53,33 @@ export default class ParliamentView extends Component {
         return categoryTompIds;
       }, {});
 
-    const nX = Object.keys(categoryTompIds).length + 1;
-    const nY = Object.values(categoryTompIds).reduce(function (nY, mpIds) {
-      return Math.max(nY, mpIds.length);
-    }, 0) + 1;
+    const nX = Object.keys(categoryTompIds).length;
+    const nY = 1;
 
-    const [xSpan, ySpan] = [width / nX, height / nY];
-    const size = Math.min(xSpan, ySpan);
+    const [spanX, spanY] = [width / (nX + 1), height / (nY + 1)]
+    const minSpan = Math.min(spanX, spanY);
 
-    const mpIdToQXY = Object.keys(categoryTompIds)
-      .sort()
-      .reduce(function (mpIdToQXY, category, iCategory) {
+    const categoryList = Object.keys(categoryTompIds).sort();
+    const cells = categoryList.reduce(
+      function(cells, category, iCategory) {
         const mpIds = categoryTompIds[category];
-        return mpIds.reduce(function (mpIdToQXY, mpId, iMP) {
-          mpIdToQXY[mpId] = [iCategory, iMP];
-          return mpIdToQXY;
-        }, mpIdToQXY);
-      }, {});
+        return mpIds.reduce(
+          function(cells, mpId) {
+            const cellContent = (
+              <MPWidget mp={mpIdx[mpId]} />
+            )
+            cells[iCategory][0].push(cellContent);
+            return cells;
+          },
+          cells,
+        );
+      },
+      DataStructuresFuture.initArray2D(nX, nY, (iX, iY) => []),
+    );
 
-    const customStyle = {
-      width,
-      height,
-    };
 
     return (
-      <div style={{ ...STYLE, ...customStyle }}>
-        {
-          Object.keys(categoryTompIds).sort().map(function(category, iCategory) {
-            const [qx, qy] = [iCategory, -1];
-            const [x, y] = [(qx + 1) * xSpan, (nY - qy - 1) * ySpan];
-
-            const key = `div-x-label-${iCategory}`;
-            const styleLabel = {
-              position: 'absolute',
-              left: x,
-              top: 0,
-              fontSize: xSpan / 5,
-              textAlign: 'center',
-              width: xSpan,
-              height,
-              backgroundColor: '#f8f8f8',
-              borderColor: 'gray',
-              borderStyle: 'solid',
-              borderWidth: 1,
-            }
-            return (
-              <div key={key} style={styleLabel}>{category}</div>
-            )
-          })
-        }
-        {Object.values(mpIdx).map(function (mp, iMp) {
-          const key = `mp-${mp.urlNum}`;
-          const [qx, qy] = mpIdToQXY[mp.id];
-          const [x, y] = [(qx + 1 + 0.5) * xSpan, (nY - qy - 1) * ySpan];
-          return <MPWidget key={key} mp={mp} x={x} y={y} size={size} />;
-        })}
-      </div>
-    );
+      <GridView cells={cells} xAxisLabels ={categoryList} />
+    )
   }
 }
