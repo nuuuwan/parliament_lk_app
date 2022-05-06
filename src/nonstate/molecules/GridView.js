@@ -1,18 +1,10 @@
-import DataStructuresFuture from "../../base/DataStructuresFuture.js";
-
 export default function GridView(props) {
-  const { cells, xAxisLabels, margin } = props;
-
-  const nX = cells.length;
-  const nY = cells[0].length;
+  const { cells, xAxisLabels, yAxisLabels } = props;
 
   const styleGrid = {
-    margin: margin,
     borderCollapse: "collapse",
     tableLayout: "fixed",
   };
-
-  const styleRowCustom = {};
 
   const styleCellCustom = {
     borderStyle: "solid",
@@ -26,17 +18,19 @@ export default function GridView(props) {
   return (
     <table style={styleGrid}>
       <tbody>
-        <tr style={styleRowCustom}>
-          {xAxisLabels.map(function (label, iLabel) {
-            return <th style={styleCellCustom}>{label}</th>;
+        <tr>
+          <th />
+          {xAxisLabels.map(function (xLabel, iX) {
+            return <th style={styleCellCustom}>{xLabel}</th>;
           })}
         </tr>
 
-        {DataStructuresFuture.range(0, nY).map(function (iY) {
+        {yAxisLabels.map(function (yLabel, iY) {
           return (
-            <tr style={styleRowCustom}>
-              {DataStructuresFuture.range(0, nX).map(function (iX) {
-                const cellContents = cells[iX][nY - iY - 1];
+            <tr>
+              {<th style={styleCellCustom}>{yLabel}</th>}
+              {xAxisLabels.map(function (xLabel, iX) {
+                const cellContents = cells[iX][iY];
                 return <td style={styleCellCustom}>{cellContents}</td>;
               })}
             </tr>
