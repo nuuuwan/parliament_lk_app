@@ -1,6 +1,7 @@
 import DataStructuresFuture from "../base/DataStructuresFuture.js";
 
 export const DIMENSION_TO_FUNC = {
+  Gender: (mp) => mp.gender,
   "Age Group": (mp) => mp.getAgeGroup(10),
   "Is Age > 40": (mp) => mp.isAgeOver(40),
   Party: (mp) => mp.party,
