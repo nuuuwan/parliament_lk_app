@@ -1,10 +1,10 @@
 import { Component } from "react";
-import MPListView from "../molecules/MPListView.js";
+import ParliamentView from "../molecules/ParliamentView.js";
 export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <MPListView />
+        <ParliamentView />
       </div>
     );
   }

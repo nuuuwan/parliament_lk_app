@@ -17,7 +17,7 @@ function funcCategorizeMP(mp) {
   return `${lower} - ${upper}`;
 }
 
-export default class mpListView extends Component {
+export default class ParliamentView extends Component {
   constructor(props) {
     super(props);
     this.state = { mpIdx: undefined };
