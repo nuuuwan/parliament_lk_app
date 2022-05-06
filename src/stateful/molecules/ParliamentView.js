@@ -70,14 +70,14 @@ export default class ParliamentView extends Component {
     return (
       <div>
         <DimensionPicker
-          label="X-Axis"
-          selectedDimension={xDim}
-          onChange={this.onChangeXDim.bind(this)}
-        />
-        <DimensionPicker
-          label="Y-Axis"
+          label="Top to Bottom (Y)"
           selectedDimension={yDim}
           onChange={this.onChangeYDim.bind(this)}
+        />
+        <DimensionPicker
+          label="Left to Right (X)"
+          selectedDimension={xDim}
+          onChange={this.onChangeXDim.bind(this)}
         />
         <GridView
           cells={cells}
