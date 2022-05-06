@@ -55,12 +55,9 @@ export default class MP {
 
   static async getMPIdx() {
     const mpList = await MP.getMPList();
-    return mpList.reduce(
-      function(mpIdx, mp) {
-        mpIdx[mp.id] = mp;
-        return mpIdx;
-      },
-      {},
-    );
+    return mpList.reduce(function (mpIdx, mp) {
+      mpIdx[mp.id] = mp;
+      return mpIdx;
+    }, {});
   }
 }
