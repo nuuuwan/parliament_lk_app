@@ -6,8 +6,8 @@ import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
 
 import Dimensions, { DIMENSION_TO_FUNC } from "../../core/Dimensions.js";
 
-const DEFAULT_X_DIM = "Party";
-const DEFAULT_Y_DIM = "Age Group";
+const DEFAULT_X_DIM = "Religion";
+const DEFAULT_Y_DIM = "Party";
 
 export default class ParliamentView extends Component {
   constructor(props) {
