@@ -71,6 +71,16 @@ export default class MP {
     return `${lower} - ${upper}`;
   }
 
+  get isSinhalaBuddhist() {
+    if (this.religion === "Buddhism") {
+      return "Sinhala Buddhist";
+    }
+    if (this.religion === "") {
+      return "unknown";
+    }
+    return "Not Sinhala Buddhist";
+  }
+
   static async getRawMPList() {
     return await WWW.json(URL_MP_LIST);
   }
