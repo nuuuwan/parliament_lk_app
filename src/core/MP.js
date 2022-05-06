@@ -17,12 +17,12 @@ export default class MP {
     this.urlNum = parseInt(d.url_num);
     this.name = cleanName(d.name);
     this.imageURL = d.image_url;
-    this.party = d.party;
+    this.partyData = d.party;
     this.electoralDistrict = d.electoral_district;
 
     this.dateOfBirthData = d.date_of_birth;
     this.civilStatus = d.civil_status;
-    this.religion = d.religion;
+    this.religionData = d.religion;
     this.profession = d.profession;
     this.phone = d.phone;
 
@@ -35,6 +35,10 @@ export default class MP {
 
   get id() {
     return this.urlNum;
+  }
+
+  get party() {
+    return this.partyData.split("(")[1].split(")")[0];
   }
 
   get dateOfBirth() {
@@ -80,12 +84,23 @@ export default class MP {
     return `Age ≤ ${ageLimit}`;
   }
 
+  get religion() {
+    if (["Roman Catholicism", "Christianity"].includes(this.religionData)) {
+      return "Christianity (All)";
+    }
+
+    if (!this.religionData || this.religionData === "Other") {
+      return "Other or Unknown";
+    }
+    return this.religionData;
+  }
+
   get isSinhalaBuddhist() {
     if (this.religion === "Buddhism") {
       return "Sinhala Buddhist";
     }
-    if (this.religion === "" || this.religion === "Other") {
-      return "Unknown or Other";
+    if (this.religion === "Other or Unknown") {
+      return "Other or Unknown";
     }
     return "Not Sinhala Buddhist";
   }
