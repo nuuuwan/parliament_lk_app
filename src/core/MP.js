@@ -79,8 +79,8 @@ export default class MP {
     if (this.religion === "Buddhism") {
       return "Sinhala Buddhist";
     }
-    if (this.religion === "") {
-      return "unknown";
+    if (this.religion === "" || this.religion === "Other" ) {
+      return "Unknown or Other";
     }
     return "Not Sinhala Buddhist";
   }
