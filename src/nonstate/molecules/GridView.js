@@ -1,5 +1,4 @@
 import Grid from "@mui/material/Grid";
-import PctWidget from "../atoms/PctWidget.js";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
@@ -14,9 +13,9 @@ const STYLE_GRID = {
 
 const STYLE_CELL = {
   textAlign: "center",
-  borderColor: "#ddd",
+  borderColor: "#eee",
   borderStyle: "solid",
-  borderWidth: 1,
+  borderWidth: 2,
   padding: 12,
 };
 
@@ -37,10 +36,10 @@ export default function GridView(props) {
 
         return (
           <td key={key} style={STYLE_CELL}>
-            <Typography variant="h6" gutterBottom component="div">
+            <Typography variant="caption" gutterBottom component="div">
               {xLabel}
             </Typography>
-            <PctWidget count={countX} />
+            <Typography variant="h6">{countX}</Typography>
           </td>
         );
       })}
@@ -48,7 +47,7 @@ export default function GridView(props) {
   );
 
   return (
-    <Paper elevation={1} sx={STYLE_PAPER}>
+    <Paper elevation={0} sx={STYLE_PAPER}>
       <table style={STYLE_GRID}>
         <tbody>
           {renderedXAxisHeader}
@@ -66,10 +65,10 @@ export default function GridView(props) {
               <tr key={key}>
                 {
                   <td style={STYLE_CELL}>
-                    <Typography variant="h6" gutterBottom component="div">
+                    <Typography variant="caption" gutterBottom component="div">
                       {yLabel}
                     </Typography>
-                    <PctWidget count={countY} />
+                    <Typography variant="h6">{countY}</Typography>
                   </td>
                 }
                 {xAxisLabels.map(function (xLabel, iX) {
@@ -93,10 +92,10 @@ export default function GridView(props) {
                 })}
                 {
                   <td style={STYLE_CELL}>
-                    <Typography variant="h6" gutterBottom component="div">
+                    <Typography variant="caption" gutterBottom component="div">
                       {yLabel}
                     </Typography>
-                    <PctWidget count={countY} />
+                    <Typography variant="h6">{countY}</Typography>
                   </td>
                 }
               </tr>
