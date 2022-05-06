@@ -31,8 +31,6 @@ export default class MP {
     this.addressSitting = d.address_sitting;
     this.email = d.email;
     this.sourceURL = d.source_url;
-
-
   }
 
   get id() {
@@ -79,7 +77,7 @@ export default class MP {
     if (this.religion === "Buddhism") {
       return "Sinhala Buddhist";
     }
-    if (this.religion === "" || this.religion === "Other" ) {
+    if (this.religion === "" || this.religion === "Other") {
       return "Unknown or Other";
     }
     return "Not Sinhala Buddhist";

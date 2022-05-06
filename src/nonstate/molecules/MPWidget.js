@@ -48,7 +48,7 @@ export default function MPWidget(props) {
     borderColor: getPartyColor(mp.party),
   };
 
-  const onClick = function(e) {
+  const onClick = function (e) {
     alert(JSON.stringify(mp.d));
   };
 

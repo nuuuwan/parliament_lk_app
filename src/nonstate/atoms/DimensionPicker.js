@@ -1,4 +1,4 @@
-import {DIMENSION_LIST} from '../../core/Dimensions.js';
+import { DIMENSION_LIST } from "../../core/Dimensions.js";
 
 export default function DimensionPicker(props) {
   const { selectedDimension, onChange } = props;

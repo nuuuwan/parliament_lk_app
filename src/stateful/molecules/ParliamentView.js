@@ -4,14 +4,10 @@ import MPWidget from "../../nonstate/molecules/MPWidget.js";
 import GridView from "../../nonstate/molecules/GridView.js";
 import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
 
-import Dimensions, {DIMENSION_TO_FUNC} from '../../core/Dimensions.js';
+import Dimensions, { DIMENSION_TO_FUNC } from "../../core/Dimensions.js";
 
 const DEFAULT_X_DIM = "Party";
 const DEFAULT_Y_DIM = "Age Group";
-
-
-
-
 
 export default class ParliamentView extends Component {
   constructor(props) {

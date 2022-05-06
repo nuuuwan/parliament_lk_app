@@ -30,11 +30,8 @@ export default class Dimensions {
       dxyList.map((dxy) => dxy.y)
     );
 
-
-
-    const xAxisLabels = xAxisLabelAndCount.map(x => x[0]);
-    const yAxisLabels = yAxisLabelAndCount.map(x => x[0]);
-
+    const xAxisLabels = xAxisLabelAndCount.map((x) => x[0]);
+    const yAxisLabels = yAxisLabelAndCount.map((x) => x[0]);
 
     const nX = xAxisLabels.length;
     const nY = yAxisLabels.length;
@@ -53,5 +50,4 @@ export default class Dimensions {
 
     return { cells, xAxisLabels, yAxisLabels };
   }
-
 }
