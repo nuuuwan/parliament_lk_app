@@ -21,7 +21,10 @@ export default function MPDrawerView(props) {
     <Box sx={STYLE_BOX}>
       <Avatar alt={mp.name} src={mp.imageURL} sx={STYLE_AVATAR} />
       <Typography variant="h5" display="block">
-        {mp.name}
+        {mp.firstNames}
+      </Typography>
+      <Typography variant="h4" display="block">
+        {mp.lastName}
       </Typography>
       <Typography variant="subtitle1" display="caption text">
         {mp.profession}
