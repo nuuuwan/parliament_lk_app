@@ -1,6 +1,6 @@
 import { Component } from "react";
 import MP from "../../core/MP.js";
-import MPView from "../../nonstate/molecules/MPView.js";
+import MPWidget from "../../nonstate/molecules/MPWidget.js";
 
 const STYLE = {
   height: 200,
@@ -28,7 +28,7 @@ export default class MPListView extends Component {
       <div style={STYLE}>
         {mpList.map(function (mp, iMp) {
           const key = `mp-${mp.urlNum}`;
-          return <MPView key={key} mp={mp} />;
+          return <MPWidget key={key} mp={mp} />;
         })}
       </div>
     );

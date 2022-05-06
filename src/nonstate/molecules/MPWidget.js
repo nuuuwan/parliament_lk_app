@@ -47,7 +47,7 @@ function getPartyColor(party) {
   return "black";
 }
 
-export default function MPView(props) {
+export default function MPWidget(props) {
   const { mp } = props;
   const styleImageCustom = {
     borderColor: getPartyColor(mp.party),
