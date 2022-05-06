@@ -2,9 +2,11 @@ import { Component } from "react";
 import MP from "../../core/MP.js";
 import MPWidget from "../../nonstate/molecules/MPWidget.js";
 
+const MARGIN = 20;
 const STYLE = {
-  height: 200,
-  backgroundColor: "#f8f8f8",
+  backgroundColor: '#f8f8f8',
+  borderRadius: MARGIN,
+  margin: MARGIN,
 };
 
 export default class MPListView extends Component {
@@ -24,8 +26,15 @@ export default class MPListView extends Component {
       return "Loading...";
     }
 
+    const [width, height] = [window.innerWidth - MARGIN * 2, window.innerHeight - MARGIN * 2];
+
+    const customStyle = {
+      width,
+      height,
+    }
+
     return (
-      <div style={STYLE}>
+      <div style={{...STYLE, ...customStyle}}>
         {mpList.map(function (mp, iMp) {
           const key = `mp-${mp.urlNum}`;
           return <MPWidget key={key} mp={mp} />;
