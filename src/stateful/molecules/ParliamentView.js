@@ -1,6 +1,7 @@
 import { Component } from "react";
 
 import Drawer from "@mui/material/Drawer";
+import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 
 import MP from "../../core/MP.js";
@@ -12,6 +13,10 @@ import Dimensions, { DIMENSION_TO_FUNC } from "../../core/Dimensions.js";
 
 const DEFAULT_X_DIM = "Religion";
 const DEFAULT_Y_DIM = "Party";
+
+const STYLE = {
+  margin: 2,
+};
 
 export default class ParliamentView extends Component {
   constructor(props) {
@@ -68,7 +73,7 @@ export default class ParliamentView extends Component {
     );
 
     return (
-      <div>
+      <Box sx={STYLE}>
         <DimensionPicker
           label="Top to Bottom (Y)"
           selectedDimension={yDim}
@@ -92,7 +97,7 @@ export default class ParliamentView extends Component {
         >
           <MPDrawerView mp={activeMP} />
         </Drawer>
-      </div>
+      </Box>
     );
   }
 }
