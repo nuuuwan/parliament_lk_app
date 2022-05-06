@@ -1,7 +1,11 @@
 import { Component } from "react";
+
+import Drawer from "@mui/material/Drawer";
+
 import MP from "../../core/MP.js";
 import MPWidget from "../../nonstate/molecules/MPWidget.js";
 import GridView from "../../nonstate/molecules/GridView.js";
+import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
 import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
 
 import Dimensions, { DIMENSION_TO_FUNC } from "../../core/Dimensions.js";
@@ -13,9 +17,10 @@ export default class ParliamentView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mpList: undefined,
+      mpIdx: undefined,
       xDim: DEFAULT_X_DIM,
       yDim: DEFAULT_Y_DIM,
+      activeMPId: null,
     };
   }
 
@@ -27,22 +32,43 @@ export default class ParliamentView extends Component {
     this.setState({ yDim });
   }
 
+  onClickMP(mpID) {
+    this.setState({ activeMPId: mpID });
+  }
+
+  onDrawerClose() {
+    this.setState({ activeMPId: null });
+  }
+
   async componentDidMount() {
-    const mpList = await MP.getMPList();
-    this.setState({ mpList });
+    const mpIdx = await MP.getMPIdx();
+    this.setState({ mpIdx });
   }
 
   render() {
-    const { mpList, xDim, yDim } = this.state;
-    if (mpList === undefined) {
+    const { mpIdx, xDim, yDim, activeMPId } = this.state;
+    if (mpIdx === undefined) {
       return <div>Loading...</div>;
     }
 
+    const activeMP = mpIdx[activeMPId];
+    console.debug(activeMP);
+
+    const cellMap = function (mp) {
+      return (
+        <MPWidget
+          key={`mp-${mp.id}`}
+          mp={mp}
+          onClickMP={this.onClickMP.bind(this)}
+        />
+      );
+    }.bind(this);
+
     const { cells, xAxisLabels, yAxisLabels } = Dimensions.buildGrid(
-      mpList,
+      Object.values(mpIdx),
       DIMENSION_TO_FUNC[xDim],
       DIMENSION_TO_FUNC[yDim],
-      (mp) => <MPWidget key={`mp-${mp.id}`} mp={mp} />
+      cellMap
     );
 
     return (
@@ -60,7 +86,15 @@ export default class ParliamentView extends Component {
           cells={cells}
           xAxisLabels={xAxisLabels}
           yAxisLabels={yAxisLabels}
+          onClick={this.onClickMP}
         />
+        <Drawer
+          anchor="right"
+          open={activeMPId !== null}
+          onClose={this.onDrawerClose.bind(this)}
+        >
+          <MPDrawerView mp={activeMP} />
+        </Drawer>
       </div>
     );
   }
