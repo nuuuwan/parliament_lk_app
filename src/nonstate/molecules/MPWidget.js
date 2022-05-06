@@ -1,37 +1,37 @@
 const SIZE = 40;
-const BORDER_WIDTH = SIZE / 20;
+const BORDER_WIDTH = SIZE / 15;
 const STYLE = {
   margin: 0,
   padding: 0,
 };
 const STYLE_IMAGE = {
-  maxWidth: SIZE,
-  maxHeight: SIZE,
+  width: SIZE,
+  height: SIZE,
   borderRadius: "100%",
   borderWidth: BORDER_WIDTH,
   borderStyle: "solid",
 };
 
 const PARTY_TO_COLOR = {
-  "Sri Lanka Podujana Peramuna (SLPP)": "maroon",
-  "Sri Lanka Freedom Party(SLFP)": "blue",
-  "Our Power of People Party (OPPP)": "brown",
+  SLPP: "maroon",
+  SLFP: "blue",
+  OPPP: "brown",
 
-  "Samagi Jana Balawegaya (SJB)": "green",
-  "United National Party (UNP)": "green",
+  SJB: "green",
+  UNP: "green",
 
-  "Jathika Jana balawegaya (JJB)": "red",
+  JJB: "red",
 
-  "Muslim National Alliance (MNA)": "darkgreen",
-  "All Ceylon Makkal Congress (ACMC)": "darkgreen",
-  "Sri Lanka Muslim Congress (SLMC)": "darkgreen",
-  "National Congress (NC)": "darkgreen",
+  MNA: "darkgreen",
+  ACMC: "darkgreen",
+  SLMC: "darkgreen",
+  NC: "darkgreen",
 
-  "Thamil Makkal Thesiya Kuttani (TMTK)": "yellow",
-  "Illankai Tamil Arasu Kadchi (ITAK)": "yellow",
-  "Eelam People's Democratic Party (EPDP)": "yellow",
-  "Ahila Ilankai Thamil Congress (AITC)": "yellow",
-  "Thamil Makkal Viduthalai Pulikal (TMVP)": "yellow",
+  TMTK: "yellow",
+  ITAK: "yellow",
+  EPDP: "yellow",
+  AITC: "yellow",
+  TMVP: "yellow",
 };
 
 function getPartyColor(party) {
