@@ -17,22 +17,33 @@ function funcCategorizeMP(mp) {
   return `${lower} - ${upper}`;
 }
 
-export default class MPListView extends Component {
+export default class mpListView extends Component {
   constructor(props) {
     super(props);
-    this.state = { mpList: undefined };
+    this.state = { mpIdx: undefined };
   }
 
   async componentDidMount() {
-    const mpList = await MP.getAll();
-    this.setState({ mpList });
+    const mpIdx = await MP.getMPIdx();
+    this.setState({ mpIdx });
   }
 
   render() {
-    const { mpList } = this.state;
-    if (mpList === undefined) {
+    const { mpIdx } = this.state;
+    if (mpIdx === undefined) {
       return "Loading...";
     }
+
+    const categoryTompIds = Object.values(mpIdx).reduce(function (categoryTompIds, mp) {
+      const category = funcCategorizeMP(mp);
+      if (!categoryTompIds[category]) {
+        categoryTompIds[category] = [];
+      }
+      categoryTompIds[category].push(mp.id);
+      return categoryTompIds;
+    }, {});
+
+    const nXCategories = Object.keys(categoryTompIds).length;
 
     const [width, height] = [
       window.innerWidth - MARGIN * 2,
@@ -57,7 +68,7 @@ export default class MPListView extends Component {
 
     return (
       <div style={{ ...STYLE, ...customStyle }}>
-        {mpList.map(function (mp, iMp) {
+        {Object.values(mpIdx).map(function (mp, iMp) {
           const key = `mp-${mp.urlNum}`;
           return (
             <MPWidget
