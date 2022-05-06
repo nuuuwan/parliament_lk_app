@@ -5,7 +5,7 @@ import MPWidget from "../../nonstate/molecules/MPWidget.js";
 const MARGIN = 20;
 const STYLE = {
   position: "relative",
-  backgroundColor: "#f0f0f8",
+  backgroundColor: "#fcfcfc",
   borderRadius: MARGIN,
   margin: MARGIN,
 };
@@ -53,23 +53,22 @@ export default class ParliamentView extends Component {
         return categoryTompIds;
       }, {});
 
-    const nX = Object.keys(categoryTompIds).length;
+    const nX = Object.keys(categoryTompIds).length + 1;
     const nY = Object.values(categoryTompIds).reduce(function (nY, mpIds) {
       return Math.max(nY, mpIds.length);
-    }, 0);
+    }, 0) + 1;
 
     const [xSpan, ySpan] = [width / nX, height / nY];
     const size = Math.min(xSpan, ySpan);
-    const [innerWidth, innerHeight] = [width - size, height - size];
 
-    const mpIdToPXY = Object.keys(categoryTompIds)
+    const mpIdToQXY = Object.keys(categoryTompIds)
       .sort()
-      .reduce(function (mpIdToPXY, category, iCategory) {
+      .reduce(function (mpIdToQXY, category, iCategory) {
         const mpIds = categoryTompIds[category];
-        return mpIds.reduce(function (mpIdToPXY, mpId, iMP) {
-          mpIdToPXY[mpId] = [iCategory / nX, iMP / nY];
-          return mpIdToPXY;
-        }, mpIdToPXY);
+        return mpIds.reduce(function (mpIdToQXY, mpId, iMP) {
+          mpIdToQXY[mpId] = [iCategory, iMP];
+          return mpIdToQXY;
+        }, mpIdToQXY);
       }, {});
 
     const customStyle = {
@@ -79,10 +78,34 @@ export default class ParliamentView extends Component {
 
     return (
       <div style={{ ...STYLE, ...customStyle }}>
+        {
+          Object.keys(categoryTompIds).sort().map(function(category, iCategory) {
+            const [qx, qy] = [iCategory, -1];
+            const [x, y] = [(qx + 1) * xSpan, (nY - qy - 1) * ySpan];
+
+            const key = `div-x-label-${iCategory}`;
+            const styleLabel = {
+              position: 'absolute',
+              left: x,
+              top: 0,
+              fontSize: xSpan / 5,
+              textAlign: 'center',
+              width: xSpan,
+              height,
+              backgroundColor: '#f8f8f8',
+              borderColor: 'gray',
+              borderStyle: 'solid',
+              borderWidth: 1,
+            }
+            return (
+              <div key={key} style={styleLabel}>{category}</div>
+            )
+          })
+        }
         {Object.values(mpIdx).map(function (mp, iMp) {
           const key = `mp-${mp.urlNum}`;
-          const [px, py] = mpIdToPXY[mp.id];
-          const [x, y] = [px * innerWidth + size, (1 - py) * innerHeight];
+          const [qx, qy] = mpIdToQXY[mp.id];
+          const [x, y] = [(qx + 1 + 0.5) * xSpan, (nY - qy - 1) * ySpan];
           return <MPWidget key={key} mp={mp} x={x} y={y} size={size} />;
         })}
       </div>
