@@ -52,7 +52,6 @@ export default class ParliamentView extends Component {
     }
 
     const activeMP = mpIdx[activeMPId];
-    console.debug(activeMP);
 
     const cellMap = function (mp) {
       return (
