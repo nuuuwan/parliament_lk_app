@@ -2,6 +2,7 @@ import { Component } from "react";
 
 import Drawer from "@mui/material/Drawer";
 import Avatar from "@mui/material/Avatar";
+
 import MP from "../../core/MP.js";
 import GridView from "../../nonstate/molecules/GridView.js";
 import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
@@ -69,11 +70,12 @@ export default class ParliamentView extends Component {
     return (
       <div>
         <DimensionPicker
+          label="X-Axis"
           selectedDimension={xDim}
           onChange={this.onChangeXDim.bind(this)}
         />
-        {" x "}
         <DimensionPicker
+          label="Y-Axis"
           selectedDimension={yDim}
           onChange={this.onChangeYDim.bind(this)}
         />
