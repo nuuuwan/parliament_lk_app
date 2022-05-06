@@ -4,7 +4,7 @@ import MPWidget from "../../nonstate/molecules/MPWidget.js";
 
 const MARGIN = 20;
 const STYLE = {
-  backgroundColor: '#f8f8f8',
+  backgroundColor: "#f8f8f8",
   borderRadius: MARGIN,
   margin: MARGIN,
 };
@@ -26,15 +26,18 @@ export default class MPListView extends Component {
       return "Loading...";
     }
 
-    const [width, height] = [window.innerWidth - MARGIN * 2, window.innerHeight - MARGIN * 2];
+    const [width, height] = [
+      window.innerWidth - MARGIN * 2,
+      window.innerHeight - MARGIN * 2,
+    ];
 
     const customStyle = {
       width,
       height,
-    }
+    };
 
     return (
-      <div style={{...STYLE, ...customStyle}}>
+      <div style={{ ...STYLE, ...customStyle }}>
         {mpList.map(function (mp, iMp) {
           const key = `mp-${mp.urlNum}`;
           return <MPWidget key={key} mp={mp} />;
