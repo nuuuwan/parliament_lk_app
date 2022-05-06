@@ -13,42 +13,45 @@ const STYLE_GRID = {
 };
 
 const STYLE_CELL = {
-  overflow: "hidden",
   textAlign: "center",
-  fontSize: 12,
   borderColor: "#ddd",
   borderStyle: "solid",
   borderWidth: 1,
+  padding: 12,
 };
 
 export default function GridView(props) {
   const { cells, xAxisLabels, yAxisLabels } = props;
 
+  const renderedXAxisHeader = (
+    <tr>
+      <td />
+      {xAxisLabels.map(function (xLabel, iX) {
+        const key = `x-label-${iX}`;
+
+        const countX = yAxisLabels.reduce(function (countX, __, iY) {
+          const cellContents = cells[iX][iY];
+          const count = cellContents.length;
+          return countX + count;
+        }, 0);
+
+        return (
+          <td key={key} style={STYLE_CELL}>
+            <Typography variant="h6" gutterBottom component="div">
+              {xLabel}
+            </Typography>
+            <PctWidget count={countX} />
+          </td>
+        );
+      })}
+    </tr>
+  );
+
   return (
     <Paper elevation={1} sx={STYLE_PAPER}>
       <table style={STYLE_GRID}>
         <tbody>
-          <tr>
-            <td />
-            {xAxisLabels.map(function (xLabel, iX) {
-              const key = `x-label-${iX}`;
-
-              const countX = yAxisLabels.reduce(function (countX, __, iY) {
-                const cellContents = cells[iX][iY];
-                const count = cellContents.length;
-                return countX + count;
-              }, 0);
-
-              return (
-                <td key={key} style={STYLE_CELL}>
-                  <Typography variant="h6" gutterBottom component="div">
-                    {xLabel}
-                  </Typography>
-                  <PctWidget count={countX} />
-                </td>
-              );
-            })}
-          </tr>
+          {renderedXAxisHeader}
 
           {yAxisLabels.map(function (yLabel, iY) {
             const key = `row-${iY}`;
@@ -88,9 +91,19 @@ export default function GridView(props) {
                     </td>
                   );
                 })}
+                {
+                  <td style={STYLE_CELL}>
+                    <Typography variant="h6" gutterBottom component="div">
+                      {yLabel}
+                    </Typography>
+                    <PctWidget count={countY} />
+                  </td>
+                }
               </tr>
             );
           })}
+
+          {renderedXAxisHeader}
         </tbody>
       </table>
     </Paper>
