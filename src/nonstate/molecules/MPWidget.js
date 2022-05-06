@@ -1,5 +1,5 @@
 const SIZE = 40;
-const BORDER_WIDTH = SIZE / 10;
+const BORDER_WIDTH = SIZE / 20;
 const STYLE = {
   margin: 0,
   padding: 0,
@@ -8,9 +8,8 @@ const STYLE_IMAGE = {
   maxWidth: SIZE,
   maxHeight: SIZE,
   borderRadius: "100%",
-  borderWidth: 2,
-  borderStyle: 'solid',
-
+  borderWidth: BORDER_WIDTH,
+  borderStyle: "solid",
 };
 
 const PARTY_TO_COLOR = {
@@ -44,8 +43,8 @@ function getPartyColor(party) {
 }
 
 export default function MPWidget(props) {
-  const { mp, width, height} = props;
-    const styleImageCustom = {
+  const { mp } = props;
+  const styleImageCustom = {
     borderColor: getPartyColor(mp.party),
   };
 
