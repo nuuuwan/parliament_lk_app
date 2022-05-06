@@ -12,13 +12,13 @@ function cleanName(nameRaw) {
 
 export default class MP {
   constructor(d) {
-    this.urlNum = d.url_num;
+    this.urlNum = parseInt(d.url_num);
     this.name = cleanName(d.name);
     this.imageURL = d.image_url;
     this.party = d.party;
     this.electoralDistrict = d.electoral_district;
 
-    this.dateOfBirth = d.date_of_birth;
+    this.dateOfBirthData = d.date_of_birth;
     this.civilStatus = d.civil_status;
     this.religion = d.religion;
     this.profession = d.profession;
@@ -40,6 +40,22 @@ export default class MP {
     const utDateOfBirth = TimeXFuture.parse(this.dateOfBirth);
     const age = (utNow - utDateOfBirth) / SECONDS_IN.YEAR;
     return age;
+  }
+
+  get dateOfBirth() {
+    if (this.dateOfBirthData) {
+      return this.dateOfBirthData;
+    }
+    const CUSTOM_DATE_OF_BIRTH = {
+      1575: "27-04-1951", // Basil Rohana Rajapaksa
+      3451: "01-10-1971", // Jagath Kumara Sumithraarachchi
+      3364: "07-10-1974", // Lalith Varna Kumara
+    };
+    if (CUSTOM_DATE_OF_BIRTH[this.id]) {
+      return CUSTOM_DATE_OF_BIRTH[this.id];
+    }
+    console.warn("No dateOfBirth for " + this.name + this.id);
+    return "01-01-1970";
   }
 
   static async getRawMPList() {
