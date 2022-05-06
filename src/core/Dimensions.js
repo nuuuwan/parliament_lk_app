@@ -10,6 +10,7 @@ export const DIMENSION_TO_FUNC = {
   Religion: (mp) => mp.religion,
   Profession: (mp) => mp.profession,
   "Is Sinhala Buddhist": (mp) => mp.isSinhalaBuddhist,
+  "Last Name": (mp) => mp.lastName,
 };
 
 export const DIMENSION_LIST = Object.keys(DIMENSION_TO_FUNC);
