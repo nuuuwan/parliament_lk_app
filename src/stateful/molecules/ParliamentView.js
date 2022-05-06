@@ -1,21 +1,26 @@
-import DataStructuresFuture from '../../base/DataStructuresFuture.js';
+import DataStructuresFuture from "../../base/DataStructuresFuture.js";
 import { Component } from "react";
 import MP from "../../core/MP.js";
 import MPWidget from "../../nonstate/molecules/MPWidget.js";
 import GridView from "../../nonstate/molecules/GridView.js";
 
-const MARGIN = 0;
-
-function funcCategorizeMP2(mp) {
-  const Q = 2;
-  const age = mp.age;
-  const lower = Math.floor(age / Q) * Q;
-  const upper = lower + Q;
-  return `${lower} - ${upper}`;
+function funcCategorizeMPByParty(mp) {
+  return mp.party;
 }
 
-function funcCategorizeMP(mp) {
-  return mp.party;
+function categorizeMPs(mpIdx, funcCategorizeMP) {
+  return Object.values(mpIdx)
+    .sort(function (mpA, mpB) {
+      return mpA.age - mpB.age;
+    })
+    .reduce(function (categoryTompIds, mp) {
+      const category = funcCategorizeMP(mp);
+      if (!categoryTompIds[category]) {
+        categoryTompIds[category] = [];
+      }
+      categoryTompIds[category].push(mp.id);
+      return categoryTompIds;
+    }, {});
 }
 
 export default class ParliamentView extends Component {
@@ -35,51 +40,23 @@ export default class ParliamentView extends Component {
       return "Loading...";
     }
 
-    const [width, height] = [
-      window.innerWidth - MARGIN * 2,
-      window.innerHeight - MARGIN * 2,
-    ];
-
-    const categoryTompIds = Object.values(mpIdx)
-      .sort(function (mpA, mpB) {
-        return mpA.age - mpB.age;
-      })
-      .reduce(function (categoryTompIds, mp) {
-        const category = funcCategorizeMP(mp);
-        if (!categoryTompIds[category]) {
-          categoryTompIds[category] = [];
-        }
-        categoryTompIds[category].push(mp.id);
-        return categoryTompIds;
-      }, {});
-
+    const categoryTompIds = categorizeMPs(mpIdx, funcCategorizeMPByParty);
     const nX = Object.keys(categoryTompIds).length;
     const nY = 1;
 
-    const [spanX, spanY] = [width / (nX + 1), height / (nY + 1)]
-    const minSpan = Math.min(spanX, spanY);
-
     const categoryList = Object.keys(categoryTompIds).sort();
     const cells = categoryList.reduce(
-      function(cells, category, iCategory) {
+      function (cells, category, iCategory) {
         const mpIds = categoryTompIds[category];
-        return mpIds.reduce(
-          function(cells, mpId) {
-            const cellContent = (
-              <MPWidget mp={mpIdx[mpId]} />
-            )
-            cells[iCategory][0].push(cellContent);
-            return cells;
-          },
-          cells,
-        );
+        return mpIds.reduce(function (cells, mpId) {
+          const cellContent = <MPWidget mp={mpIdx[mpId]} />;
+          cells[iCategory][0].push(cellContent);
+          return cells;
+        }, cells);
       },
-      DataStructuresFuture.initArray2D(nX, nY, (iX, iY) => []),
+      DataStructuresFuture.initArray2D(nX, nY, (iX, iY) => [])
     );
 
-
-    return (
-      <GridView cells={cells} xAxisLabels ={categoryList} />
-    )
+    return <GridView cells={cells} xAxisLabels={categoryList} />;
   }
 }
