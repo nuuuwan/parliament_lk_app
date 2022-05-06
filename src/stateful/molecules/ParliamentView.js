@@ -11,8 +11,11 @@ const DEFAULT_Y_DIM = "Age Group";
 const DIM_TO_FUNC = {
   "Age Group": (mp) => mp.getAgeGroup(10),
   Party: (mp) => mp.party,
-  "National List": (mp) => mp.isNationalList,
+  "Is National List": (mp) => mp.isNationalList,
   "Electoral District": (mp) => mp.electoralDistrict,
+  Religion: (mp) => mp.religion,
+  Profession: (mp) => mp.profession,
+  "Is Sinhala Buddhist": (mp) => mp.isSinhalaBuddhist,
 };
 
 function buildGrid(dataList, xMap, yMap, cellMap) {
@@ -60,6 +63,14 @@ export default class ParliamentView extends Component {
     };
   }
 
+  onChangeXDim(xDim) {
+    this.setState({ xDim });
+  }
+
+  onChangeYDim(yDim) {
+    this.setState({ yDim });
+  }
+
   async componentDidMount() {
     const mpList = await MP.getMPList();
     this.setState({ mpList });
@@ -80,9 +91,15 @@ export default class ParliamentView extends Component {
 
     return (
       <div>
-        <DimensionPicker selectedDimension={xDim} />
+        <DimensionPicker
+          selectedDimension={xDim}
+          onChange={this.onChangeXDim.bind(this)}
+        />
         {" x "}
-        <DimensionPicker selectedDimension={yDim} />
+        <DimensionPicker
+          selectedDimension={yDim}
+          onChange={this.onChangeYDim.bind(this)}
+        />
         <GridView
           cells={cells}
           xAxisLabels={xAxisLabels}
