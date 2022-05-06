@@ -57,11 +57,11 @@ export default class MP {
     const age = (utNow - utDateOfBirth) / SECONDS_IN.YEAR;
     return age;
   }
-  get ageGroup() {
-    const Q = 2;
+
+  getAgeGroup(groupYears) {
     const age = this.age;
-    const lower = Math.floor(age / Q) * Q;
-    const upper = lower + Q;
+    const lower = Math.floor(age / groupYears) * groupYears;
+    const upper = lower + groupYears;
     return `${lower} - ${upper}`;
   }
 
