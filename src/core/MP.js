@@ -35,13 +35,6 @@ export default class MP {
     return this.urlNum;
   }
 
-  get age() {
-    const utNow = TimeX.getUnixTime();
-    const utDateOfBirth = TimeXFuture.parse(this.dateOfBirth);
-    const age = (utNow - utDateOfBirth) / SECONDS_IN.YEAR;
-    return age;
-  }
-
   get dateOfBirth() {
     if (this.dateOfBirthData) {
       return this.dateOfBirthData;
@@ -56,6 +49,20 @@ export default class MP {
     }
     console.warn("No dateOfBirth for " + this.name + this.id);
     return "01-01-1970";
+  }
+
+  get age() {
+    const utNow = TimeX.getUnixTime();
+    const utDateOfBirth = TimeXFuture.parse(this.dateOfBirth);
+    const age = (utNow - utDateOfBirth) / SECONDS_IN.YEAR;
+    return age;
+  }
+  get ageGroup() {
+    const Q = 2;
+    const age = this.age;
+    const lower = Math.floor(age / Q) * Q;
+    const upper = lower + Q;
+    return `${lower} - ${upper}`;
   }
 
   static async getRawMPList() {
