@@ -23,9 +23,14 @@ function Address({ address, isSitting }) {
   if (!address) {
     return null;
   }
-  address = address.replace(",", ", ").replace("  ", " ");
+  address = address.replaceAll(",", ", ");
   const href =
-    "https://www.google.com/maps/search/" + address.replace(" ", "+");
+    "https://www.google.com/maps/search/" + address.replaceAll(" ", "+");
+
+  const renderedAddress = address.split(", ").map(function (line) {
+    return <div>{line}</div>;
+  });
+
   const secondaryText = isSitting ? "Sitting" : "";
   return (
     <ListItem disablePadding>
@@ -33,7 +38,7 @@ function Address({ address, isSitting }) {
         <ListItemIcon>
           <HomeIcon color="disabled" />
         </ListItemIcon>
-        <ListItemText primary={address} secondary={secondaryText} />
+        <ListItemText primary={renderedAddress} secondary={secondaryText} />
       </ListItemButton>
     </ListItem>
   );
@@ -87,7 +92,7 @@ function Wikipedia({ searchText }) {
 
   const href =
     "https://en.wikipedia.org/w/index.php?search=" +
-    searchText.replace(" ", "+");
+    searchText.replaceAll(" ", "+");
   return (
     <ListItem disablePadding>
       <ListItemButton component="a" href={href}>
@@ -125,7 +130,7 @@ export default function MPDrawerView(props) {
       <Typography variant="h5" display="block">
         {mp.firstNames}
       </Typography>
-      <Typography variant="h4" display="block">
+      <Typography variant="h3" display="block">
         {mp.lastName}
       </Typography>
       <Typography variant="subtitle1" display="caption text">
