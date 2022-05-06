@@ -1,4 +1,5 @@
 /* stylelint-disable */
-body {
+body,
+select {
   font-family: "Futura", sans-serif;
 }
