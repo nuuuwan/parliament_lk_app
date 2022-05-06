@@ -24,4 +24,21 @@ export default class DataStructuresFuture {
       return reverseIndex;
     }, {});
   }
+
+  static keyAndCount(arr) {
+    return Object.entries(arr.reduce(
+      function(count, x) {
+        if (!count[x]) {
+          count[x] = 0;
+        }
+        count[x]  += 1;
+        return count;
+      },
+      {},
+    )).sort(
+      function(a, b) {
+        return b[1] - a[1];
+      }
+    );
+  }
 }
