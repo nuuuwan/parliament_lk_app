@@ -59,7 +59,9 @@ export default class MP {
   }
 
   get isNationalList() {
-    return (this.electoralDistrict === 'National List') ? "National List": "Electoral Districts";
+    return this.electoralDistrict === "National List"
+      ? "National List"
+      : "Electoral Districts";
   }
 
   getAgeGroup(groupYears) {
