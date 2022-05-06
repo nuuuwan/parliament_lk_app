@@ -62,7 +62,15 @@ export default class ParliamentView extends Component {
       const onClickInner = function (e) {
         this.onClickMP(mp.id);
       }.bind(this);
-      return <Avatar alt={mp.name} src={mp.imageURL} onClick={onClickInner} />;
+      const key = `avatar-${mp.id}`;
+      return (
+        <Avatar
+          key={key}
+          alt={mp.name}
+          src={mp.imageURL}
+          onClick={onClickInner}
+        />
+      );
     }.bind(this);
 
     const { cells, xAxisLabels, yAxisLabels } = Dimensions.buildGrid(
