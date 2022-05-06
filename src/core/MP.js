@@ -37,6 +37,14 @@ export default class MP {
     return this.urlNum;
   }
 
+  get firstNames() {
+    return this.name.split(" ").slice(0, -1).join(" ");
+  }
+
+  get lastName() {
+    return this.name.split(" ").slice(-1);
+  }
+
   get party() {
     return this.partyData.split("(")[1].split(")")[0];
   }
