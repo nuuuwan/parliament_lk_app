@@ -1,9 +1,8 @@
 import { Component } from "react";
 
 import Drawer from "@mui/material/Drawer";
-
+import Avatar from "@mui/material/Avatar";
 import MP from "../../core/MP.js";
-import MPWidget from "../../nonstate/molecules/MPWidget.js";
 import GridView from "../../nonstate/molecules/GridView.js";
 import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
 import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
@@ -54,11 +53,14 @@ export default class ParliamentView extends Component {
     const activeMP = mpIdx[activeMPId];
 
     const cellMap = function (mp) {
+      const onClickInner = function(e) {
+        this.onClickMP(mp.id);
+      }.bind(this);
       return (
-        <MPWidget
-          key={`mp-${mp.id}`}
-          mp={mp}
-          onClickMP={this.onClickMP.bind(this)}
+        <Avatar
+          alt={mp.name}
+          src={mp.imageURL}
+          onClick={onClickInner}
         />
       );
     }.bind(this);

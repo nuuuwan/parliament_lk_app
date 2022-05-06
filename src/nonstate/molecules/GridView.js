@@ -1,3 +1,4 @@
+import Grid from '@mui/material/Grid';
 import PctWidget from "../atoms/PctWidget.js";
 
 const STYLE_GRID = {
@@ -71,7 +72,9 @@ export default function GridView(props) {
 
                 return (
                   <td key={key} style={STYLE_CELL}>
-                    {cellContents}
+                    <Grid container alignItems="center" justifyContent="center">
+                      {cellContents}
+                    </Grid>
                     <PctWidget
                       count={count}
                       countY={countY}
