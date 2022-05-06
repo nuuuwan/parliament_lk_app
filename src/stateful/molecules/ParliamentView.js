@@ -10,7 +10,7 @@ const STYLE = {
 };
 
 function funcCategorizeMP(mp) {
-  const Q = 10;
+  const Q = 2;
   const age = mp.age;
   const lower = Math.floor(age / Q) * Q;
   const upper = lower + Q;
@@ -34,33 +34,44 @@ export default class ParliamentView extends Component {
       return "Loading...";
     }
 
-    const categoryTompIds = Object.values(mpIdx).reduce(function (categoryTompIds, mp) {
-      const category = funcCategorizeMP(mp);
-      if (!categoryTompIds[category]) {
-        categoryTompIds[category] = [];
-      }
-      categoryTompIds[category].push(mp.id);
-      return categoryTompIds;
-    }, {});
-
-    const nXCategories = Object.keys(categoryTompIds).length;
-
     const [width, height] = [
       window.innerWidth - MARGIN * 2,
       window.innerHeight - MARGIN * 2,
     ];
 
-    const size = 100;
-    const [innerWidth, innerHeight] = [width - size, height - size];
+    const categoryTompIds = Object.values(mpIdx)
+      .sort(function (mpA, mpB) {
+        return mpA.age - mpB.age;
+      })
+      .reduce(function (categoryTompIds, mp) {
+        const category = funcCategorizeMP(mp);
+        if (!categoryTompIds[category]) {
+          categoryTompIds[category] = [];
+        }
+        categoryTompIds[category].push(mp.id);
+        return categoryTompIds;
+      }, {});
 
-    function getRandomX() {
-      return parseInt(Math.random() * innerWidth) + MARGIN + size / 2;
-    }
+    const nX = Object.keys(categoryTompIds).length;
+    const nY = Object.values(categoryTompIds).reduce(function (nY, mpIds) {
+      return Math.max(nY, mpIds.length);
+    }, 0);
+    const [xSpan, ySpan] = [width / nX, height / nY];
+    const size = Math.min(xSpan, ySpan);
 
-    function getRandomY() {
-      return parseInt(Math.random() * innerHeight) + MARGIN + size / 2;
-    }
-
+    const mpIdToXY = Object.keys(categoryTompIds)
+      .sort()
+      .reduce(function (mpIdToXY, category, iCategory) {
+        const mpIds = categoryTompIds[category];
+        const nMPs = mpIds.length;
+        return mpIds.reduce(function (mpIdToXY, mpId, iMP) {
+          mpIdToXY[mpId] = [
+            iCategory * xSpan + MARGIN,
+            height - (nMPs - iMP - 1) * ySpan + MARGIN,
+          ];
+          return mpIdToXY;
+        }, mpIdToXY);
+      }, {});
     const customStyle = {
       width,
       height,
@@ -70,15 +81,8 @@ export default class ParliamentView extends Component {
       <div style={{ ...STYLE, ...customStyle }}>
         {Object.values(mpIdx).map(function (mp, iMp) {
           const key = `mp-${mp.urlNum}`;
-          return (
-            <MPWidget
-              key={key}
-              mp={mp}
-              x={getRandomX()}
-              y={getRandomY()}
-              size={size}
-            />
-          );
+          const [x, y] = mpIdToXY[mp.id];
+          return <MPWidget key={key} mp={mp} x={x} y={y} size={size} />;
         })}
       </div>
     );
