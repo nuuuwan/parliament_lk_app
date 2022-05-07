@@ -18,8 +18,8 @@ import Dimensions from "../../core/Dimensions.js";
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
 
-const URL_PARLIAMENT = 'https://www.parliament.lk/';
-const URL_NUUUWAN = 'http://github.com/nuuuwan'
+const URL_PARLIAMENT = "https://www.parliament.lk/";
+const URL_NUUUWAN = "http://github.com/nuuuwan";
 const STYLE = {
   margin: 2,
 };
@@ -139,18 +139,27 @@ export default class ParliamentView extends Component {
           <MPDrawerView mp={activeMP} />
         </Drawer>
 
-        <div style={{textAlign: 'center'}}>
+        <div style={{ textAlign: "center" }}>
           <Typography variant="subtitle1">
             Data from
-            <Link href={URL_PARLIAMENT} variant="subtitle1" underline="none" target="_blank">
-
-              {' The Parliament of Sri Lanka'}
+            <Link
+              href={URL_PARLIAMENT}
+              variant="subtitle1"
+              underline="none"
+              target="_blank"
+            >
+              {" The Parliament of Sri Lanka"}
             </Link>
           </Typography>
           <Typography variant="subtitle1">
             App & Visualization by
-            <Link href={URL_NUUUWAN} variant="subtitle1" underline="none" target="_blank">
-              {' @nuuuwan'}
+            <Link
+              href={URL_NUUUWAN}
+              variant="subtitle1"
+              underline="none"
+              target="_blank"
+            >
+              {" @nuuuwan"}
             </Link>
           </Typography>
         </div>
