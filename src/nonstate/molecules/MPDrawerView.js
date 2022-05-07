@@ -25,7 +25,8 @@ function Address({ address, isSitting }) {
   }
   address = address.replaceAll(",", ", ");
   const href =
-    "https://www.google.com/maps/search/" + address.replaceAll(" ", "+").replaceAll("/", "+");
+    "https://www.google.com/maps/search/" +
+    address.replaceAll(" ", "+").replaceAll("/", "+");
 
   const renderedAddress = address.split(", ").map(function (line, i) {
     return <div key={i}>{line}</div>;
@@ -137,7 +138,7 @@ export default function MPDrawerView(props) {
       </Typography>
 
       <List>
-        <Phone phone={mp.phoneSitting} isSitting={true}/>
+        <Phone phone={mp.phoneSitting} isSitting={true} />
 
         <Address address={mp.addressSitting} isSitting={true} />
 

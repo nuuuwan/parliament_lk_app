@@ -1,5 +1,5 @@
 import { WWW, TimeX } from "@nuuuwan/utils-js-dev";
-import TimeXFuture, { SECONDS_IN } from "../base/TimeXFuture.js";
+import { SECONDS_IN } from "../base/TimeXFuture.js";
 
 const URL_MP_LIST =
   "https://raw.githubusercontent.com/" +
@@ -12,8 +12,8 @@ export default class MP {
 
     this.id = parseInt(d.id);
     this.name = d.name_cleaned;
-    this.firstNames = d.first_names
-    this.lastName = d.last_name
+    this.firstNames = d.first_names;
+    this.lastName = d.last_name;
     this.gender = d.gender;
     this.imageURL = d.image_url;
     this.party = d.party_short;
@@ -25,7 +25,7 @@ export default class MP {
 
     this.civilStatus = d.civil_status;
     this.religion = d.religion_cleaned;
-    
+
     this.profession = d.profession;
     this.phone = d.phone_norm;
     this.address = d.address;
@@ -33,12 +33,11 @@ export default class MP {
     this.addressSitting = d.address_sitting;
     this.email = d.email;
 
-    this.academicQualifications = d.academic_qualifications
-    this.academicHighestLevel = d.academic_highest_level
+    this.academicQualifications = d.academic_qualifications;
+    this.academicHighestLevel = d.academic_highest_level;
 
     this.sourceURL = d.source_url;
   }
-
 
   get age() {
     const utNow = TimeX.getUnixTime();
