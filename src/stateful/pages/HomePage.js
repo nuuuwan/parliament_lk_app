@@ -6,18 +6,13 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-import I18N from "../../base/I18N.js";
+import I18N, { LANG_TO_LABEL } from "../../base/I18N.js";
 import ParliamentView from "../molecules/ParliamentView.js";
 
 const STYLE = {
   backgroundColor: "lightgray",
 };
 const DEFAULT_LANG = "en";
-const LANG_TO_LABEL = {
-  si: "සිංහල",
-  // ta: "தமிழ்",
-  en: "English",
-};
 
 export default class HomePage extends Component {
   constructor(props) {

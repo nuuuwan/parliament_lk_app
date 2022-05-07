@@ -5,6 +5,12 @@ const DICTIONARY = {
   si: SI_DICTIONARY,
 };
 
+export const LANG_TO_LABEL = {
+  si: "සිංහල",
+  // ta: "தமிழ்",
+  en: "English",
+};
+
 export default class I18N {
   constructor(lang) {
     this.lang = lang;
