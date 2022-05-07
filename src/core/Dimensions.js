@@ -15,6 +15,7 @@ export const DIMENSION_TO_FUNC = {
   "Is Sinhala Buddhist?": (mp) => mp.isSinhalaBuddhist,
   "Last Name": (mp) => mp.lastName,
   "First Letter of First Name": (mp) => mp.firstNames.substring(0, 1),
+  "Highest Education Level": (mp) => mp.academicHighestLevel,
 };
 
 const SORTED_DIMENSION_LIST = [
@@ -24,6 +25,9 @@ const SORTED_DIMENSION_LIST = [
 ];
 export const GROUP_TO_DIMENSION_LIST = {
   "Political Parties": ["Party"],
+  "Education": [
+    'Highest Education Level',
+  ],
   Age: [
     "Age Group (5 year)",
     "Age Group (10 year)",
