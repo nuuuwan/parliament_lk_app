@@ -1,29 +1,33 @@
+import SI_DICTIONARY from "./SI_DICTIONARY.js";
 const BASE_LANG = "en";
 
-let lang = "en";
-
 const DICTIONARY = {
-  si: {
-    "Parliament of Sri Lanka": "ශ්‍රී ලංකා පාර්ලිමේන්තුව",
-    "The Parliament of Sri Lanka": "ශ්‍රී ලංකා පාර්ලිමේන්තුව",
-    "App & Visualization by": "යෙදුම සහ දෘශ්‍යකරණය",
-    "Data from": "දත්ත",
-  },
+  si: SI_DICTIONARY,
 };
 
-export function t(s) {
-  if (lang === BASE_LANG) {
-    return s;
-  }
-  if (!DICTIONARY[lang]) {
-    console.error("Missing lang", lang);
-    return s;
+export default class I18N {
+  constructor(lang) {
+    this.lang = lang;
+
+    if (!DICTIONARY[this.lang]) {
+      console.error("Missing lang", this.lang);
+    }
   }
 
-  if (!DICTIONARY[lang][s]) {
-    console.error(`Missing word(${lang}): ${s}`);
-    return s;
+  setLang(lang) {
+    this.lang = lang;
   }
 
-  return DICTIONARY[lang][s];
+  t(s) {
+    if (this.lang === BASE_LANG) {
+      return s;
+    }
+
+    if (!DICTIONARY[this.lang][s]) {
+      console.error(s);
+      return s;
+    }
+
+    return DICTIONARY[this.lang][s];
+  }
 }
