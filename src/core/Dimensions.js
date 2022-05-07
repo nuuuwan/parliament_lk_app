@@ -1,24 +1,37 @@
 import DataStructuresFuture from "../base/DataStructuresFuture.js";
 
 export const DIMENSION_TO_FUNC = {
-  Gender: (mp) => mp.gender,
+  // Political Parties
+  Party: (mp) => mp.party,
+
+  // Education & Profession
+  "Highest Education Level": (mp) => mp.academicHighestLevel,
+  "Has Bachelors or higher?": (mp) => mp.isBachelorsOrHigher,
+  "Has A. Levels or higher?": (mp) => mp.isALevelsOrHigher,
+  Profession: (mp) => mp.profession,
+
+  // Voting Record
+  "Vote for 20th Amendment": (mp) => mp.vote20A,
+
+  // Demographics
   "Age Group (5 year)": (mp) => mp.getAgeGroup(5),
   "Age Group (10 year)": (mp) => mp.getAgeGroup(10),
   "Is Age > 40": (mp) => mp.isAgeOver(40),
   "Is Age > 50": (mp) => mp.isAgeOver(50),
-  Party: (mp) => mp.party,
+  Gender: (mp) => mp.gender,
+
+  // Electoral Regions
   "Is National List?": (mp) => mp.isNationalList,
   "Electoral District": (mp) => mp.edName,
   Province: (mp) => mp.provinceName,
+
+  // Religion & Ethnicity
   Religion: (mp) => mp.religion,
-  Profession: (mp) => mp.profession,
   "Is Sinhala Buddhist?": (mp) => mp.isSinhalaBuddhist,
+
+  // Miscellaneous & Fun
   "Last Name": (mp) => mp.lastName,
   "First Letter of First Name": (mp) => mp.firstNames.substring(0, 1),
-  "Highest Education Level": (mp) => mp.academicHighestLevel,
-  "Has Bachelors or higher?": (mp) => mp.isBachelorsOrHigher,
-  "Has A. Levels or higher?": (mp) => mp.isALevelsOrHigher,
-  "Vote for 20th Amendment": (mp) => mp.vote20A,
 };
 
 const SORTED_DIMENSION_LIST = [
@@ -28,15 +41,20 @@ const SORTED_DIMENSION_LIST = [
 ];
 export const GROUP_TO_DIMENSION_LIST = {
   "Political Parties": ["Party"],
-  Education: ["Highest Education Level", "Has Bachelors or higher?", "Has A. Levels or higher?"],
-  "Voting Record": ['Vote for 20th Amendment'],
-  Age: [
+  "Education & Profession": [
+    "Highest Education Level",
+    "Has Bachelors or higher?",
+    "Has A. Levels or higher?",
+  ],
+  "Voting Record": ["Vote for 20th Amendment"],
+  Demographics: [
     "Age Group (5 year)",
     "Age Group (10 year)",
     "Is Age > 40",
     "Is Age > 50",
+    "Gender",
   ],
-  "Electoral Region": ["Electoral District", "Province", "Is National List?"],
+  "Electoral Regions": ["Electoral District", "Province", "Is National List?"],
   "Religion & Ethnicity": ["Religion", "Is Sinhala Buddhist?"],
   "Miscellaneous & Fun": ["Last Name", "First Letter of First Name"],
 };
