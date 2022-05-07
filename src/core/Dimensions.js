@@ -11,11 +11,19 @@ export const DIMENSION_TO_FUNC = {
   Province: (mp) => mp.provinceName,
   Religion: (mp) => mp.religion,
   Profession: (mp) => mp.profession,
-  "Is Sinhala Buddhist": (mp) => mp.isSinhalaBuddhist,
+  "Is Sinhala Buddhist?": (mp) => mp.isSinhalaBuddhist,
   "Last Name": (mp) => mp.lastName,
+  "First Letter of First Name": (mp) => mp.firstNames.substring(0, 1),
 };
 
 const SORTED_DIMENSION_LIST = ["Age Group", "Highest Education Level"];
+export const GROUP_TO_DIMENSION_LIST = {
+  "Political Parties": ["Party"],
+  Age: ["Age Group", "Is Age > 40", "Is Age > 50"],
+  "Electoral Region": ["Electoral District", "Province", "Is National List?"],
+  "Religion & Ethnicity": ["Religion", "Is Sinhala Buddhist?"],
+  "Miscellaneous & Fun": ["Last Name", "First Letter of First Name"],
+};
 
 export const DIMENSION_LIST = Object.keys(DIMENSION_TO_FUNC);
 
