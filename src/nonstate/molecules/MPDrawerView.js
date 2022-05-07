@@ -25,13 +25,13 @@ function Address({ address, isSitting }) {
   }
   address = address.replaceAll(",", ", ");
   const href =
-    "https://www.google.com/maps/search/" + address.replaceAll(" ", "+");
+    "https://www.google.com/maps/search/" + address.replaceAll(" ", "+").replaceAll("/", "+");
 
   const renderedAddress = address.split(", ").map(function (line, i) {
     return <div key={i}>{line}</div>;
   });
 
-  const secondaryText = isSitting ? "Sitting" : "";
+  const secondaryText = isSitting ? "Sitting" : "Not Sitting";
   return (
     <ListItem disablePadding>
       <ListItemButton component="a" href={href} target="_blank">
@@ -44,16 +44,12 @@ function Address({ address, isSitting }) {
   );
 }
 
-function Phone({ phone }) {
+function Phone({ phone, isSitting }) {
   if (!phone) {
     return null;
   }
   const href = "tel:" + phone;
-  const phoneStr = [
-    phone.substring(0, 3),
-    phone.substring(3, 6),
-    phone.substring(6, 10),
-  ].join("-");
+  const secondaryText = isSitting ? "Sitting" : "Not Sitting";
 
   return (
     <ListItem disablePadding>
@@ -61,7 +57,7 @@ function Phone({ phone }) {
         <ListItemIcon>
           <PhoneIcon color="disabled" />
         </ListItemIcon>
-        <ListItemText primary={phoneStr} />
+        <ListItemText primary={phone} secondary={secondaryText} />
       </ListItemButton>
     </ListItem>
   );
@@ -137,11 +133,11 @@ export default function MPDrawerView(props) {
         {mp.profession}
       </Typography>
       <Typography variant="overline" display="block">
-        {mp.party + " - " + mp.electoralDistrict}
+        {mp.party + " - " + mp.edName}
       </Typography>
 
       <List>
-        <Phone phone={mp.phoneSitting} />
+        <Phone phone={mp.phoneSitting} isSitting={true}/>
 
         <Address address={mp.addressSitting} isSitting={true} />
 
