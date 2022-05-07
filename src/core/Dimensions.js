@@ -15,34 +15,48 @@ export const DIMENSION_TO_FUNC = {
   "Last Name": (mp) => mp.lastName,
 };
 
+const SORTED_DIMENSION_LIST = ["Age Group", "Highest Education Level"];
+
 export const DIMENSION_LIST = Object.keys(DIMENSION_TO_FUNC);
 
+function expandDimensionInfo(dataList, funcXValues, xDim) {
+  const xValues = dataList.map(funcXValues);
+
+  let xAxisLabels;
+  if (SORTED_DIMENSION_LIST.includes(xDim)) {
+    xAxisLabels = DataStructuresFuture.uniqueSorted(xValues);
+  } else {
+    const xAxisLabelAndCount = DataStructuresFuture.keyAndCount(xValues);
+    xAxisLabels = xAxisLabelAndCount.map((x) => x[0]);
+  }
+  const xToIX = DataStructuresFuture.buildReverseIndex(xAxisLabels);
+
+  return [xAxisLabels, xAxisLabels.length, xToIX];
+}
+
 export default class Dimensions {
-  static buildGrid(dataList, xMap, yMap, cellMap) {
+  static buildGrid(dataList, xDim, yDim, cellMap) {
+    const xFunc = DIMENSION_TO_FUNC[xDim];
+    const yFunc = DIMENSION_TO_FUNC[yDim];
+
     const dxyList = dataList.map(function (d) {
       return {
         d,
-        x: xMap(d),
-        y: yMap(d),
+        x: xFunc(d),
+        y: yFunc(d),
       };
     });
 
-    const xAxisLabelAndCount = DataStructuresFuture.keyAndCount(
-      dxyList.map((dxy) => dxy.x)
+    const [xAxisLabels, nX, xToIX] = expandDimensionInfo(
+      dxyList,
+      (d) => d.x,
+      xDim
     );
-
-    const yAxisLabelAndCount = DataStructuresFuture.keyAndCount(
-      dxyList.map((dxy) => dxy.y)
+    const [yAxisLabels, nY, yToIY] = expandDimensionInfo(
+      dxyList,
+      (d) => d.y,
+      yDim
     );
-
-    const xAxisLabels = xAxisLabelAndCount.map((x) => x[0]);
-    const yAxisLabels = yAxisLabelAndCount.map((x) => x[0]);
-
-    const nX = xAxisLabels.length;
-    const nY = yAxisLabels.length;
-
-    const xToIX = DataStructuresFuture.buildReverseIndex(xAxisLabels);
-    const yToIY = DataStructuresFuture.buildReverseIndex(yAxisLabels);
 
     const cells = dxyList.reduce(
       function (cells, dxy) {
