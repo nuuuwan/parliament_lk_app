@@ -32,6 +32,7 @@ export const DIMENSION_TO_FUNC = {
   // Miscellaneous & Fun
   "Last Name": (mp) => mp.lastName,
   "First Letter of First Name": (mp) => mp.firstNames.substring(0, 1),
+  "Month of Birth": (mp) => mp.monthOfBirth,
 };
 
 const SORTED_DIMENSION_LIST = [
@@ -56,7 +57,11 @@ export const GROUP_TO_DIMENSION_LIST = {
   ],
   "Electoral Regions": ["Electoral District", "Province", "Is National List?"],
   "Religion & Ethnicity": ["Religion", "Is Sinhala Buddhist?"],
-  "Miscellaneous & Fun": ["Last Name", "First Letter of First Name"],
+  "Miscellaneous & Fun": [
+      "Last Name",
+      "First Letter of First Name",
+      "Month of Birth",
+  ],
 };
 
 export const DIMENSION_LIST = Object.keys(DIMENSION_TO_FUNC);
