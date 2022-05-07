@@ -5,6 +5,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
+import { t } from "../../base/I18N.js";
 import ParliamentView from "../molecules/ParliamentView.js";
 
 const STYLE = {
@@ -18,7 +19,7 @@ export default class HomePage extends Component {
         <AppBar position="static" sx={STYLE}>
           <Toolbar variant="dense">
             <Typography variant="h6" component="div">
-              Parliament of Sri Lanka
+              {t("Parliament of Sri Lanka")}
             </Typography>
           </Toolbar>
         </AppBar>

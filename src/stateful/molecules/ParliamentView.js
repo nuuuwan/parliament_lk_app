@@ -15,6 +15,8 @@ import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
 
 import Dimensions from "../../core/Dimensions.js";
 
+import { t } from "../../base/I18N.js";
+
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
 
@@ -141,18 +143,18 @@ export default class ParliamentView extends Component {
 
         <div style={{ textAlign: "center" }}>
           <Typography variant="subtitle1">
-            Data from
+            {t("Data from")}
             <Link
               href={URL_PARLIAMENT}
               variant="subtitle1"
               underline="none"
               target="_blank"
             >
-              {" The Parliament of Sri Lanka"}
+              {" " + t("The Parliament of Sri Lanka")}
             </Link>
           </Typography>
           <Typography variant="subtitle1">
-            App & Visualization by
+            {t("App & Visualization by")}
             <Link
               href={URL_NUUUWAN}
               variant="subtitle1"
