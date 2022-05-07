@@ -3,7 +3,7 @@ import { Component } from "react";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
-import Checkbox from '@mui/material/Checkbox';
+import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 
@@ -22,14 +22,14 @@ const STYLE = {
 };
 
 const STATISTICAL_TRENDS_TOOLTOP = [
-  'Statistical Trends measure if certain grid cells contain more MPs than',
-  ' we would expect if they were assigned at random. ',
+  "Statistical Trends measure if certain grid cells contain more MPs than",
+  " we would expect if they were assigned at random. ",
   ' The "z" (e.g. x = 2.5) value shows how many standard deviations',
-  ' the number of MPs vary from the mean number of expected MPs.',
-  ' The range (e.g. Exp. 84 to 114) is the 95% confidence interval for the',
-  ' number of MPs. If the actual number is outside this range,',
-  ' the probability that the trend is random is <5%.',
-].join('')
+  " the number of MPs vary from the mean number of expected MPs.",
+  " The range (e.g. Exp. 84 to 114) is the 95% confidence interval for the",
+  " number of MPs. If the actual number is outside this range,",
+  " the probability that the trend is random is <5%.",
+].join("");
 
 export default class ParliamentView extends Component {
   constructor(props) {
@@ -62,7 +62,7 @@ export default class ParliamentView extends Component {
   onShowStatisticalTrendsClick() {
     const oldState = this.state.showStatisticalTrends;
 
-    this.setState({showStatisticalTrends: !oldState});
+    this.setState({ showStatisticalTrends: !oldState });
   }
 
   async componentDidMount() {
@@ -113,14 +113,13 @@ export default class ParliamentView extends Component {
           onChange={this.onChangeXDim.bind(this)}
         />
 
-
-        <Checkbox checked={showStatisticalTrends} onClick={this.onShowStatisticalTrendsClick.bind(this)}/>
+        <Checkbox
+          checked={showStatisticalTrends}
+          onClick={this.onShowStatisticalTrendsClick.bind(this)}
+        />
         <Tooltip title={STATISTICAL_TRENDS_TOOLTOP}>
-          <Typography variant="caption">
-            Show Statistical Trends
-          </Typography>
+          <Typography variant="caption">Show Statistical Trends</Typography>
         </Tooltip>
-
 
         <GridView
           cells={cells}

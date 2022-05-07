@@ -58,9 +58,9 @@ export const GROUP_TO_DIMENSION_LIST = {
   "Electoral Regions": ["Electoral District", "Province", "Is National List?"],
   "Religion & Ethnicity": ["Religion", "Is Sinhala Buddhist?"],
   "Miscellaneous & Fun": [
-      "Last Name",
-      "First Letter of First Name",
-      "Month of Birth",
+    "Last Name",
+    "First Letter of First Name",
+    "Month of Birth",
   ],
 };
 

@@ -155,7 +155,7 @@ export default function GridView(props) {
                           {` (z = ${zStr})`}
                         </Typography>
                       </>
-                    )
+                    );
 
                     const h = z > 0 ? 0 : 120;
                     const absZ = Math.abs(z);
