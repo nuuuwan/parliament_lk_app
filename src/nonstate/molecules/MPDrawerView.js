@@ -1,5 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
@@ -116,6 +118,38 @@ function Pariament({ id }) {
   );
 }
 
+function QualificationsWidget({title, body}) {
+  if (!body )  {
+    return null;
+  }
+  return (
+    <Card sx={{ maxWidth: 275, margin: 1 }}>
+       <CardContent>
+        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+          {title} Qualifications
+        </Typography>
+        <Typography variant="body2">
+          {body}
+        </Typography>
+       </CardContent>
+    </Card>
+
+  )
+}
+
+function ChipWidget({content}) {
+  if (!content) {
+    return null;
+  }
+  if (content === 'Other or Unknown') {
+    return null;
+  }
+  if (content === 'None') {
+    return null;
+  }
+  return (<Chip label={content} variant="outlined" />)
+}
+
 export default function MPDrawerView(props) {
   const { mp } = props;
   if (!mp) {
@@ -130,12 +164,22 @@ export default function MPDrawerView(props) {
       <Typography variant="h3" display="block">
         {mp.lastName}
       </Typography>
-      <Typography variant="subtitle1" display="caption text">
-        {mp.profession}
+      <Typography variant="subtitle2" display="block">
+        {mp.ageAndDateOfBirth}
       </Typography>
       <Typography variant="overline" display="block">
         {mp.party + " - " + mp.edName}
       </Typography>
+
+      <Stack direction="row" spacing={1}>
+        <ChipWidget content={mp.profession} />
+        <ChipWidget content={mp.civilStatus} />
+        <ChipWidget content={mp.religion} />
+      </Stack>
+
+      <QualificationsWidget title="Academic" body={mp.academicQualifications} />
+      <QualificationsWidget title="Professional" body={mp.professionalQualifications} />
+
 
       <List>
         <Phone phone={mp.phoneSitting} isSitting={true} />
@@ -147,17 +191,9 @@ export default function MPDrawerView(props) {
         <Address address={mp.address} isSitting={false} />
 
         <Email email={mp.email} />
-      </List>
 
-      <Stack direction="row" spacing={1}>
-        <Chip label={mp.civilStatus} variant="outlined" />
-        <Chip label={mp.religion} variant="outlined" />
-        <Chip label={parseInt(mp.age) + " years"} variant="outlined" />
-      </Stack>
-
-      <List>
-        <Wikipedia searchText={mp.name} />
         <Pariament id={mp.id} />
+        <Wikipedia searchText={mp.name} />
       </List>
     </Box>
   );
