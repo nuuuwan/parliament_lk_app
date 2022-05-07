@@ -1,13 +1,15 @@
-import SI_DICTIONARY from "./SI_DICTIONARY.js";
+import SINHALA_DICTIONARY from "./SINHALA_DICTIONARY.js";
+import TAMIL_DICTIONARY from "./TAMIL_DICTIONARY.js";
 const BASE_LANG = "en";
 
 const DICTIONARY = {
-  si: SI_DICTIONARY,
+  si: SINHALA_DICTIONARY,
+  ta: TAMIL_DICTIONARY,
 };
 
 export const LANG_TO_LABEL = {
   si: "සිංහල",
-  // ta: "தமிழ்",
+  ta: "தமிழ்",
   en: "English",
 };
 
