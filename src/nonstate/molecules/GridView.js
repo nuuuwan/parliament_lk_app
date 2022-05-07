@@ -19,6 +19,26 @@ const STYLE_CELL = {
   padding: 12,
 };
 
+function DimWidget({ dim }) {
+  return (
+    <>
+      <Typography variant="body1">{dim}</Typography>
+    </>
+  );
+}
+
+function NWidget({ n }) {
+  if (n === 0) {
+    return null;
+  }
+
+  return (
+    <>
+      <Typography variant="caption">{n}</Typography>
+    </>
+  );
+}
+
 function PctWidget({ n, d }) {
   if (n === 0) {
     return null;
@@ -38,7 +58,7 @@ function PctWidget({ n, d }) {
   return (
     <>
       <Typography variant="h6">{pStr}</Typography>
-      <Typography variant="caption">{n}</Typography>
+      <NWidget n={n} />
     </>
   );
 }
@@ -64,9 +84,7 @@ export default function GridView(props) {
 
               return (
                 <td key={key} style={STYLE_CELL}>
-                  <Typography variant="caption" gutterBottom component="div">
-                    {xLabel}
-                  </Typography>
+                  <DimWidget dim={xLabel} />
                   <PctWidget n={countX} d={countXY} />
                 </td>
               );
@@ -86,9 +104,7 @@ export default function GridView(props) {
               <tr key={key}>
                 {
                   <td style={STYLE_CELL}>
-                    <Typography variant="caption" gutterBottom component="div">
-                      {yLabel}
-                    </Typography>
+                    <DimWidget dim={yLabel} />
                     <PctWidget n={countY} d={countXY} />
                   </td>
                 }
@@ -108,6 +124,7 @@ export default function GridView(props) {
                           {cellContents}
                         </Grid>
                       ) : null}
+                      <NWidget n={count} />
                     </td>
                   );
                 })}
