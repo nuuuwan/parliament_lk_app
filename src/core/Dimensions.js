@@ -16,8 +16,9 @@ export const DIMENSION_TO_FUNC = {
   "Last Name": (mp) => mp.lastName,
   "First Letter of First Name": (mp) => mp.firstNames.substring(0, 1),
   "Highest Education Level": (mp) => mp.academicHighestLevel,
-  "Bachelors or higher": (mp) => mp.isBachelorsOrHigher,
-  "A. Levels or higher": (mp) => mp.isALevelsOrHigher,
+  "Has Bachelors or higher?": (mp) => mp.isBachelorsOrHigher,
+  "Has A. Levels or higher?": (mp) => mp.isALevelsOrHigher,
+  "Vote for 20th Amendment": (mp) => mp.vote20A,
 };
 
 const SORTED_DIMENSION_LIST = [
@@ -27,7 +28,8 @@ const SORTED_DIMENSION_LIST = [
 ];
 export const GROUP_TO_DIMENSION_LIST = {
   "Political Parties": ["Party"],
-  Education: ["Highest Education Level", "Bachelors or higher", "A. Levels or higher"],
+  Education: ["Highest Education Level", "Has Bachelors or higher?", "Has A. Levels or higher?"],
+  "Voting Record": ['Vote for 20th Amendment'],
   Age: [
     "Age Group (5 year)",
     "Age Group (10 year)",
