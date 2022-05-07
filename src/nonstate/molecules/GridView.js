@@ -80,7 +80,7 @@ export default function GridView(props) {
       const cellContents = cells[iX][iY];
       const count = cellContents.length;
       return countY + count;
-    }, 0);;
+    }, 0);
   }
 
   return (
@@ -126,28 +126,35 @@ export default function GridView(props) {
                   let statisticsBlurb;
                   let styleCellCustom;
                   if (count > 0) {
-                    const [n, p] = [countXY, countX * countY / countXY / countXY];
+                    const [n, p] = [
+                      countXY,
+                      (countX * countY) / countXY / countXY,
+                    ];
                     const meanCount = n * p;
                     const stdevCount = Math.sqrt(n * p * (1 - p));
                     const z = (count - meanCount) / stdevCount;
-                    const lowerCount = parseInt(meanCount- stdevCount * 2 + 0.5);
-                    const upperCount = parseInt(meanCount +stdevCount * 2 + 0.5);
+                    const lowerCount = parseInt(
+                      meanCount - stdevCount * 2 + 0.5
+                    );
+                    const upperCount = parseInt(
+                      meanCount + stdevCount * 2 + 0.5
+                    );
                     statisticsBlurb = `(Exp. ${lowerCount} to ${upperCount})`;
-                    const h = (z > 0) ? 0 : 120;
+                    const h = z > 0 ? 0 : 120;
                     const absZ = Math.abs(z);
                     let l = 100;
                     if (absZ > 2) {
-                      l = 100 - 30 * Math.min(2, absZ - 2) / 2;
+                      l = 100 - (30 * Math.min(2, absZ - 2)) / 2;
                     }
                     const a = 0.3;
                     const s = 100;
                     styleCellCustom = {
                       backgroundColor: `hsla(${h},${s}%,${l}%,${a})`,
-                    }
+                    };
                   }
 
                   return (
-                    <td key={key} style={{...STYLE_CELL, ...styleCellCustom}}>
+                    <td key={key} style={{ ...STYLE_CELL, ...styleCellCustom }}>
                       {count > 0 ? (
                         <Grid
                           container
