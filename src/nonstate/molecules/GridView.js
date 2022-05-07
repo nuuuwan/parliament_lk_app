@@ -3,8 +3,8 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 
 const STYLE_PAPER = {
-  margin: 2,
-  padding: 3,
+  margin: 1,
+  padding: 2,
 };
 const STYLE_GRID = {
   borderCollapse: "collapse",
@@ -64,7 +64,7 @@ function PctWidget({ n, d }) {
 }
 
 export default function GridView(props) {
-  const { cells, xAxisLabels, yAxisLabels } = props;
+  const { cells, xAxisLabels, yAxisLabels, showStatisticalTrends } = props;
   const countXY = 225;
 
   function getCountX(iX) {
@@ -125,7 +125,7 @@ export default function GridView(props) {
 
                   let statisticsBlurb;
                   let styleCellCustom;
-                  if (count > 0) {
+                  if (showStatisticalTrends && count > 0) {
                     const [n, p] = [
                       countXY,
                       (countX * countY) / countXY / countXY,
@@ -139,7 +139,24 @@ export default function GridView(props) {
                     const upperCount = parseInt(
                       meanCount + stdevCount * 2 + 0.5
                     );
-                    statisticsBlurb = `(Exp. ${lowerCount} to ${upperCount})`;
+
+                    let lowHighStr = `Exp. ${lowerCount} to ${upperCount}`;
+                    if (lowerCount === upperCount) {
+                      lowHighStr = `Exp. ${lowerCount}`;
+                    }
+
+                    const zStr = parseInt(z * 10 + 0.5) / 10;
+                    statisticsBlurb = (
+                      <>
+                        <Typography variant="subtitle2" component="span">
+                          {lowHighStr}
+                        </Typography>
+                        <Typography variant="caption" component="span">
+                          {` (z = ${zStr})`}
+                        </Typography>
+                      </>
+                    )
+
                     const h = z > 0 ? 0 : 120;
                     const absZ = Math.abs(z);
                     let l = 100;
@@ -165,7 +182,7 @@ export default function GridView(props) {
                         </Grid>
                       ) : null}
                       <NWidget n={count} />
-                      <NWidget n={statisticsBlurb} />
+                      {statisticsBlurb}
                     </td>
                   );
                 })}
