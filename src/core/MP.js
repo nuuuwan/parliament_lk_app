@@ -6,6 +6,8 @@ const URL_MP_LIST =
   "nuuuwan/parliament_lk/data/" +
   "expanded_mp_list.json";
 
+const NO_DATA = 'No Data';
+
 export default class MP {
   constructor(d) {
     this.d = d;
@@ -34,8 +36,10 @@ export default class MP {
     this.email = d.email;
 
     this.academicQualifications = d.academic_qualifications;
-    this.academicHighestLevel = 'ISCED' + d.academic_highest_level;
+    this.academicHighestLevel = "ISCED" + d.academic_highest_level;
     this.professionalQualifications = d.professional_qualifications;
+
+    this.vote20A = d.vote_20th_amendment;
 
     this.sourceURL = d.source_url;
   }
@@ -78,6 +82,32 @@ export default class MP {
 
   get ageAndDateOfBirth() {
     return parseInt(this.age) + " years";
+  }
+
+  get academicHighestLevelInt() {
+    return parseInt(this.academicHighestLevel.substring(5, 6));
+  }
+
+  get isBachelorsOrHigher() {
+    const academicHighestLevelInt = this.academicHighestLevelInt;
+    if (academicHighestLevelInt === 0) {
+      return NO_DATA;
+    }
+    if (academicHighestLevelInt >=6  ) {
+      return "Bachelors Or Higher";
+    }
+    return "Below Bachelors";
+  }
+
+  get isALevelsOrHigher() {
+    const academicHighestLevelInt = this.academicHighestLevelInt;
+    if (academicHighestLevelInt === 0) {
+      return NO_DATA;
+    }
+    if (academicHighestLevelInt >=3  ) {
+      return "A. Levels Or Higher";
+    }
+    return "Below A. Levels";
   }
 
   static async getRawMPList() {
