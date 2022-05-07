@@ -7,11 +7,11 @@ export const DIMENSION_TO_FUNC = {
   // Education & Profession
   "Highest Education Level": (mp) => mp.academicHighestLevel,
   "Has Bachelors or higher?": (mp) => mp.isBachelorsOrHigher,
-  "Has A. Levels or higher?": (mp) => mp.isALevelsOrHigher,
+  "Has Advanced Levels or higher?": (mp) => mp.isALevelsOrHigher,
   Profession: (mp) => mp.profession,
 
   // Voting Record
-  "Vote for 20th Amendment": (mp) => mp.vote20A,
+  "Voting for 20th Amendment": (mp) => mp.vote20A,
 
   // Demographics
   "Age Group (5 year)": (mp) => mp.getAgeGroup(5),
@@ -45,9 +45,9 @@ export const GROUP_TO_DIMENSION_LIST = {
   "Education & Profession": [
     "Highest Education Level",
     "Has Bachelors or higher?",
-    "Has A. Levels or higher?",
+    "Has Advanced Levels or higher?",
   ],
-  "Voting Record": ["Vote for 20th Amendment"],
+  "Voting Record": ["Voting for 20th Amendment"],
   Demographics: [
     "Age Group (5 year)",
     "Age Group (10 year)",
