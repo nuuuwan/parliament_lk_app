@@ -118,36 +118,33 @@ function Pariament({ id }) {
   );
 }
 
-function QualificationsWidget({title, body}) {
-  if (!body )  {
+function QualificationsWidget({ title, body }) {
+  if (!body) {
     return null;
   }
   return (
     <Card sx={{ maxWidth: 275, margin: 1 }}>
-       <CardContent>
+      <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {title} Qualifications
         </Typography>
-        <Typography variant="body2">
-          {body}
-        </Typography>
-       </CardContent>
+        <Typography variant="body2">{body}</Typography>
+      </CardContent>
     </Card>
-
-  )
+  );
 }
 
-function ChipWidget({content}) {
+function ChipWidget({ content }) {
   if (!content) {
     return null;
   }
-  if (content === 'Other or Unknown') {
+  if (content === "Other or Unknown") {
     return null;
   }
-  if (content === 'None') {
+  if (content === "None") {
     return null;
   }
-  return (<Chip label={content} variant="outlined" />)
+  return <Chip label={content} variant="outlined" />;
 }
 
 export default function MPDrawerView(props) {
@@ -178,8 +175,10 @@ export default function MPDrawerView(props) {
       </Stack>
 
       <QualificationsWidget title="Academic" body={mp.academicQualifications} />
-      <QualificationsWidget title="Professional" body={mp.professionalQualifications} />
-
+      <QualificationsWidget
+        title="Professional"
+        body={mp.professionalQualifications}
+      />
 
       <List>
         <Phone phone={mp.phoneSitting} isSitting={true} />
