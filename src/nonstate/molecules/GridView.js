@@ -19,38 +19,59 @@ const STYLE_CELL = {
   padding: 12,
 };
 
+function PctWidget({ n, d }) {
+  if (n === 0) {
+    return null;
+  }
+
+  const p = n / d;
+  let pStr;
+  if (p > 0.1) {
+    pStr = parseInt(100 * p + 0.5) + "%";
+  } else if (p > 0.01) {
+    pStr = parseInt(100 * p * 10 + 0.5) / 10 + "%";
+  } else if (p > 0.001) {
+    pStr = parseInt(100 * p * 100 + 0.5) / 100 + "%";
+  } else {
+    pStr = "<0.1%";
+  }
+  return (
+    <>
+      <Typography variant="h6">{pStr}</Typography>
+      <Typography variant="caption">{n}</Typography>
+    </>
+  );
+}
+
 export default function GridView(props) {
   const { cells, xAxisLabels, yAxisLabels } = props;
-
-  const renderedXAxisHeader = (
-    <tr>
-      <td />
-      {xAxisLabels.map(function (xLabel, iX) {
-        const key = `x-label-${iX}`;
-
-        const countX = yAxisLabels.reduce(function (countX, __, iY) {
-          const cellContents = cells[iX][iY];
-          const count = cellContents.length;
-          return countX + count;
-        }, 0);
-
-        return (
-          <td key={key} style={STYLE_CELL}>
-            <Typography variant="caption" gutterBottom component="div">
-              {xLabel}
-            </Typography>
-            <Typography variant="h6">{countX}</Typography>
-          </td>
-        );
-      })}
-    </tr>
-  );
+  const countXY = 225;
 
   return (
     <Paper elevation={0} sx={STYLE_PAPER}>
       <table style={STYLE_GRID}>
         <tbody>
-          {renderedXAxisHeader}
+          <tr>
+            <td />
+            {xAxisLabels.map(function (xLabel, iX) {
+              const key = `x-label-${iX}`;
+
+              const countX = yAxisLabels.reduce(function (countX, __, iY) {
+                const cellContents = cells[iX][iY];
+                const count = cellContents.length;
+                return countX + count;
+              }, 0);
+
+              return (
+                <td key={key} style={STYLE_CELL}>
+                  <Typography variant="caption" gutterBottom component="div">
+                    {xLabel}
+                  </Typography>
+                  <PctWidget n={countX} d={countXY} />
+                </td>
+              );
+            })}
+          </tr>
 
           {yAxisLabels.map(function (yLabel, iY) {
             const key = `row-${iY}`;
@@ -68,7 +89,7 @@ export default function GridView(props) {
                     <Typography variant="caption" gutterBottom component="div">
                       {yLabel}
                     </Typography>
-                    <Typography variant="h6">{countY}</Typography>
+                    <PctWidget n={countY} d={countXY} />
                   </td>
                 }
                 {xAxisLabels.map(function (xLabel, iX) {
@@ -90,19 +111,9 @@ export default function GridView(props) {
                     </td>
                   );
                 })}
-                {
-                  <td style={STYLE_CELL}>
-                    <Typography variant="caption" gutterBottom component="div">
-                      {yLabel}
-                    </Typography>
-                    <Typography variant="h6">{countY}</Typography>
-                  </td>
-                }
               </tr>
             );
           })}
-
-          {renderedXAxisHeader}
         </tbody>
       </table>
     </Paper>
