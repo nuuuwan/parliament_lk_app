@@ -110,6 +110,10 @@ export default class MP {
     return "Below A. Levels";
   }
 
+  get monthOfBirth() {
+    return this.dateOfBirth.substring(5, 7);
+  }
+
   static async getRawMPList() {
     return await WWW.json(URL_MP_LIST);
   }
