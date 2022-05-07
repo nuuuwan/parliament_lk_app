@@ -105,9 +105,9 @@ export default class MP {
       return NO_DATA;
     }
     if (academicHighestLevelInt >= 3) {
-      return "A. Levels Or Higher";
+      return "Advanced LevelsOr Higher";
     }
-    return "Below A. Levels";
+    return "Below Advanced Levels";
   }
 
   get monthOfBirth() {
