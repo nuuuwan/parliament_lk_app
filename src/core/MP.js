@@ -34,7 +34,7 @@ export default class MP {
     this.email = d.email;
 
     this.academicQualifications = d.academic_qualifications;
-    this.academicHighestLevel = d.academic_highest_level;
+    this.academicHighestLevel = 'ISCED' + d.academic_highest_level;
     this.professionalQualifications = d.professional_qualifications;
 
     this.sourceURL = d.source_url;
@@ -77,7 +77,7 @@ export default class MP {
   }
 
   get ageAndDateOfBirth() {
-    return parseInt(this.age) + ' years';
+    return parseInt(this.age) + " years";
   }
 
   static async getRawMPList() {
