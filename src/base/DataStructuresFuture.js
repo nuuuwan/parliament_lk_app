@@ -18,6 +18,10 @@ export default class DataStructuresFuture {
     return [...new Set(arr)];
   }
 
+  static uniqueSorted(arr) {
+    return DataStructuresFuture.unique(arr).sort();
+  }
+
   static buildReverseIndex(arr) {
     return arr.reduce(function (reverseIndex, x, i) {
       reverseIndex[x] = i;
