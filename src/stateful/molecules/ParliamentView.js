@@ -15,8 +15,6 @@ import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
 
 import Dimensions from "../../core/Dimensions.js";
 
-import { t } from "../../base/I18N.js";
-
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
 
@@ -29,9 +27,9 @@ const STYLE = {
 const STATISTICAL_TRENDS_TOOLTOP = [
   "Statistical Trends measure if certain grid cells contain more MPs than",
   " we would expect if they were assigned at random. ",
-  ' The "z" (e.g. x = 2.5) value shows how many standard deviations',
+  ' The "z" (e.g. z = 2.5) value shows how many standard deviations',
   " the number of MPs vary from the mean number of expected MPs.",
-  " The range (e.g. Exp. 84 to 114) is the 95% confidence interval for the",
+  " The range (e.g. 84 - 114) is the 95% confidence interval for the",
   " number of MPs. If the actual number is outside this range,",
   " the probability that the trend is random is <5%.",
 ].join("");
@@ -80,6 +78,7 @@ export default class ParliamentView extends Component {
     if (mpIdx === undefined) {
       return <div>Loading...</div>;
     }
+    const { i18n } = this.props;
 
     const activeMP = mpIdx[activeMPId];
 
@@ -108,22 +107,26 @@ export default class ParliamentView extends Component {
     return (
       <Box sx={STYLE}>
         <DimensionPicker
-          label={t("Top to Bottom") + " (Y)"}
+          label={i18n.t("Top to Bottom") + " (Y)"}
           selectedDimension={yDim}
           onChange={this.onChangeYDim.bind(this)}
+          i18n={i18n}
         />
         <DimensionPicker
-          label={t("Left to Right") + " (X)"}
+          label={i18n.t("Left to Right") + " (X)"}
           selectedDimension={xDim}
           onChange={this.onChangeXDim.bind(this)}
+          i18n={i18n}
         />
 
         <Checkbox
           checked={showStatisticalTrends}
           onClick={this.onShowStatisticalTrendsClick.bind(this)}
         />
-        <Tooltip title={STATISTICAL_TRENDS_TOOLTOP}>
-          <Typography variant="caption">Show Statistical Trends</Typography>
+        <Tooltip title={i18n.t(STATISTICAL_TRENDS_TOOLTOP)}>
+          <Typography variant="caption">
+            {i18n.t("Show Statistical Trends")}
+          </Typography>
         </Tooltip>
 
         <GridView
@@ -132,6 +135,7 @@ export default class ParliamentView extends Component {
           yAxisLabels={yAxisLabels}
           onClick={this.onClickMP}
           showStatisticalTrends={showStatisticalTrends}
+          i18n={i18n}
         />
         <Drawer
           anchor="right"
@@ -143,18 +147,18 @@ export default class ParliamentView extends Component {
 
         <div style={{ textAlign: "center" }}>
           <Typography variant="subtitle1">
-            {t("Data from")}
+            {i18n.t("Data from")}
             <Link
               href={URL_PARLIAMENT}
               variant="subtitle1"
               underline="none"
               target="_blank"
             >
-              {" " + t("The Parliament of Sri Lanka")}
+              {" " + i18n.t("The Parliament of Sri Lanka")}
             </Link>
           </Typography>
           <Typography variant="subtitle1">
-            {t("App & Visualization by")}
+            {i18n.t("App & Visualization by")}
             <Link
               href={URL_NUUUWAN}
               variant="subtitle1"
