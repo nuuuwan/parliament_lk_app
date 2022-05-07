@@ -108,12 +108,12 @@ export default class ParliamentView extends Component {
     return (
       <Box sx={STYLE}>
         <DimensionPicker
-          label="Top to Bottom (Y)"
+          label={t("Top to Bottom") + " (Y)"}
           selectedDimension={yDim}
           onChange={this.onChangeYDim.bind(this)}
         />
         <DimensionPicker
-          label="Left to Right (X)"
+          label={t("Left to Right") + " (X)"}
           selectedDimension={xDim}
           onChange={this.onChangeXDim.bind(this)}
         />
