@@ -6,6 +6,7 @@ import Avatar from "@mui/material/Avatar";
 import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
+import Link from "@mui/material/Link";
 
 import MP from "../../core/MP.js";
 import GridView from "../../nonstate/molecules/GridView.js";
@@ -17,6 +18,8 @@ import Dimensions from "../../core/Dimensions.js";
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
 
+const URL_PARLIAMENT = 'https://www.parliament.lk/';
+const URL_NUUUWAN = 'http://github.com/nuuuwan'
 const STYLE = {
   margin: 2,
 };
@@ -135,6 +138,22 @@ export default class ParliamentView extends Component {
         >
           <MPDrawerView mp={activeMP} />
         </Drawer>
+
+        <div style={{textAlign: 'center'}}>
+          <Typography variant="subtitle1">
+            Data from
+            <Link href={URL_PARLIAMENT} variant="subtitle1" underline="none" target="_blank">
+
+              {' The Parliament of Sri Lanka'}
+            </Link>
+          </Typography>
+          <Typography variant="subtitle1">
+            App & Visualization by
+            <Link href={URL_NUUUWAN} variant="subtitle1" underline="none" target="_blank">
+              {' @nuuuwan'}
+            </Link>
+          </Typography>
+        </div>
       </Box>
     );
   }
