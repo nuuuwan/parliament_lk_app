@@ -2,7 +2,8 @@ import DataStructuresFuture from "../base/DataStructuresFuture.js";
 
 export const DIMENSION_TO_FUNC = {
   Gender: (mp) => mp.gender,
-  "Age Group": (mp) => mp.getAgeGroup(10),
+  "Age Group (5 year)": (mp) => mp.getAgeGroup(5),
+  "Age Group (10 year)": (mp) => mp.getAgeGroup(10),
   "Is Age > 40": (mp) => mp.isAgeOver(40),
   "Is Age > 50": (mp) => mp.isAgeOver(50),
   Party: (mp) => mp.party,
@@ -16,10 +17,19 @@ export const DIMENSION_TO_FUNC = {
   "First Letter of First Name": (mp) => mp.firstNames.substring(0, 1),
 };
 
-const SORTED_DIMENSION_LIST = ["Age Group", "Highest Education Level"];
+const SORTED_DIMENSION_LIST = [
+  "Age Group (5 year)",
+  "Age Group (10 year)",
+  "Highest Education Level",
+];
 export const GROUP_TO_DIMENSION_LIST = {
   "Political Parties": ["Party"],
-  Age: ["Age Group", "Is Age > 40", "Is Age > 50"],
+  Age: [
+    "Age Group (5 year)",
+    "Age Group (10 year)",
+    "Is Age > 40",
+    "Is Age > 50",
+  ],
   "Electoral Region": ["Electoral District", "Province", "Is National List?"],
   "Religion & Ethnicity": ["Religion", "Is Sinhala Buddhist?"],
   "Miscellaneous & Fun": ["Last Name", "First Letter of First Name"],
