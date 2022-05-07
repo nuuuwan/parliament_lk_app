@@ -9,7 +9,7 @@ import GridView from "../../nonstate/molecules/GridView.js";
 import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
 import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
 
-import Dimensions, { DIMENSION_TO_FUNC } from "../../core/Dimensions.js";
+import Dimensions from "../../core/Dimensions.js";
 
 const DEFAULT_X_DIM = "Religion";
 const DEFAULT_Y_DIM = "Party";
@@ -75,8 +75,8 @@ export default class ParliamentView extends Component {
 
     const { cells, xAxisLabels, yAxisLabels } = Dimensions.buildGrid(
       Object.values(mpIdx),
-      DIMENSION_TO_FUNC[xDim],
-      DIMENSION_TO_FUNC[yDim],
+      xDim,
+      yDim,
       cellMap
     );
 
