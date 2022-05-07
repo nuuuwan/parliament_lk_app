@@ -19,10 +19,10 @@ const STYLE_CELL = {
   padding: 12,
 };
 
-function DimWidget({ dim }) {
+function DimWidget({ dim, i18n }) {
   return (
     <>
-      <Typography variant="body1">{dim}</Typography>
+      <Typography variant="body1">{i18n.t(dim)}</Typography>
     </>
   );
 }
@@ -64,7 +64,8 @@ function PctWidget({ n, d }) {
 }
 
 export default function GridView(props) {
-  const { cells, xAxisLabels, yAxisLabels, showStatisticalTrends } = props;
+  const { cells, xAxisLabels, yAxisLabels, showStatisticalTrends, i18n } =
+    props;
   const countXY = 225;
 
   function getCountX(iX) {
@@ -96,7 +97,7 @@ export default function GridView(props) {
 
               return (
                 <td key={key} style={STYLE_CELL}>
-                  <DimWidget dim={xLabel} />
+                  <DimWidget dim={xLabel} i18n={i18n} />
                   <PctWidget n={countX} d={countXY} />
                 </td>
               );
@@ -112,7 +113,7 @@ export default function GridView(props) {
               <tr key={key}>
                 {
                   <td style={STYLE_CELL}>
-                    <DimWidget dim={yLabel} />
+                    <DimWidget dim={yLabel} i18n={i18n} />
                     <PctWidget n={countY} d={countXY} />
                   </td>
                 }
@@ -140,9 +141,9 @@ export default function GridView(props) {
                       meanCount + stdevCount * 2 + 0.5
                     );
 
-                    let lowHighStr = `Exp. ${lowerCount} to ${upperCount}`;
+                    let lowHighStr = `${lowerCount} - ${upperCount}`;
                     if (lowerCount === upperCount) {
-                      lowHighStr = `Exp. ${lowerCount}`;
+                      lowHighStr = `${lowerCount}`;
                     }
 
                     const zStr = parseInt(z * 10 + 0.5) / 10;
