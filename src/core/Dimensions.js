@@ -4,6 +4,7 @@ export const DIMENSION_TO_FUNC = {
   Gender: (mp) => mp.gender,
   "Age Group": (mp) => mp.getAgeGroup(10),
   "Is Age > 40": (mp) => mp.isAgeOver(40),
+  "Is Age > 50": (mp) => mp.isAgeOver(50),
   Party: (mp) => mp.party,
   "Is National List?": (mp) => mp.isNationalList,
   "Electoral District": (mp) => mp.edName,
