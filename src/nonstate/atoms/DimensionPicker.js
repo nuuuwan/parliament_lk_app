@@ -2,8 +2,9 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import ListSubheader from "@mui/material/ListSubheader";
 
-import { DIMENSION_LIST } from "../../core/Dimensions.js";
+import { GROUP_TO_DIMENSION_LIST } from "../../core/Dimensions.js";
 
 export default function DimensionPicker(props) {
   const { label, selectedDimension, onChange } = props;
@@ -21,13 +22,22 @@ export default function DimensionPicker(props) {
         label={label}
         onChange={onChangeInner}
       >
-        {DIMENSION_LIST.map(function (dimension, iDimension) {
-          const key = `option-${iDimension}`;
-          return (
-            <MenuItem key={key} value={dimension}>
-              {dimension}
-            </MenuItem>
-          );
+        {Object.entries(GROUP_TO_DIMENSION_LIST).map(function (
+          [groupName, dimensionList],
+          iGroup
+        ) {
+          const key = "group-" + groupName;
+          return [
+            <ListSubheader key={key}>{groupName}</ListSubheader>,
+            dimensionList.map(function (dimension, iDimension) {
+              const key = `option-${iDimension}`;
+              return (
+                <MenuItem key={key} value={dimension}>
+                  {dimension}
+                </MenuItem>
+              );
+            }),
+          ];
         })}
       </Select>
     </FormControl>
