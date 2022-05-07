@@ -34,7 +34,7 @@ function NWidget({ n }) {
 
   return (
     <>
-      <Typography variant="caption">{n}</Typography>
+      <Typography variant="subtitle2">{n}</Typography>
     </>
   );
 }
@@ -67,6 +67,22 @@ export default function GridView(props) {
   const { cells, xAxisLabels, yAxisLabels } = props;
   const countXY = 225;
 
+  function getCountX(iX) {
+    return yAxisLabels.reduce(function (countX, __, iY) {
+      const cellContents = cells[iX][iY];
+      const count = cellContents.length;
+      return countX + count;
+    }, 0);
+  }
+
+  function getCountY(iY) {
+    return xAxisLabels.reduce(function (countY, __, iX) {
+      const cellContents = cells[iX][iY];
+      const count = cellContents.length;
+      return countY + count;
+    }, 0);;
+  }
+
   return (
     <Paper elevation={0} sx={STYLE_PAPER}>
       <table style={STYLE_GRID}>
@@ -76,11 +92,7 @@ export default function GridView(props) {
             {xAxisLabels.map(function (xLabel, iX) {
               const key = `x-label-${iX}`;
 
-              const countX = yAxisLabels.reduce(function (countX, __, iY) {
-                const cellContents = cells[iX][iY];
-                const count = cellContents.length;
-                return countX + count;
-              }, 0);
+              const countX = getCountX(iX);
 
               return (
                 <td key={key} style={STYLE_CELL}>
@@ -94,11 +106,7 @@ export default function GridView(props) {
           {yAxisLabels.map(function (yLabel, iY) {
             const key = `row-${iY}`;
 
-            const countY = xAxisLabels.reduce(function (countY, __, iX) {
-              const cellContents = cells[iX][iY];
-              const count = cellContents.length;
-              return countY + count;
-            }, 0);
+            const countY = getCountY(iY);
 
             return (
               <tr key={key}>
@@ -113,8 +121,33 @@ export default function GridView(props) {
                   const cellContents = cells[iX][iY];
                   const count = cellContents.length;
 
+                  const countX = getCountX(iX);
+
+                  let statisticsBlurb;
+                  let styleCellCustom;
+                  if (count > 0) {
+                    const [n, p] = [countXY, countX * countY / countXY / countXY];
+                    const meanCount = n * p;
+                    const stdevCount = Math.sqrt(n * p * (1 - p));
+                    const z = (count - meanCount) / stdevCount;
+                    const lowerCount = parseInt(meanCount- stdevCount * 2 + 0.5);
+                    const upperCount = parseInt(meanCount +stdevCount * 2 + 0.5);
+                    statisticsBlurb = `(Exp. ${lowerCount} to ${upperCount})`;
+                    const h = (z > 0) ? 0 : 120;
+                    const absZ = Math.abs(z);
+                    let l = 100;
+                    if (absZ > 2) {
+                      l = 100 - 30 * Math.min(2, absZ - 2) / 2;
+                    }
+                    const a = 0.3;
+                    const s = 100;
+                    styleCellCustom = {
+                      backgroundColor: `hsla(${h},${s}%,${l}%,${a})`,
+                    }
+                  }
+
                   return (
-                    <td key={key} style={STYLE_CELL}>
+                    <td key={key} style={{...STYLE_CELL, ...styleCellCustom}}>
                       {count > 0 ? (
                         <Grid
                           container
@@ -125,6 +158,7 @@ export default function GridView(props) {
                         </Grid>
                       ) : null}
                       <NWidget n={count} />
+                      <NWidget n={statisticsBlurb} />
                     </td>
                   );
                 })}
