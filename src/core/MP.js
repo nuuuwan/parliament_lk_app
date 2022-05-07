@@ -6,7 +6,7 @@ const URL_MP_LIST =
   "nuuuwan/parliament_lk/data/" +
   "expanded_mp_list.json";
 
-const NO_DATA = 'No Data';
+const NO_DATA = "No Data";
 
 export default class MP {
   constructor(d) {
@@ -93,7 +93,7 @@ export default class MP {
     if (academicHighestLevelInt === 0) {
       return NO_DATA;
     }
-    if (academicHighestLevelInt >=6  ) {
+    if (academicHighestLevelInt >= 6) {
       return "Bachelors Or Higher";
     }
     return "Below Bachelors";
@@ -104,7 +104,7 @@ export default class MP {
     if (academicHighestLevelInt === 0) {
       return NO_DATA;
     }
-    if (academicHighestLevelInt >=3  ) {
+    if (academicHighestLevelInt >= 3) {
       return "A. Levels Or Higher";
     }
     return "Below A. Levels";
