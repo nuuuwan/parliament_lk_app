@@ -7,7 +7,7 @@ import ListSubheader from "@mui/material/ListSubheader";
 import { GROUP_TO_DIMENSION_LIST } from "../../core/Dimensions.js";
 
 export default function DimensionPicker(props) {
-  const { label, selectedDimension, onChange } = props;
+  const { label, selectedDimension, onChange, i18n } = props;
 
   const onChangeInner = function (e) {
     return onChange(e.target.value);
@@ -28,12 +28,12 @@ export default function DimensionPicker(props) {
         ) {
           const key = "group-" + groupName;
           return [
-            <ListSubheader key={key}>{groupName}</ListSubheader>,
+            <ListSubheader key={key}>{i18n.t(groupName)}</ListSubheader>,
             dimensionList.map(function (dimension, iDimension) {
               const key = `option-${iDimension}`;
               return (
                 <MenuItem key={key} value={dimension}>
-                  {dimension}
+                  {i18n.t(dimension)}
                 </MenuItem>
               );
             }),
