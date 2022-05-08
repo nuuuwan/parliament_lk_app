@@ -201,7 +201,7 @@ export default class ParliamentView extends Component {
         </Stack>
 
         {showStatisticalTrends ? (
-          <Stack sx={{ width: "50%" }} margin={2}>
+          <Stack sx={{ maxWidth: 700}} margin={2}>
             <Alert severity="info">
               <AlertTitle>{i18n.t("Statistical Trends")}</AlertTitle>
               {i18n.t(STATISTICAL_TRENDS_TOOLTOP)}
