@@ -1,7 +1,3 @@
-Transparency & Corruption
-Has Publicly Declared Assets?
-Not Declared
-Declared
 20 - 30
 25 - 30
 30 - 35
@@ -31,8 +27,10 @@ Age ≤ 50
 Age Group (10 year)
 Age Group (5 year)
 AITC
+All data except asset declaration data is from www.parliament.lk
 Anuradhapura
 App & Visualization by
+Asset declaration data is from www.tisrilanka.org
 Bachelors Or Higher
 Badulla
 Batticaloa
@@ -43,6 +41,7 @@ Central
 Christianity (All)
 Colombo
 Data from
+Declared
 Demographics
 Did Not Vote: Absent
 Did Not Vote: Not MP
@@ -61,7 +60,9 @@ Gampaha
 Gender
 Hambantota
 Has A. Levels or higher?
+Has Advanced Levels or higher?
 Has Bachelors or higher?
+Has Publicly Declared Assets?
 Highest Education Level
 Hinduism
 Is Age > 40
@@ -99,6 +100,7 @@ No Data
 North Central
 North Western
 Northern
+Not Declared
 Not Sinhala Buddhist
 Nuwara-Eliya
 OPPP
@@ -125,14 +127,15 @@ The Parliament of Sri Lanka
 TMTK
 TMVP
 Top to Bottom
+Transparency & Corruption
 Trincomalee
 UNP
 Uva
 Vanni
+Visualization, Design and App by @nuuuwan
 Vote for 20th Amendment
 Voted Against
 Voted: In Favour
+Voting for 20th Amendment
 Voting Record
 Western
-Has Advanced Levels or higher?
-Voting for 20th Amendment
