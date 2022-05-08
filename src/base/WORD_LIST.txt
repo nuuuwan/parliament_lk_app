@@ -1,0 +1,136 @@
+Transparency & Corruption
+Has Publicly Declared Assets?
+Not Declared
+Declared
+20 - 30
+25 - 30
+30 - 35
+30 - 40
+35 - 40
+40 - 45
+40 - 50
+45 - 50
+50 - 55
+50 - 60
+55 - 60
+60 - 65
+60 - 70
+65 - 70
+70 - 75
+70 - 80
+75 - 80
+80 - 85
+80 - 90
+85 - 90
+A. Levels Or Higher
+ACMC
+Age > 40
+Age > 50
+Age ≤ 40
+Age ≤ 50
+Age Group (10 year)
+Age Group (5 year)
+AITC
+Anuradhapura
+App & Visualization by
+Bachelors Or Higher
+Badulla
+Batticaloa
+Below A. Levels
+Below Bachelors
+Buddhism
+Central
+Christianity (All)
+Colombo
+Data from
+Demographics
+Did Not Vote: Absent
+Did Not Vote: Not MP
+Did Not Vote: Speaker
+Digamadulla
+Eastern
+Education & Profession
+Electoral District
+Electoral Districts
+Electoral Regions
+EPDP
+Female
+First Letter of First Name
+Galle
+Gampaha
+Gender
+Hambantota
+Has A. Levels or higher?
+Has Bachelors or higher?
+Highest Education Level
+Hinduism
+Is Age > 40
+Is Age > 50
+Is National List?
+Is Sinhala Buddhist?
+ISCED0 Unknown
+ISCED1 Primary
+ISCED2 Lower Secondary (O. Levels)
+ISCED3 Upper Secondary (A. Levels)
+ISCED4 Post-Secondary
+ISCED6 Bachelors
+ISCED7 Masters
+ISCED8 Doctorate
+Islam
+ITAK
+Jaffna
+JJB
+Kalutara
+Kandy
+Kegalle
+Kurunegala
+Last Name
+Left to Right
+Male
+Matale
+Matara
+Miscellaneous & Fun
+MNA
+Moneragala
+Month of Birth
+National List
+NC
+No Data
+North Central
+North Western
+Northern
+Not Sinhala Buddhist
+Nuwara-Eliya
+OPPP
+Other or Unknown
+Parliament of Sri Lanka
+Party
+Political Parties
+Polonnaruwa
+Province
+Puttalam
+Ratnapura
+Religion
+Religion & Ethnicity
+Sabaragamuwa
+Show Statistical Trends
+Sinhala Buddhist
+SJB
+SLFP
+SLMC
+SLPP
+Southern
+Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The "z" (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.
+The Parliament of Sri Lanka
+TMTK
+TMVP
+Top to Bottom
+Trincomalee
+UNP
+Uva
+Vanni
+Vote for 20th Amendment
+Voted Against
+Voted: In Favour
+Voting Record
+Western
