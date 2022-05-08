@@ -7,6 +7,11 @@ import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 import Link from "@mui/material/Link";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import SourceIcon from '@mui/icons-material/Source';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
 
 import MP from "../../core/MP.js";
 import GridView from "../../nonstate/molecules/GridView.js";
@@ -18,7 +23,6 @@ import Dimensions from "../../core/Dimensions.js";
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
 
-const URL_NUUUWAN = "http://github.com/nuuuwan";
 const STYLE = {
   margin: 2,
 };
@@ -33,16 +37,27 @@ const STATISTICAL_TRENDS_TOOLTOP = [
   " the probability that the trend is random is <5%.",
 ].join("");
 
-const DATA_SOURCES = [
+const BOTTOM_NAVIGATION_ITEMS = [
   {
     name: "@ParliamentLK",
     url:
       "https://www.parliament.lk/" +
       "en/members-of-parliament/directory-of-members/",
+    details: 'All data except asset declaration data'
+      + ' is from www.parliament.lk',
+    Icon: SourceIcon,
   },
   {
     name: "@TISriLanka",
     url: "https://www.tisrilanka.org/mpassets/",
+    details: 'Asset declaration data is from www.tisrilanka.org',
+    Icon: SourceIcon,
+  },
+  {
+    name: "@nuuuwan",
+    url: "http://github.com/nuuuwan",
+    details: 'Visualization, Design and App by @nuuuwan',
+    Icon: GitHubIcon,
   },
 ];
 
@@ -157,37 +172,21 @@ export default class ParliamentView extends Component {
           <MPDrawerView mp={activeMP} />
         </Drawer>
 
-        <div style={{ textAlign: "center" }}>
-          <Typography variant="subtitle1">
-            {i18n.t("Data from")}
-
-            {DATA_SOURCES.map(function (d, i) {
-              const key = "data-" + i;
-              return (
-                <Link
-                  key={key}
-                  href={d.url}
-                  variant="subtitle1"
-                  underline="none"
-                  target="_blank"
-                >
-                  {" " + d.name}
-                </Link>
-              );
-            })}
-          </Typography>
-          <Typography variant="subtitle1">
-            {i18n.t("App & Visualization by")}
-            <Link
-              href={URL_NUUUWAN}
-              variant="subtitle1"
-              underline="none"
-              target="_blank"
-            >
-              {" @nuuuwan"}
-            </Link>
-          </Typography>
-        </div>
+        <BottomNavigation showLabels>
+          {BOTTOM_NAVIGATION_ITEMS.map(function (d, i) {
+            const key = "data-" + i;
+            const onClick = function(e) {
+              window.open(d.url, '_blank');
+            }
+            const Icon = d.Icon;
+            return (
+              <Tooltip key={key} title={i18n.t(d.details)}>
+                <BottomNavigationAction
+                  label={d.name} icon={<Icon />} onClick={onClick} />
+              </Tooltip>
+            );
+          })}
+        </BottomNavigation>
       </Box>
     );
   }
