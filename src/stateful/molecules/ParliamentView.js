@@ -27,7 +27,7 @@ const STYLE = {
 const STATISTICAL_TRENDS_TOOLTOP = [
   "Statistical Trends measure if certain grid cells contain more MPs than",
   " we would expect if they were assigned at random. ",
-  ' The "z" (e.g. z = 2.5) value shows how many standard deviations',
+  " The 'z' (e.g. z = 2.5) value shows how many standard deviations",
   " the number of MPs vary from the mean number of expected MPs.",
   " The range (e.g. 84 - 114) is the 95% confidence interval for the",
   " number of MPs. If the actual number is outside this range,",
