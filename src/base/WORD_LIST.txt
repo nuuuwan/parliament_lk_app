@@ -30,6 +30,7 @@ Abdul Haleem
 Abegunawardhana
 Abeysinghe
 Abeywardana
+Academic Qualifications
 Academician
 Accountant
 Adaikkalanathan
@@ -490,11 +491,13 @@ North Western
 Northern
 Not Declared
 Not Sinhala Buddhist
+Not Sitting
 Nuwara-Eliya
 OPPP
 Other or Unknown
 Palani
 Palani Thigambaram
+Parliament Website
 Parliament of Sri Lanka
 Parliamentarian
 Party
@@ -535,6 +538,7 @@ Premnath C. Dolawatte
 Prishanthi
 Priyantha
 Profession
+Professional Qualifications
 Province
 Pushpakumara
 Puttalam
@@ -657,6 +661,7 @@ Sirisena
 Sisira
 Sisira Jayakody
 Sithadthan
+Sitting
 Sivagnanam
 Sivagnanam Shritharan
 Sivanesathurai
@@ -785,6 +790,7 @@ Wijesekera
 Wijesiri
 Wijeyadasa
 Wijeyadasa Rajapakshe
+Wikipedia
 Wimal
 Wimal Weerawansa
 Wimalaweera
@@ -795,3 +801,4 @@ Yadamini
 Yadamini Gunawardena
 Yapa
 Yapabandara
+years

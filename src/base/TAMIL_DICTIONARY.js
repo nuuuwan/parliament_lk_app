@@ -1,4 +1,4 @@
-// Auto Translated 20220508-143458
+// Auto Translated 20220508-144233
 const TAMIL_DICTIONARY = {
   "20 - 30": "20 - 30",
   "25 - 30": "25 - 30",
@@ -32,6 +32,7 @@ const TAMIL_DICTIONARY = {
   Abegunawardhana: "அபேகுணவர்தன",
   Abeysinghe: "அபேசிங்க",
   Abeywardana: "அபேவர்தன",
+  "Academic Qualifications": "கல்வி தகுதி",
   Academician: "கல்வியாளர்",
   Accountant: "கணக்காளர்",
   Adaikkalanathan: "அடைக்கலநாதன்",
@@ -54,8 +55,7 @@ const TAMIL_DICTIONARY = {
   "Ali Sabri": "அலி சப்ரி",
   "Ali Sabri Raheem": "அலி சப்ரி ரஹீம்",
   "Ali Sabry": "அலி சப்ரி",
-  "All data except asset declaration data is from www.parliament.lk":
-    "சொத்து அறிவிப்பு தரவு தவிர அனைத்து தரவுகளும் www.parliament.lk இலிருந்து",
+  "All data except asset declaration data is from www.parliament.lk": "சொத்து அறிவிப்பு தரவு தவிர அனைத்து தரவுகளும் www.parliament.lk இலிருந்து",
   Alles: "அல்லேஸ்",
   Aluthgamage: "அலுத்கமகே",
   Amal: "அமல்",
@@ -89,8 +89,7 @@ const TAMIL_DICTIONARY = {
   "Ashok Abeysinghe": "அசோக் அபேசிங்க",
   Ashoka: "Ashoka",
   "Ashoka Priyantha": "அசோக பிரியந்த",
-  "Asset declaration data is from www.tisrilanka.org":
-    "www.tisrilanka.org இலிருந்து சொத்து அறிக்கை தரவு",
+  "Asset declaration data is from www.tisrilanka.org": "www.tisrilanka.org இலிருந்து சொத்து அறிக்கை தரவு",
   Athaullah: "அதாவுல்லாஹ்",
   Athukorala: "அதுகோரல",
   Athuraliye: "அதுரலியே",
@@ -265,8 +264,7 @@ const TAMIL_DICTIONARY = {
   Harshana: "ஹர்ஷனா",
   "Harshana Rajakaruna": "ஹர்ஷன ராஜகருணா",
   "Has A. Levels or higher?": "மேம்பட்ட நிலைகள் அல்லது அதற்கு மேல் உள்ளதா?",
-  "Has Advanced Levels or higher?":
-    "மேம்பட்ட நிலைகள் அல்லது அதற்கு மேல் உள்ளதா?",
+  "Has Advanced Levels or higher?": "மேம்பட்ட நிலைகள் அல்லது அதற்கு மேல் உள்ளதா?",
   "Has Bachelors or higher?": "இளங்கலை அல்லது அதற்கு மேல் உள்ளதா?",
   "Has Publicly Declared Assets?": "பொதுவில் அறிவிக்கப்பட்ட சொத்துகள் உள்ளதா?",
   Hashim: "ஹாஷிம்",
@@ -495,11 +493,13 @@ const TAMIL_DICTIONARY = {
   Northern: "வடக்கு",
   "Not Declared": "அறிவிக்கப்படவில்லை",
   "Not Sinhala Buddhist": "சிங்கள பௌத்தம் அல்ல",
+  "Not Sitting": "உட்காரவில்லை",
   "Nuwara-Eliya": "நுவரெலியா",
   OPPP: "OPPP",
   "Other or Unknown": "மற்றவை அல்லது தெரியாதவை",
   Palani: "பழனி",
   "Palani Thigambaram": "பழனி திகாம்பரம்",
+  "Parliament Website": "பாராளுமன்ற இணையதளம்",
   "Parliament of Sri Lanka": "இலங்கை பாராளுமன்றம்",
   Parliamentarian: "பாராளுமன்ற உறுப்பினர்",
   Party: "பார்ட்டி",
@@ -540,6 +540,7 @@ const TAMIL_DICTIONARY = {
   Prishanthi: "பிரிஷாந்தி",
   Priyantha: "பிரியந்த",
   Profession: "தொழில்",
+  "Professional Qualifications": "தொழில்முறை தகுதிகள்",
   Province: "மாகாணம்",
   Pushpakumara: "புஷ்பகுமார",
   Puttalam: "புத்தளம்",
@@ -662,6 +663,7 @@ const TAMIL_DICTIONARY = {
   Sisira: "சிசிர",
   "Sisira Jayakody": "சிசிர ஜெயக்கொடி",
   Sithadthan: "சித்தத்தான்",
+  Sitting: "உட்கார்ந்து",
   Sivagnanam: "சிவஞானம்",
   "Sivagnanam Shritharan": "சிவஞானம் ஸ்ரீதரன்",
   Sivanesathurai: "சிவநேசதுரை",
@@ -669,8 +671,7 @@ const TAMIL_DICTIONARY = {
   Siyambalapitiya: "சியம்பலாபிட்டிய",
   Southern: "தெற்கு",
   "Statistical Trends": "புள்ளியியல் போக்குகள்",
-  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.":
-    "சில கிரிட் செல்கள் சீரற்ற முறையில் ஒதுக்கப்பட்டால் நாம் எதிர்பார்ப்பதை விட அதிகமான எம்.பி.க்கள் இருந்தால், புள்ளியியல் போக்குகள் அளவிடுகின்றன. 'z' (எ.கா. z = 2.5) மதிப்பு, எதிர்பார்க்கப்படும் எம்.பி.க்களின் சராசரி எண்ணிக்கையிலிருந்து எம்.பி.க்களின் எண்ணிக்கை எத்தனை நிலையான விலகல்கள் மாறுபடுகிறது என்பதைக் காட்டுகிறது. வரம்பு (எ.கா. 84 - 114) என்பது எம்.பி.க்களின் எண்ணிக்கைக்கான 95% நம்பிக்கை இடைவெளி. உண்மையான எண் இந்த வரம்பிற்கு வெளியே இருந்தால், போக்கு சீரற்றதாக இருப்பதற்கான நிகழ்தகவு <5% ஆகும்.",
+  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.": "சில கிரிட் செல்கள் சீரற்ற முறையில் ஒதுக்கப்பட்டால் நாம் எதிர்பார்ப்பதை விட அதிகமான எம்.பி.க்கள் இருந்தால், புள்ளியியல் போக்குகள் அளவிடுகின்றன. 'z' (எ.கா. z = 2.5) மதிப்பு, எதிர்பார்க்கப்படும் எம்.பி.க்களின் சராசரி எண்ணிக்கையிலிருந்து எம்.பி.க்களின் எண்ணிக்கை எத்தனை நிலையான விலகல்கள் மாறுபடுகிறது என்பதைக் காட்டுகிறது. வரம்பு (எ.கா. 84 - 114) என்பது எம்.பி.க்களின் எண்ணிக்கைக்கான 95% நம்பிக்கை இடைவெளி. உண்மையான எண் இந்த வரம்பிற்கு வெளியே இருந்தால், போக்கு சீரற்றதாக இருப்பதற்கான நிகழ்தகவு <5% ஆகும்.",
   Sudarshana: "சுதர்சன",
   "Sudarshana Denipitiya": "சுதர்சன தெனிபிட்டிய",
   Sudarshini: "சுதர்ஷினி",
@@ -752,8 +753,7 @@ const TAMIL_DICTIONARY = {
   Vijitha: "விஜிதா",
   "Vijitha Berugoda": "விஜித பேருகொட",
   "Vijitha Herath": "விஜித ஹேரத்",
-  "Visualization, Design and App by @nuuuwan":
-    "@nuuuwan மூலம் காட்சிப்படுத்தல், வடிவமைப்பு மற்றும் பயன்பாடு",
+  "Visualization, Design and App by @nuuuwan": "@nuuuwan மூலம் காட்சிப்படுத்தல், வடிவமைப்பு மற்றும் பயன்பாடு",
   Vitarana: "விதாரண",
   Viyalanderan: "வியாழேந்திரன்",
   "Vote for 20th Amendment": "20வது திருத்தத்திற்கான வாக்கெடுப்பு",
@@ -792,6 +792,7 @@ const TAMIL_DICTIONARY = {
   Wijesiri: "விஜேசிறி",
   Wijeyadasa: "விஜயதாச",
   "Wijeyadasa Rajapakshe": "விஜயதாச ராஜபக்ஷ",
+  Wikipedia: "விக்கிபீடியா",
   Wimal: "விமல்",
   "Wimal Weerawansa": "விமல் வீரவன்ச",
   Wimalaweera: "விமலவீர",
@@ -802,8 +803,6 @@ const TAMIL_DICTIONARY = {
   "Yadamini Gunawardena": "யாதாமினி குணவர்தன",
   Yapa: "யாப்பா",
   Yapabandara: "Yapabandara",
-  null: "ஏதுமில்லை",
-  "​": "",
-  "​Abdul": "அப்துல்",
+  years: "ஆண்டுகள்",
 };
 export default TAMIL_DICTIONARY;
