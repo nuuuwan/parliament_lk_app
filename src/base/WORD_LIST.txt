@@ -1,23 +1,32 @@
+10 - 20%
 20 - 30
+20 - 30%
 25 - 30
 30 - 35
 30 - 40
+30 - 40%
 35 - 40
 40 - 45
 40 - 50
+40 - 50%
 45 - 50
 50 - 55
 50 - 60
+50 - 60%
 55 - 60
 60 - 65
 60 - 70
+60 - 70%
 65 - 70
 70 - 75
 70 - 80
+70 - 80%
 75 - 80
 80 - 85
 80 - 90
+80 - 90%
 85 - 90
+90 - 100%
 A. Aravindh
 A. Aravindh Kumar
 A. L. M.
@@ -54,6 +63,7 @@ Alawathuwala
 Ali Sabri
 Ali Sabri Raheem
 Ali Sabry
+All 100%
 All data except asset declaration data is from www.parliament.lk
 Alles
 Aluthgamage
@@ -94,6 +104,8 @@ Athukorala
 Athuraliye
 Athuraliye Rathana
 Attanayake
+Attandance 8th Parliament (2017 - 2020)
+Attandance 9th Parliament (2020 - )
 Attorney-at-Law
 B. Y. G.
 B. Y. G. Rathnasekara
@@ -758,6 +770,7 @@ Viyalanderan
 Vote for 20th Amendment
 Voted Against
 Voted: In Favour
+Voting & Parliamentary Attandance
 Voting Record
 Voting for 20th Amendment
 W. H. M.
