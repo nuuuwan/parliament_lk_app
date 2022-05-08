@@ -41,8 +41,7 @@ const BOTTOM_NAVIGATION_ITEMS = [
     url:
       "https://www.parliament.lk/" +
       "en/members-of-parliament/directory-of-members/",
-    details:
-      "All data except asset declaration data" + " is from www.parliament.lk",
+    details: "All data except asset declaration data is from www.parliament.lk",
     Icon: SourceIcon,
   },
   {
