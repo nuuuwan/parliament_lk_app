@@ -40,8 +40,10 @@ export default class MP {
     this.professionalQualifications = d.professional_qualifications;
 
     this.vote20A = d.vote_20th_amendment;
+    this.assetDeclarationYears = d.asset_declaration_years;
 
     this.sourceURL = d.source_url;
+
   }
 
   get age() {
@@ -112,6 +114,16 @@ export default class MP {
 
   get monthOfBirth() {
     return this.dateOfBirth.substring(5, 7);
+  }
+
+  get hasDeclaredAssets() {
+    if (
+      this.assetDeclarationYears &&
+      this.assetDeclarationYears.trim() !== ""
+    ) {
+      return "Declared";
+    }
+    return "Not Declared";
   }
 
   static async getRawMPList() {
