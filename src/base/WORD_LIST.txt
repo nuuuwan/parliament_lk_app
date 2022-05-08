@@ -30,6 +30,8 @@ Abdul Haleem
 Abegunawardhana
 Abeysinghe
 Abeywardana
+Academician
+Accountant
 Adaikkalanathan
 Age > 40
 Age > 50
@@ -37,6 +39,7 @@ Age Group (10 year)
 Age Group (5 year)
 Age ≤ 40
 Age ≤ 50
+Agriculturist
 Ahamed
 Ajith
 Ajith Mannapperuma
@@ -89,6 +92,7 @@ Athukorala
 Athuraliye
 Athuraliye Rathana
 Attanayake
+Attorney-at-Law
 B. Y. G.
 B. Y. G. Rathnasekara
 Bachelors Or Higher
@@ -98,6 +102,7 @@ Balasuriya
 Bandara
 Bandula
 Bandula Gunawardana
+Bank Officer
 Basil Rohana
 Basil Rohana Rajapaksa
 Bathiudeen
@@ -108,6 +113,8 @@ Berugoda
 Buddhika
 Buddhika Pathirana
 Buddhism
+Businessman
+Businessman/Managing Director
 C. B.
 C. B. Rathnayake
 C.V.
@@ -131,7 +138,12 @@ Charitha Herath
 Charles
 Charles Nirmalanathan
 Christianity (All)
+Civil Engineer
+Civil Status
 Colombo
+Company Chairman
+Company Director
+Consultant Economist
 Cumaratunga
 D.
 D. B.
@@ -147,6 +159,7 @@ De Silva
 Declared
 Demographics
 Denipitiya
+Dental Surgeon
 Devananda
 Dharmalingam
 Dharmalingam Sithadthan
@@ -168,6 +181,7 @@ Dinesh
 Dinesh Gunawardena
 Dissanayaka
 Dissanayake
+Divorced
 Dodangoda
 Dolawatte
 Douglas
@@ -179,20 +193,24 @@ Duminda Dissanayake
 Dushmantha
 EPDP
 Eastern
+Economist
 Edirimanna
 Education & Profession
 Electoral District
 Electoral Districts
 Electoral Regions
 Ellawala
+Engineer
 Eran
 Eran Wickramaratne
 Faizal
 Faizal Cassim
 Faleel
+Farming
 Female
 Fernando
 Fernandopulle
+Film Artiste
 First Letter of First Name
 Fonseka
 G. G.
@@ -309,6 +327,7 @@ John
 John Seneviratne
 Johnston
 Johnston Fernando
+Journalist
 K. Kader
 K. Kader Masthan
 K. P. S.
@@ -360,11 +379,14 @@ Lalith
 Lalith Ellawala
 Lalith Varna
 Lalith Varna Kumara
+Landed Proprietor
 Lanza
 Lasantha
 Lasantha Alagiyawanna
 Last Name
+Lecturer
 Left to Right
+Legal Advisor
 Liyanage
 Lohan
 Lohan Ratwatte
@@ -404,6 +426,7 @@ Manusha Nanayakkara
 Marikkar
 Marjan
 Marjan Faleel
+Married
 Masthan
 Matale
 Matara
@@ -411,6 +434,9 @@ Mayadunna Chinthaka
 Mayadunna Chinthaka Amal
 Mayantha
 Mayantha Dissanayake
+Medical Consultant - Specialist.
+Medical Practitioner
+Medical Practitioner; Academician
 Milan
 Milan Jayathilake
 Miscellaneous & Fun
@@ -458,6 +484,7 @@ Niroshan Perera
 Nishantha
 No Data
 Noharathalingam
+None
 North Central
 North Western
 Northern
@@ -469,6 +496,7 @@ Other or Unknown
 Palani
 Palani Thigambaram
 Parliament of Sri Lanka
+Parliamentarian
 Party
 Pasqual
 Patali Champika
@@ -478,12 +506,16 @@ Pavithradevi
 Pavithradevi Wanniarachchi
 Peiris
 Perera
+Pharmacutical Distributor
 Piyal Nishantha
 Piyal Nishantha De Silva
 Piyankara
 Piyankara Jayaratne
 Piyathissa
+Planter
+Planter; Businessman
 Political Parties
+Politician
 Polonnaruwa
 Ponnambalam
 Pradeep
@@ -502,6 +534,7 @@ Premnath C.
 Premnath C. Dolawatte
 Prishanthi
 Priyantha
+Profession
 Province
 Pushpakumara
 Puttalam
@@ -616,6 +649,7 @@ Show All
 Show Random
 Show Statistical Trends
 Shritharan
+Single
 Sinhala Buddhist
 Siripala
 Siripala Gamalath
@@ -646,6 +680,7 @@ Susil
 Susil Premajayantha
 TMTK
 TMVP
+Teacher
 Tennakoon
 Thalatha
 Thalatha Athukorala
@@ -672,6 +707,8 @@ Tissa
 Tissa Attanayake
 Tissa Vitarana
 Top to Bottom
+Trade Unionist
+Trained Teacher
 Transparency & Corruption
 Trincomalee
 U. K. Sumith
@@ -688,6 +725,7 @@ Uddika
 Uddika Premarathne
 Udukumbura
 Undugoda
+University Lecturer
 Upul
 Upul Galappaththi
 Upul Mahendra
@@ -739,6 +777,8 @@ Wickramanayaka
 Wickramaratne
 Wickramasinghe
 Wickremesinghe
+Widow
+Widower
 Wigneswaran
 Wijerathna
 Wijesekera
@@ -755,4 +795,3 @@ Yadamini
 Yadamini Gunawardena
 Yapa
 Yapabandara
-​Abdul
