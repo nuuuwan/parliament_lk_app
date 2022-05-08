@@ -10,8 +10,10 @@ export const DIMENSION_TO_FUNC = {
   "Has Advanced Levels or higher?": (mp) => mp.isALevelsOrHigher,
   Profession: (mp) => mp.profession,
 
-  // Voting Record
+  // Voting & Parliamentary Attandance
   "Voting for 20th Amendment": (mp) => mp.vote20A,
+  "Attandance 9th Parliament (2020 - )": (mp) => mp.attendance9th,
+  "Attandance 8th Parliament (2017 - 2020)": (mp) => mp.attendance8th,
 
   // Transparency & Corruption
   "Has Publicly Declared Assets?": (mp) => mp.hasDeclaredAssets,
@@ -46,6 +48,8 @@ const SORTED_DIMENSION_LIST = [
   "Age Group (10 year)",
   "Highest Education Level",
   "Show Random",
+  "Attandance 9th Parliament (2020 - )",
+  "Attandance 8th Parliament (2017 - 2020)",
 ];
 export const GROUP_TO_DIMENSION_LIST = {
   "Political Parties": ["Party"],
@@ -55,7 +59,11 @@ export const GROUP_TO_DIMENSION_LIST = {
     "Has Advanced Levels or higher?",
     "Profession",
   ],
-  "Voting Record": ["Voting for 20th Amendment"],
+  "Voting & Parliamentary Attandance": [
+    "Voting for 20th Amendment",
+    "Attandance 9th Parliament (2020 - )",
+    "Attandance 8th Parliament (2017 - 2020)",
+  ],
   "Transparency & Corruption": ["Has Publicly Declared Assets?"],
   Demographics: [
     "Age Group (5 year)",
