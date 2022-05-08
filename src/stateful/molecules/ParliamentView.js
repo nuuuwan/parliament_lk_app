@@ -27,6 +27,7 @@ import Dimensions from "../../core/Dimensions.js";
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
 
+const COLOR_SWITCH_ON = "#1976D2";
 const STYLE = {
   margin: 2,
 };
@@ -99,7 +100,6 @@ export default class ParliamentView extends Component {
   }
 
   onClickSwapDims(e) {
-    console.debug(e);
     const { xDim, yDim } = this.state;
     this.setState({
       xDim: yDim,
@@ -178,7 +178,10 @@ export default class ParliamentView extends Component {
                   </Typography>
                 }
               >
-                <Typography variant="subtitle2">
+                <Typography
+                  variant="subtitle2"
+                  color={showStatisticalTrends ? COLOR_SWITCH_ON : "gray"}
+                >
                   {i18n.t("Statistical Trends")}
                 </Typography>
               </Tooltip>
