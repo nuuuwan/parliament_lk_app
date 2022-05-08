@@ -4,13 +4,18 @@ import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Avatar from "@mui/material/Avatar";
-import Checkbox from "@mui/material/Checkbox";
+import Switch from "@mui/material/Switch";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
+import FormControlLabel from "@mui/material/FormControlLabel";
+
 import SourceIcon from "@mui/icons-material/Source";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
 import MP from "../../core/MP.js";
 import GridView from "../../nonstate/molecules/GridView.js";
@@ -93,6 +98,15 @@ export default class ParliamentView extends Component {
     this.setState({ showStatisticalTrends: !oldState });
   }
 
+  onClickSwapDims(e) {
+    console.debug(e);
+    const { xDim, yDim } = this.state;
+    this.setState({
+      xDim: yDim,
+      yDim: xDim,
+    });
+  }
+
   async componentDidMount() {
     const mpIdx = await MP.getMPIdx();
     this.setState({ mpIdx });
@@ -131,34 +145,46 @@ export default class ParliamentView extends Component {
 
     return (
       <Box sx={STYLE}>
-        <DimensionPicker
-          label={i18n.t("Top to Bottom") + " (Y)"}
-          selectedDimension={yDim}
-          onChange={this.onChangeYDim.bind(this)}
-          i18n={i18n}
-        />
-        <DimensionPicker
-          label={i18n.t("Left to Right") + " (X)"}
-          selectedDimension={xDim}
-          onChange={this.onChangeXDim.bind(this)}
-          i18n={i18n}
-        />
+        <Stack direction="row">
+          <DimensionPicker
+            label={i18n.t("Top to Bottom") + " (Y)"}
+            selectedDimension={yDim}
+            onChange={this.onChangeYDim.bind(this)}
+            i18n={i18n}
+          />
 
-        <Checkbox
-          checked={showStatisticalTrends}
-          onClick={this.onShowStatisticalTrendsClick.bind(this)}
-        />
-        <Tooltip
-          title={
-            <Typography variant="subtitle1">
-              {i18n.t(STATISTICAL_TRENDS_TOOLTOP)}
-            </Typography>
-          }
-        >
-          <Typography variant="caption">
-            {i18n.t("Show Statistical Trends")}
-          </Typography>
-        </Tooltip>
+          <IconButton onClick={this.onClickSwapDims.bind(this)}>
+            <SwapHorizIcon />
+          </IconButton>
+          <DimensionPicker
+            label={i18n.t("Left to Right") + " (X)"}
+            selectedDimension={xDim}
+            onChange={this.onChangeXDim.bind(this)}
+            i18n={i18n}
+          />
+
+          <FormControlLabel
+            control={
+              <Switch
+                checked={showStatisticalTrends}
+                onClick={this.onShowStatisticalTrendsClick.bind(this)}
+              />
+            }
+            label={
+              <Tooltip
+                title={
+                  <Typography variant="subtitle1">
+                    {i18n.t(STATISTICAL_TRENDS_TOOLTOP)}
+                  </Typography>
+                }
+              >
+                <Typography variant="subtitle2">
+                  {i18n.t("Show Statistical Trends")}
+                </Typography>
+              </Tooltip>
+            }
+          />
+        </Stack>
 
         <GridView
           cells={cells}
