@@ -29,10 +29,12 @@ const SINHALA_DICTIONARY = {
   "Age Group (5 year)": "වයස් කාණ්ඩය (අවුරුදු 5)",
   "Age ≤ 40": "වයස ≤ 40",
   "Age ≤ 50": "වයස ≤ 50",
-  "All data except asset declaration data is from www.parliament.lk": "වත්කම් ප්‍රකාශන දත්ත හැර අනෙකුත් සියලුම දත්ත www.parliament.lk වෙතින් වේ",
+  "All data except asset declaration data is from www.parliament.lk":
+    "වත්කම් ප්‍රකාශන දත්ත හැර අනෙකුත් සියලුම දත්ත www.parliament.lk වෙතින් වේ",
   Anuradhapura: "අනුරාධපුර",
   "App & Visualization by": "යෙදුම සහ දෘශ්‍යකරණය",
-  "Asset declaration data is from www.tisrilanka.org": "වත්කම් ප්‍රකාශන දත්ත www.tisrilanka.org වෙතින් වේ",
+  "Asset declaration data is from www.tisrilanka.org":
+    "වත්කම් ප්‍රකාශන දත්ත www.tisrilanka.org වෙතින් වේ",
   "Bachelors Or Higher": "උපාධිය හෝ ඊට වැඩි",
   Badulla: "බදුල්ල",
   Batticaloa: "මඩකලපුව",
@@ -124,7 +126,8 @@ const SINHALA_DICTIONARY = {
   "Show Statistical Trends": "සංඛ්‍යාන ප්‍රවණතා පෙන්වන්න",
   "Sinhala Buddhist": "සිංහල බෞද්ධ",
   Southern: "දකුණු",
-  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.": "සංඛ්‍යානමය ප්‍රවණතා මනිනු ලබන්නේ ඇතැම් ජාලක සෛල අහඹු ලෙස පවරනු ලැබුවහොත් අප බලාපොරොත්තු වන ප්‍රමාණයට වඩා මන්ත්‍රීවරුන් සංඛ්‍යාවක් අඩංගුද යන්නයි. 'z' (උදා. z = 2.5) අගය පෙන්නුම් කරන්නේ මන්ත්‍රීවරුන් සංඛ්‍යාව අපේක්ෂිත මන්ත්‍රීවරුන් සංඛ්‍යාවෙන් කොපමණ සම්මත අපගමන සංඛ්‍යාවක් වෙනස් වේද යන්නයි. පරාසය (උදා. 84 - 114) යනු මන්ත්‍රීවරුන් සංඛ්‍යාව සඳහා 95% විශ්වාසනීය පරතරයයි. සැබෑ සංඛ්‍යාව මෙම පරාසයෙන් පිටත නම්, ප්‍රවණතාවය අහඹු වීමේ සම්භාවිතාව <5% වේ.",
+  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.":
+    "සංඛ්‍යානමය ප්‍රවණතා මනිනු ලබන්නේ ඇතැම් ජාලක සෛල අහඹු ලෙස පවරනු ලැබුවහොත් අප බලාපොරොත්තු වන ප්‍රමාණයට වඩා මන්ත්‍රීවරුන් සංඛ්‍යාවක් අඩංගුද යන්නයි. 'z' (උදා. z = 2.5) අගය පෙන්නුම් කරන්නේ මන්ත්‍රීවරුන් සංඛ්‍යාව අපේක්ෂිත මන්ත්‍රීවරුන් සංඛ්‍යාවෙන් කොපමණ සම්මත අපගමන සංඛ්‍යාවක් වෙනස් වේද යන්නයි. පරාසය (උදා. 84 - 114) යනු මන්ත්‍රීවරුන් සංඛ්‍යාව සඳහා 95% විශ්වාසනීය පරතරයයි. සැබෑ සංඛ්‍යාව මෙම පරාසයෙන් පිටත නම්, ප්‍රවණතාවය අහඹු වීමේ සම්භාවිතාව <5% වේ.",
   TMTK: "TMTK",
   TMVP: "ටී.එම්.වී.පී",
   "The Parliament of Sri Lanka": "ශ්‍රී ලංකා පාර්ලිමේන්තුව",
@@ -134,7 +137,8 @@ const SINHALA_DICTIONARY = {
   UNP: "එජාප",
   Uva: "ඌව",
   Vanni: "වන්නිය",
-  "Visualization, Design and App by @nuuuwan": "@nuuuwan විසින් දෘශ්‍යකරණය, නිර්මාණය සහ යෙදුම",
+  "Visualization, Design and App by @nuuuwan":
+    "@nuuuwan විසින් දෘශ්‍යකරණය, නිර්මාණය සහ යෙදුම",
   "Vote for 20th Amendment": "20 වැනි සංශෝධනයට ඡන්දය දීම",
   "Voted Against": "විරුද්ධව ඡන්දය දුන්නා",
   "Voted: In Favour": "පක්ෂව ඡන්දය දුන්නා",
