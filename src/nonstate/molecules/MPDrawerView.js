@@ -155,7 +155,7 @@ export default function MPDrawerView(props) {
         {i18n.t(mp.lastName)}
       </Typography>
       <Typography variant="subtitle2" display="block">
-        {i18n.t("Age") + ' ' + mp.ageFloor}
+        {i18n.t("Age") + " " + mp.ageFloor}
       </Typography>
       <Typography variant="overline" display="block">
         {i18n.t(mp.party)}
