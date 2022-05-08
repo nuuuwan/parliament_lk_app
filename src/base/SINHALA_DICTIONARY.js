@@ -1,4 +1,4 @@
-// Auto Translated 20220508-144501
+// Auto Translated 20220508-145124
 const SINHALA_DICTIONARY = {
   "20 - 30": "20 - 30",
   "25 - 30": "25 - 30",
@@ -36,6 +36,7 @@ const SINHALA_DICTIONARY = {
   Academician: "ශාස්ත්රාලිකයා",
   Accountant: "ගණකාධිකාරී",
   Adaikkalanathan: "අඩක්කලනාදන්",
+  Age: "වයස",
   "Age > 40": "වයස > 40",
   "Age > 50": "වයස > 50",
   "Age Group (10 year)": "වයස් කාණ්ඩය (අවුරුදු 10)",
@@ -55,8 +56,7 @@ const SINHALA_DICTIONARY = {
   "Ali Sabri": "අලි සබ්රි",
   "Ali Sabri Raheem": "අලි සබ්රි රහීම්",
   "Ali Sabry": "අලි සබ්රි",
-  "All data except asset declaration data is from www.parliament.lk":
-    "වත්කම් ප්‍රකාශන දත්ත හැර අනෙකුත් සියලුම දත්ත www.parliament.lk වෙතින් වේ",
+  "All data except asset declaration data is from www.parliament.lk": "වත්කම් ප්‍රකාශන දත්ත හැර අනෙකුත් සියලුම දත්ත www.parliament.lk වෙතින් වේ",
   Alles: "අලස්",
   Aluthgamage: "අලුත්ගමගේ",
   Amal: "අමල්",
@@ -90,8 +90,7 @@ const SINHALA_DICTIONARY = {
   "Ashok Abeysinghe": "අශෝක් අබේසිංහ",
   Ashoka: "Ashoka",
   "Ashoka Priyantha": "අශෝක ප්‍රියන්ත",
-  "Asset declaration data is from www.tisrilanka.org":
-    "වත්කම් ප්‍රකාශන දත්ත www.tisrilanka.org වෙතින් වේ",
+  "Asset declaration data is from www.tisrilanka.org": "වත්කම් ප්‍රකාශන දත්ත www.tisrilanka.org වෙතින් වේ",
   Athaullah: "අතාවුල්ලාය",
   Athukorala: "අතුකෝරල",
   Athuraliye: "අතුරලියේ",
@@ -673,8 +672,7 @@ const SINHALA_DICTIONARY = {
   Siyambalapitiya: "සියඹලාපිටිය",
   Southern: "දකුණු",
   "Statistical Trends": "සංඛ්යානමය ප්රවණතා",
-  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.":
-    "සංඛ්‍යානමය ප්‍රවණතා මනිනු ලබන්නේ ඇතැම් ජාලක සෛල අහඹු ලෙස පවරනු ලැබුවහොත් අප බලාපොරොත්තු වන ප්‍රමාණයට වඩා මන්ත්‍රීවරුන් සංඛ්‍යාවක් අඩංගුද යන්නයි. 'z' (උදා. z = 2.5) අගය පෙන්නුම් කරන්නේ මන්ත්‍රීවරුන් සංඛ්‍යාව අපේක්ෂිත මන්ත්‍රීවරුන් සංඛ්‍යාවෙන් කොපමණ සම්මත අපගමන සංඛ්‍යාවක් වෙනස් වේද යන්නයි. පරාසය (උදා. 84 - 114) යනු මන්ත්‍රීවරුන් සංඛ්‍යාව සඳහා 95% විශ්වාසනීය පරතරයයි. සැබෑ සංඛ්‍යාව මෙම පරාසයෙන් පිටත නම්, ප්‍රවණතාවය අහඹු වීමේ සම්භාවිතාව <5% වේ.",
+  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.": "සංඛ්‍යානමය ප්‍රවණතා මනිනු ලබන්නේ ඇතැම් ජාලක සෛල අහඹු ලෙස පවරනු ලැබුවහොත් අප බලාපොරොත්තු වන ප්‍රමාණයට වඩා මන්ත්‍රීවරුන් සංඛ්‍යාවක් අඩංගුද යන්නයි. 'z' (උදා. z = 2.5) අගය පෙන්නුම් කරන්නේ මන්ත්‍රීවරුන් සංඛ්‍යාව අපේක්ෂිත මන්ත්‍රීවරුන් සංඛ්‍යාවෙන් කොපමණ සම්මත අපගමන සංඛ්‍යාවක් වෙනස් වේද යන්නයි. පරාසය (උදා. 84 - 114) යනු මන්ත්‍රීවරුන් සංඛ්‍යාව සඳහා 95% විශ්වාසනීය පරතරයයි. සැබෑ සංඛ්‍යාව මෙම පරාසයෙන් පිටත නම්, ප්‍රවණතාවය අහඹු වීමේ සම්භාවිතාව <5% වේ.",
   Sudarshana: "සුදර්ශන",
   "Sudarshana Denipitiya": "සුදර්ශන දෙනිපිටිය",
   Sudarshini: "සුදර්ශිනී",
@@ -756,8 +754,7 @@ const SINHALA_DICTIONARY = {
   Vijitha: "විජිත ය",
   "Vijitha Berugoda": "විජිත බේරුගොඩ",
   "Vijitha Herath": "විජිත හේරත්",
-  "Visualization, Design and App by @nuuuwan":
-    "@nuuuwan විසින් දෘශ්‍යකරණය, නිර්මාණය සහ යෙදුම",
+  "Visualization, Design and App by @nuuuwan": "@nuuuwan විසින් දෘශ්‍යකරණය, නිර්මාණය සහ යෙදුම",
   Vitarana: "විතාරණ",
   Viyalanderan: "වියලන්දෙරන්",
   "Vote for 20th Amendment": "20 වැනි සංශෝධනයට ඡන්දය දීම",
