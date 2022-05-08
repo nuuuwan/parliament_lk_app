@@ -160,10 +160,20 @@ export default function GridView(props) {
 
                     const h = z > 0 ? 0 : 120;
                     const absZ = Math.abs(z);
+                    const MAX_ABS_Z = 4;
+                    const ABS_Z_LIMIT = 2;
                     let l = 100;
-                    if (absZ > 2) {
-                      l = 100 - (30 * Math.min(2, absZ - 2)) / 2;
+                    if (absZ > ABS_Z_LIMIT) {
+                      l =
+                        100 -
+                        (70 *
+                          Math.min(
+                            MAX_ABS_Z - ABS_Z_LIMIT,
+                            absZ - ABS_Z_LIMIT
+                          )) /
+                          (MAX_ABS_Z - ABS_Z_LIMIT);
                     }
+
                     const a = 0.3;
                     const s = 100;
                     styleCellCustom = {
