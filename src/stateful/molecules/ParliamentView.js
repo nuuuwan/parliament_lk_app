@@ -116,6 +116,7 @@ export default class ParliamentView extends Component {
         <Avatar
           key={key}
           alt={mp.name}
+          title={mp.name}
           src={mp.imageURL}
           onClick={onClickInner}
         />
