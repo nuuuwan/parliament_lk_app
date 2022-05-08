@@ -2,6 +2,7 @@ import { Component } from "react";
 
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
 import Avatar from "@mui/material/Avatar";
 import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
@@ -175,31 +176,36 @@ export default class ParliamentView extends Component {
           <MPDrawerView mp={activeMP} />
         </Drawer>
 
-        <BottomNavigation showLabels>
-          {BOTTOM_NAVIGATION_ITEMS.map(function (d, i) {
-            const key = "data-" + i;
-            const onClick = function (e) {
-              window.open(d.url, "_blank");
-            };
-            const Icon = d.Icon;
-            return (
-              <Tooltip
-                key={key}
-                title={
-                  <Typography variant="subtitle1">
-                    {i18n.t(d.details)}
-                  </Typography>
-                }
-              >
-                <BottomNavigationAction
-                  label={d.name}
-                  icon={<Icon />}
-                  onClick={onClick}
-                />
-              </Tooltip>
-            );
-          })}
-        </BottomNavigation>
+        <Paper
+          sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+          elevation={3}
+        >
+          <BottomNavigation showLabels>
+            {BOTTOM_NAVIGATION_ITEMS.map(function (d, i) {
+              const key = "data-" + i;
+              const onClick = function (e) {
+                window.open(d.url, "_blank");
+              };
+              const Icon = d.Icon;
+              return (
+                <Tooltip
+                  key={key}
+                  title={
+                    <Typography variant="subtitle1">
+                      {i18n.t(d.details)}
+                    </Typography>
+                  }
+                >
+                  <BottomNavigationAction
+                    label={d.name}
+                    icon={<Icon />}
+                    onClick={onClick}
+                  />
+                </Tooltip>
+              );
+            })}
+          </BottomNavigation>
+        </Paper>
       </Box>
     );
   }
