@@ -131,13 +131,27 @@ export default class ParliamentView extends Component {
       }.bind(this);
       const key = `avatar-${mp.id}`;
       return (
-        <Avatar
-          key={key}
-          alt={mp.name}
-          src={mp.imageURL}
-          onClick={onClickInner}
-          sx={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
-        />
+        <div key={key}>
+          <Tooltip
+            title={
+              <>
+                <Typography variant="subtitle1">{i18n.t(mp.name)}</Typography>
+                <Typography variant="overline" display="block">
+                  {i18n.t(mp.party)}
+                  {" - "}
+                  {i18n.t(mp.edName)}
+                </Typography>
+              </>
+            }
+          >
+            <Avatar
+              alt={mp.name}
+              src={mp.imageURL}
+              onClick={onClickInner}
+              sx={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
+            />
+          </Tooltip>
+        </div>
       );
     }.bind(this);
 
@@ -208,7 +222,7 @@ export default class ParliamentView extends Component {
           open={activeMPId !== null}
           onClose={this.onDrawerClose.bind(this)}
         >
-          <MPDrawerView mp={activeMP} />
+          <MPDrawerView mp={activeMP} i18n={i18n} />
         </Drawer>
 
         <Paper
