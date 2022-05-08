@@ -18,7 +18,6 @@ import Dimensions from "../../core/Dimensions.js";
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
 
-const URL_PARLIAMENT = "https://www.parliament.lk/";
 const URL_NUUUWAN = "http://github.com/nuuuwan";
 const STYLE = {
   margin: 2,
@@ -33,6 +32,19 @@ const STATISTICAL_TRENDS_TOOLTOP = [
   " number of MPs. If the actual number is outside this range,",
   " the probability that the trend is random is <5%.",
 ].join("");
+
+const DATA_SOURCES = [
+  {
+    name: "@ParliamentLK",
+    url:
+      "https://www.parliament.lk/" +
+      "en/members-of-parliament/directory-of-members/",
+  },
+  {
+    name: "@TISriLanka",
+    url: "https://www.tisrilanka.org/mpassets/",
+  },
+];
 
 export default class ParliamentView extends Component {
   constructor(props) {
@@ -148,14 +160,21 @@ export default class ParliamentView extends Component {
         <div style={{ textAlign: "center" }}>
           <Typography variant="subtitle1">
             {i18n.t("Data from")}
-            <Link
-              href={URL_PARLIAMENT}
-              variant="subtitle1"
-              underline="none"
-              target="_blank"
-            >
-              {" " + i18n.t("The Parliament of Sri Lanka")}
-            </Link>
+
+            {DATA_SOURCES.map(function (d, i) {
+              const key = "data-" + i;
+              return (
+                <Link
+                  key={key}
+                  href={d.url}
+                  variant="subtitle1"
+                  underline="none"
+                  target="_blank"
+                >
+                  {" " + d.name}
+                </Link>
+              );
+            })}
           </Typography>
           <Typography variant="subtitle1">
             {i18n.t("App & Visualization by")}
