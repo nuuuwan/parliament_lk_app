@@ -6,12 +6,10 @@ import Avatar from "@mui/material/Avatar";
 import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
-import Link from "@mui/material/Link";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import SourceIcon from '@mui/icons-material/Source';
-import GitHubIcon from '@mui/icons-material/GitHub';
-
+import SourceIcon from "@mui/icons-material/Source";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import MP from "../../core/MP.js";
 import GridView from "../../nonstate/molecules/GridView.js";
@@ -43,20 +41,20 @@ const BOTTOM_NAVIGATION_ITEMS = [
     url:
       "https://www.parliament.lk/" +
       "en/members-of-parliament/directory-of-members/",
-    details: 'All data except asset declaration data'
-      + ' is from www.parliament.lk',
+    details:
+      "All data except asset declaration data" + " is from www.parliament.lk",
     Icon: SourceIcon,
   },
   {
     name: "@TISriLanka",
     url: "https://www.tisrilanka.org/mpassets/",
-    details: 'Asset declaration data is from www.tisrilanka.org',
+    details: "Asset declaration data is from www.tisrilanka.org",
     Icon: SourceIcon,
   },
   {
     name: "@nuuuwan",
     url: "http://github.com/nuuuwan",
-    details: 'Visualization, Design and App by @nuuuwan',
+    details: "Visualization, Design and App by @nuuuwan",
     Icon: GitHubIcon,
   },
 ];
@@ -175,14 +173,17 @@ export default class ParliamentView extends Component {
         <BottomNavigation showLabels>
           {BOTTOM_NAVIGATION_ITEMS.map(function (d, i) {
             const key = "data-" + i;
-            const onClick = function(e) {
-              window.open(d.url, '_blank');
-            }
+            const onClick = function (e) {
+              window.open(d.url, "_blank");
+            };
             const Icon = d.Icon;
             return (
               <Tooltip key={key} title={i18n.t(d.details)}>
                 <BottomNavigationAction
-                  label={d.name} icon={<Icon />} onClick={onClick} />
+                  label={d.name}
+                  icon={<Icon />}
+                  onClick={onClick}
+                />
               </Tooltip>
             );
           })}
