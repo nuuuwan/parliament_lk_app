@@ -25,7 +25,7 @@ export default class MP {
     this.dateOfBirth = d.date_of_birth_norm;
     this.dateOfBirthUT = d.date_of_birth_ut;
 
-    this.civilStatus = d.civil_status;
+    this.civilStatus = d.civil_status_cleaned;
     this.religion = d.religion_cleaned;
 
     this.profession = d.profession;
