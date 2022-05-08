@@ -4,7 +4,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import ListSubheader from "@mui/material/ListSubheader";
 
-import { GROUP_TO_DIMENSION_LIST } from "../../core/Dimensions.js";
+import { GROUP_TO_DIMENSION_LIST } from "../../core/DimensionConstants.js";
 
 export default function DimensionPicker(props) {
   const { label, selectedDimension, onChange, i18n } = props;
