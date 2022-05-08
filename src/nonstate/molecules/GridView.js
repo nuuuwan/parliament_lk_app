@@ -163,7 +163,7 @@ export default function GridView(props) {
                     const MAX_ABS_Z = 4;
                     const ABS_Z_LIMIT = 2;
                     let l = 100;
-                    const [MIN_H , MAX_H] = [40, 70];
+                    const [MIN_H, MAX_H] = [40, 70];
                     if (absZ > ABS_Z_LIMIT) {
                       l =
                         MAX_H -
