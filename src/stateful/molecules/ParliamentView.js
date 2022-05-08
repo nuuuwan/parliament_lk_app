@@ -31,7 +31,8 @@ const DEFAULT_Y_DIM = "Gender";
 
 const COLOR_SWITCH_ON = "#1976D2";
 const STYLE = {
-  margin: 2,
+  margin: 4,
+  marginBottom: 10,
 };
 const AVATAR_SIZE = 48;
 
