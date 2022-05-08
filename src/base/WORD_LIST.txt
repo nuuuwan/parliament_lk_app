@@ -18,51 +18,115 @@
 80 - 85
 80 - 90
 85 - 90
+A. Aravindh Kumar
+A. L. M. Athaullah
 A. Levels Or Higher
 ACMC
 AITC
+Abdul Haleem
 Age > 40
 Age > 50
 Age Group (10 year)
 Age Group (5 year)
 Age ≤ 40
 Age ≤ 50
+Ajith Mannapperuma
+Ajith Rajapakse
+Akila Ellawala
+Ali Sabri Raheem
 All data except asset declaration data is from www.parliament.lk
+Amarakeerthi Athukorala
+Angajan Ramanathan
+Anupa Pasqual
+Anura Dissanayaka
+Anura Priyadharshana Yapa
+Anuradha Jayaratne
 Anuradhapura
 App & Visualization by
+Arundika Fernando
+Asanka Navarathna
+Ashok Abeysinghe
+Ashoka Priyantha
 Asset declaration data is from www.tisrilanka.org
+Athuraliye Rathana
+B. Y. G. Rathnasekara
 Bachelors Or Higher
 Badulla
+Bandula Gunawardana
+Basil Rohana Rajapaksa
 Batticaloa
 Below A. Levels
 Below Bachelors
+Buddhika Pathirana
 Buddhism
+C. B. Rathnayake
+C.V. Wigneswaran
 Central
+Chamal Rajapaksa
+Chamara Sampath Dasanayake
+Chaminda Wijesiri
+Chandima Weerakkody
+Channa Jayasumana
+Charitha Herath
+Charles Nirmalanathan
 Christianity (All)
 Colombo
+D. B. Herath
+D. V. Chanaka
+D. Weerasingha
 Data from
+Dayasiri Jayasekara
 Declared
 Demographics
+Dharmalingam Sithadthan
+Diana Gamage
 Did Not Vote: Absent
 Did Not Vote: Not MP
 Did Not Vote: Speaker
 Digamadulla
+Dilan Perera
+Dilip Wedaarachchi
+Dilum Amunugama
+Dinesh Gunawardena
+Douglas Devananda
+Dullas Alahapperuma
+Duminda Dissanayake
 EPDP
 Eastern
 Education & Profession
 Electoral District
 Electoral Districts
 Electoral Regions
+Eran Wickramaratne
+Faizal Cassim
 Female
 First Letter of First Name
+G. G. Ponnambalam
+G. L. Peiris
 Galle
+Gamini Lokuge
+Gamini Waleboda
 Gampaha
+Gayantha Karunatilleka
+Gayashan Nawananda
+Geetha Samanmale Kumarasinghe
 Gender
+Gevindu Cumaratunga
+Govindan Karunakaram
+Gunathilaka Rajapaksha
+H. M. M. Harees
+H. Nandasena
 Hambantota
+Harin Fernando
+Harini Amarasuriya
+Harsha de Silva
+Harshana Rajakaruna
 Has A. Levels or higher?
 Has Advanced Levels or higher?
 Has Bachelors or higher?
 Has Publicly Declared Assets?
+Hector Appuhamy
+Hesha Withanage
 Highest Education Level
 Hinduism
 ISCED0 Unknown
@@ -74,28 +138,100 @@ ISCED6 Bachelors
 ISCED7 Masters
 ISCED8 Doctorate
 ITAK
+Imran Maharoof
+Imthiaz Bakeer Markar
+Indika Anuruddha Herath
 Is Age > 40
 Is Age > 50
 Is National List?
 Is Sinhala Buddhist?
+Ishak Rahuman
 Islam
+Isuru Dodangoda
+J. C. Alawathuwala
 JJB
 Jaffna
+Jagath Kumara Sumithraarachchi
+Jagath Pushpakumara
+Janaka Bandara Thennakoon
+Janaka Wakkumbura
+Jayantha Ketagoda
+Jayantha Samaraweera
+Jayantha Weerasinghe
+Jayarathna Herath
+Jeevan Thondaman
+John Seneviratne
+Johnston Fernando
+K. Kader Masthan
+K. P. S. Kumarasiri
+K. Sujith Sanjaya Perera
+Kabir Hashim
 Kalutara
+Kanaka Herath
+Kanchana Wijesekera
 Kandy
+Kapila Athukorala
+Karunadasa Kodithuwakku
+Kavinda Heshan Jayawardhana
 Kegalle
+Keheliya Rambukwella
+Kins Nelson
+Kokila Gunawardene
+Kulasingam Dhileeban
+Kumara Welgama
+Kumarasiri Rathnayaka
 Kurunegala
+Lakshman Kiriella
+Lalith Ellawala
+Lalith Varna Kumara
+Lasantha Alagiyawanna
 Last Name
 Left to Right
+Lohan Ratwatte
+M .U. M. Ali Sabry
+M. A. Sumanthiran
+M. Rameshwaran
+M. S. Thowfeek
+M. Udayakumar
+M. W. D. Sahan Pradeep Withana
 MNA
+Madhura Withanage
+Mahinda Amaraweera
+Mahinda Rajapaksa
+Mahinda Yapa Abeywardana
+Mahindananda Aluthgamage
+Maithreepala Sirisena
 Male
+Manjula Dissanayake
+Mano Ganesan
+Manusha Nanayakkara
+Marjan Faleel
 Matale
 Matara
+Mayadunna Chinthaka Amal
+Mayantha Dissanayake
+Milan Jayathilake
 Miscellaneous & Fun
+Mohan Priyadarshana De Silva
+Mohomad Muzammil
 Moneragala
 Month of Birth
+Muditha Prishanthi
+Mujibur Rahuman
 NC
+Nalaka Bandara Kottegoda
+Nalaka Godahewa
+Nalin Bandara Jayamaha
+Nalin Fernando
+Namal
+Namal Rajapaksa
+Naseer Ahamed
 National List
+Nimal Lanza
+Nimal Piyathissa
+Nimal Siripala de Silva
+Nipuna Ranawaka
+Niroshan Perera
 No Data
 North Central
 North Western
@@ -105,40 +241,132 @@ Not Sinhala Buddhist
 Nuwara-Eliya
 OPPP
 Other or Unknown
+Palani Thigambaram
 Parliament of Sri Lanka
 Party
+Patali Champika Ranawaka
+Pavithradevi Wanniarachchi
+Piyal Nishantha De Silva
+Piyankara Jayaratne
 Political Parties
 Polonnaruwa
+Pradeep Undugoda
+Prasanna Ranatunga
+Prasanna Ranaweera
+Premalal Jayasekara
+Premitha Bandara Tennakoon
+Premnath C. Dolawatte
 Province
 Puttalam
+R. M. Ranjith Madduma Bandara
+Rajapaksa
+Rajavarothiam Sampanthan
+Rajika Wickramasinghe
+Rajitha Senarathne
+Ramesh Pathirana
+Ranil Wickremesinghe
+Ranjith Bandara
+Ranjith Siyambalapitiya
 Ratnapura
+Rauff Hakeem
 Religion
 Religion & Ethnicity
+Rishad Bathiudeen
+Rohana Bandara
+Rohana Dissanayaka
+Rohini Kumari Wijerathna
+Rohitha Abegunawardhana
+Roshan Ranasinghe
+S. B. Dissanayake
+S. M. Chandrasena
+S. M. M. Muszhaaraff
+S. M. Marikkar
+S. Noharathalingam
+S. Viyalanderan
 SJB
 SLFP
 SLMC
 SLPP
 Sabaragamuwa
+Sagara Kariyawasam
+Sajith Premadasa
+Samanpriya Herath
+Sampath Athukorala
+Sanath Nishantha
+Sanjeeva Edirimanna
+Sarath Fonseka
+Sarath Weerasekera
+Sarathi Dushmantha
+Seetha Arambepola
+Selvam Adaikkalanathan
+Selvarajah Kajendren
+Shan Vijayalal De Silva
+Shanakiyan Rajaputhiran Rasamanickam
+Shantha Bandara
+Shasheendra Rajapaksa
+Shehan Semasinghe
 Show All
 Show Random
 Show Statistical Trends
 Sinhala Buddhist
+Siripala Gamalath
+Sisira Jayakody
+Sivagnanam Shritharan
+Sivanesathurai Santhirakanthan
 Southern
 Statistical Trends
 Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.
+Sudarshana Denipitiya
+Sudarshini Fernandopulle
+Sudath Manjula
+Suren Raghavan
+Susil Premajayantha
 TMTK
 TMVP
+Thalatha Athukorala
+Tharaka Balasuriya
+Thavaraja Kalai Arasan
 The Parliament of Sri Lanka
+Thenuka Vidanagamage
+Thilak Rajapakshe
+Thisakutti Arachchi
+Thushara Indunil Amarasena
+Tiran Alles
+Tissa Attanayake
+Tissa Vitarana
 Top to Bottom
 Transparency & Corruption
 Trincomalee
+U. K. Sumith Udukumbura
 UNP
+Udaya Gammanpila
+Udayakantha Gunathilaka
+Udayana Kirindigoda
+Uddika Premarathne
+Upul Galappaththi
+Upul Mahendra Rajapaksha
 Uva
+V. Radhakrishnan
+Vadivel Suresh
 Vanni
+Vasudeva Nanayakkara
+Velu Kumar
+Vidura Wickramanayaka
+Vijitha Berugoda
+Vijitha Herath
 Visualization, Design and App by @nuuuwan
 Vote for 20th Amendment
 Voted Against
 Voted: In Favour
 Voting Record
 Voting for 20th Amendment
+W. H. M. Dharmasena
+Waruna Liyanage
+Wasantha Yapabandara
+Weerasumana Weerasinghe
 Western
+Wijeyadasa Rajapakshe
+Wimal Weerawansa
+Wimalaweera Dissanayake
+Yadamini Gunawardena
+​
