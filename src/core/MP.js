@@ -51,6 +51,10 @@ export default class MP {
     return age;
   }
 
+  get ageFloor() {
+    return parseInt(this.age);
+  }
+
   get isNationalList() {
     return this.edName === "National List"
       ? "National List"
