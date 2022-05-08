@@ -179,7 +179,7 @@ export default class ParliamentView extends Component {
                 }
               >
                 <Typography variant="subtitle2">
-                  {i18n.t("Show Statistical Trends")}
+                  {i18n.t("Statistical Trends")}
                 </Typography>
               </Tooltip>
             }
