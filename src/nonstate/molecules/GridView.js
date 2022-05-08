@@ -16,7 +16,14 @@ const STYLE_CELL = {
   borderColor: "#eee",
   borderStyle: "solid",
   borderWidth: 2,
-  padding: 12,
+  padding: 6,
+};
+
+const STYLE_HEADER_CELL = {
+  ...STYLE_CELL,
+  ...{
+    backgroundColor: "#f8f8f8",
+  },
 };
 
 function DimWidget({ dim, i18n }) {
@@ -96,10 +103,10 @@ export default function GridView(props) {
               const countX = getCountX(iX);
 
               return (
-                <td key={key} style={STYLE_CELL}>
+                <th key={key} style={STYLE_HEADER_CELL}>
                   <DimWidget dim={xLabel} i18n={i18n} />
                   <PctWidget n={countX} d={countXY} />
-                </td>
+                </th>
               );
             })}
           </tr>
@@ -112,10 +119,10 @@ export default function GridView(props) {
             return (
               <tr key={key}>
                 {
-                  <td style={STYLE_CELL}>
+                  <th style={STYLE_HEADER_CELL}>
                     <DimWidget dim={yLabel} i18n={i18n} />
                     <PctWidget n={countY} d={countXY} />
-                  </td>
+                  </th>
                 }
                 {xAxisLabels.map(function (xLabel, iX) {
                   const key = `cell-${iX}-${iY}`;
