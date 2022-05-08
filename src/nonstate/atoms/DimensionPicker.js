@@ -13,7 +13,7 @@ export default function DimensionPicker(props) {
     return onChange(e.target.value);
   };
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+    <FormControl fullWidth size="small" margin="normal">
       <InputLabel id="demo-select-small">{label}</InputLabel>
       <Select
         labelId="demo-select-small"

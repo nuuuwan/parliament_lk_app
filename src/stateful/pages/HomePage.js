@@ -10,7 +10,7 @@ import I18N, { LANG_TO_LABEL } from "../../base/I18N.js";
 import ParliamentView from "../molecules/ParliamentView.js";
 
 const STYLE = {
-  backgroundColor: "lightgray",
+  backgroundColor: "#37474F",
 };
 const DEFAULT_LANG = "en";
 
@@ -26,14 +26,15 @@ export default class HomePage extends Component {
       <div>
         <AppBar position="static" sx={STYLE}>
           <Toolbar variant="dense">
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} style={{fontWeight:"bolder"}}>
               {this.i18n.t("Parliament of Sri Lanka")}
             </Typography>
 
             {Object.entries(LANG_TO_LABEL).map(
               function ([lang, label]) {
-                const key = "button-" + lang;
-                const color = selectedLang === lang ? "white" : "gray";
+                const
+                  isSelectedLang = selectedLang === lang,
+                  key = "button-" + lang;
 
                 const onClick = function (e) {
                   this.i18n.setLang(lang);
@@ -41,7 +42,7 @@ export default class HomePage extends Component {
                 }.bind(this);
 
                 return (
-                  <Button key={key} sx={{ color: color }} onClick={onClick}>
+                  <Button key={key} sx={{ color: (isSelectedLang ? "white" : "lightgray"), fontWeight: (isSelectedLang ? "bolder" : "normal") }} onClick={onClick}>
                     {label}
                   </Button>
                 );

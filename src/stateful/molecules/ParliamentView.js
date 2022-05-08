@@ -7,8 +7,10 @@ import Avatar from "@mui/material/Avatar";
 import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
+import Grid from "@mui/material/Grid";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import SourceIcon from "@mui/icons-material/Source";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
@@ -132,34 +134,45 @@ export default class ParliamentView extends Component {
 
     return (
       <Box sx={STYLE}>
-        <DimensionPicker
-          label={i18n.t("Top to Bottom") + " (Y)"}
-          selectedDimension={yDim}
-          onChange={this.onChangeYDim.bind(this)}
-          i18n={i18n}
-        />
-        <DimensionPicker
-          label={i18n.t("Left to Right") + " (X)"}
-          selectedDimension={xDim}
-          onChange={this.onChangeXDim.bind(this)}
-          i18n={i18n}
-        />
+        <Grid container spacing={2}>
+          <Grid item md={2}>
+            <DimensionPicker
+              label={i18n.t("Top to Bottom") + " (Y)"}
+              selectedDimension={yDim}
+              onChange={this.onChangeYDim.bind(this)}
+              i18n={i18n}
+            />
+          </Grid>
 
-        <Checkbox
-          checked={showStatisticalTrends}
-          onClick={this.onShowStatisticalTrendsClick.bind(this)}
-        />
-        <Tooltip
-          title={
-            <Typography variant="subtitle1">
-              {i18n.t(STATISTICAL_TRENDS_TOOLTOP)}
-            </Typography>
-          }
-        >
-          <Typography variant="caption">
-            {i18n.t("Show Statistical Trends")}
-          </Typography>
-        </Tooltip>
+          <Grid item md={2}>
+            <DimensionPicker
+              label={i18n.t("Left to Right") + " (X)"}
+              selectedDimension={xDim}
+              onChange={this.onChangeXDim.bind(this)}
+              i18n={i18n}
+            />
+          </Grid>
+
+          <Grid item md={2} style={{marginTop:"0.8rem"}}>
+
+            <Tooltip
+              title={
+                <Typography variant="subtitle1">
+                  {i18n.t(STATISTICAL_TRENDS_TOOLTOP)}
+                </Typography>
+              }
+              sx={{mr:0}}
+            >
+              <FormControlLabel
+                label={i18n.t("Show Statistical Trends")}
+                control={
+                  <Checkbox checked={showStatisticalTrends} onClick={this.onShowStatisticalTrendsClick.bind(this)} />
+                }
+              />
+            </Tooltip>
+          </Grid>
+
+        </Grid>
 
         <GridView
           cells={cells}
