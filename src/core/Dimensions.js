@@ -13,6 +13,9 @@ export const DIMENSION_TO_FUNC = {
   // Voting Record
   "Voting for 20th Amendment": (mp) => mp.vote20A,
 
+  // Transparency & Corruption
+  "Has Publicly Declared Assets?": (mp) => mp.hasDeclaredAssets,
+
   // Demographics
   "Age Group (5 year)": (mp) => mp.getAgeGroup(5),
   "Age Group (10 year)": (mp) => mp.getAgeGroup(10),
@@ -48,6 +51,7 @@ export const GROUP_TO_DIMENSION_LIST = {
     "Has Advanced Levels or higher?",
   ],
   "Voting Record": ["Voting for 20th Amendment"],
+  "Transparency & Corruption": ["Has Publicly Declared Assets?"],
   Demographics: [
     "Age Group (5 year)",
     "Age Group (10 year)",
