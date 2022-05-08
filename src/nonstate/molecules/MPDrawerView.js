@@ -22,7 +22,9 @@ const STYLE_BOX = { padding: 3 };
 const STYLE_AVATAR = { width: 100, height: 100 };
 
 function getSittingText(i18n, isSitting) {
-  return i18n.t(isSitting ? "Sitting" : "Not Sitting");
+  return i18n.t(
+    isSitting ? "When attending parliament" : "When not attending parliament"
+  );
 }
 
 function CustomLink({ primary, secondary, href, Icon }) {
