@@ -147,7 +147,13 @@ export default class ParliamentView extends Component {
           checked={showStatisticalTrends}
           onClick={this.onShowStatisticalTrendsClick.bind(this)}
         />
-        <Tooltip title={i18n.t(STATISTICAL_TRENDS_TOOLTOP)}>
+        <Tooltip
+          title={
+            <Typography variant="subtitle1">
+              {i18n.t(STATISTICAL_TRENDS_TOOLTOP)}
+            </Typography>
+          }
+        >
           <Typography variant="caption">
             {i18n.t("Show Statistical Trends")}
           </Typography>
@@ -177,7 +183,14 @@ export default class ParliamentView extends Component {
             };
             const Icon = d.Icon;
             return (
-              <Tooltip key={key} title={i18n.t(d.details)}>
+              <Tooltip
+                key={key}
+                title={
+                  <Typography variant="subtitle1">
+                    {i18n.t(d.details)}
+                  </Typography>
+                }
+              >
                 <BottomNavigationAction
                   label={d.name}
                   icon={<Icon />}
