@@ -134,6 +134,25 @@ export default function GridView(props) {
                     const meanCount = n * p;
                     const stdevCount = Math.sqrt(n * p * (1 - p));
                     const z = (count - meanCount) / stdevCount;
+                    const absZ = Math.abs(z);
+                    let humanText = '';
+
+                    if (absZ > 1) {
+                      if (z > 4) {
+                        humanText = 'Highly significantly more';
+                      } else if (z < -4) {
+                        humanText = 'Highly significantly fewer';
+                      } else if (z > 2) {
+                        humanText = 'Significantly more';
+                      } else if (z < -2) {
+                        humanText = 'Significantly fewer';
+                      } else if (z > 1) {
+                        humanText = 'Slightly more';
+                      } else if (z < -1) {
+                        humanText = 'Slightly fewer';
+                      }
+                    }
+
                     const lowerCount = parseInt(
                       meanCount - stdevCount * 2 + 0.5
                     );
@@ -149,17 +168,19 @@ export default function GridView(props) {
                     const zStr = parseInt(z * 10 + 0.5) / 10;
                     statisticsBlurb = (
                       <>
-                        <Typography variant="subtitle2" component="span">
+                        <Typography variant="caption" component="span">
                           {lowHighStr}
                         </Typography>
                         <Typography variant="caption" component="span">
                           {` (z = ${zStr})`}
                         </Typography>
+                        <Typography variant="subtitle1" component="div">
+                          {humanText}
+                        </Typography>
                       </>
                     );
 
                     const h = z > 0 ? 0 : 120;
-                    const absZ = Math.abs(z);
                     const MAX_ABS_Z = 4;
                     const ABS_Z_LIMIT = 2;
                     let l = 100;
