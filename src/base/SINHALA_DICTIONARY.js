@@ -1,4 +1,4 @@
-// Auto Translated 20220508-084726
+// Auto Translated 20220508-085013
 const SINHALA_DICTIONARY = {
   "20 - 30": "20 - 30",
   "25 - 30": "25 - 30",
@@ -60,6 +60,7 @@ const SINHALA_DICTIONARY = {
   "Gender": "ස්ත්රී පුරුෂ භාවය",
   "Hambantota": "හම්බන්තොට",
   "Has A. Levels or higher?": "උසස් පෙළ හෝ ඊට වැඩිද?",
+  "Has Advanced Levels or higher?": "උසස් පෙළ හෝ ඊට වැඩිද?",
   "Has Bachelors or higher?": "උපාධිය හෝ ඊට වැඩිද?",
   "Has Publicly Declared Assets?": "ප්‍රසිද්ධියේ ප්‍රකාශිත වත්කම් තිබේද?",
   "Highest Education Level": "ඉහළම අධ්‍යාපන මට්ටම",
@@ -135,6 +136,7 @@ const SINHALA_DICTIONARY = {
   "Voted Against": "විරුද්ධව ඡන්දය දුන්නා",
   "Voted: In Favour": "පක්ෂව ඡන්දය දුන්නා",
   "Voting Record": "ඡන්ද වාර්තාව",
+  "Voting for 20th Amendment": "20 වැනි සංශෝධනයට ඡන්දය දීම",
   "Western": "බටහිර",
 };
 export default SINHALA_DICTIONARY;

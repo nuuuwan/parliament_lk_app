@@ -1,4 +1,4 @@
-// Auto Translated 20220508-084727
+// Auto Translated 20220508-085015
 const TAMIL_DICTIONARY = {
   "20 - 30": "20 - 30",
   "25 - 30": "25 - 30",
@@ -60,6 +60,7 @@ const TAMIL_DICTIONARY = {
   "Gender": "பாலினம்",
   "Hambantota": "ஹம்பாந்தோட்டை",
   "Has A. Levels or higher?": "மேம்பட்ட நிலைகள் அல்லது அதற்கு மேல் உள்ளதா?",
+  "Has Advanced Levels or higher?": "மேம்பட்ட நிலைகள் அல்லது அதற்கு மேல் உள்ளதா?",
   "Has Bachelors or higher?": "இளங்கலை அல்லது அதற்கு மேல் உள்ளதா?",
   "Has Publicly Declared Assets?": "பொதுவில் அறிவிக்கப்பட்ட சொத்துகள் உள்ளதா?",
   "Highest Education Level": "உயர் கல்வி மட்டம்",
@@ -135,6 +136,7 @@ const TAMIL_DICTIONARY = {
   "Voted Against": "எதிர்த்து வாக்களித்தனர்",
   "Voted: In Favour": "ஆதரவாக வாக்களித்தது",
   "Voting Record": "வாக்கு பதிவு",
+  "Voting for 20th Amendment": "20வது திருத்தத்திற்கான வாக்கெடுப்பு",
   "Western": "மேற்கு",
 };
 export default TAMIL_DICTIONARY;
