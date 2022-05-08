@@ -7,6 +7,21 @@ const URL_MP_LIST =
   "expanded_mp_list.json";
 
 const NO_DATA = "No Data";
+
+function getAttendanceGroup(present, absent) {
+  const Q = 10;
+  if (!present) {
+    return "No Data";
+  }
+  const p = present / (present + absent);
+  if (p === 1) {
+    return "All 100%";
+  }
+  const pLower = parseInt((p * 100) / Q) * Q;
+  const pHigher = pLower + Q;
+  return `${pLower} - ${pHigher}%`;
+}
+
 export default class MP {
   constructor(d) {
     this.d = d;
@@ -43,6 +58,12 @@ export default class MP {
     this.assetDeclarationYears = d.asset_declaration_years;
 
     this.sourceURL = d.source_url;
+
+    this.attendance9thPresent = d.attendance_9th_present;
+    this.attendance9thAbsent = d.attendance_9th_absent;
+
+    this.attendance8thPresent = d.attendance_8th_present;
+    this.attendance8thAbsent = d.attendance_8th_absent;
   }
 
   get age() {
@@ -127,6 +148,20 @@ export default class MP {
       return "Declared";
     }
     return "Not Declared";
+  }
+
+  get attendance8th() {
+    return getAttendanceGroup(
+      this.attendance8thPresent,
+      this.attendance8thAbsent
+    );
+  }
+
+  get attendance9th() {
+    return getAttendanceGroup(
+      this.attendance9thPresent,
+      this.attendance9thAbsent
+    );
   }
 
   static async getRawMPList() {
