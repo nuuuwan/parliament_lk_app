@@ -2,9 +2,13 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import ListSubheader from "@mui/material/ListSubheader";
-
-import { GROUP_TO_DIMENSION_LIST } from "../../core/DimensionConstants.js";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Typography from "@mui/material/Typography";
+import {
+  GROUP_TO_DIMENSION_LIST,
+  GROUP_TO_ICON,
+} from "../../core/DimensionConstants.js";
 
 export default function DimensionPicker(props) {
   const { label, selectedDimension, onChange, i18n } = props;
@@ -27,12 +31,22 @@ export default function DimensionPicker(props) {
           iGroup
         ) {
           const key = "group-" + groupName;
+          const GroupIcon = GROUP_TO_ICON[groupName];
           return [
-            <ListSubheader key={key}>{i18n.t(groupName)}</ListSubheader>,
+            <MenuItem key={key} disabled sx={{ marginTop: 2 }}>
+              <ListItemIcon>
+                <GroupIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary={
+                  <Typography type="caption">{i18n.t(groupName)}</Typography>
+                }
+              />
+            </MenuItem>,
             dimensionList.map(function (dimension, iDimension) {
               const key = `option-${iDimension}`;
               return (
-                <MenuItem key={key} value={dimension}>
+                <MenuItem key={key} value={dimension} sx={{ marginLeft: 2 }}>
                   {i18n.t(dimension)}
                 </MenuItem>
               );
