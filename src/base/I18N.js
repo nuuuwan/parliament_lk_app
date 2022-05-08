@@ -17,7 +17,7 @@ export default class I18N {
   constructor(lang) {
     this.lang = lang;
 
-    if (lang != BASE_LANG && !DICTIONARY[this.lang]) {
+    if (lang !== BASE_LANG && !DICTIONARY[this.lang]) {
       console.error("Missing lang", this.lang);
     }
   }
