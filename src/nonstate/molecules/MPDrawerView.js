@@ -18,7 +18,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
-const STYLE_BOX = { padding: 3 };
+const STYLE_BOX = { padding: 3, maxWidth: "75%" };
 const STYLE_AVATAR = { width: 100, height: 100 };
 
 function getSittingText(i18n, isSitting) {
