@@ -22,6 +22,7 @@ export const DIMENSION_TO_FUNC = {
   "Is Age > 40": (mp) => mp.isAgeOver(40),
   "Is Age > 50": (mp) => mp.isAgeOver(50),
   Gender: (mp) => mp.gender,
+  "Civil Status": (mp) => mp.civilStatus,
 
   // Electoral Regions
   "Is National List?": (mp) => mp.isNationalList,
@@ -52,6 +53,7 @@ export const GROUP_TO_DIMENSION_LIST = {
     "Highest Education Level",
     "Has Bachelors or higher?",
     "Has Advanced Levels or higher?",
+    "Profession",
   ],
   "Voting Record": ["Voting for 20th Amendment"],
   "Transparency & Corruption": ["Has Publicly Declared Assets?"],
@@ -61,6 +63,7 @@ export const GROUP_TO_DIMENSION_LIST = {
     "Is Age > 40",
     "Is Age > 50",
     "Gender",
+    "Civil Status",
   ],
   "Electoral Regions": ["Electoral District", "Province", "Is National List?"],
   "Religion & Ethnicity": ["Religion", "Is Sinhala Buddhist?"],
