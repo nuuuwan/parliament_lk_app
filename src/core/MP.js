@@ -43,7 +43,6 @@ export default class MP {
     this.assetDeclarationYears = d.asset_declaration_years;
 
     this.sourceURL = d.source_url;
-
   }
 
   get age() {
