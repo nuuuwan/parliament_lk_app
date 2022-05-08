@@ -12,6 +12,8 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 
 import SourceIcon from "@mui/icons-material/Source";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -173,23 +175,24 @@ export default class ParliamentView extends Component {
               />
             }
             label={
-              <Tooltip
-                title={
-                  <Typography variant="subtitle1">
-                    {i18n.t(STATISTICAL_TRENDS_TOOLTOP)}
-                  </Typography>
-                }
+              <Typography
+                variant="subtitle2"
+                color={showStatisticalTrends ? COLOR_SWITCH_ON : "gray"}
               >
-                <Typography
-                  variant="subtitle2"
-                  color={showStatisticalTrends ? COLOR_SWITCH_ON : "gray"}
-                >
-                  {i18n.t("Statistical Trends")}
-                </Typography>
-              </Tooltip>
+                {i18n.t("Statistical Trends")}
+              </Typography>
             }
           />
         </Stack>
+
+        {showStatisticalTrends ? (
+          <Stack sx={{ width: "50%" }} margin={2}>
+            <Alert severity="info">
+              <AlertTitle>{i18n.t("Statistical Trends")}</AlertTitle>
+              {i18n.t(STATISTICAL_TRENDS_TOOLTOP)}
+            </Alert>
+          </Stack>
+        ) : null}
 
         <GridView
           cells={cells}
