@@ -135,30 +135,28 @@ export default function GridView(props) {
                     const stdevCount = Math.sqrt(n * p * (1 - p));
                     const z = (count - meanCount) / stdevCount;
                     const absZ = Math.abs(z);
-                    let humanText = '';
+                    let humanText = "";
 
                     if (absZ > 1) {
-                      if (z > 4) {
-                        humanText = 'Highly significantly more';
-                      } else if (z < -4) {
-                        humanText = 'Highly significantly fewer';
-                      } else if (z > 2) {
-                        humanText = 'Significantly more';
-                      } else if (z < -2) {
-                        humanText = 'Significantly fewer';
-                      } else if (z > 1) {
-                        humanText = 'Slightly more';
-                      } else if (z < -1) {
-                        humanText = 'Slightly fewer';
+                      if (z >= 4) {
+                        humanText = "Highly significantly more";
+                      } else if (z <= -4) {
+                        humanText = "Highly significantly fewer";
+                      } else if (z >= 2) {
+                        humanText = "Significantly more";
+                      } else if (z <= -2) {
+                        humanText = "Significantly fewer";
+                      } else if (z >= 1) {
+                        humanText = "Slightly more";
+                      } else if (z <= -1) {
+                        humanText = "Slightly fewer";
                       }
                     }
 
-                    const lowerCount = parseInt(
-                      meanCount - stdevCount * 2 + 0.5
-                    );
-                    const upperCount = parseInt(
-                      meanCount + stdevCount * 2 + 0.5
-                    );
+                    const lowerCount =
+                      parseInt((meanCount - stdevCount * 2) * 10 + 0.5) / 10;
+                    const upperCount =
+                      parseInt((meanCount + stdevCount * 2) * 10 + 0.5) / 10;
 
                     let lowHighStr = `${lowerCount} - ${upperCount}`;
                     if (lowerCount === upperCount) {
@@ -168,14 +166,22 @@ export default function GridView(props) {
                     const zStr = parseInt(z * 10 + 0.5) / 10;
                     statisticsBlurb = (
                       <>
-                        <Typography variant="caption" component="span">
-                          {lowHighStr}
-                        </Typography>
-                        <Typography variant="caption" component="span">
-                          {` (z = ${zStr})`}
-                        </Typography>
                         <Typography variant="subtitle1" component="div">
                           {humanText}
+                        </Typography>
+                        <Typography
+                          variant="caption"
+                          component="span"
+                          color="gray"
+                        >
+                          {lowHighStr}
+                        </Typography>
+                        <Typography
+                          variant="caption"
+                          component="span"
+                          color="gray"
+                        >
+                          {` (z = ${zStr})`}
                         </Typography>
                       </>
                     );
