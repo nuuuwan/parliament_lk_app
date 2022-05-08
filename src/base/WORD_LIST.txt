@@ -20,13 +20,13 @@
 85 - 90
 A. Levels Or Higher
 ACMC
+AITC
 Age > 40
 Age > 50
-Age ≤ 40
-Age ≤ 50
 Age Group (10 year)
 Age Group (5 year)
-AITC
+Age ≤ 40
+Age ≤ 50
 All data except asset declaration data is from www.parliament.lk
 Anuradhapura
 App & Visualization by
@@ -47,12 +47,12 @@ Did Not Vote: Absent
 Did Not Vote: Not MP
 Did Not Vote: Speaker
 Digamadulla
+EPDP
 Eastern
 Education & Profession
 Electoral District
 Electoral Districts
 Electoral Regions
-EPDP
 Female
 First Letter of First Name
 Galle
@@ -65,10 +65,6 @@ Has Bachelors or higher?
 Has Publicly Declared Assets?
 Highest Education Level
 Hinduism
-Is Age > 40
-Is Age > 50
-Is National List?
-Is Sinhala Buddhist?
 ISCED0 Unknown
 ISCED1 Primary
 ISCED2 Lower Secondary (O. Levels)
@@ -77,25 +73,29 @@ ISCED4 Post-Secondary
 ISCED6 Bachelors
 ISCED7 Masters
 ISCED8 Doctorate
-Islam
 ITAK
-Jaffna
+Is Age > 40
+Is Age > 50
+Is National List?
+Is Sinhala Buddhist?
+Islam
 JJB
+Jaffna
 Kalutara
 Kandy
 Kegalle
 Kurunegala
 Last Name
 Left to Right
+MNA
 Male
 Matale
 Matara
 Miscellaneous & Fun
-MNA
 Moneragala
 Month of Birth
-National List
 NC
+National List
 No Data
 North Central
 North Western
@@ -114,18 +114,21 @@ Puttalam
 Ratnapura
 Religion
 Religion & Ethnicity
-Sabaragamuwa
-Show Statistical Trends
-Sinhala Buddhist
 SJB
 SLFP
 SLMC
 SLPP
+Sabaragamuwa
+Show All
+Show Random
+Show Statistical Trends
+Sinhala Buddhist
 Southern
+Statistical Trends
 Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.
-The Parliament of Sri Lanka
 TMTK
 TMVP
+The Parliament of Sri Lanka
 Top to Bottom
 Transparency & Corruption
 Trincomalee
@@ -136,6 +139,6 @@ Visualization, Design and App by @nuuuwan
 Vote for 20th Amendment
 Voted Against
 Voted: In Favour
-Voting for 20th Amendment
 Voting Record
+Voting for 20th Amendment
 Western

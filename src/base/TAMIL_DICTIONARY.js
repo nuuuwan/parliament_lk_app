@@ -1,4 +1,4 @@
-// Auto Translated 20220508-091930
+// Auto Translated 20220508-114713
 const TAMIL_DICTIONARY = {
   "20 - 30": "20 - 30",
   "25 - 30": "25 - 30",
@@ -124,9 +124,12 @@ const TAMIL_DICTIONARY = {
   SLMC: "SLMC",
   SLPP: "எஸ்.எல்.பி.பி",
   Sabaragamuwa: "சப்ரகமுவ",
+  "Show All": "அனைத்தையும் காட்டு",
+  "Show Random": "ரேண்டம் காட்டு",
   "Show Statistical Trends": "புள்ளியியல் போக்குகளைக் காட்டு",
   "Sinhala Buddhist": "சிங்கள பௌத்த",
   Southern: "தெற்கு",
+  "Statistical Trends": "புள்ளியியல் போக்குகள்",
   "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.":
     "சில கிரிட் செல்கள் சீரற்ற முறையில் ஒதுக்கப்பட்டால் நாம் எதிர்பார்ப்பதை விட அதிகமான எம்.பி.க்கள் இருந்தால், புள்ளியியல் போக்குகள் அளவிடுகின்றன. 'z' (எ.கா. z = 2.5) மதிப்பு, எதிர்பார்க்கப்படும் எம்.பி.க்களின் சராசரி எண்ணிக்கையிலிருந்து எம்.பி.க்களின் எண்ணிக்கை எத்தனை நிலையான விலகல்கள் மாறுபடுகிறது என்பதைக் காட்டுகிறது. வரம்பு (எ.கா. 84 - 114) என்பது எம்.பி.க்களின் எண்ணிக்கைக்கான 95% நம்பிக்கை இடைவெளி. உண்மையான எண் இந்த வரம்பிற்கு வெளியே இருந்தால், போக்கு சீரற்றதாக இருப்பதற்கான நிகழ்தகவு <5% ஆகும்.",
   TMTK: "டிஎம்டிகே",

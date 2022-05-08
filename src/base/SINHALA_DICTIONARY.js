@@ -1,4 +1,4 @@
-// Auto Translated 20220508-091929
+// Auto Translated 20220508-114712
 const SINHALA_DICTIONARY = {
   "20 - 30": "20 - 30",
   "25 - 30": "25 - 30",
@@ -123,9 +123,12 @@ const SINHALA_DICTIONARY = {
   SLMC: "SLMC",
   SLPP: "SLPP",
   Sabaragamuwa: "සබරගමුව",
+  "Show All": "සියල්ල පෙන්වන්න",
+  "Show Random": "අහඹු ලෙස පෙන්වන්න",
   "Show Statistical Trends": "සංඛ්‍යාන ප්‍රවණතා පෙන්වන්න",
   "Sinhala Buddhist": "සිංහල බෞද්ධ",
   Southern: "දකුණු",
+  "Statistical Trends": "සංඛ්යානමය ප්රවණතා",
   "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.":
     "සංඛ්‍යානමය ප්‍රවණතා මනිනු ලබන්නේ ඇතැම් ජාලක සෛල අහඹු ලෙස පවරනු ලැබුවහොත් අප බලාපොරොත්තු වන ප්‍රමාණයට වඩා මන්ත්‍රීවරුන් සංඛ්‍යාවක් අඩංගුද යන්නයි. 'z' (උදා. z = 2.5) අගය පෙන්නුම් කරන්නේ මන්ත්‍රීවරුන් සංඛ්‍යාව අපේක්ෂිත මන්ත්‍රීවරුන් සංඛ්‍යාවෙන් කොපමණ සම්මත අපගමන සංඛ්‍යාවක් වෙනස් වේද යන්නයි. පරාසය (උදා. 84 - 114) යනු මන්ත්‍රීවරුන් සංඛ්‍යාව සඳහා 95% විශ්වාසනීය පරතරයයි. සැබෑ සංඛ්‍යාව මෙම පරාසයෙන් පිටත නම්, ප්‍රවණතාවය අහඹු වීමේ සම්භාවිතාව <5% වේ.",
   TMTK: "TMTK",
