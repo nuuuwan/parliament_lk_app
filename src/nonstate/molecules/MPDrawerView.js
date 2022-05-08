@@ -21,7 +21,24 @@ import ListItemText from "@mui/material/ListItemText";
 const STYLE_BOX = { padding: 3 };
 const STYLE_AVATAR = { width: 100, height: 100 };
 
-function Address({ address, isSitting }) {
+function getSittingText(i18n, isSitting) {
+  return i18n.t(isSitting ? "Sitting" : "Not Sitting");
+}
+
+function CustomLink({ primary, secondary, href, Icon }) {
+  return (
+    <ListItem disablePadding>
+      <ListItemButton component="a" href={href} target="_blank">
+        <ListItemIcon>
+          <Icon color="disabled" />
+        </ListItemIcon>
+        <ListItemText primary={primary} secondary={secondary} />
+      </ListItemButton>
+    </ListItem>
+  );
+}
+
+function Address({ i18n, address, isSitting }) {
   if (!address) {
     return null;
   }
@@ -29,40 +46,30 @@ function Address({ address, isSitting }) {
   const href =
     "https://www.google.com/maps/search/" +
     address.replaceAll(" ", "+").replaceAll("/", "+");
-
   const renderedAddress = address.split(", ").map(function (line, i) {
     return <div key={i}>{line}</div>;
   });
-
-  const secondaryText = isSitting ? "Sitting" : "Not Sitting";
   return (
-    <ListItem disablePadding>
-      <ListItemButton component="a" href={href} target="_blank">
-        <ListItemIcon>
-          <HomeIcon color="disabled" />
-        </ListItemIcon>
-        <ListItemText primary={renderedAddress} secondary={secondaryText} />
-      </ListItemButton>
-    </ListItem>
+    <CustomLink
+      primary={renderedAddress}
+      secondary={getSittingText(i18n, isSitting)}
+      href={href}
+      Icon={HomeIcon}
+    />
   );
 }
 
-function Phone({ phone, isSitting }) {
+function Phone({ i18n, phone, isSitting }) {
   if (!phone) {
     return null;
   }
-  const href = "tel:" + phone;
-  const secondaryText = isSitting ? "Sitting" : "Not Sitting";
-
   return (
-    <ListItem disablePadding>
-      <ListItemButton component="a" href={href} target="_blank">
-        <ListItemIcon>
-          <PhoneIcon color="disabled" />
-        </ListItemIcon>
-        <ListItemText primary={phone} secondary={secondaryText} />
-      </ListItemButton>
-    </ListItem>
+    <CustomLink
+      primary={phone}
+      secondary={getSittingText(i18n, isSitting)}
+      href={"tel:" + phone}
+      Icon={PhoneIcon}
+    />
   );
 }
 
@@ -70,55 +77,39 @@ function Email({ email }) {
   if (!email) {
     return null;
   }
-
-  const href = "mailto:" + email;
   return (
-    <ListItem disablePadding>
-      <ListItemButton component="a" href={href} target="_blank">
-        <ListItemIcon>
-          <EmailIcon color="disabled" />
-        </ListItemIcon>
-        <ListItemText primary={email} />
-      </ListItemButton>
-    </ListItem>
+    <CustomLink primary={email} href={"mailto:" + email} Icon={EmailIcon} />
   );
 }
 
-function Wikipedia({ searchText }) {
+function Wikipedia({ i18n, searchText }) {
   if (!searchText) {
     return null;
   }
-
   const href =
     "https://en.wikipedia.org/w/index.php?search=" +
     searchText.replaceAll(" ", "+");
   return (
-    <ListItem disablePadding>
-      <ListItemButton component="a" href={href} target="_blank">
-        <ListItemIcon>
-          <TravelExploreIcon color="disabled" />
-        </ListItemIcon>
-        <ListItemText primary={"Wikipedia"} />
-      </ListItemButton>
-    </ListItem>
+    <CustomLink
+      primary={i18n.t("Wikipedia")}
+      href={href}
+      Icon={TravelExploreIcon}
+    />
   );
 }
 
-function Pariament({ id }) {
+function Parliament({ i18n, id }) {
   const href = "https://www.parliament.lk/component/members/viewMember/" + id;
   return (
-    <ListItem disablePadding>
-      <ListItemButton component="a" href={href} target="_blank">
-        <ListItemIcon>
-          <GavelIcon color="disabled" />
-        </ListItemIcon>
-        <ListItemText primary={"Parliment.LK"} />
-      </ListItemButton>
-    </ListItem>
+    <CustomLink
+      primary={i18n.t("Parliament Website")}
+      href={href}
+      Icon={GavelIcon}
+    />
   );
 }
 
-function QualificationsWidget({ title, body }) {
+function QualificationsWidget({ i18n, title, body }) {
   if (!body) {
     return null;
   }
@@ -126,7 +117,7 @@ function QualificationsWidget({ title, body }) {
     <Card sx={{ maxWidth: 275, margin: 1 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {title} Qualifications
+          {i18n.t(title + " Qualifications")}
         </Typography>
         <Typography variant="body2">{body}</Typography>
       </CardContent>
@@ -134,7 +125,7 @@ function QualificationsWidget({ title, body }) {
   );
 }
 
-function ChipWidget({ content }) {
+function ChipWidget({ i18n, content }) {
   if (!content) {
     return null;
   }
@@ -144,7 +135,7 @@ function ChipWidget({ content }) {
   if (content === "None") {
     return null;
   }
-  return <Chip label={content} variant="outlined" />;
+  return <Chip label={i18n.t(content)} variant="outlined" />;
 }
 
 export default function MPDrawerView(props) {
@@ -162,7 +153,7 @@ export default function MPDrawerView(props) {
         {i18n.t(mp.lastName)}
       </Typography>
       <Typography variant="subtitle2" display="block">
-        {mp.ageAndDateOfBirth}
+        {mp.ageFloor + " " + i18n.t("years")}
       </Typography>
       <Typography variant="overline" display="block">
         {i18n.t(mp.party)}
@@ -171,30 +162,35 @@ export default function MPDrawerView(props) {
       </Typography>
 
       <Stack direction="row" spacing={1}>
-        <ChipWidget content={mp.profession} />
-        <ChipWidget content={mp.civilStatus} />
-        <ChipWidget content={mp.religion} />
+        <ChipWidget content={mp.profession} i18n={i18n} />
+        <ChipWidget content={mp.civilStatus} i18n={i18n} />
+        <ChipWidget content={mp.religion} i18n={i18n} />
       </Stack>
 
-      <QualificationsWidget title="Academic" body={mp.academicQualifications} />
+      <QualificationsWidget
+        title="Academic"
+        body={mp.academicQualifications}
+        i18n={i18n}
+      />
       <QualificationsWidget
         title="Professional"
         body={mp.professionalQualifications}
+        i18n={i18n}
       />
 
       <List>
-        <Phone phone={mp.phoneSitting} isSitting={true} />
+        <Phone phone={mp.phoneSitting} isSitting={true} i18n={i18n} />
 
-        <Address address={mp.addressSitting} isSitting={true} />
+        <Address address={mp.addressSitting} isSitting={true} i18n={i18n} />
 
-        <Phone phone={mp.phone} />
+        <Phone phone={mp.phone} i18n={i18n} />
 
-        <Address address={mp.address} isSitting={false} />
+        <Address address={mp.address} isSitting={false} i18n={i18n} />
 
-        <Email email={mp.email} />
+        <Email email={mp.email} i18n={i18n} />
 
-        <Pariament id={mp.id} />
-        <Wikipedia searchText={mp.name} />
+        <Parliament id={mp.id} i18n={i18n} />
+        <Wikipedia searchText={mp.name} i18n={i18n} />
       </List>
     </Box>
   );
