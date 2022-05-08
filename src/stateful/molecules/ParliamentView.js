@@ -31,6 +31,7 @@ const COLOR_SWITCH_ON = "#1976D2";
 const STYLE = {
   margin: 2,
 };
+const AVATAR_SIZE = 48;
 
 const STATISTICAL_TRENDS_TOOLTOP = [
   "Statistical Trends measure if certain grid cells contain more MPs than",
@@ -132,6 +133,7 @@ export default class ParliamentView extends Component {
           alt={mp.name}
           src={mp.imageURL}
           onClick={onClickInner}
+          sx={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
         />
       );
     }.bind(this);
