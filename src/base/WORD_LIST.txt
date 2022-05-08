@@ -18,114 +18,239 @@
 80 - 85
 80 - 90
 85 - 90
+A. Aravindh
 A. Aravindh Kumar
+A. L. M.
 A. L. M. Athaullah
 A. Levels Or Higher
 ACMC
 AITC
+Abdul
 Abdul Haleem
+Abegunawardhana
+Abeysinghe
+Abeywardana
+Adaikkalanathan
 Age > 40
 Age > 50
 Age Group (10 year)
 Age Group (5 year)
 Age ≤ 40
 Age ≤ 50
+Ahamed
+Ajith
 Ajith Mannapperuma
 Ajith Rajapakse
+Akila
 Akila Ellawala
+Alagiyawanna
+Alahapperuma
+Alawathuwala
+Ali Sabri
 Ali Sabri Raheem
+Ali Sabry
 All data except asset declaration data is from www.parliament.lk
+Alles
+Aluthgamage
+Amal
+Amarakeerthi
 Amarakeerthi Athukorala
+Amarasena
+Amarasuriya
+Amaraweera
+Amunugama
+Angajan
 Angajan Ramanathan
+Anupa
 Anupa Pasqual
+Anura
 Anura Dissanayaka
+Anura Priyadharshana
 Anura Priyadharshana Yapa
+Anuradha
 Anuradha Jayaratne
 Anuradhapura
 App & Visualization by
+Appuhamy
+Arachchi
+Arambepola
+Arasan
+Arundika
 Arundika Fernando
+Asanka
 Asanka Navarathna
+Ashok
 Ashok Abeysinghe
+Ashoka
 Ashoka Priyantha
 Asset declaration data is from www.tisrilanka.org
+Athaullah
+Athukorala
+Athuraliye
 Athuraliye Rathana
+Attanayake
+B. Y. G.
 B. Y. G. Rathnasekara
 Bachelors Or Higher
 Badulla
+Bakeer Markar
+Balasuriya
+Bandara
+Bandula
 Bandula Gunawardana
+Basil Rohana
 Basil Rohana Rajapaksa
+Bathiudeen
 Batticaloa
 Below A. Levels
 Below Bachelors
+Berugoda
+Buddhika
 Buddhika Pathirana
 Buddhism
+C. B.
 C. B. Rathnayake
+C.V.
 C.V. Wigneswaran
+Cassim
 Central
+Chamal
 Chamal Rajapaksa
+Chamara Sampath
 Chamara Sampath Dasanayake
+Chaminda
 Chaminda Wijesiri
+Chanaka
+Chandima
 Chandima Weerakkody
+Chandrasena
+Channa
 Channa Jayasumana
+Charitha
 Charitha Herath
+Charles
 Charles Nirmalanathan
 Christianity (All)
 Colombo
+Cumaratunga
+D.
+D. B.
 D. B. Herath
+D. V.
 D. V. Chanaka
 D. Weerasingha
+Dasanayake
 Data from
+Dayasiri
 Dayasiri Jayasekara
+De Silva
 Declared
 Demographics
+Denipitiya
+Devananda
+Dharmalingam
 Dharmalingam Sithadthan
+Dharmasena
+Dhileeban
+Diana
 Diana Gamage
 Did Not Vote: Absent
 Did Not Vote: Not MP
 Did Not Vote: Speaker
 Digamadulla
+Dilan
 Dilan Perera
+Dilip
 Dilip Wedaarachchi
+Dilum
 Dilum Amunugama
+Dinesh
 Dinesh Gunawardena
+Dissanayaka
+Dissanayake
+Dodangoda
+Dolawatte
+Douglas
 Douglas Devananda
+Dullas
 Dullas Alahapperuma
+Duminda
 Duminda Dissanayake
+Dushmantha
 EPDP
 Eastern
+Edirimanna
 Education & Profession
 Electoral District
 Electoral Districts
 Electoral Regions
+Ellawala
+Eran
 Eran Wickramaratne
+Faizal
 Faizal Cassim
+Faleel
 Female
+Fernando
+Fernandopulle
 First Letter of First Name
+Fonseka
+G. G.
 G. G. Ponnambalam
+G. L.
 G. L. Peiris
+Galappaththi
 Galle
+Gamage
+Gamalath
+Gamini
 Gamini Lokuge
 Gamini Waleboda
+Gammanpila
 Gampaha
+Ganesan
+Gayantha
 Gayantha Karunatilleka
+Gayashan
 Gayashan Nawananda
+Geetha Samanmale
 Geetha Samanmale Kumarasinghe
 Gender
+Gevindu
 Gevindu Cumaratunga
+Godahewa
+Govindan
 Govindan Karunakaram
+Gunathilaka
 Gunathilaka Rajapaksha
+Gunawardana
+Gunawardena
+Gunawardene
+H.
+H. M. M.
 H. M. M. Harees
 H. Nandasena
+Hakeem
+Haleem
 Hambantota
+Harees
+Harin
 Harin Fernando
+Harini
 Harini Amarasuriya
+Harsha
 Harsha de Silva
+Harshana
 Harshana Rajakaruna
 Has A. Levels or higher?
 Has Advanced Levels or higher?
 Has Bachelors or higher?
 Has Publicly Declared Assets?
+Hashim
+Hector
 Hector Appuhamy
+Herath
+Hesha
 Hesha Withanage
 Highest Education Level
 Hinduism
@@ -138,101 +263,201 @@ ISCED6 Bachelors
 ISCED7 Masters
 ISCED8 Doctorate
 ITAK
+Imran
 Imran Maharoof
+Imthiaz
 Imthiaz Bakeer Markar
+Indika Anuruddha
 Indika Anuruddha Herath
 Is Age > 40
 Is Age > 50
 Is National List?
 Is Sinhala Buddhist?
+Ishak
 Ishak Rahuman
 Islam
+Isuru
 Isuru Dodangoda
+J. C.
 J. C. Alawathuwala
 JJB
 Jaffna
+Jagath
+Jagath Kumara
 Jagath Kumara Sumithraarachchi
 Jagath Pushpakumara
+Janaka
+Janaka Bandara
 Janaka Bandara Thennakoon
 Janaka Wakkumbura
+Jayakody
+Jayamaha
+Jayantha
 Jayantha Ketagoda
 Jayantha Samaraweera
 Jayantha Weerasinghe
+Jayarathna
 Jayarathna Herath
+Jayaratne
+Jayasekara
+Jayasumana
+Jayathilake
+Jayawardhana
+Jeevan
 Jeevan Thondaman
+John
 John Seneviratne
+Johnston
 Johnston Fernando
+K. Kader
 K. Kader Masthan
+K. P. S.
 K. P. S. Kumarasiri
+K. Sujith Sanjaya
 K. Sujith Sanjaya Perera
+Kabir
 Kabir Hashim
+Kajendren
 Kalutara
+Kanaka
 Kanaka Herath
+Kanchana
 Kanchana Wijesekera
 Kandy
+Kapila
 Kapila Athukorala
+Kariyawasam
+Karunadasa
 Karunadasa Kodithuwakku
+Karunakaram
+Karunatilleka
+Kavinda Heshan
 Kavinda Heshan Jayawardhana
 Kegalle
+Keheliya
 Keheliya Rambukwella
+Ketagoda
+Kins
 Kins Nelson
+Kiriella
+Kirindigoda
+Kodithuwakku
+Kokila
 Kokila Gunawardene
+Kottegoda
+Kulasingam
 Kulasingam Dhileeban
+Kumar
+Kumara
 Kumara Welgama
+Kumarasinghe
+Kumarasiri
 Kumarasiri Rathnayaka
 Kurunegala
+Lakshman
 Lakshman Kiriella
+Lalith
 Lalith Ellawala
+Lalith Varna
 Lalith Varna Kumara
+Lanza
+Lasantha
 Lasantha Alagiyawanna
 Last Name
 Left to Right
+Liyanage
+Lohan
 Lohan Ratwatte
+Lokuge
+M .U. M.
 M .U. M. Ali Sabry
+M.
+M. A.
 M. A. Sumanthiran
 M. Rameshwaran
+M. S.
 M. S. Thowfeek
 M. Udayakumar
+M. W. D. Sahan Pradeep
 M. W. D. Sahan Pradeep Withana
 MNA
+Madhura
 Madhura Withanage
+Maharoof
+Mahinda
 Mahinda Amaraweera
 Mahinda Rajapaksa
+Mahinda Yapa
 Mahinda Yapa Abeywardana
+Mahindananda
 Mahindananda Aluthgamage
+Maithreepala
 Maithreepala Sirisena
 Male
+Manjula
 Manjula Dissanayake
+Mannapperuma
+Mano
 Mano Ganesan
+Manusha
 Manusha Nanayakkara
+Marikkar
+Marjan
 Marjan Faleel
+Masthan
 Matale
 Matara
+Mayadunna Chinthaka
 Mayadunna Chinthaka Amal
+Mayantha
 Mayantha Dissanayake
+Milan
 Milan Jayathilake
 Miscellaneous & Fun
+Mohan Priyadarshana
 Mohan Priyadarshana De Silva
+Mohomad
 Mohomad Muzammil
 Moneragala
 Month of Birth
+Muditha
 Muditha Prishanthi
+Mujibur
 Mujibur Rahuman
+Muszhaaraff
+Muzammil
 NC
+Nalaka
+Nalaka Bandara
 Nalaka Bandara Kottegoda
 Nalaka Godahewa
+Nalin
+Nalin Bandara
 Nalin Bandara Jayamaha
 Nalin Fernando
 Namal
 Namal Rajapaksa
+Nanayakkara
+Nandasena
+Naseer
 Naseer Ahamed
 National List
+Navarathna
+Nawananda
+Nelson
+Nimal
 Nimal Lanza
 Nimal Piyathissa
+Nimal Siripala
 Nimal Siripala de Silva
+Nipuna
 Nipuna Ranawaka
+Nirmalanathan
+Niroshan
 Niroshan Perera
+Nishantha
 No Data
+Noharathalingam
 North Central
 North Western
 Northern
@@ -241,44 +466,104 @@ Not Sinhala Buddhist
 Nuwara-Eliya
 OPPP
 Other or Unknown
+Palani
 Palani Thigambaram
 Parliament of Sri Lanka
 Party
+Pasqual
+Patali Champika
 Patali Champika Ranawaka
+Pathirana
+Pavithradevi
 Pavithradevi Wanniarachchi
+Peiris
+Perera
+Piyal Nishantha
 Piyal Nishantha De Silva
+Piyankara
 Piyankara Jayaratne
+Piyathissa
 Political Parties
 Polonnaruwa
+Ponnambalam
+Pradeep
 Pradeep Undugoda
+Prasanna
 Prasanna Ranatunga
 Prasanna Ranaweera
+Premadasa
+Premajayantha
+Premalal
 Premalal Jayasekara
+Premarathne
+Premitha Bandara
 Premitha Bandara Tennakoon
+Premnath C.
 Premnath C. Dolawatte
+Prishanthi
+Priyantha
 Province
+Pushpakumara
 Puttalam
+R. M. Ranjith Madduma
 R. M. Ranjith Madduma Bandara
+Radhakrishnan
+Raghavan
+Raheem
+Rahuman
+Rajakaruna
 Rajapaksa
+Rajapakse
+Rajapaksha
+Rajapakshe
+Rajavarothiam
 Rajavarothiam Sampanthan
+Rajika
 Rajika Wickramasinghe
+Rajitha
 Rajitha Senarathne
+Ramanathan
+Rambukwella
+Ramesh
 Ramesh Pathirana
+Rameshwaran
+Ranasinghe
+Ranatunga
+Ranawaka
+Ranaweera
+Ranil
 Ranil Wickremesinghe
+Ranjith
 Ranjith Bandara
 Ranjith Siyambalapitiya
+Rasamanickam
+Rathana
+Rathnasekara
+Rathnayaka
+Rathnayake
 Ratnapura
+Ratwatte
+Rauff
 Rauff Hakeem
 Religion
 Religion & Ethnicity
+Rishad
 Rishad Bathiudeen
+Rohana
 Rohana Bandara
 Rohana Dissanayaka
+Rohini Kumari
 Rohini Kumari Wijerathna
+Rohitha
 Rohitha Abegunawardhana
+Roshan
 Roshan Ranasinghe
+S.
+S. B.
 S. B. Dissanayake
+S. M.
 S. M. Chandrasena
+S. M. M.
 S. M. M. Muszhaaraff
 S. M. Marikkar
 S. Noharathalingam
@@ -288,85 +573,186 @@ SLFP
 SLMC
 SLPP
 Sabaragamuwa
+Sagara
 Sagara Kariyawasam
+Sajith
 Sajith Premadasa
+Samanpriya
 Samanpriya Herath
+Samaraweera
+Sampanthan
+Sampath
 Sampath Athukorala
+Sanath
 Sanath Nishantha
+Sanjeeva
 Sanjeeva Edirimanna
+Santhirakanthan
+Sarath
 Sarath Fonseka
 Sarath Weerasekera
+Sarathi
 Sarathi Dushmantha
+Seetha
 Seetha Arambepola
+Selvam
 Selvam Adaikkalanathan
+Selvarajah
 Selvarajah Kajendren
+Semasinghe
+Senarathne
+Seneviratne
+Shan Vijayalal
 Shan Vijayalal De Silva
+Shanakiyan Rajaputhiran
 Shanakiyan Rajaputhiran Rasamanickam
+Shantha
 Shantha Bandara
+Shasheendra
 Shasheendra Rajapaksa
+Shehan
 Shehan Semasinghe
 Show All
 Show Random
 Show Statistical Trends
+Shritharan
 Sinhala Buddhist
+Siripala
 Siripala Gamalath
+Sirisena
+Sisira
 Sisira Jayakody
+Sithadthan
+Sivagnanam
 Sivagnanam Shritharan
+Sivanesathurai
 Sivanesathurai Santhirakanthan
+Siyambalapitiya
 Southern
 Statistical Trends
 Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.
+Sudarshana
 Sudarshana Denipitiya
+Sudarshini
 Sudarshini Fernandopulle
+Sudath
 Sudath Manjula
+Sumanthiran
+Sumithraarachchi
+Suren
 Suren Raghavan
+Suresh
+Susil
 Susil Premajayantha
 TMTK
 TMVP
+Tennakoon
+Thalatha
 Thalatha Athukorala
+Tharaka
 Tharaka Balasuriya
+Thavaraja Kalai
 Thavaraja Kalai Arasan
 The Parliament of Sri Lanka
+Thennakoon
+Thenuka
 Thenuka Vidanagamage
+Thigambaram
+Thilak
 Thilak Rajapakshe
+Thisakutti
 Thisakutti Arachchi
+Thondaman
+Thowfeek
+Thushara Indunil
 Thushara Indunil Amarasena
+Tiran
 Tiran Alles
+Tissa
 Tissa Attanayake
 Tissa Vitarana
 Top to Bottom
 Transparency & Corruption
 Trincomalee
+U. K. Sumith
 U. K. Sumith Udukumbura
 UNP
+Udaya
 Udaya Gammanpila
+Udayakantha
 Udayakantha Gunathilaka
+Udayakumar
+Udayana
 Udayana Kirindigoda
+Uddika
 Uddika Premarathne
+Udukumbura
+Undugoda
+Upul
 Upul Galappaththi
+Upul Mahendra
 Upul Mahendra Rajapaksha
 Uva
+V.
 V. Radhakrishnan
+Vadivel
 Vadivel Suresh
 Vanni
+Vasudeva
 Vasudeva Nanayakkara
+Velu
 Velu Kumar
+Vidanagamage
+Vidura
 Vidura Wickramanayaka
+Vijitha
 Vijitha Berugoda
 Vijitha Herath
 Visualization, Design and App by @nuuuwan
+Vitarana
+Viyalanderan
 Vote for 20th Amendment
 Voted Against
 Voted: In Favour
 Voting Record
 Voting for 20th Amendment
+W. H. M.
 W. H. M. Dharmasena
+Wakkumbura
+Waleboda
+Wanniarachchi
+Waruna
 Waruna Liyanage
+Wasantha
 Wasantha Yapabandara
+Wedaarachchi
+Weerakkody
+Weerasekera
+Weerasingha
+Weerasinghe
+Weerasumana
 Weerasumana Weerasinghe
+Weerawansa
+Welgama
 Western
+Wickramanayaka
+Wickramaratne
+Wickramasinghe
+Wickremesinghe
+Wigneswaran
+Wijerathna
+Wijesekera
+Wijesiri
+Wijeyadasa
 Wijeyadasa Rajapakshe
+Wimal
 Wimal Weerawansa
+Wimalaweera
 Wimalaweera Dissanayake
+Withana
+Withanage
+Yadamini
 Yadamini Gunawardena
-​
+Yapa
+Yapabandara
+​Abdul
