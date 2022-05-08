@@ -148,7 +148,7 @@ function ChipWidget({ content }) {
 }
 
 export default function MPDrawerView(props) {
-  const { mp } = props;
+  const { mp, i18n } = props;
   if (!mp) {
     return null;
   }
@@ -156,16 +156,18 @@ export default function MPDrawerView(props) {
     <Box sx={STYLE_BOX}>
       <Avatar alt={mp.name} src={mp.imageURL} sx={STYLE_AVATAR} />
       <Typography variant="h5" display="block">
-        {mp.firstNames}
+        {i18n.t(mp.firstNames)}
       </Typography>
       <Typography variant="h3" display="block">
-        {mp.lastName}
+        {i18n.t(mp.lastName)}
       </Typography>
       <Typography variant="subtitle2" display="block">
         {mp.ageAndDateOfBirth}
       </Typography>
       <Typography variant="overline" display="block">
-        {mp.party + " - " + mp.edName}
+        {i18n.t(mp.party)}
+        {" - "}
+        {i18n.t(mp.edName)}
       </Typography>
 
       <Stack direction="row" spacing={1}>
