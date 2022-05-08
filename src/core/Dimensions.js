@@ -36,12 +36,15 @@ export const DIMENSION_TO_FUNC = {
   "Last Name": (mp) => mp.lastName,
   "First Letter of First Name": (mp) => mp.firstNames.substring(0, 1),
   "Month of Birth": (mp) => mp.monthOfBirth,
+  "Show All": (mp) => "All",
+  "Show Random": (mp) => "Random Group " + parseInt(Math.random() * 5 + 1),
 };
 
 const SORTED_DIMENSION_LIST = [
   "Age Group (5 year)",
   "Age Group (10 year)",
   "Highest Education Level",
+  "Show Random",
 ];
 export const GROUP_TO_DIMENSION_LIST = {
   "Political Parties": ["Party"],
@@ -62,6 +65,8 @@ export const GROUP_TO_DIMENSION_LIST = {
   "Electoral Regions": ["Electoral District", "Province", "Is National List?"],
   "Religion & Ethnicity": ["Religion", "Is Sinhala Buddhist?"],
   "Miscellaneous & Fun": [
+    "Show All",
+    "Show Random",
     "Last Name",
     "First Letter of First Name",
     "Month of Birth",
