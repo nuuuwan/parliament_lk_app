@@ -84,8 +84,8 @@ export default class ParliamentView extends Component {
   onChangeXDim(xDim) {
     ReactGA.event({
       category: "Dimensions",
-      action: "Selected X Dimension",
-      label: "xDim",
+      action: "change_x_dim",
+      label: xDim,
     });
     this.setState({ xDim });
   }
@@ -93,8 +93,8 @@ export default class ParliamentView extends Component {
   onChangeYDim(yDim) {
     ReactGA.event({
       category: "Dimensions",
-      action: "Selected Y Dimension",
-      label: "yDim",
+      action: "change_y_dim",
+      label: yDim,
     });
     this.setState({ yDim });
   }
@@ -102,7 +102,7 @@ export default class ParliamentView extends Component {
   onClickMP(mpID) {
     ReactGA.event({
       category: "MPs",
-      action: "Clicked MP",
+      action: "click_mp",
       label: mpID,
     });
     this.setState({ activeMPId: mpID });
@@ -112,11 +112,11 @@ export default class ParliamentView extends Component {
     this.setState({ activeMPId: null });
   }
 
-  onShowStatisticalTrendsClick() {
+  onClickStatisticalTrends() {
     const oldState = this.state.showStatisticalTrends;
     ReactGA.event({
       category: "Statistical Trends",
-      action: "Clicked Statistical Trends Checkbox",
+      action: "click_statistical_trends",
       label: oldState.toString(),
     });
 
@@ -211,7 +211,7 @@ export default class ParliamentView extends Component {
             control={
               <Switch
                 checked={showStatisticalTrends}
-                onClick={this.onShowStatisticalTrendsClick.bind(this)}
+                onClick={this.onClickStatisticalTrends.bind(this)}
               />
             }
             label={
