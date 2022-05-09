@@ -31,9 +31,8 @@ export default class MP {
     this.firstNames = d.first_names;
     this.lastName = d.last_name;
     this.gender = d.gender;
-    this.imageURL = d.image_url;
-    this.imageURLLocal =
-      process.env.PUBLIC_URL + "/mp_images/" + this.id + ".jpg";
+    this.imageURLGlobal = d.image_url;
+    this.imageURL = process.env.PUBLIC_URL + "/mp_images/" + this.id + ".jpg";
     this.party = d.party_short;
     this.edName = d.ed_name;
     this.provinceName = d.province_name;
