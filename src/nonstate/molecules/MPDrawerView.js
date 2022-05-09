@@ -1,4 +1,6 @@
 import * as React from "react";
+import ReactGA from "react-ga";
+
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -28,9 +30,17 @@ function getSittingText(i18n, isSitting) {
 }
 
 function CustomLink({ primary, secondary, href, Icon }) {
+  const onClick = function (e) {
+    ReactGA.event({
+      category: "External Links - Drawer",
+      action: "Clicked MP Link",
+      label: href,
+    });
+    window.open(href, "_blank");
+  };
   return (
     <ListItem disablePadding>
-      <ListItemButton component="a" href={href} target="_blank">
+      <ListItemButton component="a" onClick={onClick}>
         <ListItemIcon>
           <Icon color="disabled" />
         </ListItemIcon>
