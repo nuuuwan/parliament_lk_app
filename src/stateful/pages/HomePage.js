@@ -45,7 +45,7 @@ export default class HomePage extends Component {
                   this.i18n.setLang(lang);
                   ReactGA.event({
                     category: "Internationalization",
-                    action: "click_lang",
+                    action: "Clicked Language",
                     label: lang,
                   });
                   this.setState({ selectedLang: lang });
