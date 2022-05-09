@@ -96,6 +96,7 @@ export default class ParliamentView extends Component {
       category: "MPs",
       action: "Clicked MP",
       label: mp.logString,
+      value: 10,
     });
     this.setState({ activeMPId: mpID });
   }
@@ -110,6 +111,7 @@ export default class ParliamentView extends Component {
       category: "Statistical Trends",
       action: "Clicked Statistical Trends",
       label: oldState.toString(),
+      value: 10,
     });
 
     this.setState({ showStatisticalTrends: !oldState });
@@ -121,6 +123,7 @@ export default class ParliamentView extends Component {
       category: "Dimensions",
       action: "Clicked Swap Dimensions",
       label: `${xDim},${yDim}`,
+      value: 10,
     });
     this.setState({
       xDim: yDim,
@@ -150,6 +153,7 @@ export default class ParliamentView extends Component {
       category: "ParliamentView State",
       action: "ParliamentView.render()",
       label: `${xDim},${yDim},${activeMPStr}`,
+      value: 0,
     });
 
     const cellMap = function (mp) {
@@ -268,6 +272,7 @@ export default class ParliamentView extends Component {
                   category: "External Links",
                   action: "Clicked Bottom Navigation Link",
                   label: d.name,
+                  value: 1,
                 });
                 window.open(d.url, "_blank");
               };

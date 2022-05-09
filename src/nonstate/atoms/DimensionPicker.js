@@ -21,11 +21,13 @@ export default function DimensionPicker(props) {
       category: "Dimensions",
       action: `Changed ${label} Dim`,
       label: dim,
+      value: 10,
     });
     ReactGA.event({
       category: "Dimensions",
       action: `Changed Dim`,
       label: dim,
+      value: 20,
     });
     return onChange(dim);
   };

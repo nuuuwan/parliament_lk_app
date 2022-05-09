@@ -47,6 +47,7 @@ export default class HomePage extends Component {
                     category: "Internationalization",
                     action: "Clicked Language",
                     label: lang,
+                    value: 10,
                   });
                   this.setState({ selectedLang: lang });
                 }.bind(this);

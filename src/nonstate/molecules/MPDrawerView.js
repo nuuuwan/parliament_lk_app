@@ -37,6 +37,7 @@ function CustomLink({ gaAction, primary, secondary, href, Icon }) {
       category: "External Links - Drawer",
       action: "Clicked Drawer - " + gaAction,
       label: href,
+      value: 1,
     });
     window.open(href, "_blank");
   };
