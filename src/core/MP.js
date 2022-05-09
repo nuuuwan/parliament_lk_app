@@ -165,6 +165,21 @@ export default class MP {
     );
   }
 
+  get initials() {
+    return this.firstNames
+      .split(" ")
+      .map((s) => s.substring(0, 1))
+      .join("");
+  }
+
+  get nameShort() {
+    return this.initials + "-" + this.lastName.replace(" ", "");
+  }
+
+  get logString() {
+    return this.id + "-" + this.nameShort;
+  }
+
   static async getRawMPList() {
     return await WWW.json(URL_MP_LIST);
   }
