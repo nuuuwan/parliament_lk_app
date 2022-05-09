@@ -84,7 +84,7 @@ export default class ParliamentView extends Component {
   onChangeXDim(xDim) {
     ReactGA.event({
       category: "Dimensions",
-      action: "change_x_dim",
+      action: "Changed X Dim",
       label: xDim,
     });
     this.setState({ xDim });
@@ -93,7 +93,7 @@ export default class ParliamentView extends Component {
   onChangeYDim(yDim) {
     ReactGA.event({
       category: "Dimensions",
-      action: "change_y_dim",
+      action: "Changed Y Dim",
       label: yDim,
     });
     this.setState({ yDim });
@@ -102,7 +102,7 @@ export default class ParliamentView extends Component {
   onClickMP(mpID) {
     ReactGA.event({
       category: "MPs",
-      action: "click_mp",
+      action: "Clicked MP",
       label: mpID,
     });
     this.setState({ activeMPId: mpID });
@@ -116,7 +116,7 @@ export default class ParliamentView extends Component {
     const oldState = this.state.showStatisticalTrends;
     ReactGA.event({
       category: "Statistical Trends",
-      action: "click_statistical_trends",
+      action: "Clicked Statistical Trends",
       label: oldState.toString(),
     });
 
@@ -127,7 +127,7 @@ export default class ParliamentView extends Component {
     const { xDim, yDim } = this.state;
     ReactGA.event({
       category: "Dimensions",
-      action: "Swapped Dimensions",
+      action: "Clicked Swap Dimensions",
       label: `${xDim},${yDim}`,
     });
     this.setState({
@@ -258,6 +258,11 @@ export default class ParliamentView extends Component {
             {BOTTOM_NAVIGATION_ITEMS.map(function (d, i) {
               const key = "data-" + i;
               const onClick = function (e) {
+                ReactGA.event({
+                  category: "External Links",
+                  action: "Clicked Bottom Navigation Link",
+                  label: d.name,
+                });
                 window.open(d.url, "_blank");
               };
               const Icon = d.Icon;
