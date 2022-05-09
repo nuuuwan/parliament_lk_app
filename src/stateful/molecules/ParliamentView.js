@@ -100,10 +100,12 @@ export default class ParliamentView extends Component {
   }
 
   onClickMP(mpID) {
+    const { mpIdx } = this.state;
+    const mp = mpIdx[mpID];
     ReactGA.event({
       category: "MPs",
       action: "Clicked MP",
-      label: mpID,
+      label: `${mpID}-${mp.name}`,
     });
     this.setState({ activeMPId: mpID });
   }
