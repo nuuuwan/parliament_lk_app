@@ -13,7 +13,9 @@ import GavelIcon from "@mui/icons-material/Gavel";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
-
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -160,7 +162,7 @@ function ChipWidget({ i18n, content }) {
 }
 
 export default function MPDrawerView(props) {
-  const { mp, i18n } = props;
+  const { mp, i18n, onClose } = props;
   if (!mp) {
     return null;
   }
@@ -169,6 +171,12 @@ export default function MPDrawerView(props) {
 
   return (
     <Box sx={STYLE_BOX}>
+      <Grid container justifyContent="flex-end">
+        <IconButton aria-label="delete" size="small" onClick={onClose}>
+          <CloseIcon fontSize="small" />
+        </IconButton>
+      </Grid>
+
       <Avatar alt={mp.name} src={mp.imageURL} sx={STYLE_AVATAR} />
       <Typography variant="h5" display="block">
         {i18n.t(mp.firstNames)}

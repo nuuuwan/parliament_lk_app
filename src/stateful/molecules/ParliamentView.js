@@ -239,7 +239,11 @@ export default class ParliamentView extends Component {
           open={activeMPId !== null}
           onClose={this.onDrawerClose.bind(this)}
         >
-          <MPDrawerView mp={activeMP} i18n={i18n} />
+          <MPDrawerView
+            mp={activeMP}
+            i18n={i18n}
+            onClose={this.onDrawerClose.bind(this)}
+          />
         </Drawer>
 
         <Paper
