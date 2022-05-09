@@ -29,11 +29,11 @@ function getSittingText(i18n, isSitting) {
   );
 }
 
-function CustomLink({ primary, secondary, href, Icon }) {
+function CustomLink({ gaAction, primary, secondary, href, Icon }) {
   const onClick = function (e) {
     ReactGA.event({
       category: "External Links - Drawer",
-      action: "Clicked MP Link",
+      action: "Clicked Drawer - " + gaAction,
       label: href,
     });
     window.open(href, "_blank");
@@ -50,7 +50,7 @@ function CustomLink({ primary, secondary, href, Icon }) {
   );
 }
 
-function Address({ i18n, address, isSitting }) {
+function Address({ gaAction, i18n, address, isSitting }) {
   if (!address) {
     return null;
   }
@@ -67,11 +67,12 @@ function Address({ i18n, address, isSitting }) {
       secondary={getSittingText(i18n, isSitting)}
       href={href}
       Icon={HomeIcon}
+      gaAction={gaAction + "-address"}
     />
   );
 }
 
-function Phone({ i18n, phone, isSitting }) {
+function Phone({ gaAction, i18n, phone, isSitting }) {
   if (!phone) {
     return null;
   }
@@ -81,20 +82,26 @@ function Phone({ i18n, phone, isSitting }) {
       secondary={getSittingText(i18n, isSitting)}
       href={"tel:" + phone}
       Icon={PhoneIcon}
+      gaAction={gaAction + "-phone"}
     />
   );
 }
 
-function Email({ email }) {
+function Email({ gaAction, email }) {
   if (!email) {
     return null;
   }
   return (
-    <CustomLink primary={email} href={"mailto:" + email} Icon={EmailIcon} />
+    <CustomLink
+      primary={email}
+      href={"mailto:" + email}
+      Icon={EmailIcon}
+      gaAction={gaAction + "-email"}
+    />
   );
 }
 
-function Wikipedia({ i18n, searchText }) {
+function Wikipedia({ gaAction, i18n, searchText }) {
   if (!searchText) {
     return null;
   }
@@ -106,17 +113,19 @@ function Wikipedia({ i18n, searchText }) {
       primary={i18n.t("Wikipedia")}
       href={href}
       Icon={TravelExploreIcon}
+      gaAction={gaAction + "-wikipedia"}
     />
   );
 }
 
-function Parliament({ i18n, id }) {
+function Parliament({ gaAction, i18n, id }) {
   const href = "https://www.parliament.lk/component/members/viewMember/" + id;
   return (
     <CustomLink
       primary={i18n.t("Parliament Website")}
       href={href}
       Icon={GavelIcon}
+      gaAction={gaAction + "-parliamnent"}
     />
   );
 }
@@ -155,6 +164,9 @@ export default function MPDrawerView(props) {
   if (!mp) {
     return null;
   }
+
+  const gaAction = mp.id + "-" + mp.name;
+
   return (
     <Box sx={STYLE_BOX}>
       <Avatar alt={mp.name} src={mp.imageURL} sx={STYLE_AVATAR} />
@@ -191,18 +203,33 @@ export default function MPDrawerView(props) {
       />
 
       <List>
-        <Phone phone={mp.phoneSitting} isSitting={true} i18n={i18n} />
+        <Phone
+          phone={mp.phoneSitting}
+          isSitting={true}
+          i18n={i18n}
+          gaAction={gaAction}
+        />
 
-        <Address address={mp.addressSitting} isSitting={true} i18n={i18n} />
+        <Address
+          address={mp.addressSitting}
+          isSitting={true}
+          i18n={i18n}
+          gaAction={gaAction}
+        />
 
-        <Phone phone={mp.phone} i18n={i18n} />
+        <Phone phone={mp.phone} i18n={i18n} gaAction={gaAction} />
 
-        <Address address={mp.address} isSitting={false} i18n={i18n} />
+        <Address
+          address={mp.address}
+          isSitting={false}
+          i18n={i18n}
+          gaAction={gaAction}
+        />
 
-        <Email email={mp.email} i18n={i18n} />
+        <Email email={mp.email} i18n={i18n} gaAction={gaAction} />
 
-        <Parliament id={mp.id} i18n={i18n} />
-        <Wikipedia searchText={mp.name} i18n={i18n} />
+        <Parliament id={mp.id} i18n={i18n} gaAction={gaAction} />
+        <Wikipedia searchText={mp.name} i18n={i18n} gaAction={gaAction} />
       </List>
     </Box>
   );
