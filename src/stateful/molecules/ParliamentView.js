@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import ReactGA from "react-ga";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -82,14 +82,29 @@ export default class ParliamentView extends Component {
   }
 
   onChangeXDim(xDim) {
+    ReactGA.event({
+      category: "Dimensions",
+      action: "Selected X Dimension",
+      label: "xDim",
+    });
     this.setState({ xDim });
   }
 
   onChangeYDim(yDim) {
+    ReactGA.event({
+      category: "Dimensions",
+      action: "Selected Y Dimension",
+      label: "yDim",
+    });
     this.setState({ yDim });
   }
 
   onClickMP(mpID) {
+    ReactGA.event({
+      category: "MPs",
+      action: "Clicked MP",
+      label: mpID,
+    });
     this.setState({ activeMPId: mpID });
   }
 
@@ -99,12 +114,22 @@ export default class ParliamentView extends Component {
 
   onShowStatisticalTrendsClick() {
     const oldState = this.state.showStatisticalTrends;
+    ReactGA.event({
+      category: "Statistical Trends",
+      action: "Clicked Statistical Trends Checkbox",
+      label: oldState.toString(),
+    });
 
     this.setState({ showStatisticalTrends: !oldState });
   }
 
   onClickSwapDims(e) {
     const { xDim, yDim } = this.state;
+    ReactGA.event({
+      category: "Dimensions",
+      action: "Swapped Dimensions",
+      label: `${xDim},${yDim}`,
+    });
     this.setState({
       xDim: yDim,
       yDim: xDim,

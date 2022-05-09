@@ -1,5 +1,6 @@
 import { Component } from "react";
 import * as React from "react";
+import ReactGA from "react-ga";
 
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -20,6 +21,11 @@ export default class HomePage extends Component {
     this.state = { selectedLang: DEFAULT_LANG };
     this.i18n = new I18N(DEFAULT_LANG);
   }
+
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname);
+  }
+
   render() {
     const { selectedLang } = this.state;
     return (
