@@ -95,7 +95,7 @@ export default class ParliamentView extends Component {
     ReactGA.event({
       category: "MPs",
       action: "Clicked MP",
-      label: `${mpID}-${mp.name}`,
+      label: mp.logString,
     });
     this.setState({ activeMPId: mpID });
   }
@@ -141,10 +141,15 @@ export default class ParliamentView extends Component {
     const { i18n } = this.props;
     const activeMP = mpIdx[activeMPId];
 
+    let activeMPStr = "None";
+    if (activeMP) {
+      activeMPStr = activeMP.logString;
+    }
+
     ReactGA.event({
       category: "ParliamentView State",
       action: "ParliamentView.render()",
-      label: `${xDim},${yDim},${activeMPId}`,
+      label: `${xDim},${yDim},${activeMPStr}`,
     });
 
     const cellMap = function (mp) {
