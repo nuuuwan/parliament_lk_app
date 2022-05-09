@@ -82,10 +82,24 @@ export default class ParliamentView extends Component {
   }
 
   onChangeXDim(xDim) {
+    ReactGA.event({
+      category: "Dimensions",
+      action: `Changed X Dim`,
+      label: xDim,
+      value: 10,
+    });
+
     this.setState({ xDim });
   }
 
   onChangeYDim(yDim) {
+    ReactGA.event({
+      category: "Dimensions",
+      action: `Changed Y Dim`,
+      label: yDim,
+      value: 10,
+    });
+
     this.setState({ yDim });
   }
 

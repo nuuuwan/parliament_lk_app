@@ -19,12 +19,6 @@ export default function DimensionPicker(props) {
     const dim = e.target.value;
     ReactGA.event({
       category: "Dimensions",
-      action: `Changed ${label} Dim`,
-      label: dim,
-      value: 10,
-    });
-    ReactGA.event({
-      category: "Dimensions",
       action: `Changed Dim`,
       label: dim,
       value: 20,
