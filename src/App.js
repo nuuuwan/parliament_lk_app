@@ -1,8 +1,9 @@
+import React from "react";
+import HomePage from "./stateful/pages/HomePage.js";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./App.css";
 
-import HomePage from "./stateful/pages/HomePage.js";
 
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
