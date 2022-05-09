@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -15,7 +16,13 @@ export default function DimensionPicker(props) {
   const { label, selectedDimension, onChange, i18n } = props;
 
   const onChangeInner = function (e) {
-    return onChange(e.target.value);
+    const dim = e.target.value;
+    ReactGA.event({
+      category: "Dimensions",
+      action: `Changed ${label} Dim`,
+      label: dim,
+    });
+    return onChange(dim);
   };
   return (
     <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
