@@ -41,7 +41,7 @@ function CustomLink({
 }) {
   const onClick = function (e) {
     ReactGA.event({
-      category: "External Links-Drawer",
+      category: "MPs-External Links",
       action: "Clicked Drawer-" + gaActionSuffix,
       label: gaLabel,
       value: 1,
