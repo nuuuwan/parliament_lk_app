@@ -31,12 +31,19 @@ function getSittingText(i18n, isSitting) {
   );
 }
 
-function CustomLink({ gaAction, primary, secondary, href, Icon }) {
+function CustomLink({
+  gaLabel,
+  gaActionSuffix,
+  primary,
+  secondary,
+  href,
+  Icon,
+}) {
   const onClick = function (e) {
     ReactGA.event({
-      category: "External Links - Drawer",
-      action: "Clicked Drawer - " + gaAction,
-      label: href,
+      category: "External Links-Drawer",
+      action: "Clicked Drawer-" + gaActionSuffix,
+      label: gaLabel,
       value: 1,
     });
     window.open(href, "_blank");
@@ -53,7 +60,7 @@ function CustomLink({ gaAction, primary, secondary, href, Icon }) {
   );
 }
 
-function Address({ gaAction, i18n, address, isSitting }) {
+function Address({ gaLabel, i18n, address, isSitting }) {
   if (!address) {
     return null;
   }
@@ -70,12 +77,13 @@ function Address({ gaAction, i18n, address, isSitting }) {
       secondary={getSittingText(i18n, isSitting)}
       href={href}
       Icon={HomeIcon}
-      gaAction={gaAction + "-address"}
+      gaActionSuffix="Address"
+      gaLabel={gaLabel}
     />
   );
 }
 
-function Phone({ gaAction, i18n, phone, isSitting }) {
+function Phone({ gaLabel, i18n, phone, isSitting }) {
   if (!phone) {
     return null;
   }
@@ -85,12 +93,13 @@ function Phone({ gaAction, i18n, phone, isSitting }) {
       secondary={getSittingText(i18n, isSitting)}
       href={"tel:" + phone}
       Icon={PhoneIcon}
-      gaAction={gaAction + "-phone"}
+      gaActionSuffix="Phone"
+      gaLabel={gaLabel}
     />
   );
 }
 
-function Email({ gaAction, email }) {
+function Email({ gaLabel, email }) {
   if (!email) {
     return null;
   }
@@ -99,12 +108,13 @@ function Email({ gaAction, email }) {
       primary={email}
       href={"mailto:" + email}
       Icon={EmailIcon}
-      gaAction={gaAction + "-email"}
+      gaActionSuffix="Email"
+      gaLabel={gaLabel}
     />
   );
 }
 
-function Wikipedia({ gaAction, i18n, searchText }) {
+function Wikipedia({ gaLabel, i18n, searchText }) {
   if (!searchText) {
     return null;
   }
@@ -116,19 +126,21 @@ function Wikipedia({ gaAction, i18n, searchText }) {
       primary={i18n.t("Wikipedia")}
       href={href}
       Icon={TravelExploreIcon}
-      gaAction={gaAction + "-wikipedia"}
+      gaActionSuffix="Wikipedia"
+      gaLabel={gaLabel}
     />
   );
 }
 
-function Parliament({ gaAction, i18n, id }) {
+function Parliament({ gaLabel, i18n, id }) {
   const href = "https://www.parliament.lk/component/members/viewMember/" + id;
   return (
     <CustomLink
       primary={i18n.t("Parliament Website")}
       href={href}
       Icon={GavelIcon}
-      gaAction={gaAction + "-parliamnent"}
+      gaActionSuffix="Parliament"
+      gaLabel={gaLabel}
     />
   );
 }
@@ -168,7 +180,7 @@ export default function MPDrawerView(props) {
     return null;
   }
 
-  const gaAction = mp.logString;
+  const gaLabel = mp.logString;
 
   return (
     <Box sx={STYLE_BOX}>
@@ -216,29 +228,29 @@ export default function MPDrawerView(props) {
           phone={mp.phoneSitting}
           isSitting={true}
           i18n={i18n}
-          gaAction={gaAction}
+          gaLabel={gaLabel}
         />
 
         <Address
           address={mp.addressSitting}
           isSitting={true}
           i18n={i18n}
-          gaAction={gaAction}
+          gaLabel={gaLabel}
         />
 
-        <Phone phone={mp.phone} i18n={i18n} gaAction={gaAction} />
+        <Phone phone={mp.phone} i18n={i18n} gaLabel={gaLabel} />
 
         <Address
           address={mp.address}
           isSitting={false}
           i18n={i18n}
-          gaAction={gaAction}
+          gaLabel={gaLabel}
         />
 
-        <Email email={mp.email} i18n={i18n} gaAction={gaAction} />
+        <Email email={mp.email} i18n={i18n} gaLabel={gaLabel} />
 
-        <Parliament id={mp.id} i18n={i18n} gaAction={gaAction} />
-        <Wikipedia searchText={mp.name} i18n={i18n} gaAction={gaAction} />
+        <Parliament id={mp.id} i18n={i18n} gaLabel={gaLabel} />
+        <Wikipedia searchText={mp.name} i18n={i18n} gaLabel={gaLabel} />
       </List>
     </Box>
   );
