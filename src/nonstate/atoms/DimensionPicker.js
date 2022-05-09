@@ -22,6 +22,11 @@ export default function DimensionPicker(props) {
       action: `Changed ${label} Dim`,
       label: dim,
     });
+    ReactGA.event({
+      category: "Dimensions",
+      action: `Changed Dim`,
+      label: dim,
+    });
     return onChange(dim);
   };
   return (
