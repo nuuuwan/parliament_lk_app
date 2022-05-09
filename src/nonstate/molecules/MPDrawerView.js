@@ -24,6 +24,7 @@ import ListItemText from "@mui/material/ListItemText";
 
 const STYLE_BOX = { padding: 3, maxWidth: "75%" };
 const STYLE_AVATAR = { width: 100, height: 100 };
+const SHOW_ADDRESS = false;
 
 function getSittingText(i18n, isSitting) {
   return i18n.t(
@@ -231,21 +232,25 @@ export default function MPDrawerView(props) {
           gaLabel={gaLabel}
         />
 
-        <Address
-          address={mp.addressSitting}
-          isSitting={true}
-          i18n={i18n}
-          gaLabel={gaLabel}
-        />
+        {SHOW_ADDRESS ? (
+          <Address
+            address={mp.addressSitting}
+            isSitting={true}
+            i18n={i18n}
+            gaLabel={gaLabel}
+          />
+        ) : null}
 
         <Phone phone={mp.phone} i18n={i18n} gaLabel={gaLabel} />
 
-        <Address
-          address={mp.address}
-          isSitting={false}
-          i18n={i18n}
-          gaLabel={gaLabel}
-        />
+        {SHOW_ADDRESS ? (
+          <Address
+            address={mp.address}
+            isSitting={false}
+            i18n={i18n}
+            gaLabel={gaLabel}
+          />
+        ) : null}
 
         <Email email={mp.email} i18n={i18n} gaLabel={gaLabel} />
 
