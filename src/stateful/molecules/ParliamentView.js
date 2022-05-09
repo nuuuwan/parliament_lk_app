@@ -139,8 +139,13 @@ export default class ParliamentView extends Component {
       return <div>Loading...</div>;
     }
     const { i18n } = this.props;
-
     const activeMP = mpIdx[activeMPId];
+
+    ReactGA.event({
+      category: "ParliamentView State",
+      action: "ParliamentView.render()",
+      label: `${xDim},${yDim},${activeMPId}`,
+    });
 
     const cellMap = function (mp) {
       const onClickInner = function (e) {
