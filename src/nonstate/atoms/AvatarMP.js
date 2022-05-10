@@ -2,12 +2,18 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import {t} from "../../base/I18N.js";
-const AVATAR_SIZE = 36;
+
+function getAvatarSize([width, height]) {
+  const area = width * height;
+  return parseInt(Math.sqrt((area - 10_000) / 225) * 0.5);
+}
 
 export default function AvatarMP({mp, onClickMP}) {
   const onClickInner = function (e) {
     onClickMP(mp.id);
   };
+
+  const avatar_size =  getAvatarSize([window.innerWidth, window.innerHeight]);
 
   return (
     <div>
@@ -27,7 +33,7 @@ export default function AvatarMP({mp, onClickMP}) {
           alt={mp.name}
           src={mp.imageURL}
           onClick={onClickInner}
-          sx={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
+          sx={{ width: avatar_size, height: avatar_size }}
         >
           {mp.initials}
         </Avatar>
