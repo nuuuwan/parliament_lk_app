@@ -13,6 +13,10 @@ const STYLE = {
   backgroundColor: "lightgray",
 };
 
+const STYLE_TITLE = {
+  fontSize: "80%",
+};
+
 const STYLE_VERSION = {
   fontSize: "40%",
   flexGrow: 1,
@@ -24,7 +28,7 @@ export default function CustomAppBar({ selectedLang, onSelectLang }) {
   return (
     <AppBar position="static" sx={STYLE}>
       <Toolbar variant="dense">
-        <Typography variant="subtitle1" component="div">
+        <Typography component="div" sx={STYLE_TITLE}>
           {t("Parliament of Sri Lanka")}
         </Typography>
         <Typography sx={STYLE_VERSION}>{"App v" + VERSION}</Typography>
