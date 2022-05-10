@@ -1,5 +1,9 @@
-// Auto Translated 20220508-165443
+// Auto Translated 20220510-145540
 const TAMIL_DICTIONARY = {
+  "(1928 - 1946) Silent Generation": "(1928 - 1946) அமைதியான தலைமுறை",
+  "(1946 - 1965) Baby Boomers": "(1946 - 1965) பேபி பூமர்ஸ்",
+  "(1965 - 1981) Generation X": "(1965 - 1981) தலைமுறை X",
+  "(1981 - 1997) Millenials/Gen Y": "(1981 - 1997) மில்லினியல்கள்/ஜெனரல் ஒய்",
   "10 - 20%": "10 - 20%",
   "20 - 30": "20 - 30",
   "20 - 30%": "20 - 30%",
@@ -66,8 +70,7 @@ const TAMIL_DICTIONARY = {
   "Ali Sabri Raheem": "அலி சப்ரி ரஹீம்",
   "Ali Sabry": "அலி சப்ரி",
   "All 100%": "அனைத்தும் 100%",
-  "All data except asset declaration data is from www.parliament.lk":
-    "சொத்து அறிவிப்பு தரவு தவிர அனைத்து தரவுகளும் www.parliament.lk இலிருந்து",
+  "All data except asset declaration data is from www.parliament.lk": "சொத்து அறிவிப்பு தரவு தவிர அனைத்து தரவுகளும் www.parliament.lk இலிருந்து",
   Alles: "அல்லேஸ்",
   Aluthgamage: "அலுத்கமகே",
   Amal: "அமல்",
@@ -101,15 +104,13 @@ const TAMIL_DICTIONARY = {
   "Ashok Abeysinghe": "அசோக் அபேசிங்க",
   Ashoka: "Ashoka",
   "Ashoka Priyantha": "அசோக பிரியந்த",
-  "Asset declaration data is from www.tisrilanka.org":
-    "www.tisrilanka.org இலிருந்து சொத்து அறிக்கை தரவு",
+  "Asset declaration data is from www.tisrilanka.org": "www.tisrilanka.org இலிருந்து சொத்து அறிக்கை தரவு",
   Athaullah: "அதாவுல்லாஹ்",
   Athukorala: "அதுகோரல",
   Athuraliye: "அதுரலியே",
   "Athuraliye Rathana": "அதுரலியே ரத்தனா",
   Attanayake: "அத்தநாயக்க",
-  "Attandance 8th Parliament (2017 - 2020)":
-    "8வது பாராளுமன்ற வருகை (2017 - 2020)",
+  "Attandance 8th Parliament (2017 - 2020)": "8வது பாராளுமன்ற வருகை (2017 - 2020)",
   "Attandance 9th Parliament (2020 - )": "வருகை 9வது பாராளுமன்றம் (2020 - )",
   "Attorney-at-Law": "சட்ட வழக்கறிஞர்",
   "B. Y. G.": "பி. ஒய். ஜி.",
@@ -253,6 +254,7 @@ const TAMIL_DICTIONARY = {
   "Geetha Samanmale": "கீதா சமன்மலே",
   "Geetha Samanmale Kumarasinghe": "கீதா சமன்மலே குமாரசிங்க",
   Gender: "பாலினம்",
+  Generation: "தலைமுறை",
   Gevindu: "கெவிந்து",
   "Gevindu Cumaratunga": "கெவிந்து குமாரதுங்க",
   Godahewa: "கொடஹேவா",
@@ -280,8 +282,7 @@ const TAMIL_DICTIONARY = {
   Harshana: "ஹர்ஷனா",
   "Harshana Rajakaruna": "ஹர்ஷன ராஜகருணா",
   "Has A. Levels or higher?": "மேம்பட்ட நிலைகள் அல்லது அதற்கு மேல் உள்ளதா?",
-  "Has Advanced Levels or higher?":
-    "மேம்பட்ட நிலைகள் அல்லது அதற்கு மேல் உள்ளதா?",
+  "Has Advanced Levels or higher?": "மேம்பட்ட நிலைகள் அல்லது அதற்கு மேல் உள்ளதா?",
   "Has Bachelors or higher?": "இளங்கலை அல்லது அதற்கு மேல் உள்ளதா?",
   "Has Publicly Declared Assets?": "பொதுவில் அறிவிக்கப்பட்ட சொத்துகள் உள்ளதா?",
   Hashim: "ஹாஷிம்",
@@ -688,8 +689,7 @@ const TAMIL_DICTIONARY = {
   Siyambalapitiya: "சியம்பலாபிட்டிய",
   Southern: "தெற்கு",
   "Statistical Trends": "புள்ளியியல் போக்குகள்",
-  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.":
-    "சில கிரிட் செல்கள் சீரற்ற முறையில் ஒதுக்கப்பட்டால் நாம் எதிர்பார்ப்பதை விட அதிகமான எம்.பி.க்கள் இருந்தால், புள்ளியியல் போக்குகள் அளவிடுகின்றன. 'z' (எ.கா. z = 2.5) மதிப்பு, எதிர்பார்க்கப்படும் எம்.பி.க்களின் சராசரி எண்ணிக்கையிலிருந்து எம்.பி.க்களின் எண்ணிக்கை எத்தனை நிலையான விலகல்கள் மாறுபடுகிறது என்பதைக் காட்டுகிறது. வரம்பு (எ.கா. 84 - 114) என்பது எம்.பி.க்களின் எண்ணிக்கைக்கான 95% நம்பிக்கை இடைவெளி. உண்மையான எண் இந்த வரம்பிற்கு வெளியே இருந்தால், போக்கு சீரற்றதாக இருப்பதற்கான நிகழ்தகவு <5% ஆகும்.",
+  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.": "சில கிரிட் செல்கள் சீரற்ற முறையில் ஒதுக்கப்பட்டால் நாம் எதிர்பார்ப்பதை விட அதிகமான எம்.பி.க்கள் இருந்தால், புள்ளியியல் போக்குகள் அளவிடுகின்றன. 'z' (எ.கா. z = 2.5) மதிப்பு, எதிர்பார்க்கப்படும் எம்.பி.க்களின் சராசரி எண்ணிக்கையிலிருந்து எம்.பி.க்களின் எண்ணிக்கை எத்தனை நிலையான விலகல்கள் மாறுபடுகிறது என்பதைக் காட்டுகிறது. வரம்பு (எ.கா. 84 - 114) என்பது எம்.பி.க்களின் எண்ணிக்கைக்கான 95% நம்பிக்கை இடைவெளி. உண்மையான எண் இந்த வரம்பிற்கு வெளியே இருந்தால், போக்கு சீரற்றதாக இருப்பதற்கான நிகழ்தகவு <5% ஆகும்.",
   Sudarshana: "சுதர்சன",
   "Sudarshana Denipitiya": "சுதர்சன தெனிபிட்டிய",
   Sudarshini: "சுதர்ஷினி",
@@ -771,8 +771,7 @@ const TAMIL_DICTIONARY = {
   Vijitha: "விஜிதா",
   "Vijitha Berugoda": "விஜித பேருகொட",
   "Vijitha Herath": "விஜித ஹேரத்",
-  "Visualization, Design and App by @nuuuwan":
-    "@nuuuwan மூலம் காட்சிப்படுத்தல், வடிவமைப்பு மற்றும் பயன்பாடு",
+  "Visualization, Design and App by @nuuuwan": "@nuuuwan மூலம் காட்சிப்படுத்தல், வடிவமைப்பு மற்றும் பயன்பாடு",
   Vitarana: "விதாரண",
   Viyalanderan: "வியாழேந்திரன்",
   "Vote for 20th Amendment": "20வது திருத்தத்திற்கான வாக்கெடுப்பு",
