@@ -17,7 +17,7 @@ export default function CustomAppBar({selectedLang, onSelectLang}) {
   return (
     <AppBar position="static" sx={STYLE}>
       <Toolbar variant="dense">
-        <Typography variant="subtitle" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="subtitle1" component="div" sx={{ flexGrow: 1 }}>
           {t("Parliament of Sri Lanka")}
         </Typography>
 
