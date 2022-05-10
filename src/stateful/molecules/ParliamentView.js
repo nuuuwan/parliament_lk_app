@@ -3,7 +3,6 @@ import ReactGA from "react-ga";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import Avatar from "@mui/material/Avatar";
 import Switch from "@mui/material/Switch";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
@@ -22,7 +21,9 @@ import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import MP from "../../core/MP.js";
 import GridView from "../../nonstate/molecules/GridView.js";
 import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
+import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
+
 
 import Dimensions from "../../core/Dimensions.js";
 
@@ -34,7 +35,7 @@ const STYLE = {
   margin: 4,
   marginBottom: 10,
 };
-const AVATAR_SIZE = 48;
+
 
 const STATISTICAL_TRENDS_TOOLTOP = [
   "Statistical Trends measure if certain grid cells contain more MPs than",
@@ -171,32 +172,9 @@ export default class ParliamentView extends Component {
     });
 
     const cellMap = function (mp) {
-      const onClickInner = function (e) {
-        this.onClickMP(mp.id);
-      }.bind(this);
       const key = `avatar-${mp.id}`;
       return (
-        <div key={key}>
-          <Tooltip
-            title={
-              <>
-                <Typography variant="subtitle1">{i18n.t(mp.name)}</Typography>
-                <Typography variant="overline" display="block">
-                  {i18n.t(mp.party)}
-                  {" - "}
-                  {i18n.t(mp.edName)}
-                </Typography>
-              </>
-            }
-          >
-            <Avatar
-              alt={mp.name}
-              src={mp.imageURL}
-              onClick={onClickInner}
-              sx={{ width: AVATAR_SIZE, height: AVATAR_SIZE }}
-            />
-          </Tooltip>
-        </div>
+        <AvatarMP key={key} mp={mp} i18n={i18n} onClickMP={this.onClickMP.bind(this)} />
       );
     }.bind(this);
 
