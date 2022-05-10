@@ -6,11 +6,13 @@ import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import TempleBuddhistIcon from "@mui/icons-material/TempleBuddhist";
 import CelebrationIcon from "@mui/icons-material/Celebration";
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 
 import Dim from './Dim.js';
 import DimGroup from './DimGroup.js';
 
 export const DIM_GROUP_LIST = [
+    new DimGroup("Most Popular",  StarBorderIcon),
     new DimGroup("Political Parties",  GroupsIcon),
     new DimGroup("Education & Profession",  SchoolIcon),
     new DimGroup("Voting & Parliamentary Attandance",  HowToVoteIcon),
@@ -51,6 +53,13 @@ export const DIM_LIST = [
 ];
 
 export const DIM_GROUP_NAME_TO_DIM_NAME = {
+  "Most Popular": [
+    "Is Age > 50",
+    "Highest Education Level",
+    "Party",
+    "Has Publicly Declared Assets?",
+    "Voting for 20th Amendment",
+  ],
   "Political Parties": [
     "Party",
   ],
