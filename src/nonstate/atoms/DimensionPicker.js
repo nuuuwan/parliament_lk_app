@@ -55,10 +55,10 @@ export default function DimensionPicker(props) {
               />
             </MenuItem>,
             dimensionList.map(function (dimension, iDimension) {
-              const key = `option-${iDimension}`;
+              const key = `option-${dimension.name}`;
               return (
-                <MenuItem key={key} value={dimension} sx={{ marginLeft: 2 }}>
-                  {t(dimension)}
+                <MenuItem key={key} value={dimension.name} sx={{ marginLeft: 2 }}>
+                  {t(dimension.name)}
                 </MenuItem>
               );
             }),
