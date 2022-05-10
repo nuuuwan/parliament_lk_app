@@ -28,11 +28,9 @@ export default function DimPicker(props) {
     return onChange(dim);
   };
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+    <FormControl sx={{ m: 1, minWidth: 120}} >
       <InputLabel id="demo-select-small">{label}</InputLabel>
       <Select
-        labelId="demo-select-small"
-        id="demo-select-small"
         value={selectedDim}
         label={label}
         onChange={onChangeInner}
