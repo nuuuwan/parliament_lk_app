@@ -2,30 +2,26 @@ import React, { Component } from "react";
 import ReactGA from "react-ga";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Switch from "@mui/material/Switch";
 import Typography from "@mui/material/Typography";
-import Tooltip from "@mui/material/Tooltip";
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 
-import SourceIcon from "@mui/icons-material/Source";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
 import MP from "../../core/MP.js";
 import GridView from "../../nonstate/molecules/GridView.js";
+import CustomBottomNavigation from
+  "../../nonstate/molecules/CustomBottomNavigation.js";
+
 import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
+
 import {t} from "../../base/I18N.js";
-
-
 import Dimensions from "../../core/Dimensions.js";
 
 const DEFAULT_X_DIM = "Is Age > 40";
@@ -48,28 +44,7 @@ const STATISTICAL_TRENDS_TOOLTOP = [
   " the probability that the trend is random is <5%.",
 ].join("");
 
-const BOTTOM_NAVIGATION_ITEMS = [
-  {
-    name: "@ParliamentLK",
-    url:
-      "https://www.parliament.lk/" +
-      "en/members-of-parliament/directory-of-members/",
-    details: "All data except asset declaration data is from www.parliament.lk",
-    Icon: SourceIcon,
-  },
-  {
-    name: "@TISriLanka",
-    url: "https://www.tisrilanka.org/mpassets/",
-    details: "Asset declaration data is from www.tisrilanka.org",
-    Icon: SourceIcon,
-  },
-  {
-    name: "@nuuuwan",
-    url: "http://github.com/nuuuwan",
-    details: "Visualization, Design and App by @nuuuwan",
-    Icon: GitHubIcon,
-  },
-];
+
 
 export default class ParliamentView extends Component {
   constructor(props) {
@@ -252,42 +227,7 @@ export default class ParliamentView extends Component {
           />
         </Drawer>
 
-        <Paper
-          sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
-          elevation={3}
-        >
-          <BottomNavigation showLabels>
-            {BOTTOM_NAVIGATION_ITEMS.map(function (d, i) {
-              const key = "data-" + i;
-              const onClick = function (e) {
-                ReactGA.event({
-                  category: "External Links",
-                  action: "Clicked Bottom Navigation Link",
-                  label: d.name,
-                  value: 1,
-                });
-                window.open(d.url, "_blank");
-              };
-              const Icon = d.Icon;
-              return (
-                <Tooltip
-                  key={key}
-                  title={
-                    <Typography variant="subtitle1">
-                      {t(d.details)}
-                    </Typography>
-                  }
-                >
-                  <BottomNavigationAction
-                    label={d.name}
-                    icon={<Icon />}
-                    onClick={onClick}
-                  />
-                </Tooltip>
-              );
-            })}
-          </BottomNavigation>
-        </Paper>
+        <CustomBottomNavigation />
       </Box>
     );
   }
