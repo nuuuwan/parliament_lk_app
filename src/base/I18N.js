@@ -9,11 +9,11 @@ const DICTIONARY = {
   ta: TAMIL_DICTIONARY,
 };
 
-export const LANG_TO_LABEL = {
-  si: "සිංහල",
-  ta: "தமிழ்",
-  en: "English",
-};
+export const LANG_INFO_LIST = [
+  ['si', 'සිංහල', '#8d153a'],
+  ['ta', 'தமிழ', '#eb7400'],
+  ['en', 'English', '#00534e'],
+]
 
 export default class I18N {
   static getLang() {
