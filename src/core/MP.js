@@ -184,27 +184,27 @@ export default class MP {
     return this.id + "-" + this.nameShort;
   }
 
-  get getGeneration() {
+  get generation() {
+    let yearStart = 1883;
+    const NAME_TO_YEAR_END = {
+      "Lost Generation": 1901,
+      "Greatest Generation": 1928,
+      "Silent Generation": 1946,
+      "Baby Boomers": 1965,
+      "Generation X": 1981,
+      "Millenials/Gen Y": 1997,
+      "Zoomers/Gen Z": 2013,
+      "Generation Alpha": 2022,
+    };
     const yearOfBirth = this.yearOfBirth;
-    if (yearOfBirth <= 1946 && yearOfBirth > 1927) {
-      return "Silent Generation";
+
+    for (let [name, yearEnd] of Object.entries(NAME_TO_YEAR_END)) {
+      if (yearStart <= yearOfBirth && yearOfBirth < yearEnd) {
+        return `(${yearStart} - ${yearEnd}) ${name}`;
+      }
+      yearStart = yearEnd;
     }
-    if (yearOfBirth <= 1964) {
-      return "Baby Boomers";
-    }
-    if (yearOfBirth <= 1980) {
-      return "Generation X";
-    }
-    if (yearOfBirth <= 1996) {
-      return "Millenials/Gen Y";
-    }
-    if (yearOfBirth <= 2012) {
-      return "Zoomers/Gen Z";
-    }
-    if (yearOfBirth > 2012) {
-      return "Generation Alpha";
-    }
-    return 'Unknown'
+    return "Unknown";
   }
 
   static async getRawMPList() {
