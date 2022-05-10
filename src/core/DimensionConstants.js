@@ -42,6 +42,7 @@ export const GROUP_TO_DIMENSION_TO_FUNC = {
     "Age Group (10 year)": (mp) => mp.getAgeGroup(10),
     "Is Age > 40": (mp) => mp.isAgeOver(40),
     "Is Age > 50": (mp) => mp.isAgeOver(50),
+    Generation: (mp) => mp.generation,
     Gender: (mp) => mp.gender,
     "Civil Status": (mp) => mp.civilStatus,
   },
@@ -70,6 +71,7 @@ export const SORTED_DIMENSION_LIST = [
   "Show Random",
   "Attandance 9th Parliament (2020 - )",
   "Attandance 8th Parliament (2017 - 2020)",
+  "Generation",
 ];
 
 // Derived
