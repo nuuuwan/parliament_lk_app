@@ -31,7 +31,9 @@ const STYLE_HEADER_CELL = {
 function DimWidget({ dim }) {
   return (
     <>
-      <Typography variant="body1">{t(dim)}</Typography>
+      <Typography variant="body1" sx={{fontSize:"x-small"}}>
+        {t(dim)}
+      </Typography>
     </>
   );
 }
@@ -43,7 +45,7 @@ function NWidget({ n }) {
 
   return (
     <>
-      <Typography variant="subtitle2">{n}</Typography>
+      <Typography variant="caption">{n}</Typography>
     </>
   );
 }
@@ -66,7 +68,7 @@ function PctWidget({ n, d }) {
   }
   return (
     <>
-      <Typography variant="h6">{pStr}</Typography>
+      <Typography variant="subtitle1">{pStr}</Typography>
       <NWidget n={n} />
     </>
   );
