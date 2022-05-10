@@ -154,7 +154,7 @@ function QualificationsWidget({  title, body }) {
   return (
     <Card sx={{ maxWidth: 275, margin: 1 }}>
       <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        <Typography sx={{ fontSize: "x-small" }} color="text.secondary" gutterBottom>
           {t(title + " Qualifications")}
         </Typography>
         <Typography variant="body2">{body}</Typography>
