@@ -2,13 +2,8 @@ import React, { Component } from "react";
 import ReactGA from "react-ga";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import Switch from "@mui/material/Switch";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
 
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
@@ -17,9 +12,11 @@ import GridView from "../../nonstate/molecules/GridView.js";
 import CustomBottomNavigation from
   "../../nonstate/molecules/CustomBottomNavigation.js";
 
+import StatisticalTrendsSwitch from "../../nonstate/molecules/StatisticalTrendsSwitch.js";
 import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimPicker from "../../nonstate/atoms/DimPicker.js";
+
 
 import {t} from "../../base/I18N.js";
 import Dims from "../../core/Dims.js";
@@ -27,21 +24,12 @@ import Dims from "../../core/Dims.js";
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
 
-const COLOR_SWITCH_ON = "#1976D2";
 const STYLE = {
   margin: 4,
   marginBottom: 10,
 };
 
-const STATISTICAL_TRENDS_TOOLTOP = [
-  "Statistical Trends measure if certain grid cells contain more MPs than",
-  " we would expect if they were assigned at random. ",
-  " The 'z' (e.g. z = 2.5) value shows how many standard deviations",
-  " the number of MPs vary from the mean number of expected MPs.",
-  " The range (e.g. 84 - 114) is the 95% confidence interval for the",
-  " number of MPs. If the actual number is outside this range,",
-  " the probability that the trend is random is <5%.",
-].join("");
+
 
 export default class ParliamentView extends Component {
   constructor(props) {
@@ -186,33 +174,6 @@ export default class ParliamentView extends Component {
 
         </Stack>
 
-        <FormControlLabel
-          control={
-            <Switch
-              checked={showStatisticalTrends}
-              onClick={this.onClickStatisticalTrends.bind(this)}
-            />
-          }
-          label={
-            <Typography
-              variant="subtitle2"
-              color={showStatisticalTrends ? COLOR_SWITCH_ON : "gray"}
-            >
-              {t("Statistical Trends")}
-            </Typography>
-          }
-          sx={{marginLeft: 1}}
-        />
-
-        {showStatisticalTrends ? (
-          <Stack sx={{ maxWidth: 700 }} margin={2}>
-            <Alert severity="info">
-              <AlertTitle>{t("Statistical Trends")}</AlertTitle>
-              {t(STATISTICAL_TRENDS_TOOLTOP)}
-            </Alert>
-          </Stack>
-        ) : null}
-
         <GridView
           cells={cells}
           xAxisLabels={xAxisLabels}
@@ -221,6 +182,12 @@ export default class ParliamentView extends Component {
           showStatisticalTrends={showStatisticalTrends}
 
         />
+
+        <StatisticalTrendsSwitch
+          showStatisticalTrends={showStatisticalTrends}
+          onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
+        />
+
         <Drawer
           anchor="right"
           open={activeMPId !== null}
