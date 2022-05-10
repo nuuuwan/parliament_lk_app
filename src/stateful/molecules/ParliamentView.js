@@ -33,7 +33,6 @@ const STYLE = {
   marginBottom: 10,
 };
 
-
 const STATISTICAL_TRENDS_TOOLTOP = [
   "Statistical Trends measure if certain grid cells contain more MPs than",
   " we would expect if they were assigned at random. ",
@@ -43,8 +42,6 @@ const STATISTICAL_TRENDS_TOOLTOP = [
   " number of MPs. If the actual number is outside this range,",
   " the probability that the trend is random is <5%.",
 ].join("");
-
-
 
 export default class ParliamentView extends Component {
   constructor(props) {
@@ -180,23 +177,25 @@ export default class ParliamentView extends Component {
 
           />
 
-          <FormControlLabel
-            control={
-              <Switch
-                checked={showStatisticalTrends}
-                onClick={this.onClickStatisticalTrends.bind(this)}
-              />
-            }
-            label={
-              <Typography
-                variant="subtitle2"
-                color={showStatisticalTrends ? COLOR_SWITCH_ON : "gray"}
-              >
-                {t("Statistical Trends")}
-              </Typography>
-            }
-          />
         </Stack>
+
+        <FormControlLabel
+          control={
+            <Switch
+              checked={showStatisticalTrends}
+              onClick={this.onClickStatisticalTrends.bind(this)}
+            />
+          }
+          label={
+            <Typography
+              variant="subtitle2"
+              color={showStatisticalTrends ? COLOR_SWITCH_ON : "gray"}
+            >
+              {t("Statistical Trends")}
+            </Typography>
+          }
+          sx={{marginLeft: 1}}
+        />
 
         {showStatisticalTrends ? (
           <Stack sx={{ maxWidth: 700 }} margin={2}>
