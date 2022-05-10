@@ -51,3 +51,7 @@ export default class I18N {
     return DICTIONARY[lang][s];
   }
 }
+
+export function t(s) {
+  return I18N.t(s);
+}
