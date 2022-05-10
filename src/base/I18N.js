@@ -31,6 +31,11 @@ export default class I18N {
       return s;
     }
 
+    if (!DICTIONARY[lang]) {
+      console.error('Unknown language: ' + lang);
+      return s;
+    }
+
     if (!DICTIONARY[lang][s]) {
       console.error(s);
       return s;
