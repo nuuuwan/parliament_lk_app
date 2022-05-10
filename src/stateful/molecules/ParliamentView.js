@@ -143,6 +143,13 @@ export default class ParliamentView extends Component {
       value: 0,
     });
 
+    ReactGA.event({
+      category: "Dims",
+      action: `ParliamentView.render()`,
+      label: `${xDim},${yDim}`,
+      value: 10,
+    });
+
     const cellMap = function (mp) {
       const key = `avatar-${mp.id}`;
       return (
