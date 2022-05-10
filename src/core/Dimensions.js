@@ -5,7 +5,7 @@ import {
 
 function expandDimensionInfo(mpList, dimensionName) {
   const dimension = DIMENSION_IDX[dimensionName];
-  const xValues = mpList.map(dimension.func);
+  const xValues = dimension.map(mpList);
 
   let xAxisLabels;
   if (dimension.isSorted) {
