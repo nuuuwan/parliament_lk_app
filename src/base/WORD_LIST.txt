@@ -1,8 +1,6 @@
 (1928 - 1946) Silent Generation
 (1946 - 1965) Baby Boomers
 (1965 - 1981) Generation X
-What are Statistical Trends?
-Most Popular
 (1981 - 1997) Millenials/Gen Y
 10 - 20%
 20 - 30
@@ -292,6 +290,8 @@ Herath
 Hesha
 Hesha Withanage
 Highest Education Level
+Highly significantly fewer
+Highly significantly more
 Hinduism
 ISCED0 Unknown
 ISCED1 Primary
@@ -467,6 +467,7 @@ Mohomad
 Mohomad Muzammil
 Moneragala
 Month of Birth
+Most Popular
 Muditha
 Muditha Prishanthi
 Mujibur
@@ -673,6 +674,8 @@ Show All
 Show Random
 Show Statistical Trends
 Shritharan
+Significantly fewer
+Significantly more
 Single
 Sinhala Buddhist
 Siripala
@@ -687,6 +690,8 @@ Sivagnanam Shritharan
 Sivanesathurai
 Sivanesathurai Santhirakanthan
 Siyambalapitiya
+Slightly fewer
+Slightly more
 Southern
 Statistical Trends
 Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.
@@ -799,6 +804,7 @@ Weerasumana Weerasinghe
 Weerawansa
 Welgama
 Western
+What are Statistical Trends?
 When attending parliament
 When not attending parliament
 Wickramanayaka

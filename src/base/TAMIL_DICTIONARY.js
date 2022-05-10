@@ -1,4 +1,4 @@
-// Auto Translated 20220510-145540
+// Auto Translated 20220510-183154
 const TAMIL_DICTIONARY = {
   "(1928 - 1946) Silent Generation": "(1928 - 1946) அமைதியான தலைமுறை",
   "(1946 - 1965) Baby Boomers": "(1946 - 1965) பேபி பூமர்ஸ்",
@@ -292,6 +292,8 @@ const TAMIL_DICTIONARY = {
   Hesha: "ஹேஷா",
   "Hesha Withanage": "ஹேஷா விதானகே",
   "Highest Education Level": "உயர் கல்வி மட்டம்",
+  "Highly significantly fewer": "மிகவும் குறிப்பிடத்தக்க அளவு குறைவு",
+  "Highly significantly more": "மிகவும் குறிப்பிடத்தக்க வகையில் அதிகம்",
   Hinduism: "இந்து மதம்",
   "ISCED0 Unknown": "ISCED0 தெரியவில்லை",
   "ISCED1 Primary": "ISCED1 முதன்மை",
@@ -467,6 +469,7 @@ const TAMIL_DICTIONARY = {
   "Mohomad Muzammil": "முகமது முஸம்மில்",
   Moneragala: "மொனராகலை",
   "Month of Birth": "பிறந்த மாதம்",
+  "Most Popular": "மிகவும் பிரபலமான",
   Muditha: "முதிதா",
   "Muditha Prishanthi": "முதிதா ப்ரிஷாந்தி",
   Mujibur: "முஜிபுர்",
@@ -673,6 +676,8 @@ const TAMIL_DICTIONARY = {
   "Show Random": "ரேண்டம் காட்டு",
   "Show Statistical Trends": "புள்ளியியல் போக்குகளைக் காட்டு",
   Shritharan: "ஸ்ரீதரன்",
+  "Significantly fewer": "குறிப்பிடத்தக்க அளவு குறைவு",
+  "Significantly more": "குறிப்பிடத்தக்க வகையில் அதிகம்",
   Single: "ஒற்றை",
   "Sinhala Buddhist": "சிங்கள பௌத்த",
   Siripala: "சிறிபால",
@@ -687,6 +692,8 @@ const TAMIL_DICTIONARY = {
   Sivanesathurai: "சிவநேசதுரை",
   "Sivanesathurai Santhirakanthan": "சிவநேசதுரை சந்திரகாந்தன்",
   Siyambalapitiya: "சியம்பலாபிட்டிய",
+  "Slightly fewer": "சற்று குறைவு",
+  "Slightly more": "சற்று அதிகம்",
   Southern: "தெற்கு",
   "Statistical Trends": "புள்ளியியல் போக்குகள்",
   "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.": "சில கிரிட் செல்கள் சீரற்ற முறையில் ஒதுக்கப்பட்டால் நாம் எதிர்பார்ப்பதை விட அதிகமான எம்.பி.க்கள் இருந்தால், புள்ளியியல் போக்குகள் அளவிடுகின்றன. 'z' (எ.கா. z = 2.5) மதிப்பு, எதிர்பார்க்கப்படும் எம்.பி.க்களின் சராசரி எண்ணிக்கையிலிருந்து எம்.பி.க்களின் எண்ணிக்கை எத்தனை நிலையான விலகல்கள் மாறுபடுகிறது என்பதைக் காட்டுகிறது. வரம்பு (எ.கா. 84 - 114) என்பது எம்.பி.க்களின் எண்ணிக்கைக்கான 95% நம்பிக்கை இடைவெளி. உண்மையான எண் இந்த வரம்பிற்கு வெளியே இருந்தால், போக்கு சீரற்றதாக இருப்பதற்கான நிகழ்தகவு <5% ஆகும்.",
@@ -799,6 +806,7 @@ const TAMIL_DICTIONARY = {
   Weerawansa: "வீரவன்ச",
   Welgama: "வெல்கம",
   Western: "மேற்கு",
+  "What are Statistical Trends?": "புள்ளியியல் போக்குகள் என்றால் என்ன?",
   "When attending parliament": "பாராளுமன்றத்தில் கலந்து கொண்ட போது",
   "When not attending parliament": "பாராளுமன்றத்தில் கலந்து கொள்ளாத போது",
   Wickramanayaka: "விக்கிரமநாயக்கா",

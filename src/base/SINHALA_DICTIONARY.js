@@ -1,4 +1,4 @@
-// Auto Translated 20220510-145529
+// Auto Translated 20220510-183139
 const SINHALA_DICTIONARY = {
   "(1928 - 1946) Silent Generation": "(1928 - 1946) නිහඬ පරම්පරාව",
   "(1946 - 1965) Baby Boomers": "(1946 - 1965) Baby Boomers",
@@ -292,6 +292,8 @@ const SINHALA_DICTIONARY = {
   Hesha: "හේෂා",
   "Hesha Withanage": "හේෂා විතානගේ",
   "Highest Education Level": "ඉහළම අධ්‍යාපන මට්ටම",
+  "Highly significantly fewer": "ඉතා සැලකිය යුතු ලෙස අඩුය",
+  "Highly significantly more": "ඉතා සැලකිය යුතු ලෙස වැඩි",
   Hinduism: "හින්දු ආගම",
   "ISCED0 Unknown": "ISCED0 නොදන්නා",
   "ISCED1 Primary": "ISCED1 ප්‍රාථමික",
@@ -467,6 +469,7 @@ const SINHALA_DICTIONARY = {
   "Mohomad Muzammil": "මොහොමඩ් මුසම්මිල්",
   Moneragala: "මොණරාගල",
   "Month of Birth": "උපන් මාසය",
+  "Most Popular": "වඩාත්ම ජනප්රියයි",
   Muditha: "මුදිතා",
   "Muditha Prishanthi": "මුදිතා ප්‍රිශාන්ති",
   Mujibur: "මුජිබර්",
@@ -673,6 +676,8 @@ const SINHALA_DICTIONARY = {
   "Show Random": "අහඹු ලෙස පෙන්වන්න",
   "Show Statistical Trends": "සංඛ්‍යාන ප්‍රවණතා පෙන්වන්න",
   Shritharan: "ශ්‍රීදරන්",
+  "Significantly fewer": "සැලකිය යුතු ලෙස අඩුය",
+  "Significantly more": "සැලකිය යුතු ලෙස වැඩි",
   Single: "තනි",
   "Sinhala Buddhist": "සිංහල බෞද්ධ",
   Siripala: "සිරිපාල",
@@ -687,6 +692,8 @@ const SINHALA_DICTIONARY = {
   Sivanesathurai: "සිවනේෂතුරෙයි",
   "Sivanesathurai Santhirakanthan": "සිවනේසතුරෙයි ශාන්තිරකාන්තන්",
   Siyambalapitiya: "සියඹලාපිටිය",
+  "Slightly fewer": "ටිකක් අඩුයි",
+  "Slightly more": "තව ටිකක්",
   Southern: "දකුණු",
   "Statistical Trends": "සංඛ්යානමය ප්රවණතා",
   "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.": "සංඛ්‍යානමය ප්‍රවණතා මනිනු ලබන්නේ ඇතැම් ජාලක සෛල අහඹු ලෙස පවරනු ලැබුවහොත් අප බලාපොරොත්තු වන ප්‍රමාණයට වඩා මන්ත්‍රීවරුන් සංඛ්‍යාවක් අඩංගුද යන්නයි. 'z' (උදා. z = 2.5) අගය පෙන්නුම් කරන්නේ මන්ත්‍රීවරුන් සංඛ්‍යාව අපේක්ෂිත මන්ත්‍රීවරුන් සංඛ්‍යාවෙන් කොපමණ සම්මත අපගමන සංඛ්‍යාවක් වෙනස් වේද යන්නයි. පරාසය (උදා. 84 - 114) යනු මන්ත්‍රීවරුන් සංඛ්‍යාව සඳහා 95% විශ්වාසනීය පරතරයයි. සැබෑ සංඛ්‍යාව මෙම පරාසයෙන් පිටත නම්, ප්‍රවණතාවය අහඹු වීමේ සම්භාවිතාව <5% වේ.",
@@ -799,6 +806,7 @@ const SINHALA_DICTIONARY = {
   Weerawansa: "වීරවංශ",
   Welgama: "වෙල්ගම",
   Western: "බටහිර",
+  "What are Statistical Trends?": "සංඛ්‍යාන ප්‍රවණතා මොනවාද?",
   "When attending parliament": "පාර්ලිමේන්තුවට යනකොට",
   "When not attending parliament": "පාර්ලිමේන්තුවට නොපැමිණෙන විට",
   Wickramanayaka: "වික්‍රමනායක",
