@@ -1,10 +1,10 @@
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
-
+import {t} from "../../base/I18N.js";
 const AVATAR_SIZE = 36;
 
-export default function AvatarMP({i18n, mp, onClickMP}) {
+export default function AvatarMP({mp, onClickMP}) {
   const onClickInner = function (e) {
     onClickMP(mp.id);
   };
@@ -14,11 +14,11 @@ export default function AvatarMP({i18n, mp, onClickMP}) {
       <Tooltip
         title={
           <>
-            <Typography variant="subtitle1">{i18n.t(mp.name)}</Typography>
+            <Typography variant="subtitle1">{t(mp.name)}</Typography>
             <Typography variant="overline" display="block">
-              {i18n.t(mp.party)}
+              {t(mp.party)}
               {" - "}
-              {i18n.t(mp.edName)}
+              {t(mp.edName)}
             </Typography>
           </>
         }
