@@ -40,7 +40,7 @@ export default function CustomAppBar({selectedLang, onSelectLang}) {
             return (
               <Button
                 key={key}
-                sx={{ color: color, padding: 0, maxWidth:"10px"}}
+                sx={{ color: color, padding: 0}}
                 onClick={onClick}
               >
                 {label}
