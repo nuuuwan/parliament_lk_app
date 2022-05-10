@@ -9,16 +9,14 @@ import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
 import MP from "../../core/MP.js";
 import GridView from "../../nonstate/molecules/GridView.js";
-import CustomBottomNavigation from
-  "../../nonstate/molecules/CustomBottomNavigation.js";
+import CustomBottomNavigation from "../../nonstate/molecules/CustomBottomNavigation.js";
 
 import StatisticalTrendsSwitch from "../../nonstate/molecules/StatisticalTrendsSwitch.js";
 import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimPicker from "../../nonstate/atoms/DimPicker.js";
 
-
-import {t} from "../../base/I18N.js";
+import { t } from "../../base/I18N.js";
 import Dims from "../../core/Dims.js";
 
 const DEFAULT_X_DIM = "Is Age > 40";
@@ -28,8 +26,6 @@ const STYLE = {
   margin: 4,
   marginBottom: 10,
 };
-
-
 
 export default class ParliamentView extends Component {
   constructor(props) {
@@ -141,7 +137,7 @@ export default class ParliamentView extends Component {
     const cellMap = function (mp) {
       const key = `avatar-${mp.id}`;
       return (
-        <AvatarMP key={key} mp={mp}  onClickMP={this.onClickMP.bind(this)} />
+        <AvatarMP key={key} mp={mp} onClickMP={this.onClickMP.bind(this)} />
       );
     }.bind(this);
 
@@ -159,7 +155,6 @@ export default class ParliamentView extends Component {
             label={t("Top to Bottom") + " (Y)"}
             selectedDim={yDim}
             onChange={this.onChangeYDim.bind(this)}
-
           />
 
           <IconButton onClick={this.onClickSwapDims.bind(this)}>
@@ -169,9 +164,7 @@ export default class ParliamentView extends Component {
             label={t("Left to Right") + " (X)"}
             selectedDim={xDim}
             onChange={this.onChangeXDim.bind(this)}
-
           />
-
         </Stack>
 
         <GridView
@@ -180,7 +173,6 @@ export default class ParliamentView extends Component {
           yAxisLabels={yAxisLabels}
           onClick={this.onClickMP}
           showStatisticalTrends={showStatisticalTrends}
-
         />
 
         <StatisticalTrendsSwitch
@@ -193,11 +185,7 @@ export default class ParliamentView extends Component {
           open={activeMPId !== null}
           onClose={this.onDrawerClose.bind(this)}
         >
-          <MPDrawerView
-            mp={activeMP}
-
-            onClose={this.onDrawerClose.bind(this)}
-          />
+          <MPDrawerView mp={activeMP} onClose={this.onDrawerClose.bind(this)} />
         </Drawer>
 
         <CustomBottomNavigation />

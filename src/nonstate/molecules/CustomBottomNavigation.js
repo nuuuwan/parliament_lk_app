@@ -1,15 +1,15 @@
 import ReactGA from "react-ga";
 
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Tooltip from '@mui/material/Tooltip';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import TravelExploreIcon from '@mui/icons-material/TravelExplore';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import GavelIcon from '@mui/icons-material/Gavel';
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
+import Tooltip from "@mui/material/Tooltip";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import TravelExploreIcon from "@mui/icons-material/TravelExplore";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import GavelIcon from "@mui/icons-material/Gavel";
 
-import {t} from "../../base/I18N.js";
+import { t } from "../../base/I18N.js";
 
 const BOTTOM_NAVIGATION_ITEMS = [
   {
@@ -35,7 +35,6 @@ const BOTTOM_NAVIGATION_ITEMS = [
 ];
 
 export default function CustomBottomNavigation() {
-
   return (
     <Paper
       sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
@@ -58,9 +57,7 @@ export default function CustomBottomNavigation() {
             <Tooltip
               key={key}
               title={
-                <Typography variant="subtitle1">
-                  {t(d.details)}
-                </Typography>
+                <Typography variant="subtitle1">{t(d.details)}</Typography>
               }
             >
               <BottomNavigationAction

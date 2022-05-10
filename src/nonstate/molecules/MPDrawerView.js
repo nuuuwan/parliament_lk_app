@@ -21,13 +21,13 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import {t} from "../../base/I18N.js";
+import { t } from "../../base/I18N.js";
 
 const STYLE_BOX = { padding: 3, maxWidth: "75%" };
 const STYLE_AVATAR = { width: 100, height: 100 };
 const SHOW_ADDRESS = false;
 
-function getSittingText( isSitting) {
+function getSittingText(isSitting) {
   return t(
     isSitting ? "When attending parliament" : "When not attending parliament"
   );
@@ -62,7 +62,7 @@ function CustomLink({
   );
 }
 
-function Address({ gaLabel,  address, isSitting }) {
+function Address({ gaLabel, address, isSitting }) {
   if (!address) {
     return null;
   }
@@ -76,7 +76,7 @@ function Address({ gaLabel,  address, isSitting }) {
   return (
     <CustomLink
       primary={renderedAddress}
-      secondary={getSittingText( isSitting)}
+      secondary={getSittingText(isSitting)}
       href={href}
       Icon={HomeIcon}
       gaActionSuffix="Address"
@@ -85,14 +85,14 @@ function Address({ gaLabel,  address, isSitting }) {
   );
 }
 
-function Phone({ gaLabel,  phone, isSitting }) {
+function Phone({ gaLabel, phone, isSitting }) {
   if (!phone) {
     return null;
   }
   return (
     <CustomLink
       primary={phone}
-      secondary={getSittingText( isSitting)}
+      secondary={getSittingText(isSitting)}
       href={"tel:" + phone}
       Icon={PhoneIcon}
       gaActionSuffix="Phone"
@@ -116,7 +116,7 @@ function Email({ gaLabel, email }) {
   );
 }
 
-function Wikipedia({ gaLabel,  searchText }) {
+function Wikipedia({ gaLabel, searchText }) {
   if (!searchText) {
     return null;
   }
@@ -134,7 +134,7 @@ function Wikipedia({ gaLabel,  searchText }) {
   );
 }
 
-function Parliament({ gaLabel,  id }) {
+function Parliament({ gaLabel, id }) {
   const href = "https://www.parliament.lk/component/members/viewMember/" + id;
   return (
     <CustomLink
@@ -147,14 +147,18 @@ function Parliament({ gaLabel,  id }) {
   );
 }
 
-function QualificationsWidget({  title, body }) {
+function QualificationsWidget({ title, body }) {
   if (!body) {
     return null;
   }
   return (
     <Card sx={{ maxWidth: 275, margin: 1 }}>
       <CardContent>
-        <Typography sx={{ fontSize: "x-small" }} color="text.secondary" gutterBottom>
+        <Typography
+          sx={{ fontSize: "x-small" }}
+          color="text.secondary"
+          gutterBottom
+        >
           {t(title + " Qualifications")}
         </Typography>
         <Typography variant="body2">{body}</Typography>
@@ -163,7 +167,7 @@ function QualificationsWidget({  title, body }) {
   );
 }
 
-function ChipWidget({  content }) {
+function ChipWidget({ content }) {
   if (!content) {
     return null;
   }
@@ -177,7 +181,7 @@ function ChipWidget({  content }) {
 }
 
 export default function MPDrawerView(props) {
-  const { mp,  onClose } = props;
+  const { mp, onClose } = props;
   if (!mp) {
     return null;
   }
@@ -209,54 +213,38 @@ export default function MPDrawerView(props) {
       </Typography>
 
       <Stack direction="row" spacing={1}>
-        <ChipWidget content={mp.profession}  />
-        <ChipWidget content={mp.civilStatus}  />
-        <ChipWidget content={mp.religion}  />
+        <ChipWidget content={mp.profession} />
+        <ChipWidget content={mp.civilStatus} />
+        <ChipWidget content={mp.religion} />
       </Stack>
 
-      <QualificationsWidget
-        title="Academic"
-        body={mp.academicQualifications}
-
-      />
+      <QualificationsWidget title="Academic" body={mp.academicQualifications} />
       <QualificationsWidget
         title="Professional"
         body={mp.professionalQualifications}
-
       />
 
       <List>
-        <Phone
-          phone={mp.phoneSitting}
-          isSitting={true}
-
-          gaLabel={gaLabel}
-        />
+        <Phone phone={mp.phoneSitting} isSitting={true} gaLabel={gaLabel} />
 
         {SHOW_ADDRESS ? (
           <Address
             address={mp.addressSitting}
             isSitting={true}
-
             gaLabel={gaLabel}
           />
         ) : null}
 
-        <Phone phone={mp.phone}  gaLabel={gaLabel} />
+        <Phone phone={mp.phone} gaLabel={gaLabel} />
 
         {SHOW_ADDRESS ? (
-          <Address
-            address={mp.address}
-            isSitting={false}
-
-            gaLabel={gaLabel}
-          />
+          <Address address={mp.address} isSitting={false} gaLabel={gaLabel} />
         ) : null}
 
-        <Email email={mp.email}  gaLabel={gaLabel} />
+        <Email email={mp.email} gaLabel={gaLabel} />
 
-        <Parliament id={mp.id}  gaLabel={gaLabel} />
-        <Wikipedia searchText={mp.name}  gaLabel={gaLabel} />
+        <Parliament id={mp.id} gaLabel={gaLabel} />
+        <Wikipedia searchText={mp.name} gaLabel={gaLabel} />
       </List>
     </Box>
   );

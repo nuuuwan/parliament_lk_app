@@ -3,8 +3,8 @@ import Typography from "@mui/material/Typography";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
-import Stack from '@mui/material/Stack';
-import {t} from "../../base/I18N.js";
+import Stack from "@mui/material/Stack";
+import { t } from "../../base/I18N.js";
 
 const COLOR_SWITCH_ON = "#1976D2";
 const STATISTICAL_TRENDS_TOOLTOP = [
@@ -20,9 +20,7 @@ const STATISTICAL_TRENDS_TOOLTOP = [
 export default function StatisticalTrendsSwitch({
   showStatisticalTrends,
   onClickStatisticalTrends,
-
 }) {
-
   return (
     <div>
       <FormControlLabel
@@ -40,7 +38,7 @@ export default function StatisticalTrendsSwitch({
             {t("Statistical Trends")}
           </Typography>
         }
-        sx={{marginLeft: 1}}
+        sx={{ marginLeft: 1 }}
       />
 
       {showStatisticalTrends ? (
@@ -52,6 +50,5 @@ export default function StatisticalTrendsSwitch({
         </Stack>
       ) : null}
     </div>
-
   );
 }

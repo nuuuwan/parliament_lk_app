@@ -1,19 +1,19 @@
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
-import {t} from "../../base/I18N.js";
+import Avatar from "@mui/material/Avatar";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import { t } from "../../base/I18N.js";
 
 function getAvatarSize([width, height]) {
   const area = width * height;
   return parseInt(Math.sqrt((area - 10_000) / 225) * 0.5);
 }
 
-export default function AvatarMP({mp, onClickMP}) {
+export default function AvatarMP({ mp, onClickMP }) {
   const onClickInner = function (e) {
     onClickMP(mp.id);
   };
 
-  const avatar_size =  getAvatarSize([window.innerWidth, window.innerHeight]);
+  const avatar_size = getAvatarSize([window.innerWidth, window.innerHeight]);
 
   return (
     <div>

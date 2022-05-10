@@ -2,7 +2,7 @@ import { Component } from "react";
 import * as React from "react";
 import ReactGA from "react-ga";
 
-import  I18N  from "../../base/I18N.js";
+import I18N from "../../base/I18N.js";
 import CustomAppBar from "../../nonstate/molecules/CustomAppBar.js";
 import ParliamentView from "../molecules/ParliamentView.js";
 
@@ -24,7 +24,7 @@ export default class HomePage extends Component {
   }
 
   onSelectLang(selectedLang) {
-    this.setState({selectedLang})
+    this.setState({ selectedLang });
   }
 
   render() {

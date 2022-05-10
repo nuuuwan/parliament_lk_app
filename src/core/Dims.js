@@ -1,7 +1,5 @@
 import DataStructuresFuture from "../base/DataStructuresFuture.js";
-import {
-  DIM_IDX,
-} from "./DimConstants.js";
+import { DIM_IDX } from "./DimConstants.js";
 
 function expandDimInfo(mpList, dimName) {
   const dim = DIM_IDX[dimName];
@@ -21,14 +19,8 @@ function expandDimInfo(mpList, dimName) {
 
 export default class Dims {
   static buildGrid(mpList, dimXName, dimYName, cellMap) {
-    const [xAxisLabels, nX, xToIX] = expandDimInfo(
-      mpList,
-      dimXName,
-    );
-    const [yAxisLabels, nY, yToIY] = expandDimInfo(
-      mpList,
-      dimYName,
-    );
+    const [xAxisLabels, nX, xToIX] = expandDimInfo(mpList, dimXName);
+    const [yAxisLabels, nY, yToIY] = expandDimInfo(mpList, dimYName);
 
     const cells = mpList.reduce(
       function (cells, mp) {

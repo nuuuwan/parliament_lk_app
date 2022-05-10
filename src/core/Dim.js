@@ -1,9 +1,5 @@
 export default class Dim {
-  constructor(
-      name,
-      func,
-      isSorted=false,
-  ) {
+  constructor(name, func, isSorted = false) {
     this.name = name;
     this.func = func;
     this.isSorted = isSorted;
@@ -12,5 +8,4 @@ export default class Dim {
   map(mpList) {
     return mpList.map(this.func);
   }
-
 }

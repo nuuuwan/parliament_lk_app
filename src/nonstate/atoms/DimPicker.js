@@ -7,7 +7,7 @@ import Select from "@mui/material/Select";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Typography from "@mui/material/Typography";
-import {t} from "../../base/I18N.js";
+import { t } from "../../base/I18N.js";
 
 import {
   DIM_GROUP_LIST,
@@ -28,17 +28,10 @@ export default function DimPicker(props) {
     return onChange(dim);
   };
   return (
-    <FormControl sx={{ m: 1, minWidth: 120}} >
+    <FormControl sx={{ m: 1, minWidth: 120 }}>
       <InputLabel id="demo-select-small">{label}</InputLabel>
-      <Select
-        value={selectedDim}
-        label={label}
-        onChange={onChangeInner}
-      >
-        {DIM_GROUP_LIST.map(function (
-          dimGroup,
-          iGroup
-        ) {
+      <Select value={selectedDim} label={label} onChange={onChangeInner}>
+        {DIM_GROUP_LIST.map(function (dimGroup, iGroup) {
           const key = "group-" + dimGroup.name;
           const GroupIcon = dimGroup.Icon;
           const dimList = DIM_GROUP_NAME_TO_DIM_LIST[dimGroup.name];
@@ -50,9 +43,7 @@ export default function DimPicker(props) {
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <Typography type="caption">
-                    {t(dimGroup.name)}
-                  </Typography>
+                  <Typography type="caption">{t(dimGroup.name)}</Typography>
                 }
               />
             </MenuItem>,

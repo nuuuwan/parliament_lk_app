@@ -2,7 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import {t} from "../../base/I18N.js";
+import { t } from "../../base/I18N.js";
 
 const STYLE_PAPER = {
   margin: 1,
@@ -33,7 +33,7 @@ const COLOR_SWITCH_ON = "#1976D2";
 function DimWidget({ dim }) {
   return (
     <>
-      <Typography variant="body1" sx={{fontSize:"x-small"}}>
+      <Typography variant="body1" sx={{ fontSize: "x-small" }}>
         {t(dim)}
       </Typography>
     </>
@@ -77,8 +77,7 @@ function PctWidget({ n, d }) {
 }
 
 export default function GridView(props) {
-  const { cells, xAxisLabels, yAxisLabels, showStatisticalTrends } =
-    props;
+  const { cells, xAxisLabels, yAxisLabels, showStatisticalTrends } = props;
   const countXY = 225;
 
   function getCountX(iX) {
@@ -110,7 +109,7 @@ export default function GridView(props) {
 
               return (
                 <th key={key} style={STYLE_HEADER_CELL}>
-                  <DimWidget dim={xLabel}  />
+                  <DimWidget dim={xLabel} />
                   <PctWidget n={countX} d={countXY} />
                 </th>
               );
@@ -126,7 +125,7 @@ export default function GridView(props) {
               <tr key={key}>
                 {
                   <th style={STYLE_HEADER_CELL}>
-                    <DimWidget dim={yLabel}  />
+                    <DimWidget dim={yLabel} />
                     <PctWidget n={countY} d={countXY} />
                   </th>
                 }

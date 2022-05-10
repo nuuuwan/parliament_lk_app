@@ -2,7 +2,7 @@ import SINHALA_DICTIONARY from "./SINHALA_DICTIONARY.js";
 import TAMIL_DICTIONARY from "./TAMIL_DICTIONARY.js";
 const BASE_LANG = "en";
 
-const LOCAL_STORAGE_KEY = 'parliament_lk_app.lang'
+const LOCAL_STORAGE_KEY = "parliament_lk_app.lang";
 
 const DICTIONARY = {
   si: SINHALA_DICTIONARY,
@@ -14,7 +14,6 @@ export const LANG_TO_LABEL = {
   ta: "தமிழ்",
   en: "English",
 };
-
 
 export default class I18N {
   static getLang() {
@@ -29,14 +28,14 @@ export default class I18N {
     if (!s) {
       return s;
     }
-    
+
     const lang = I18N.getLang();
     if (lang === BASE_LANG) {
       return s;
     }
 
     if (!DICTIONARY[lang]) {
-      console.error('Unknown language: ' + lang);
+      console.error("Unknown language: " + lang);
       return s;
     }
 
