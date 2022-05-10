@@ -19,10 +19,10 @@ import CustomBottomNavigation from
 
 import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
-import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
+import DimPicker from "../../nonstate/atoms/DimPicker.js";
 
 import {t} from "../../base/I18N.js";
-import Dimensions from "../../core/Dimensions.js";
+import Dims from "../../core/Dims.js";
 
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
@@ -57,7 +57,7 @@ export default class ParliamentView extends Component {
 
   onChangeXDim(xDim) {
     ReactGA.event({
-      category: "Dimensions",
+      category: "Dims",
       action: `Changed X Dim`,
       label: xDim,
       value: 10,
@@ -68,7 +68,7 @@ export default class ParliamentView extends Component {
 
   onChangeYDim(yDim) {
     ReactGA.event({
-      category: "Dimensions",
+      category: "Dims",
       action: `Changed Y Dim`,
       label: yDim,
       value: 10,
@@ -108,8 +108,8 @@ export default class ParliamentView extends Component {
   onClickSwapDims(e) {
     const { xDim, yDim } = this.state;
     ReactGA.event({
-      category: "Dimensions",
-      action: "Clicked Swap Dimensions",
+      category: "Dims",
+      action: "Clicked Swap Dims",
       label: `${xDim},${yDim}`,
       value: 10,
     });
@@ -150,7 +150,7 @@ export default class ParliamentView extends Component {
       );
     }.bind(this);
 
-    const { cells, xAxisLabels, yAxisLabels } = Dimensions.buildGrid(
+    const { cells, xAxisLabels, yAxisLabels } = Dims.buildGrid(
       Object.values(mpIdx),
       xDim,
       yDim,
@@ -160,9 +160,9 @@ export default class ParliamentView extends Component {
     return (
       <Box sx={STYLE}>
         <Stack direction="row">
-          <DimensionPicker
+          <DimPicker
             label={t("Top to Bottom") + " (Y)"}
-            selectedDimension={yDim}
+            selectedDim={yDim}
             onChange={this.onChangeYDim.bind(this)}
 
           />
@@ -170,9 +170,9 @@ export default class ParliamentView extends Component {
           <IconButton onClick={this.onClickSwapDims.bind(this)}>
             <SwapHorizIcon />
           </IconButton>
-          <DimensionPicker
+          <DimPicker
             label={t("Left to Right") + " (X)"}
-            selectedDimension={xDim}
+            selectedDim={xDim}
             onChange={this.onChangeXDim.bind(this)}
 
           />

@@ -1,4 +1,4 @@
-export default class DimensionGroup {
+export default class DimGroup {
   constructor(
       name,
       Icon,

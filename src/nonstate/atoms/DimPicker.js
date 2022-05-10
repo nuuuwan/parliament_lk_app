@@ -10,17 +10,17 @@ import Typography from "@mui/material/Typography";
 import {t} from "../../base/I18N.js";
 
 import {
-  DIMENSION_GROUP_LIST,
-  GROUP_TO_DIMENSION_LIST,
-} from "../../core/DimensionConstants.js";
+  DIM_GROUP_LIST,
+  DIM_GROUP_NAME_TO_DIM_LIST,
+} from "../../core/DimConstants.js";
 
-export default function DimensionPicker(props) {
-  const { label, selectedDimension, onChange } = props;
+export default function DimPicker(props) {
+  const { label, selectedDim, onChange } = props;
 
   const onChangeInner = function (e) {
     const dim = e.target.value;
     ReactGA.event({
-      category: "Dimensions",
+      category: "Dims",
       action: `Changed Dim`,
       label: dim,
       value: 20,
@@ -33,17 +33,17 @@ export default function DimensionPicker(props) {
       <Select
         labelId="demo-select-small"
         id="demo-select-small"
-        value={selectedDimension}
+        value={selectedDim}
         label={label}
         onChange={onChangeInner}
       >
-        {DIMENSION_GROUP_LIST.map(function (
-          dimensionGroup,
+        {DIM_GROUP_LIST.map(function (
+          dimGroup,
           iGroup
         ) {
-          const key = "group-" + dimensionGroup.name;
-          const GroupIcon = dimensionGroup.Icon;
-          const dimensionList = GROUP_TO_DIMENSION_LIST[dimensionGroup.name];
+          const key = "group-" + dimGroup.name;
+          const GroupIcon = dimGroup.Icon;
+          const dimList = DIM_GROUP_NAME_TO_DIM_LIST[dimGroup.name];
 
           return [
             <MenuItem key={key} disabled sx={{ marginTop: 2 }}>
@@ -53,16 +53,16 @@ export default function DimensionPicker(props) {
               <ListItemText
                 primary={
                   <Typography type="caption">
-                    {t(dimensionGroup.name)}
+                    {t(dimGroup.name)}
                   </Typography>
                 }
               />
             </MenuItem>,
-            dimensionList.map(function (dimension, iDimension) {
-              const key = `option-${dimension.name}`;
+            dimList.map(function (dim, iDim) {
+              const key = `option-${dim.name}`;
               return (
-                <MenuItem key={key} value={dimension.name} sx={{ marginLeft: 2 }}>
-                  {t(dimension.name)}
+                <MenuItem key={key} value={dim.name} sx={{ marginLeft: 2 }}>
+                  {t(dim.name)}
                 </MenuItem>
               );
             }),

@@ -1,4 +1,4 @@
-export default class Dimension {
+export default class Dim {
   constructor(
       name,
       func,

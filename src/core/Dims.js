@@ -1,14 +1,14 @@
 import DataStructuresFuture from "../base/DataStructuresFuture.js";
 import {
-  DIMENSION_IDX,
-} from "./DimensionConstants.js";
+  DIM_IDX,
+} from "./DimConstants.js";
 
-function expandDimensionInfo(mpList, dimensionName) {
-  const dimension = DIMENSION_IDX[dimensionName];
-  const xValues = dimension.map(mpList);
+function expandDimInfo(mpList, dimName) {
+  const dim = DIM_IDX[dimName];
+  const xValues = dim.map(mpList);
 
   let xAxisLabels;
-  if (dimension.isSorted) {
+  if (dim.isSorted) {
     xAxisLabels = DataStructuresFuture.uniqueSorted(xValues);
   } else {
     const xAxisLabelAndCount = DataStructuresFuture.keyAndCount(xValues);
@@ -19,23 +19,23 @@ function expandDimensionInfo(mpList, dimensionName) {
   return [xAxisLabels, xAxisLabels.length, xToIX];
 }
 
-export default class Dimensions {
-  static buildGrid(mpList, dimensionXName, dimensionYName, cellMap) {
-    const [xAxisLabels, nX, xToIX] = expandDimensionInfo(
+export default class Dims {
+  static buildGrid(mpList, dimXName, dimYName, cellMap) {
+    const [xAxisLabels, nX, xToIX] = expandDimInfo(
       mpList,
-      dimensionXName,
+      dimXName,
     );
-    const [yAxisLabels, nY, yToIY] = expandDimensionInfo(
+    const [yAxisLabels, nY, yToIY] = expandDimInfo(
       mpList,
-      dimensionYName,
+      dimYName,
     );
 
     const cells = mpList.reduce(
       function (cells, mp) {
-        const dimensionX = DIMENSION_IDX[dimensionXName];
-        const dimensionY = DIMENSION_IDX[dimensionYName];
-        const xValue = dimensionX.func(mp);
-        const yValue = dimensionY.func(mp);
+        const dimX = DIM_IDX[dimXName];
+        const dimY = DIM_IDX[dimYName];
+        const xValue = dimX.func(mp);
+        const yValue = dimY.func(mp);
         const [iX, iY] = [xToIX[xValue], yToIY[yValue]];
         cells[iX][iY].push(cellMap(mp));
         return cells;
