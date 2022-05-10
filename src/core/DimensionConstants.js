@@ -10,7 +10,7 @@ import CelebrationIcon from "@mui/icons-material/Celebration";
 import Dimension from './Dimension.js';
 import DimensionGroup from './DimensionGroup.js';
 
-const DIMENSION_GROUP_LIST = [
+export const DIMENSION_GROUP_LIST = [
     new DimensionGroup("Political Parties",  GroupsIcon),
     new DimensionGroup("Education & Profession",  SchoolIcon),
     new DimensionGroup("Voting & Parliamentary Attandance",  HowToVoteIcon),
@@ -77,13 +77,6 @@ export const SORTED_DIMENSION_LIST = [
 ];
 
 // Derived
-export const GROUP_TO_ICON = DIMENSION_GROUP_LIST.reduce(
-  function(GROUP_TO_ICON, dimensionGroup) {
-      GROUP_TO_ICON[dimensionGroup.name] = dimensionGroup.Icon;
-      return GROUP_TO_ICON;
-  },
-  {},
-)
 
 export const DIMENSION_TO_FUNC = Object.values(
   GROUP_TO_DIMENSION_LIST
