@@ -8,4 +8,9 @@ export default class Dimension {
     this.func = func;
     this.isSorted = isSorted;
   }
+
+  map(mpList) {
+    return mpList.map(this.func);
+  }
+
 }
