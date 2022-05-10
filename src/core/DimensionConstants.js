@@ -26,25 +26,25 @@ export const GROUP_TO_DIMENSION_LIST = {
     new Dimension("Party", (mp) => mp.party),
   ],
   "Education & Profession": [
-    new Dimension("Highest Education Level", (mp) => mp.academicHighestLevel),
+    new Dimension("Highest Education Level", (mp) => mp.academicHighestLevel, true),
     new Dimension("Has Bachelors or higher?", (mp) => mp.isBachelorsOrHigher),
     new Dimension("Has Advanced Levels or higher?", (mp) => mp.isALevelsOrHigher),
     new Dimension("Profession", (mp) => mp.profession),
   ],
   "Voting & Parliamentary Attandance": [
   new Dimension(  "Voting for 20th Amendment", (mp) => mp.vote20A),
-    new Dimension("Attandance 9th Parliament (2020 - )", (mp) => mp.attendance9th),
-    new Dimension("Attandance 8th Parliament (2017 - 2020)", (mp) => mp.attendance8th),
+    new Dimension("Attandance 9th Parliament (2020 - )", (mp) => mp.attendance9th, true),
+    new Dimension("Attandance 8th Parliament (2017 - 2020)", (mp) => mp.attendance8th, true),
   ],
   "Transparency & Corruption": [
     new Dimension("Has Publicly Declared Assets?", (mp) => mp.hasDeclaredAssets),
   ],
   "Demographics": [
-    new Dimension("Age Group (5 year)", (mp) => mp.getAgeGroup(5)),
-    new Dimension("Age Group (10 year)", (mp) => mp.getAgeGroup(10)),
+    new Dimension("Age Group (5 year)", (mp) => mp.getAgeGroup(5), true),
+    new Dimension("Age Group (10 year)", (mp) => mp.getAgeGroup(10), true),
     new Dimension("Is Age > 40", (mp) => mp.isAgeOver(40)),
     new Dimension("Is Age > 50", (mp) => mp.isAgeOver(50)),
-    new Dimension("Generation", (mp) => mp.generation),
+    new Dimension("Generation", (mp) => mp.generation, true),
     new Dimension("Gender", (mp) => mp.gender),
     new Dimension("Civil Status", (mp) => mp.civilStatus),
   ],
@@ -62,29 +62,23 @@ export const GROUP_TO_DIMENSION_LIST = {
     new Dimension("First Letter of First Name", (mp) => mp.firstNames.substring(0, 1)),
     new Dimension("Month of Birth", (mp) => mp.monthOfBirth),
     new Dimension("Show All", (mp) => "All"),
-    new Dimension("Show Random", (mp) => "Random Group " + parseInt(Math.random() * 5 + 1)),
+    new Dimension("Show Random", (mp) => "Random Group " + parseInt(Math.random() * 5 + 1)), true,
   ],
 };
 
-export const SORTED_DIMENSION_LIST = [
-  "Age Group (5 year)",
-  "Age Group (10 year)",
-  "Highest Education Level",
-  "Show Random",
-  "Attandance 9th Parliament (2020 - )",
-  "Attandance 8th Parliament (2017 - 2020)",
-  "Generation",
-];
-
 // Derived
 
-export const DIMENSION_TO_FUNC = Object.values(
-  GROUP_TO_DIMENSION_LIST
-).reduce(function (DIMENSION_TO_FUNC, dimensionList) {
-  return dimensionList.reduce(function (DIMENSION_TO_FUNC, dimension) {
-    DIMENSION_TO_FUNC[dimension.name] = dimension.func;
-    return DIMENSION_TO_FUNC;
-  }, DIMENSION_TO_FUNC);
-}, {});
+export const DIMENSION_LIST = Object.values(GROUP_TO_DIMENSION_LIST).reduce(
+  function(DIMENSION_LIST, dimensionList) {
+    return [].concat(DIMENSION_LIST, dimensionList);
+  },
+  [],
+)
 
-export const DIMENSION_LIST = Object.keys(DIMENSION_TO_FUNC);
+export const DIMENSION_IDX = DIMENSION_LIST.reduce(
+  function(DIMENSION_IDX, dimension) {
+    DIMENSION_IDX[dimension.name] = dimension;
+    return DIMENSION_IDX;
+  },
+  {},
+)

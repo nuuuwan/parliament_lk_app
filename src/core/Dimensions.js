@@ -1,14 +1,14 @@
 import DataStructuresFuture from "../base/DataStructuresFuture.js";
 import {
-  SORTED_DIMENSION_LIST,
-  DIMENSION_TO_FUNC,
+  DIMENSION_IDX,
 } from "./DimensionConstants.js";
 
-function expandDimensionInfo(dataList, funcXValues, xDim) {
-  const xValues = dataList.map(funcXValues);
+function expandDimensionInfo(mpList, dimensionName) {
+  const dimension = DIMENSION_IDX[dimensionName];
+  const xValues = mpList.map(dimension.func);
 
   let xAxisLabels;
-  if (SORTED_DIMENSION_LIST.includes(xDim)) {
+  if (dimension.isSorted) {
     xAxisLabels = DataStructuresFuture.uniqueSorted(xValues);
   } else {
     const xAxisLabelAndCount = DataStructuresFuture.keyAndCount(xValues);
@@ -20,33 +20,24 @@ function expandDimensionInfo(dataList, funcXValues, xDim) {
 }
 
 export default class Dimensions {
-  static buildGrid(dataList, xDim, yDim, cellMap) {
-    const xFunc = DIMENSION_TO_FUNC[xDim];
-    const yFunc = DIMENSION_TO_FUNC[yDim];
-
-    const dxyList = dataList.map(function (d) {
-      return {
-        d,
-        x: xFunc(d),
-        y: yFunc(d),
-      };
-    });
-
+  static buildGrid(mpList, dimensionXName, dimensionYName, cellMap) {
     const [xAxisLabels, nX, xToIX] = expandDimensionInfo(
-      dxyList,
-      (d) => d.x,
-      xDim
+      mpList,
+      dimensionXName,
     );
     const [yAxisLabels, nY, yToIY] = expandDimensionInfo(
-      dxyList,
-      (d) => d.y,
-      yDim
+      mpList,
+      dimensionYName,
     );
 
-    const cells = dxyList.reduce(
-      function (cells, dxy) {
-        const [iX, iY] = [xToIX[dxy.x], yToIY[dxy.y]];
-        cells[iX][iY].push(cellMap(dxy.d));
+    const cells = mpList.reduce(
+      function (cells, mp) {
+        const dimensionX = DIMENSION_IDX[dimensionXName];
+        const dimensionY = DIMENSION_IDX[dimensionYName];
+        const xValue = dimensionX.func(mp);
+        const yValue = dimensionY.func(mp);
+        const [iX, iY] = [xToIX[xValue], yToIY[yValue]];
+        cells[iX][iY].push(cellMap(mp));
         return cells;
       },
       DataStructuresFuture.initArray2D(nX, nY, (iX, iY) => [])
