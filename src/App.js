@@ -7,13 +7,16 @@ import "./App.css";
 const TRACKING_ID = "UA-228120741-2";
 ReactGA.initialize(TRACKING_ID);
 
-const theme = createTheme({
-  typography: {
-    fontFamily: ["PT Sans", "sans-serif"].join(","),
-  },
-});
-
 function App() {
+  const [width, height] = [window.innerWidth, window.innerHeight];
+  const fontSize = parseInt(Math.sqrt(width * height) / 60);
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["PT Sans", "sans-serif"].join(","),
+      fontSize: fontSize,
+    },
+  });
+
   return (
     <ThemeProvider theme={theme}>
       <HomePage />
