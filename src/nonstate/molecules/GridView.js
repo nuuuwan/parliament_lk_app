@@ -28,6 +28,8 @@ const STYLE_HEADER_CELL = {
   },
 };
 
+const COLOR_SWITCH_ON = "#1976D2";
+
 function DimWidget({ dim }) {
   return (
     <>
@@ -177,20 +179,24 @@ export default function GridView(props) {
                     const zStr = parseInt(z * 10 + 0.5) / 10;
                     statisticsBlurb = (
                       <>
-                        <Typography variant="subtitle1" component="div">
-                          {humanText}
+                        <Typography
+                          variant="subtitle1"
+                          component="div"
+                          color={COLOR_SWITCH_ON}
+                        >
+                          {t(humanText)}
                         </Typography>
                         <Typography
                           variant="caption"
                           component="span"
-                          color="gray"
+                          color={COLOR_SWITCH_ON}
                         >
                           {lowHighStr}
                         </Typography>
                         <Typography
                           variant="caption"
                           component="span"
-                          color="gray"
+                          color={COLOR_SWITCH_ON}
                         >
                           {` (z = ${zStr})`}
                         </Typography>
