@@ -138,7 +138,11 @@ export default class MP {
   }
 
   get monthOfBirth() {
-    return this.dateOfBirth.substring(5, 7);
+    return parseInt(this.dateOfBirth.substring(5, 7));
+  }
+
+  get yearOfBirth() {
+    return parseInt(this.dateOfBirth.substring(0, 4));
   }
 
   get hasDeclaredAssets() {
@@ -178,6 +182,29 @@ export default class MP {
 
   get logString() {
     return this.id + "-" + this.nameShort;
+  }
+
+  get getGeneration() {
+    const yearOfBirth = this.yearOfBirth;
+    if (yearOfBirth <= 1946 && yearOfBirth > 1927) {
+      return "Silent Generation";
+    }
+    if (yearOfBirth <= 1964) {
+      return "Baby Boomers";
+    }
+    if (yearOfBirth <= 1980) {
+      return "Generation X";
+    }
+    if (yearOfBirth <= 1996) {
+      return "Millenials/Gen Y";
+    }
+    if (yearOfBirth <= 2012) {
+      return "Zoomers/Gen Z";
+    }
+    if (yearOfBirth > 2012) {
+      return "Generation Alpha";
+    }
+    return 'Unknown'
   }
 
   static async getRawMPList() {
