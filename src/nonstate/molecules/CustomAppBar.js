@@ -52,11 +52,11 @@ export default function CustomAppBar({ selectedLang, onSelectLang }) {
             <Button
               key={key}
               sx={{
-                  color: color,
-                  minHeight: 0,
-                  minWidth: 0,
-                  padding: 1,
-                  opacity: opacity,
+                color: color,
+                minHeight: 0,
+                minWidth: 0,
+                padding: 1,
+                opacity: opacity,
               }}
               onClick={onClick}
             >

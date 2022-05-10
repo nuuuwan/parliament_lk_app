@@ -1,21 +1,18 @@
-import Typography from "@mui/material/Typography";
-import { t } from "../../base/I18N.js";
-
 const STYLE_L = {
-  color: '#8d153a',
-}
+  color: "#8d153a",
+};
 const STYLE_A = {
-  color: '#eb7400',
-}
+  color: "#eb7400",
+};
 const STYLE_N = {
-  color: '#ffbe29',
-}
+  color: "#ffbe29",
+};
 const STYLE_K = {
-  color: '#00534e',
-}
+  color: "#00534e",
+};
 const STYLE_A2 = {
-  color: '#00000',
-}
+  color: "#00000",
+};
 
 export default function SriLankaLogo() {
   return (
