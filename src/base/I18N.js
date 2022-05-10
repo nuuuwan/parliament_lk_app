@@ -17,18 +17,6 @@ export const LANG_TO_LABEL = {
 
 
 export default class I18N {
-  constructor(lang) {
-    I18N.setLang(lang);
-  }
-
-  t(s) {
-    return I18N.t(s);
-  }
-
-  setLang(lang) {
-    I18N.setLang(lang);
-  }
-
   static getLang() {
     return localStorage.getItem(LOCAL_STORAGE_KEY);
   }
@@ -37,7 +25,7 @@ export default class I18N {
     localStorage.setItem(LOCAL_STORAGE_KEY, lang);
   }
 
-  static t(s) {
+  static translate(s) {
     const lang = I18N.getLang();
     if (lang === BASE_LANG) {
       return s;
@@ -53,5 +41,5 @@ export default class I18N {
 }
 
 export function t(s) {
-  return I18N.t(s);
+  return I18N.translate(s);
 }

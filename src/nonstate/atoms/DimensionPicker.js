@@ -7,13 +7,15 @@ import Select from "@mui/material/Select";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Typography from "@mui/material/Typography";
+import {t} from "../../base/I18N.js";
+
 import {
   GROUP_TO_DIMENSION_LIST,
   GROUP_TO_ICON,
 } from "../../core/DimensionConstants.js";
 
 export default function DimensionPicker(props) {
-  const { label, selectedDimension, onChange, i18n } = props;
+  const { label, selectedDimension, onChange } = props;
 
   const onChangeInner = function (e) {
     const dim = e.target.value;
@@ -48,7 +50,7 @@ export default function DimensionPicker(props) {
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <Typography type="caption">{i18n.t(groupName)}</Typography>
+                  <Typography type="caption">{t(groupName)}</Typography>
                 }
               />
             </MenuItem>,
@@ -56,7 +58,7 @@ export default function DimensionPicker(props) {
               const key = `option-${iDimension}`;
               return (
                 <MenuItem key={key} value={dimension} sx={{ marginLeft: 2 }}>
-                  {i18n.t(dimension)}
+                  {t(dimension)}
                 </MenuItem>
               );
             }),

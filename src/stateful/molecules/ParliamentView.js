@@ -23,6 +23,7 @@ import GridView from "../../nonstate/molecules/GridView.js";
 import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimensionPicker from "../../nonstate/atoms/DimensionPicker.js";
+import {t} from "../../base/I18N.js";
 
 
 import Dimensions from "../../core/Dimensions.js";
@@ -156,7 +157,6 @@ export default class ParliamentView extends Component {
     if (mpIdx === undefined) {
       return <div>Loading...</div>;
     }
-    const { i18n } = this.props;
     const activeMP = mpIdx[activeMPId];
 
     let activeMPStr = "None";
@@ -174,7 +174,7 @@ export default class ParliamentView extends Component {
     const cellMap = function (mp) {
       const key = `avatar-${mp.id}`;
       return (
-        <AvatarMP key={key} mp={mp} i18n={i18n} onClickMP={this.onClickMP.bind(this)} />
+        <AvatarMP key={key} mp={mp}  onClickMP={this.onClickMP.bind(this)} />
       );
     }.bind(this);
 
@@ -189,20 +189,20 @@ export default class ParliamentView extends Component {
       <Box sx={STYLE}>
         <Stack direction="row">
           <DimensionPicker
-            label={i18n.t("Top to Bottom") + " (Y)"}
+            label={t("Top to Bottom") + " (Y)"}
             selectedDimension={yDim}
             onChange={this.onChangeYDim.bind(this)}
-            i18n={i18n}
+
           />
 
           <IconButton onClick={this.onClickSwapDims.bind(this)}>
             <SwapHorizIcon />
           </IconButton>
           <DimensionPicker
-            label={i18n.t("Left to Right") + " (X)"}
+            label={t("Left to Right") + " (X)"}
             selectedDimension={xDim}
             onChange={this.onChangeXDim.bind(this)}
-            i18n={i18n}
+
           />
 
           <FormControlLabel
@@ -217,7 +217,7 @@ export default class ParliamentView extends Component {
                 variant="subtitle2"
                 color={showStatisticalTrends ? COLOR_SWITCH_ON : "gray"}
               >
-                {i18n.t("Statistical Trends")}
+                {t("Statistical Trends")}
               </Typography>
             }
           />
@@ -226,8 +226,8 @@ export default class ParliamentView extends Component {
         {showStatisticalTrends ? (
           <Stack sx={{ maxWidth: 700 }} margin={2}>
             <Alert severity="info">
-              <AlertTitle>{i18n.t("Statistical Trends")}</AlertTitle>
-              {i18n.t(STATISTICAL_TRENDS_TOOLTOP)}
+              <AlertTitle>{t("Statistical Trends")}</AlertTitle>
+              {t(STATISTICAL_TRENDS_TOOLTOP)}
             </Alert>
           </Stack>
         ) : null}
@@ -238,7 +238,7 @@ export default class ParliamentView extends Component {
           yAxisLabels={yAxisLabels}
           onClick={this.onClickMP}
           showStatisticalTrends={showStatisticalTrends}
-          i18n={i18n}
+
         />
         <Drawer
           anchor="right"
@@ -247,7 +247,7 @@ export default class ParliamentView extends Component {
         >
           <MPDrawerView
             mp={activeMP}
-            i18n={i18n}
+
             onClose={this.onDrawerClose.bind(this)}
           />
         </Drawer>
@@ -274,7 +274,7 @@ export default class ParliamentView extends Component {
                   key={key}
                   title={
                     <Typography variant="subtitle1">
-                      {i18n.t(d.details)}
+                      {t(d.details)}
                     </Typography>
                   }
                 >

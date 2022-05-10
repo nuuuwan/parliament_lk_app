@@ -21,13 +21,14 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import {t} from "../../base/I18N.js";
 
 const STYLE_BOX = { padding: 3, maxWidth: "75%" };
 const STYLE_AVATAR = { width: 100, height: 100 };
 const SHOW_ADDRESS = false;
 
-function getSittingText(i18n, isSitting) {
-  return i18n.t(
+function getSittingText( isSitting) {
+  return t(
     isSitting ? "When attending parliament" : "When not attending parliament"
   );
 }
@@ -61,7 +62,7 @@ function CustomLink({
   );
 }
 
-function Address({ gaLabel, i18n, address, isSitting }) {
+function Address({ gaLabel,  address, isSitting }) {
   if (!address) {
     return null;
   }
@@ -75,7 +76,7 @@ function Address({ gaLabel, i18n, address, isSitting }) {
   return (
     <CustomLink
       primary={renderedAddress}
-      secondary={getSittingText(i18n, isSitting)}
+      secondary={getSittingText( isSitting)}
       href={href}
       Icon={HomeIcon}
       gaActionSuffix="Address"
@@ -84,14 +85,14 @@ function Address({ gaLabel, i18n, address, isSitting }) {
   );
 }
 
-function Phone({ gaLabel, i18n, phone, isSitting }) {
+function Phone({ gaLabel,  phone, isSitting }) {
   if (!phone) {
     return null;
   }
   return (
     <CustomLink
       primary={phone}
-      secondary={getSittingText(i18n, isSitting)}
+      secondary={getSittingText( isSitting)}
       href={"tel:" + phone}
       Icon={PhoneIcon}
       gaActionSuffix="Phone"
@@ -115,7 +116,7 @@ function Email({ gaLabel, email }) {
   );
 }
 
-function Wikipedia({ gaLabel, i18n, searchText }) {
+function Wikipedia({ gaLabel,  searchText }) {
   if (!searchText) {
     return null;
   }
@@ -124,7 +125,7 @@ function Wikipedia({ gaLabel, i18n, searchText }) {
     searchText.replaceAll(" ", "+");
   return (
     <CustomLink
-      primary={i18n.t("Wikipedia")}
+      primary={t("Wikipedia")}
       href={href}
       Icon={TravelExploreIcon}
       gaActionSuffix="Wikipedia"
@@ -133,11 +134,11 @@ function Wikipedia({ gaLabel, i18n, searchText }) {
   );
 }
 
-function Parliament({ gaLabel, i18n, id }) {
+function Parliament({ gaLabel,  id }) {
   const href = "https://www.parliament.lk/component/members/viewMember/" + id;
   return (
     <CustomLink
-      primary={i18n.t("Parliament Website")}
+      primary={t("Parliament Website")}
       href={href}
       Icon={GavelIcon}
       gaActionSuffix="Parliament"
@@ -146,7 +147,7 @@ function Parliament({ gaLabel, i18n, id }) {
   );
 }
 
-function QualificationsWidget({ i18n, title, body }) {
+function QualificationsWidget({  title, body }) {
   if (!body) {
     return null;
   }
@@ -154,7 +155,7 @@ function QualificationsWidget({ i18n, title, body }) {
     <Card sx={{ maxWidth: 275, margin: 1 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {i18n.t(title + " Qualifications")}
+          {t(title + " Qualifications")}
         </Typography>
         <Typography variant="body2">{body}</Typography>
       </CardContent>
@@ -162,7 +163,7 @@ function QualificationsWidget({ i18n, title, body }) {
   );
 }
 
-function ChipWidget({ i18n, content }) {
+function ChipWidget({  content }) {
   if (!content) {
     return null;
   }
@@ -172,11 +173,11 @@ function ChipWidget({ i18n, content }) {
   if (content === "None") {
     return null;
   }
-  return <Chip label={i18n.t(content)} variant="outlined" />;
+  return <Chip label={t(content)} variant="outlined" />;
 }
 
 export default function MPDrawerView(props) {
-  const { mp, i18n, onClose } = props;
+  const { mp,  onClose } = props;
   if (!mp) {
     return null;
   }
@@ -193,42 +194,42 @@ export default function MPDrawerView(props) {
 
       <Avatar alt={mp.name} src={mp.imageURL} sx={STYLE_AVATAR} />
       <Typography variant="h5" display="block">
-        {i18n.t(mp.firstNames)}
+        {t(mp.firstNames)}
       </Typography>
       <Typography variant="h3" display="block">
-        {i18n.t(mp.lastName)}
+        {t(mp.lastName)}
       </Typography>
       <Typography variant="subtitle2" display="block">
-        {i18n.t("Age") + " " + mp.ageFloor}
+        {t("Age") + " " + mp.ageFloor}
       </Typography>
       <Typography variant="overline" display="block">
-        {i18n.t(mp.party)}
+        {t(mp.party)}
         {" - "}
-        {i18n.t(mp.edName)}
+        {t(mp.edName)}
       </Typography>
 
       <Stack direction="row" spacing={1}>
-        <ChipWidget content={mp.profession} i18n={i18n} />
-        <ChipWidget content={mp.civilStatus} i18n={i18n} />
-        <ChipWidget content={mp.religion} i18n={i18n} />
+        <ChipWidget content={mp.profession}  />
+        <ChipWidget content={mp.civilStatus}  />
+        <ChipWidget content={mp.religion}  />
       </Stack>
 
       <QualificationsWidget
         title="Academic"
         body={mp.academicQualifications}
-        i18n={i18n}
+
       />
       <QualificationsWidget
         title="Professional"
         body={mp.professionalQualifications}
-        i18n={i18n}
+
       />
 
       <List>
         <Phone
           phone={mp.phoneSitting}
           isSitting={true}
-          i18n={i18n}
+
           gaLabel={gaLabel}
         />
 
@@ -236,26 +237,26 @@ export default function MPDrawerView(props) {
           <Address
             address={mp.addressSitting}
             isSitting={true}
-            i18n={i18n}
+
             gaLabel={gaLabel}
           />
         ) : null}
 
-        <Phone phone={mp.phone} i18n={i18n} gaLabel={gaLabel} />
+        <Phone phone={mp.phone}  gaLabel={gaLabel} />
 
         {SHOW_ADDRESS ? (
           <Address
             address={mp.address}
             isSitting={false}
-            i18n={i18n}
+
             gaLabel={gaLabel}
           />
         ) : null}
 
-        <Email email={mp.email} i18n={i18n} gaLabel={gaLabel} />
+        <Email email={mp.email}  gaLabel={gaLabel} />
 
-        <Parliament id={mp.id} i18n={i18n} gaLabel={gaLabel} />
-        <Wikipedia searchText={mp.name} i18n={i18n} gaLabel={gaLabel} />
+        <Parliament id={mp.id}  gaLabel={gaLabel} />
+        <Wikipedia searchText={mp.name}  gaLabel={gaLabel} />
       </List>
     </Box>
   );
