@@ -10,8 +10,8 @@ import Typography from "@mui/material/Typography";
 import {t} from "../../base/I18N.js";
 
 import {
+  DIMENSION_GROUP_LIST,
   GROUP_TO_DIMENSION_LIST,
-  GROUP_TO_ICON,
 } from "../../core/DimensionConstants.js";
 
 export default function DimensionPicker(props) {
@@ -37,12 +37,14 @@ export default function DimensionPicker(props) {
         label={label}
         onChange={onChangeInner}
       >
-        {Object.entries(GROUP_TO_DIMENSION_LIST).map(function (
-          [groupName, dimensionList],
+        {DIMENSION_GROUP_LIST.map(function (
+          dimensionGroup,
           iGroup
         ) {
-          const key = "group-" + groupName;
-          const GroupIcon = GROUP_TO_ICON[groupName];
+          const key = "group-" + dimensionGroup.name;
+          const GroupIcon = dimensionGroup.Icon;
+          const dimensionList = GROUP_TO_DIMENSION_LIST[dimensionGroup.name];
+
           return [
             <MenuItem key={key} disabled sx={{ marginTop: 2 }}>
               <ListItemIcon>
@@ -50,7 +52,9 @@ export default function DimensionPicker(props) {
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <Typography type="caption">{t(groupName)}</Typography>
+                  <Typography type="caption">
+                    {t(dimensionGroup.name)}
+                  </Typography>
                 }
               />
             </MenuItem>,
