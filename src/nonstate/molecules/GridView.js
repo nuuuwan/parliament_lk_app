@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { t } from "../../base/I18N.js";
+import StatisticalTrendsBlurb from "./StatisticalTrendsBlurb.js";
 
 const STYLE_PAPER = {
   margin: 1,
@@ -27,8 +28,6 @@ const STYLE_HEADER_CELL = {
     backgroundColor: "#f8f8f8",
   },
 };
-
-const COLOR_SWITCH_ON = "#1976D2";
 
 function DimWidget({ dim }) {
   return (
@@ -136,97 +135,11 @@ export default function GridView(props) {
 
                   const countX = getCountX(iX);
 
-                  let statisticsBlurb;
-                  let styleCellCustom;
-                  if (showStatisticalTrends && count > 0) {
-                    const [n, p] = [
-                      countXY,
-                      (countX * countY) / countXY / countXY,
-                    ];
-                    const meanCount = n * p;
-                    const stdevCount = Math.sqrt(n * p * (1 - p));
-                    const z = (count - meanCount) / stdevCount;
-                    const absZ = Math.abs(z);
-                    let humanText = "";
-
-                    if (absZ > 1) {
-                      if (z >= 4) {
-                        humanText = "Highly significantly more";
-                      } else if (z <= -4) {
-                        humanText = "Highly significantly fewer";
-                      } else if (z >= 2) {
-                        humanText = "Significantly more";
-                      } else if (z <= -2) {
-                        humanText = "Significantly fewer";
-                      } else if (z >= 1) {
-                        humanText = "Slightly more";
-                      } else if (z <= -1) {
-                        humanText = "Slightly fewer";
-                      }
-                    }
-
-                    const lowerCount =
-                      parseInt((meanCount - stdevCount * 2) * 10 + 0.5) / 10;
-                    const upperCount =
-                      parseInt((meanCount + stdevCount * 2) * 10 + 0.5) / 10;
-
-                    let lowHighStr = `${lowerCount} - ${upperCount}`;
-                    if (lowerCount === upperCount) {
-                      lowHighStr = `${lowerCount}`;
-                    }
-
-                    const zStr = parseInt(z * 10 + 0.5) / 10;
-                    statisticsBlurb = (
-                      <>
-                        <Typography
-                          variant="subtitle1"
-                          component="div"
-                          color={COLOR_SWITCH_ON}
-                        >
-                          {t(humanText)}
-                        </Typography>
-                        <Typography
-                          variant="caption"
-                          component="span"
-                          color={COLOR_SWITCH_ON}
-                        >
-                          {lowHighStr}
-                        </Typography>
-                        <Typography
-                          variant="caption"
-                          component="span"
-                          color={COLOR_SWITCH_ON}
-                        >
-                          {` (z = ${zStr})`}
-                        </Typography>
-                      </>
-                    );
-
-                    const h = z > 0 ? 0 : 120;
-                    const MAX_ABS_Z = 4;
-                    const ABS_Z_LIMIT = 2;
-                    let l = 100;
-                    const [MIN_H, MAX_H] = [40, 70];
-                    if (absZ > ABS_Z_LIMIT) {
-                      l =
-                        MAX_H -
-                        ((MAX_H - MIN_H) *
-                          Math.min(
-                            MAX_ABS_Z - ABS_Z_LIMIT,
-                            absZ - ABS_Z_LIMIT
-                          )) /
-                          (MAX_ABS_Z - ABS_Z_LIMIT);
-                    }
-
-                    const a = 0.3;
-                    const s = 100;
-                    styleCellCustom = {
-                      backgroundColor: `hsla(${h},${s}%,${l}%,${a})`,
-                    };
-                  }
+                  const showStatisticalTrendsInner =
+                    showStatisticalTrends && count > 0;
 
                   return (
-                    <td key={key} style={{ ...STYLE_CELL, ...styleCellCustom }}>
+                    <td key={key} style={{ ...STYLE_CELL }}>
                       {count > 0 ? (
                         <Grid
                           container
@@ -237,7 +150,14 @@ export default function GridView(props) {
                         </Grid>
                       ) : null}
                       <NWidget n={count} />
-                      {statisticsBlurb}
+                      {showStatisticalTrendsInner ? (
+                        <StatisticalTrendsBlurb
+                          countXY={countXY}
+                          countX={countX}
+                          countY={countY}
+                          count={count}
+                        />
+                      ) : null}
                     </td>
                   );
                 })}
