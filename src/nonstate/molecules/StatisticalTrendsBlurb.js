@@ -14,11 +14,14 @@ function getHumanText(z) {
 }
 
 function getBoundsStr(meanCount, stdevCount) {
-  const lowerBound = meanCount - stdevCount * 2;
-  const upperBound = meanCount + stdevCount * 2;
+  const [lowerBound, upperBound] = [
+    meanCount - stdevCount * 2,
+    meanCount + stdevCount * 2,
+  ];
 
-  const lowerBoundStr = MathXFuture.round(lowerBound, 0.1);
-  const upperBoundStr = MathXFuture.round(upperBound, 0.1);
+  const [lowerBoundStr, upperBoundStr] = [lowerBound, upperBound].map((x) =>
+    MathXFuture.round(x, 0.1)
+  );
 
   if (lowerBound === upperBound) {
     return lowerBoundStr;
