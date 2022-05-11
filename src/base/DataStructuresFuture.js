@@ -22,6 +22,13 @@ export default class DataStructuresFuture {
     return DataStructuresFuture.unique(arr).sort();
   }
 
+  static buildIndex(dataList, funcGetKey) {
+    return dataList.reduce(function (idx, d) {
+      idx[funcGetKey(d)] = d;
+      return idx;
+    }, {});
+  }
+
   static buildReverseIndex(arr) {
     return arr.reduce(function (reverseIndex, x, i) {
       reverseIndex[x] = i;
