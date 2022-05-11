@@ -11,9 +11,25 @@ class Party {
 
 export const PARTY_LIST = [
   new Party("SLPP", "maroon"),
+  new Party("OPPP", "maroon"),
+
+  new Party("SLFP", "blue"),
+
   new Party("SJB", "green"),
+  new Party("UNP", "green"),
+
   new Party("JJB", "red"),
+
   new Party("ITAK", "yellow"),
+  new Party("TMTK", "yellow"),
+  new Party("EPDP", "yellow"),
+  new Party("AITC", "yellow"),
+  new Party("TMVP", "yellow"),
+
+  new Party("NC", "darkgreen"),
+  new Party("MNA", "darkgreen"),
+  new Party("SLMC", "darkgreen"),
+  new Party("ACMC", "darkgreen"),
 ];
 
 export const PARTY_IDX = DataStructuresFuture.buildIndex(
