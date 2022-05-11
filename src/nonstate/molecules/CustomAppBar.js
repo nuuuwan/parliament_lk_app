@@ -5,6 +5,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import AppBarMenu from "./AppBarMenu.js";
 
 import I18N, { LANG_INFO_LIST, t } from "../../base/I18N.js";
 
@@ -20,6 +21,8 @@ export default function CustomAppBar({ selectedLang, onSelectLang }) {
   return (
     <AppBar position="static" sx={STYLE}>
       <Toolbar variant="dense">
+        <AppBarMenu />
+
         <Typography component="div" sx={STYLE_TITLE}>
           {t("Parliament of Sri Lanka")}
         </Typography>
