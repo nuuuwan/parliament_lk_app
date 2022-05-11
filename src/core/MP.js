@@ -225,4 +225,12 @@ export default class MP {
       return mpIdx;
     }, {});
   }
+
+  static cmpParty(a, b) {
+    const cmpVote20A = a.vote20A.localeCompare(b.vote20A);
+    if (cmpVote20A) {
+      return cmpVote20A;
+    }
+    return a.party.localeCompare(b.party);
+  }
 }
