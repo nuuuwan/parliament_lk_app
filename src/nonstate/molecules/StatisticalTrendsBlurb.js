@@ -1,6 +1,6 @@
 import Typography from "@mui/material/Typography";
 import { t } from "../../base/I18N.js";
-
+import MathXFuture from "../../base/MathXFuture.js";
 const COLOR_SWITCH_ON = "#1976D2";
 
 function getHumanText(z) {
@@ -11,6 +11,19 @@ function getHumanText(z) {
   let directionStr = z > 0 ? "more" : "fewer";
   let magnitudeStr = absZ > 4 ? "Highly" : "";
   return directionStr + " Significantly " + magnitudeStr;
+}
+
+function getBoundsStr(meanCount, stdevCount) {
+  const lowerBound = meanCount - stdevCount * 2;
+  const upperBound = meanCount + stdevCount * 2;
+
+  const lowerBoundStr = MathXFuture.round(lowerBound, 0.1);
+  const upperBoundStr = MathXFuture.round(upperBound, 0.1);
+
+  if (lowerBound === upperBound) {
+    return lowerBoundStr;
+  }
+  return lowerBoundStr + " - " + upperBoundStr;
 }
 
 export default function StatisticalTrendsBlurb({
@@ -24,23 +37,15 @@ export default function StatisticalTrendsBlurb({
   const stdevCount = Math.sqrt(n * p * (1 - p));
   const z = (count - meanCount) / stdevCount;
   const humanText = getHumanText(z);
-
-  const lowerCount = parseInt((meanCount - stdevCount * 2) * 10 + 0.5) / 10;
-  const upperCount = parseInt((meanCount + stdevCount * 2) * 10 + 0.5) / 10;
-
-  let lowHighStr = `${lowerCount} - ${upperCount}`;
-  if (lowerCount === upperCount) {
-    lowHighStr = `${lowerCount}`;
-  }
-
-  const zStr = parseInt(z * 10 + 0.5) / 10;
+  const boundsStr = getBoundsStr(meanCount, stdevCount);
+  const zStr = MathXFuture.round(z, 0.1);
   return (
     <>
       <Typography variant="subtitle1" component="div" color={COLOR_SWITCH_ON}>
         {t(humanText)}
       </Typography>
       <Typography variant="caption" component="span" color={COLOR_SWITCH_ON}>
-        {lowHighStr}
+        {boundsStr}
       </Typography>
       <Typography variant="caption" component="span" color={COLOR_SWITCH_ON}>
         {` (z = ${zStr})`}
