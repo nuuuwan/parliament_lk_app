@@ -1,19 +1,29 @@
+import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import { t } from "../../base/I18N.js";
 
-function getAvatarSize([width, height]) {
-  const area = width * height;
-  return parseInt(Math.sqrt((area - 10_000) / 225) * 0.5);
+const SIZE_MULT_ON_MOUSE_ENTER = 3;
+function getInitialAvatarSize() {
+  return window.innerWidth / 30;
 }
 
 export default function AvatarMP({ mp, onClickMP }) {
+  const initialAvatarSize = getInitialAvatarSize();
+  const [avatarSize, setAvatarSize] = useState(initialAvatarSize);
+
   const onClickInner = function (e) {
     onClickMP(mp.id);
   };
 
-  const avatar_size = getAvatarSize([window.innerWidth, window.innerHeight]);
+  const onMouseOver = function (e) {
+    setAvatarSize(initialAvatarSize * SIZE_MULT_ON_MOUSE_ENTER);
+  };
+
+  const onMouseLeave = function (e) {
+    setAvatarSize(initialAvatarSize);
+  };
 
   return (
     <div>
@@ -33,7 +43,9 @@ export default function AvatarMP({ mp, onClickMP }) {
           alt={mp.name}
           src={mp.imageURL}
           onClick={onClickInner}
-          sx={{ width: avatar_size, height: avatar_size }}
+          onMouseOver={onMouseOver}
+          onMouseLeave={onMouseLeave}
+          sx={{ width: avatarSize, height: avatarSize }}
         >
           {mp.initials}
         </Avatar>
