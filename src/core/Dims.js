@@ -1,5 +1,6 @@
 import DataStructuresFuture from "../base/DataStructuresFuture.js";
 import { DIM_IDX } from "./DimConstants.js";
+import MP from "../core/MP.js";
 
 function expandDimInfo(mpList, dimName) {
   const dim = DIM_IDX[dimName];
@@ -22,18 +23,24 @@ export default class Dims {
     const [xAxisLabels, nX, xToIX] = expandDimInfo(mpList, dimXName);
     const [yAxisLabels, nY, yToIY] = expandDimInfo(mpList, dimYName);
 
-    const cells = mpList.reduce(
+    const mpCells = mpList.reduce(
       function (cells, mp) {
         const dimX = DIM_IDX[dimXName];
         const dimY = DIM_IDX[dimYName];
         const xValue = dimX.func(mp);
         const yValue = dimY.func(mp);
         const [iX, iY] = [xToIX[xValue], yToIY[yValue]];
-        cells[iX][iY].push(cellMap(mp));
+        cells[iX][iY].push(mp);
         return cells;
       },
       DataStructuresFuture.initArray2D(nX, nY, (iX, iY) => [])
     );
+
+    const cells = mpCells.map(function (mpCellsX, iX) {
+      return mpCellsX.map(function (mpList, iY) {
+        return mpList.sort(MP.cmpParty).map(cellMap);
+      });
+    });
 
     return { cells, xAxisLabels, yAxisLabels };
   }
