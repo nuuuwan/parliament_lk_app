@@ -53,19 +53,11 @@ export default function StatisticalTrendsSwitch({
         <Stack sx={{ maxWidth: 700 }} margin={2}>
           <Alert severity="info">
             <AlertTitle>{t(TITLE_TEXT)}</AlertTitle>
-            {
-              INFO_TEXT_LIST_LIST.map(
-                function(infoTextList, i) {
-                  const infoText = infoTextList.join(' ');
-                  const key = 'p-info-text-' + i;
-                  return (
-                    <p key={key}>
-                      {t(infoText)}
-                    </p>
-                  );
-                },
-              )
-            }
+            {INFO_TEXT_LIST_LIST.map(function (infoTextList, i) {
+              const infoText = infoTextList.join(" ");
+              const key = "p-info-text-" + i;
+              return <p key={key}>{t(infoText)}</p>;
+            })}
           </Alert>
         </Stack>
       ) : null}
