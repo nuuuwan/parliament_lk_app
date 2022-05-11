@@ -8,6 +8,7 @@ import TempleBuddhistIcon from "@mui/icons-material/TempleBuddhist";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 
+import DataStructuresFuture from "../base/DataStructuresFuture.js";
 import Dim from "./Dim.js";
 import DimGroup from "./DimGroup.js";
 
@@ -106,10 +107,10 @@ export const DIM_GROUP_NAME_TO_DIM_NAME = {
 };
 
 // Derived
-export const DIM_IDX = DIM_LIST.reduce(function (DIM_IDX, dim) {
-  DIM_IDX[dim.name] = dim;
-  return DIM_IDX;
-}, {});
+export const DIM_IDX = DataStructuresFuture.buildIndex(
+  DIM_LIST,
+  (dim) => dim.name
+);
 
 export const DIM_GROUP_NAME_TO_DIM_LIST = Object.entries(
   DIM_GROUP_NAME_TO_DIM_NAME
