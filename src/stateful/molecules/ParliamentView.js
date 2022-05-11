@@ -136,8 +136,14 @@ export default class ParliamentView extends Component {
 
     const cellMap = function (mp) {
       const key = `avatar-${mp.id}`;
+      const isActiveMP = mp.id === activeMPId;
       return (
-        <AvatarMP key={key} mp={mp} onClickMP={this.onClickMP.bind(this)} />
+        <AvatarMP
+          key={key}
+          mp={mp}
+          onClickMP={this.onClickMP.bind(this)}
+          isActiveMP={isActiveMP}
+        />
       );
     }.bind(this);
 
