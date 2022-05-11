@@ -1,5 +1,5 @@
 import Typography from "@mui/material/Typography";
-import { VERSION } from "../../constants/Constants.js";
+import { DATE_LAST_UPDATE } from "../../constants/Constants.js";
 
 const STYLE_VERSION = {
   fontSize: "50%",
@@ -10,5 +10,5 @@ const STYLE_VERSION = {
 };
 
 export default function VersionWidget() {
-  return <Typography sx={STYLE_VERSION}>App Version {VERSION}</Typography>;
+  return <Typography sx={STYLE_VERSION}>Last Updated {DATE_LAST_UPDATE}</Typography>;
 }
