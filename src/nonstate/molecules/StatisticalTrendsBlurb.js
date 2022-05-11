@@ -20,7 +20,7 @@ function getBoundsStr(meanCount, stdevCount) {
   ];
 
   const [lowerBoundStr, upperBoundStr] = [lowerBound, upperBound].map((x) =>
-    MathXFuture.round(x, 0.1)
+    MathXFuture.round(x, 1)
   );
 
   if (lowerBound === upperBound) {
@@ -44,14 +44,14 @@ export default function StatisticalTrendsBlurb({
   const zStr = MathXFuture.round(z, 0.1);
   return (
     <>
-      <Typography variant="subtitle1" component="div" color={COLOR_SWITCH_ON}>
+      <Typography variant="caption" component="div" color={COLOR_SWITCH_ON}>
         {t(humanText)}
       </Typography>
-      <Typography variant="caption" component="span" color={COLOR_SWITCH_ON}>
+      <Typography variant="caption" component="div" color={COLOR_SWITCH_ON}>
         {boundsStr}
       </Typography>
-      <Typography variant="caption" component="span" color={COLOR_SWITCH_ON}>
-        {` (z = ${zStr})`}
+      <Typography variant="caption" component="div" color={COLOR_SWITCH_ON}>
+        {`z = ${zStr}`}
       </Typography>
     </>
   );
