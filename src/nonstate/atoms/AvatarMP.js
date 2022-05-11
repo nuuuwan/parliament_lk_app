@@ -2,6 +2,7 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import { t } from "../../base/I18N.js";
+import { PARTY_IDX } from "../../core/Party.js";
 
 const AVATAR_SIZE_MULT_IF_ACTIVE = 3;
 function getInitialAvatarSize() {
@@ -16,6 +17,8 @@ export default function AvatarMP({ mp, onClickMP, isActiveMP }) {
   const onClickInner = function (e) {
     onClickMP(mp.id);
   };
+
+  const color = PARTY_IDX[mp.party];
 
   return (
     <div>
@@ -35,7 +38,13 @@ export default function AvatarMP({ mp, onClickMP, isActiveMP }) {
           alt={mp.name}
           src={mp.imageURL}
           onClick={onClickInner}
-          sx={{ width: avatarSize, height: avatarSize }}
+          sx={{
+            width: avatarSize,
+            height: avatarSize,
+            borderColor: color,
+            borderWidth: avatarSize / 7,
+            borderStyle: "solid",
+          }}
         >
           {mp.initials}
         </Avatar>
