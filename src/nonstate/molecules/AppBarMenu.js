@@ -7,8 +7,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GavelIcon from "@mui/icons-material/Gavel";
-import Tooltip from "@mui/material/Tooltip";
-import Typography from "@mui/material/Typography";
 
 import { t } from "../../base/I18N.js";
 
@@ -82,16 +80,9 @@ export default function AppBarMenu() {
           };
 
           return (
-            <Tooltip
-              key={key}
-              title={
-                <Typography variant="subtitle1">
-                  {t(menuItem.details)}
-                </Typography>
-              }
-            >
-              <MenuItem onClick={onClick}>{t(menuItem.name)}</MenuItem>
-            </Tooltip>
+            <MenuItem key={key} onClick={onClick}>
+              {t(menuItem.name)}
+            </MenuItem>
           );
         })}
       </Menu>
