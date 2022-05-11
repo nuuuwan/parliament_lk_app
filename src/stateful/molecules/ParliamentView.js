@@ -195,7 +195,9 @@ export default class ParliamentView extends Component {
           <MPDrawerView mp={activeMP} onClose={this.onDrawerClose.bind(this)} />
         </Drawer>
         <VersionWidget />
-        <CustomBottomNavigation />
+        <CustomBottomNavigation
+          onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
+        />
       </Box>
     );
   }
