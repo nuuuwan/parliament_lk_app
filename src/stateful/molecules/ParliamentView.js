@@ -15,6 +15,7 @@ import StatisticalTrendsSwitch from "../../nonstate/molecules/StatisticalTrendsS
 import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimPicker from "../../nonstate/atoms/DimPicker.js";
+import VersionWidget from "../../nonstate/atoms/VersionWidget.js";
 
 import { t } from "../../base/I18N.js";
 import Dims from "../../core/Dims.js";
@@ -193,7 +194,7 @@ export default class ParliamentView extends Component {
         >
           <MPDrawerView mp={activeMP} onClose={this.onDrawerClose.bind(this)} />
         </Drawer>
-
+        <VersionWidget />
         <CustomBottomNavigation />
       </Box>
     );
