@@ -15,6 +15,7 @@ const STYLE = {
 
 const STYLE_TITLE = {
   fontSize: "80%",
+  flexGrow: 1,
 };
 
 export default function CustomAppBar({ selectedLang, onSelectLang }) {
