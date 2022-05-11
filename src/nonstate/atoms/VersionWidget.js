@@ -10,5 +10,7 @@ const STYLE_VERSION = {
 };
 
 export default function VersionWidget() {
-  return <Typography sx={STYLE_VERSION}>Last Updated {DATE_LAST_UPDATE}</Typography>;
+  return (
+    <Typography sx={STYLE_VERSION}>Last Updated {DATE_LAST_UPDATE}</Typography>
+  );
 }
