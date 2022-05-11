@@ -25,6 +25,7 @@ const DEFAULT_Y_DIM = "Gender";
 
 const STYLE = {
   margin: 4,
+  marginTop: 10,
   marginBottom: 10,
 };
 

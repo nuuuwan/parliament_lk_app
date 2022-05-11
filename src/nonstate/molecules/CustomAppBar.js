@@ -11,6 +11,11 @@ import I18N, { LANG_INFO_LIST, t } from "../../base/I18N.js";
 
 const STYLE = {
   backgroundColor: "lightgray",
+  position: "fixed",
+  top: 0,
+  left: 0,
+  right: 0,
+  height: 50,
 };
 
 const STYLE_TITLE = {
@@ -20,7 +25,7 @@ const STYLE_TITLE = {
 
 export default function CustomAppBar({ selectedLang, onSelectLang }) {
   return (
-    <AppBar position="static" sx={STYLE}>
+    <AppBar sx={STYLE}>
       <Toolbar variant="dense">
         <AppBarMenu />
 
