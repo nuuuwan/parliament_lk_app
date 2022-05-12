@@ -54,18 +54,5 @@ export default class MPBase {
     return await WWW.json(URL_MP_LIST);
   }
 
-  static async getMPList() {
-    const mpRawList = await MPBase.getRawMPList();
-    return mpRawList.map(function (d) {
-      return new MPBase(d);
-    });
-  }
 
-  static async getMPIdx() {
-    const mpList = await MPBase.getMPList();
-    return mpList.reduce(function (mpIdx, mp) {
-      mpIdx[mp.id] = mp;
-      return mpIdx;
-    }, {});
-  }
 }

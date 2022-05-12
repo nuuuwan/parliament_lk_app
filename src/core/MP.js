@@ -181,4 +181,19 @@ export default class MP extends MPBase {
     }
     return a.party.localeCompare(b.party);
   }
+
+  static async getMPList() {
+    const mpRawList = await MPBase.getRawMPList();
+    return mpRawList.map(function (d) {
+      return new MP(d);
+    });
+  }
+
+  static async getMPIdx() {
+    const mpList = await MP.getMPList();
+    return mpList.reduce(function (mpIdx, mp) {
+      mpIdx[mp.id] = mp;
+      return mpIdx;
+    }, {});
+  }
 }
