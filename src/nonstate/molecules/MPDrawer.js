@@ -10,7 +10,7 @@ import MPDrawerGroup from "./MPDrawerGroup.js";
 import ProfileHeader from "./ProfileHeader.js";
 import TitledChip from "./TitledChip.js";
 
-const STYLE_BOX = { padding: 3, maxWidth: "75%" };
+const STYLE_BOX = { padding: 3, maxWidth: "90%", margin: "auto" };
 
 export default function MPDrawer(props) {
   const { mp, onClose } = props;
