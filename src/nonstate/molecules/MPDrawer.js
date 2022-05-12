@@ -6,6 +6,7 @@ import CloseButton from "../atoms/CloseButton.js";
 import QualificationsBlurb from "../atoms/QualificationsBlurb.js";
 import MPDrawerGroup from "./MPDrawerGroup.js";
 import ProfileHeader from "./ProfileHeader.js";
+import ExternalLink from "./ExternalLink.js";
 import TitledChip from "./TitledChip.js";
 
 const STYLE_BOX = { padding: 3, maxWidth: "90%", margin: "auto" };
@@ -53,7 +54,7 @@ export default function MPDrawer(props) {
       <MPDrawerGroup name="Demographics">
         <TitledChip title="Gender" body={mp.gender} />
         <TitledChip title="Civil Status" body={mp.civilStatus} />
-        
+
         <TitledChip title="Age" body={mp.ageFloor} />
         <TitledChip title="Date of Birth" body={mp.dateOfBirth} />
         <TitledChip title="Generation" body={mp.generation} />
@@ -64,6 +65,16 @@ export default function MPDrawer(props) {
       </MPDrawerGroup>
       <MPDrawerGroup name="Religion & Ethnicity">
         <TitledChip title="Religion" body={mp.religion} />
+      </MPDrawerGroup>
+
+      <MPDrawerGroup name="Contact Details">
+        <ExternalLink title="Phone" mp={mp} />
+        <ExternalLink title="Address" mp={mp} />
+        <ExternalLink title="Phone Sitting" mp={mp} />
+        <ExternalLink title="Address Sitting" mp={mp} />
+        <ExternalLink title="Email" mp={mp} />
+        <ExternalLink title="Parliament Website" mp={mp} />
+        <ExternalLink title="Wikipedia" mp={mp} />
       </MPDrawerGroup>
     </Box>
   );
