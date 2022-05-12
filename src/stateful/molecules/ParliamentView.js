@@ -12,7 +12,7 @@ import GridView from "../../nonstate/molecules/GridView.js";
 import CustomBottomNavigation from "../../nonstate/molecules/CustomBottomNavigation.js";
 
 import StatisticalTrendsSwitch from "../../nonstate/molecules/StatisticalTrendsSwitch.js";
-import MPDrawerView from "../../nonstate/molecules/MPDrawerView.js";
+import MPDrawer from "../../nonstate/molecules/MPDrawer.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimPicker from "../../nonstate/atoms/DimPicker.js";
 import VersionWidget from "../../nonstate/atoms/VersionWidget.js";
@@ -36,7 +36,7 @@ export default class ParliamentView extends Component {
       mpIdx: undefined,
       xDim: DEFAULT_X_DIM,
       yDim: DEFAULT_Y_DIM,
-      activeMPId: null,
+      activeMPId: 1244,
       showStatisticalTrends: false,
     };
   }
@@ -193,7 +193,7 @@ export default class ParliamentView extends Component {
           open={activeMPId !== null}
           onClose={this.onDrawerClose.bind(this)}
         >
-          <MPDrawerView mp={activeMP} onClose={this.onDrawerClose.bind(this)} />
+          <MPDrawer mp={activeMP} onClose={this.onDrawerClose.bind(this)} />
         </Drawer>
         <VersionWidget />
         <CustomBottomNavigation

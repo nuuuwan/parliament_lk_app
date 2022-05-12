@@ -180,7 +180,7 @@ function ChipWidget({ content }) {
   return <Chip label={t(content)} variant="outlined" />;
 }
 
-export default function MPDrawerView(props) {
+export default function MPDrawer(props) {
   const { mp, onClose } = props;
   if (!mp) {
     return null;
