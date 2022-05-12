@@ -12,10 +12,10 @@ const STYLE = {
 export default function TitledChip({ title, body }) {
   return (
     <div style={STYLE}>
-      <Typography sx={{ fontSize: "xx-small", color: "gray" }}>
+      <Typography sx={{ fontSize: "x-small", color: "gray" }}>
         {t(title)}
       </Typography>
-      <Typography sx={{ fontSize: "small" }}>{t(body)}</Typography>
+      <Typography sx={{ fontSize: "normal" }}>{t(body)}</Typography>
     </div>
   );
 }
