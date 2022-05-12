@@ -53,6 +53,4 @@ export default class MPBase {
   static async getRawMPList() {
     return await WWW.json(URL_MP_LIST);
   }
-
-
 }
