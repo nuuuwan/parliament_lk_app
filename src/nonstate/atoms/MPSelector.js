@@ -25,6 +25,7 @@ export default function MPSelector({ mpIdx, activeMPId, onSelectMP }) {
         return <TextField {...mpSearchParams} placeholder="Search MPs" />;
       }}
       sx={{ minWidth: 300 }}
+      size="small"
       autoHighlight
     />
   );
