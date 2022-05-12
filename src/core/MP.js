@@ -8,6 +8,13 @@ const URL_MP_LIST =
 
 const NO_DATA = "No Data";
 
+function getPct(present, absent) {
+  if (!present) {
+    return null;
+  }
+  return parseInt((100 * present) / (present + absent) + 0.5) + "%";
+}
+
 function getAttendanceGroup(present, absent) {
   const Q = 10;
   if (!present) {
@@ -167,6 +174,14 @@ export default class MP {
       this.attendance9thPresent,
       this.attendance9thAbsent
     );
+  }
+
+  get attendance8thPct() {
+    return getPct(this.attendance8thPresent, this.attendance8thAbsent);
+  }
+
+  get attendance9thPct() {
+    return getPct(this.attendance9thPresent, this.attendance9thAbsent);
   }
 
   get initials() {
