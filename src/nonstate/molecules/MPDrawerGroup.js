@@ -10,7 +10,7 @@ export default function MPDrawerGroup({ name, children }) {
   const Icon = dimGroup.Icon;
 
   return (
-    <Card sx={{ margin: 1 }}>
+    <Card sx={{ margin: 2 }} elevation="5">
       <CardContent>
         <div
           style={{
