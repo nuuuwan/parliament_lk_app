@@ -27,15 +27,12 @@ export default function MPDrawer(props) {
       <MPDrawerGroup name="Political Parties">
         <TitledChip title="Party" body={mp.party} />
       </MPDrawerGroup>
-      <MPDrawerGroup name="Education & Profession">
-        <TitledChip
-          title="Highest Education Level"
-          body={mp.academicHighestLevel}
-        />
-        <QualificationsBlurb body={mp.academicQualifications} />
-        <TitledChip title="Stated Profession" body={mp.profession} />
-        <QualificationsBlurb body={mp.professionalQualifications} />
+
+      <MPDrawerGroup name="Electoral Regions">
+        <TitledChip title="Electoral District" body={mp.edName} titleAtBottom />
+        <TitledChip title="Province" body={mp.provinceName} titleAtBottom />
       </MPDrawerGroup>
+
       <MPDrawerGroup name="Voting & Parliamentary Attandance">
         <TitledChip title="Voting for 20th Amendment" body={mp.vote20A} />
         <TitledChip
@@ -47,12 +44,24 @@ export default function MPDrawer(props) {
           body={mp.attendance8thPct}
         />
       </MPDrawerGroup>
+
       <MPDrawerGroup name="Transparency & Corruption">
         <TitledChip
           title="Has Publicly Declared Assets?"
           body={mp.hasDeclaredAssets}
         />
       </MPDrawerGroup>
+
+      <MPDrawerGroup name="Education & Profession">
+        <TitledChip
+          title="Highest Education Level"
+          body={mp.academicHighestLevel}
+        />
+        <QualificationsBlurb body={mp.academicQualifications} />
+        <TitledChip title="Stated Profession" body={mp.profession} />
+        <QualificationsBlurb body={mp.professionalQualifications} />
+      </MPDrawerGroup>
+
       <MPDrawerGroup name="Demographics">
         <TitledChip title="Gender" body={mp.gender} />
         <TitledChip title="Civil Status" body={mp.civilStatus} />
@@ -61,23 +70,16 @@ export default function MPDrawer(props) {
         <TitledChip title="Date of Birth" body={mp.dateOfBirth} />
         <TitledChip title="Generation" body={mp.generation} />
       </MPDrawerGroup>
-      <MPDrawerGroup name="Electoral Regions">
-        <TitledChip title="Electoral District" body={mp.edName} titleAtBottom />
-        <TitledChip title="Province" body={mp.provinceName} titleAtBottom />
-      </MPDrawerGroup>
+
       <MPDrawerGroup name="Religion & Ethnicity">
         <TitledChip title="Religion" body={mp.religion} />
       </MPDrawerGroup>
 
       <MPDrawerGroup name="Contact Details">
         <ExternalLink title="Phone" mp={mp} />
-        {SHOW_ADDRESS ? (
-          <ExternalLink title="Address" mp={mp} />
-        ) : null}
+        {SHOW_ADDRESS ? <ExternalLink title="Address" mp={mp} /> : null}
         <ExternalLink title="Phone Sitting" mp={mp} />
-        {SHOW_ADDRESS ? (
-          <ExternalLink title="Address Sitting" mp={mp} />
-        ) : null}
+        {SHOW_ADDRESS ? <ExternalLink title="Address Sitting" mp={mp} /> : null}
         <ExternalLink title="Email" mp={mp} />
       </MPDrawerGroup>
 
