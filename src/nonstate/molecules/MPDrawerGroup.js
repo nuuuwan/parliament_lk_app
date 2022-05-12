@@ -5,7 +5,7 @@ import { t } from "../../base/I18N.js";
 
 import { DIM_GROUP_IDX } from "../../core/DimConstants.js";
 
-export default function MPDrawerGroup({ name }) {
+export default function MPDrawerGroup({ name, children }) {
   const dimGroup = DIM_GROUP_IDX[name];
   const Icon = dimGroup.Icon;
 
@@ -26,6 +26,7 @@ export default function MPDrawerGroup({ name }) {
             {t(name)}
           </Typography>
         </div>
+        {children}
       </CardContent>
     </Card>
   );
