@@ -5,10 +5,6 @@ import Typography from "@mui/material/Typography";
 import { t } from "../../base/I18N.js";
 import StatisticalTrendsBlurb from "./StatisticalTrendsBlurb.js";
 
-const STYLE_PAPER = {
-  margin: 1,
-  padding: 2,
-};
 const STYLE_GRID = {
   borderCollapse: "collapse",
   tableLayout: "fixed",
@@ -18,8 +14,8 @@ const STYLE_CELL = {
   textAlign: "center",
   borderColor: "#eee",
   borderStyle: "solid",
-  borderWidth: 2,
-  padding: 6,
+  borderWidth: 1,
+  padding: 3,
 };
 
 const STYLE_HEADER_CELL = {
@@ -96,7 +92,7 @@ export default function GridView(props) {
   }
 
   return (
-    <Paper elevation={0} sx={STYLE_PAPER}>
+    <Paper elevation={0}>
       <table style={STYLE_GRID}>
         <tbody>
           <tr>
