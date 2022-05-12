@@ -1,7 +1,7 @@
 const STYLE = {
   backgroundColor: "#f8f8f8",
-  padding: "5%",
-  borderRadius: "30%",
+  padding: "3%",
+  borderRadius: "20%",
   display: "inline-block",
   margin: "1%",
 };
