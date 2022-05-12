@@ -13,7 +13,6 @@ import Dim from "./Dim.js";
 import DimGroup from "./DimGroup.js";
 
 export const DIM_GROUP_LIST = [
-  new DimGroup("Most Popular", StarBorderIcon),
   new DimGroup("Political Parties", GroupsIcon),
   new DimGroup("Education & Profession", SchoolIcon),
   new DimGroup("Voting & Parliamentary Attandance", HowToVoteIcon),
@@ -66,13 +65,6 @@ export const DIM_LIST = [
 ];
 
 export const DIM_GROUP_NAME_TO_DIM_NAME = {
-  "Most Popular": [
-    "Is Age > 50",
-    "Highest Education Level",
-    "Party",
-    "Has Publicly Declared Assets?",
-    "Voting for 20th Amendment",
-  ],
   "Political Parties": ["Party"],
   "Education & Profession": [
     "Highest Education Level",
