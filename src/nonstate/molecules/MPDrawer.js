@@ -52,10 +52,11 @@ export default function MPDrawer(props) {
       </MPDrawerGroup>
       <MPDrawerGroup name="Demographics">
         <TitledChip title="Gender" body={mp.gender} />
+        <TitledChip title="Civil Status" body={mp.civilStatus} />
+        
         <TitledChip title="Age" body={mp.ageFloor} />
         <TitledChip title="Date of Birth" body={mp.dateOfBirth} />
         <TitledChip title="Generation" body={mp.generation} />
-        <TitledChip title="Civil Status" body={mp.civilStatus} />
       </MPDrawerGroup>
       <MPDrawerGroup name="Electoral Regions">
         <TitledChip title="Electoral District" body={mp.edName} titleAtBottom />
