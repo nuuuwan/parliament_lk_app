@@ -28,7 +28,7 @@ export default function DimPicker(props) {
     return onChange(dim);
   };
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }}>
+    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
       <InputLabel id="demo-select-small">{label}</InputLabel>
       <Select value={selectedDim} label={label} onChange={onChangeInner}>
         {DIM_GROUP_LIST.map(function (dimGroup, iGroup) {
