@@ -9,7 +9,9 @@ import ProfileHeader from "./ProfileHeader.js";
 import ExternalLink from "./ExternalLink.js";
 import TitledChip from "./TitledChip.js";
 
-const STYLE_BOX = { padding: 3, maxWidth: "90%", margin: "auto" };
+const STYLE_BOX = {
+  padding: 3,
+};
 
 const SHOW_ADDRESS = false;
 
