@@ -37,6 +37,14 @@ export default function MPDrawer(props) {
       </MPDrawerGroup>
       <MPDrawerGroup name="Voting & Parliamentary Attandance">
         <TitledChip title="Voting for 20th Amendment" body={mp.vote20A} />
+        <TitledChip
+          title="Attandance 9th Parliament (2020 - )"
+          body={mp.attendance9thPct}
+        />
+        <TitledChip
+          title="Attandance 8th Parliament (2017 - 2020)"
+          body={mp.attendance8thPct}
+        />
       </MPDrawerGroup>
       <MPDrawerGroup name="Transparency & Corruption">
         <TitledChip
