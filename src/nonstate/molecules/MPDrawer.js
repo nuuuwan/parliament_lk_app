@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 
 import ProfileHeader from "./ProfileHeader.js";
 import CloseButton from "../atoms/CloseButton.js";
-import {DIM_GROUP_LIST} from '../../core/DimConstants.js';
+import MPDrawerGroup from "./MPDrawerGroup.js";
 
 const STYLE_BOX = { padding: 3, maxWidth: "75%" };
 
@@ -19,7 +19,13 @@ export default function MPDrawer(props) {
       <CloseButton onClose={onClose} />
       <ProfileHeader mp={mp} />
 
-      
+      <MPDrawerGroup name="Political Parties" />
+      <MPDrawerGroup name="Education & Profession" />
+      <MPDrawerGroup name="Voting & Parliamentary Attandance" />
+      <MPDrawerGroup name="Transparency & Corruption" />
+      <MPDrawerGroup name="Demographics" />
+      <MPDrawerGroup name="Electoral Regions" />
+      <MPDrawerGroup name="Religion & Ethnicity" />
     </Box>
   );
 }
