@@ -6,8 +6,12 @@ import { t } from "../../base/I18N.js";
 import { DIM_GROUP_IDX } from "../../core/DimConstants.js";
 
 export default function MPDrawerGroup({ name, children }) {
+  let renderedIcon;
   const dimGroup = DIM_GROUP_IDX[name];
-  const Icon = dimGroup.Icon;
+  if (dimGroup) {
+    const Icon = dimGroup.Icon;
+    renderedIcon = <Icon sx={{ color: "gray", padding: 0.5 }} />;
+  }
 
   return (
     <Card sx={{ margin: 2 }} elevation="5">
@@ -18,7 +22,7 @@ export default function MPDrawerGroup({ name, children }) {
             alignItems: "center",
           }}
         >
-          <Icon sx={{ color: "gray", padding: 0.5 }} />
+          {renderedIcon}
           <Typography
             sx={{ fontSize: "x-small", color: "gray" }}
             component="span"
