@@ -11,7 +11,7 @@ export default function TitledChip({
   if (!body) {
     return null;
   }
-  
+
   const renderedTitle = <Typography sx={STYLE_TITLE}>{t(title)}</Typography>;
 
   const renderedBody = disableTranslate ? body : t(body);
