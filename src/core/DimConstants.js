@@ -6,7 +6,6 @@ import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import TempleBuddhistIcon from "@mui/icons-material/TempleBuddhist";
 import CelebrationIcon from "@mui/icons-material/Celebration";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
 
 import DataStructuresFuture from "../base/DataStructuresFuture.js";
 import Dim from "./Dim.js";
@@ -99,6 +98,11 @@ export const DIM_GROUP_NAME_TO_DIM_NAME = {
 };
 
 // Derived
+export const DIM_GROUP_IDX = DataStructuresFuture.buildIndex(
+  DIM_GROUP_LIST,
+  (dimGroup) => dimGroup.name
+);
+
 export const DIM_IDX = DataStructuresFuture.buildIndex(
   DIM_LIST,
   (dim) => dim.name
