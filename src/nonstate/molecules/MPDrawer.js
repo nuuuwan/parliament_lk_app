@@ -32,6 +32,7 @@ export default function MPDrawer(props) {
           body={mp.academicHighestLevel}
         />
         <QualificationsBlurb body={mp.academicQualifications} />
+        <TitledChip title="Stated Profession" body={mp.profession} />
         <QualificationsBlurb body={mp.professionalQualifications} />
       </MPDrawerGroup>
       <MPDrawerGroup name="Voting & Parliamentary Attandance">
