@@ -14,7 +14,7 @@ export default function MPDrawerGroup({ name, children }) {
   }
 
   return (
-    <Card sx={{ margin: 2 }} elevation={5}>
+    <Card sx={{ marginBottom: 3 }} elevation={1}>
       <CardContent>
         <div
           style={{
