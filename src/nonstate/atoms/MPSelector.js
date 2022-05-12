@@ -22,9 +22,23 @@ export default function MPSelector({ mpIdx, activeMPId, onSelectMP }) {
         onSelectMP(newValue.id);
       }}
       renderInput={function (mpSearchParams) {
-        return <TextField {...mpSearchParams} placeholder="Search MPs" />;
+        return (
+          <TextField
+            placeholder="Search MPs"
+            sx={{
+              input: {
+                backgroundColor: "#f0f0f0",
+                fontSize: "small",
+              },
+              div: {
+                backgroundColor: "#f0f0f0",
+              },
+            }}
+            {...mpSearchParams}
+          />
+        );
       }}
-      sx={{ minWidth: 300 }}
+      sx={{ minWidth: Math.min(window.innerWidth - 150, 400) }}
       size="small"
       autoHighlight
     />
