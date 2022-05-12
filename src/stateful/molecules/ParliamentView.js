@@ -17,7 +17,6 @@ import MPDrawer from "../../nonstate/molecules/MPDrawer.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimPicker from "../../nonstate/atoms/DimPicker.js";
 import VersionWidget from "../../nonstate/atoms/VersionWidget.js";
-import MPSelector from "../../nonstate/atoms/MPSelector.js";
 import CustomAppBar from "../../nonstate/molecules/CustomAppBar.js";
 
 const DEFAULT_X_DIM = "Is Age > 40";
@@ -188,16 +187,12 @@ export default class ParliamentView extends Component {
     return (
       <Box sx={STYLE}>
         <CustomAppBar
+          mpIdx={mpIdx}
+          activeMPId={activeMPId}
           selectedLang={selectedLang}
+          onSelectMP={this.onSelectMP.bind(this)}
           onSelectLang={this.onSelectLang.bind(this)}
         />
-        <Grid container justifyContent="center">
-          <MPSelector
-            mpIdx={mpIdx}
-            activeMPId={activeMPId}
-            onSelectMP={this.onSelectMP.bind(this)}
-          />
-        </Grid>
 
         <Grid container justifyContent="center">
           <DimPicker

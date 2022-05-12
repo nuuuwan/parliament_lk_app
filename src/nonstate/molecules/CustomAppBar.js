@@ -6,6 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import AppBarMenu from "./AppBarMenu.js";
+import MPSelector from "../../nonstate/atoms/MPSelector.js";
 
 import I18N, { LANG_INFO_LIST, t } from "../../base/I18N.js";
 
@@ -18,19 +19,26 @@ const STYLE = {
   height: 50,
 };
 
-const STYLE_TITLE = {
-  fontSize: "80%",
-  flexGrow: 1,
-};
-
-export default function CustomAppBar({ selectedLang, onSelectLang }) {
+export default function CustomAppBar({
+  mpIdx,
+  activeMPId,
+  selectedLang,
+  onSelectLang,
+  onSelectMP,
+}) {
   return (
     <AppBar sx={STYLE}>
       <Toolbar variant="dense">
         <AppBarMenu />
 
-        <Typography component="div" sx={STYLE_TITLE}>
-          {t("Parliament of Sri Lanka")}
+        <MPSelector
+          mpIdx={mpIdx}
+          activeMPId={activeMPId}
+          onSelectMP={onSelectMP}
+        />
+
+        <Typography component="div" sx={{ flexGrow: 1 }}>
+          {t("")}
         </Typography>
 
         {LANG_INFO_LIST.map(function ([lang, label, color]) {
