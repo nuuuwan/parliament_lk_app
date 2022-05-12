@@ -3,7 +3,6 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 
 import CloseButton from "../atoms/CloseButton.js";
-import PartyBlurb from "../atoms/PartyBlurb.js";
 import ElectoralRegionBlurb from "../atoms/ElectoralRegionBlurb.js";
 import QualificationsBlurb from "../atoms/QualificationsBlurb.js";
 import MPDrawerGroup from "./MPDrawerGroup.js";
@@ -24,7 +23,10 @@ export default function MPDrawer(props) {
       <ProfileHeader mp={mp} />
 
       <MPDrawerGroup name="Political Parties">
-        <PartyBlurb mp={mp} />
+        <TitledChip
+          title="Party"
+          body={mp.party}
+        />
       </MPDrawerGroup>
       <MPDrawerGroup name="Education & Profession">
         <TitledChip
