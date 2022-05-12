@@ -36,7 +36,7 @@ export default class ParliamentView extends Component {
       mpIdx: undefined,
       xDim: DEFAULT_X_DIM,
       yDim: DEFAULT_Y_DIM,
-      activeMPId: 1244,
+      activeMPId: 3187,
       showStatisticalTrends: false,
     };
   }
