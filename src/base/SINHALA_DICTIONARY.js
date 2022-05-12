@@ -73,7 +73,8 @@ const SINHALA_DICTIONARY = {
   "Ali Sabri Raheem": "අලි සබ්රි රහීම්",
   "Ali Sabry": "අලි සබ්රි",
   "All 100%": "සියලුම 100%",
-  "All data except asset declaration data is from www.parliament.lk": "වත්කම් ප්‍රකාශන දත්ත හැර අනෙකුත් සියලුම දත්ත www.parliament.lk වෙතින් වේ",
+  "All data except asset declaration data is from www.parliament.lk":
+    "වත්කම් ප්‍රකාශන දත්ත හැර අනෙකුත් සියලුම දත්ත www.parliament.lk වෙතින් වේ",
   Alles: "අලස්",
   Aluthgamage: "අලුත්ගමගේ",
   Amal: "අමල්",
@@ -107,14 +108,17 @@ const SINHALA_DICTIONARY = {
   "Ashok Abeysinghe": "අශෝක් අබේසිංහ",
   Ashoka: "Ashoka",
   "Ashoka Priyantha": "අශෝක ප්‍රියන්ත",
-  "Asset declaration data is from www.tisrilanka.org": "වත්කම් ප්‍රකාශන දත්ත www.tisrilanka.org වෙතින් වේ",
+  "Asset declaration data is from www.tisrilanka.org":
+    "වත්කම් ප්‍රකාශන දත්ත www.tisrilanka.org වෙතින් වේ",
   Athaullah: "අතාවුල්ලාය",
   Athukorala: "අතුකෝරල",
   Athuraliye: "අතුරලියේ",
   "Athuraliye Rathana": "අතුරලියේ රතන",
   Attanayake: "අත්තනායක",
-  "Attandance 8th Parliament (2017 - 2020)": "පැමිණීම 8 වැනි පාර්ලිමේන්තුව (2017 - 2020)",
-  "Attandance 9th Parliament (2020 - )": "පැමිණීම 9 වැනි පාර්ලිමේන්තුව (2020 - )",
+  "Attandance 8th Parliament (2017 - 2020)":
+    "පැමිණීම 8 වැනි පාර්ලිමේන්තුව (2017 - 2020)",
+  "Attandance 9th Parliament (2020 - )":
+    "පැමිණීම 9 වැනි පාර්ලිමේන්තුව (2020 - )",
   "Attorney-at-Law": "නීතීඥ",
   "B. Y. G.": "බී. වයි. ජී.",
   "B. Y. G. Rathnasekara": "B. Y. G. රත්නසේකර",
@@ -708,8 +712,10 @@ const SINHALA_DICTIONARY = {
   Southern: "දකුණු",
   "Stated Profession": "ප්රකාශිත වෘත්තිය",
   "Statistical Trends": "සංඛ්යානමය ප්රවණතා",
-  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.": "සංඛ්‍යානමය ප්‍රවණතා මනිනු ලබන්නේ ඇතැම් ජාලක සෛල අහඹු ලෙස පවරනු ලැබුවහොත් අප බලාපොරොත්තු වන ප්‍රමාණයට වඩා මන්ත්‍රීවරුන් සංඛ්‍යාවක් අඩංගුද යන්නයි.",
-  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.": "සංඛ්‍යානමය ප්‍රවණතා මනිනු ලබන්නේ ඇතැම් ජාලක සෛල අහඹු ලෙස පවරනු ලැබුවහොත් අප බලාපොරොත්තු වන ප්‍රමාණයට වඩා මන්ත්‍රීවරුන් සංඛ්‍යාවක් අඩංගුද යන්නයි. 'z' (උදා. z = 2.5) අගය පෙන්නුම් කරන්නේ මන්ත්‍රීවරුන් සංඛ්‍යාව අපේක්ෂිත මන්ත්‍රීවරුන් සංඛ්‍යාවෙන් කොපමණ සම්මත අපගමන සංඛ්‍යාවක් වෙනස් වේද යන්නයි. පරාසය (උදා. 84 - 114) යනු මන්ත්‍රීවරුන් සංඛ්‍යාව සඳහා 95% විශ්වාසනීය පරතරයයි. සැබෑ සංඛ්‍යාව මෙම පරාසයෙන් පිටත නම්, ප්‍රවණතාවය අහඹු වීමේ සම්භාවිතාව <5% වේ.",
+  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.":
+    "සංඛ්‍යානමය ප්‍රවණතා මනිනු ලබන්නේ ඇතැම් ජාලක සෛල අහඹු ලෙස පවරනු ලැබුවහොත් අප බලාපොරොත්තු වන ප්‍රමාණයට වඩා මන්ත්‍රීවරුන් සංඛ්‍යාවක් අඩංගුද යන්නයි.",
+  "Statistical Trends measure if certain grid cells contain more MPs than we would expect if they were assigned at random.  The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs. The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.":
+    "සංඛ්‍යානමය ප්‍රවණතා මනිනු ලබන්නේ ඇතැම් ජාලක සෛල අහඹු ලෙස පවරනු ලැබුවහොත් අප බලාපොරොත්තු වන ප්‍රමාණයට වඩා මන්ත්‍රීවරුන් සංඛ්‍යාවක් අඩංගුද යන්නයි. 'z' (උදා. z = 2.5) අගය පෙන්නුම් කරන්නේ මන්ත්‍රීවරුන් සංඛ්‍යාව අපේක්ෂිත මන්ත්‍රීවරුන් සංඛ්‍යාවෙන් කොපමණ සම්මත අපගමන සංඛ්‍යාවක් වෙනස් වේද යන්නයි. පරාසය (උදා. 84 - 114) යනු මන්ත්‍රීවරුන් සංඛ්‍යාව සඳහා 95% විශ්වාසනීය පරතරයයි. සැබෑ සංඛ්‍යාව මෙම පරාසයෙන් පිටත නම්, ප්‍රවණතාවය අහඹු වීමේ සම්භාවිතාව <5% වේ.",
   Sudarshana: "සුදර්ශන",
   "Sudarshana Denipitiya": "සුදර්ශන දෙනිපිටිය",
   Sudarshini: "සුදර්ශිනී",
@@ -733,9 +739,11 @@ const SINHALA_DICTIONARY = {
   "Tharaka Balasuriya": "තාරක බාලසූරිය",
   "Thavaraja Kalai": "තවරාජා කලයි",
   "Thavaraja Kalai Arasan": "තවරාජා කලයි අරසන්",
-  "The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs.": "'z' (උදා. z = 2.5) අගය පෙන්නුම් කරන්නේ මන්ත්‍රීවරුන් සංඛ්‍යාව අපේක්ෂිත මන්ත්‍රීවරුන්ගේ මධ්‍යන්‍ය සංඛ්‍යාවෙන් කොපමණ සම්මත අපගමන සංඛ්‍යාවක් වෙනස් වේද යන්නයි.",
+  "The 'z' (e.g. z = 2.5) value shows how many standard deviations the number of MPs vary from the mean number of expected MPs.":
+    "'z' (උදා. z = 2.5) අගය පෙන්නුම් කරන්නේ මන්ත්‍රීවරුන් සංඛ්‍යාව අපේක්ෂිත මන්ත්‍රීවරුන්ගේ මධ්‍යන්‍ය සංඛ්‍යාවෙන් කොපමණ සම්මත අපගමන සංඛ්‍යාවක් වෙනස් වේද යන්නයි.",
   "The Parliament of Sri Lanka": "ශ්‍රී ලංකා පාර්ලිමේන්තුව",
-  "The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.": "පරාසය (උදා. 84 - 114) යනු මන්ත්‍රීවරුන් සංඛ්‍යාව සඳහා 95% විශ්වාසනීය පරතරයයි. සැබෑ සංඛ්‍යාව මෙම පරාසයෙන් පිටත නම්, ප්‍රවණතාවය අහඹු වීමේ සම්භාවිතාව <5% වේ.",
+  "The range (e.g. 84 - 114) is the 95% confidence interval for the number of MPs. If the actual number is outside this range, the probability that the trend is random is <5%.":
+    "පරාසය (උදා. 84 - 114) යනු මන්ත්‍රීවරුන් සංඛ්‍යාව සඳහා 95% විශ්වාසනීය පරතරයයි. සැබෑ සංඛ්‍යාව මෙම පරාසයෙන් පිටත නම්, ප්‍රවණතාවය අහඹු වීමේ සම්භාවිතාව <5% වේ.",
   Thennakoon: "තෙන්නකෝන්",
   Thenuka: "තේනුක",
   "Thenuka Vidanagamage": "තේනුක විදානගමගේ",
@@ -794,7 +802,8 @@ const SINHALA_DICTIONARY = {
   Vijitha: "විජිත ය",
   "Vijitha Berugoda": "විජිත බේරුගොඩ",
   "Vijitha Herath": "විජිත හේරත්",
-  "Visualization, Design and App by @nuuuwan": "@nuuuwan විසින් දෘශ්‍යකරණය, නිර්මාණය සහ යෙදුම",
+  "Visualization, Design and App by @nuuuwan":
+    "@nuuuwan විසින් දෘශ්‍යකරණය, නිර්මාණය සහ යෙදුම",
   Vitarana: "විතාරණ",
   Viyalanderan: "වියලන්දෙරන්",
   "Vote for 20th Amendment": "20 වැනි සංශෝධනයට ඡන්දය දීම",
