@@ -4,8 +4,6 @@ import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
-import Stack from "@mui/material/Stack";
-
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
 import MP from "../../core/MP.js";
@@ -180,20 +178,18 @@ export default class ParliamentView extends Component {
         </Grid>
 
         <Grid container justifyContent="center">
-          <Stack direction="row">
-            <DimPicker
-              selectedDim={yDim}
-              onChange={this.onChangeYDim.bind(this)}
-            />
+          <DimPicker
+            selectedDim={yDim}
+            onChange={this.onChangeYDim.bind(this)}
+          />
 
-            <IconButton onClick={this.onClickSwapDims.bind(this)}>
-              <SwapHorizIcon />
-            </IconButton>
-            <DimPicker
-              selectedDim={xDim}
-              onChange={this.onChangeXDim.bind(this)}
-            />
-          </Stack>
+          <IconButton onClick={this.onClickSwapDims.bind(this)}>
+            <SwapHorizIcon />
+          </IconButton>
+          <DimPicker
+            selectedDim={xDim}
+            onChange={this.onChangeXDim.bind(this)}
+          />
         </Grid>
 
         <GridView
@@ -213,6 +209,9 @@ export default class ParliamentView extends Component {
           anchor="right"
           open={activeMPId !== null}
           onClose={this.onDrawerClose.bind(this)}
+          PaperProps={{
+            sx: { maxWidth: "90%" },
+          }}
         >
           <MPDrawer mp={activeMP} onClose={this.onDrawerClose.bind(this)} />
         </Drawer>
