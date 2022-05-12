@@ -45,7 +45,24 @@ export default function MPDrawer(props) {
           body={mp.hasDeclaredAssets}
         />
       </MPDrawerGroup>
-      <MPDrawerGroup name="Demographics" />
+      <MPDrawerGroup name="Demographics">
+        <TitledChip
+          title="Gender"
+          body={mp.gender}
+        />
+        <TitledChip
+          title="Age"
+          body={mp.ageFloor}
+        />
+        <TitledChip
+          title="Date of Birth"
+          body={mp.dateOfBirth}
+        />
+        <TitledChip
+          title="Generation"
+          body={mp.generation}
+        />
+      </MPDrawerGroup>
       <MPDrawerGroup name="Electoral Regions">
         <ElectoralRegionBlurb mp={mp} />
       </MPDrawerGroup>
