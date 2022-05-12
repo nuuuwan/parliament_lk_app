@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactGA from "react-ga";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 
@@ -16,8 +17,8 @@ import MPDrawer from "../../nonstate/molecules/MPDrawer.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimPicker from "../../nonstate/atoms/DimPicker.js";
 import VersionWidget from "../../nonstate/atoms/VersionWidget.js";
+import MPSelector from "../../nonstate/atoms/MPSelector.js";
 
-import { t } from "../../base/I18N.js";
 import Dims from "../../core/Dims.js";
 
 const DEFAULT_X_DIM = "Is Age > 40";
@@ -69,6 +70,18 @@ export default class ParliamentView extends Component {
     ReactGA.event({
       category: "MPs",
       action: "Clicked MP",
+      label: mp.logString,
+      value: 10,
+    });
+    this.setState({ activeMPId: mpID });
+  }
+
+  onSelectMP(mpID) {
+    const { mpIdx } = this.state;
+    const mp = mpIdx[mpID];
+    ReactGA.event({
+      category: "MPs",
+      action: "Searched MP",
       label: mp.logString,
       value: 10,
     });
@@ -158,22 +171,30 @@ export default class ParliamentView extends Component {
 
     return (
       <Box sx={STYLE}>
-        <Stack direction="row">
-          <DimPicker
-            label={t("Top to Bottom") + " (Y)"}
-            selectedDim={yDim}
-            onChange={this.onChangeYDim.bind(this)}
+        <Grid container justifyContent="center">
+          <MPSelector
+            mpIdx={mpIdx}
+            activeMPId={activeMPId}
+            onSelectMP={this.onSelectMP.bind(this)}
           />
+        </Grid>
 
-          <IconButton onClick={this.onClickSwapDims.bind(this)}>
-            <SwapHorizIcon />
-          </IconButton>
-          <DimPicker
-            label={t("Left to Right") + " (X)"}
-            selectedDim={xDim}
-            onChange={this.onChangeXDim.bind(this)}
-          />
-        </Stack>
+        <Grid container justifyContent="center">
+          <Stack direction="row">
+            <DimPicker
+              selectedDim={yDim}
+              onChange={this.onChangeYDim.bind(this)}
+            />
+
+            <IconButton onClick={this.onClickSwapDims.bind(this)}>
+              <SwapHorizIcon />
+            </IconButton>
+            <DimPicker
+              selectedDim={xDim}
+              onChange={this.onChangeXDim.bind(this)}
+            />
+          </Stack>
+        </Grid>
 
         <GridView
           cells={cells}
