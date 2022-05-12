@@ -11,6 +11,8 @@ import TitledChip from "./TitledChip.js";
 
 const STYLE_BOX = { padding: 3, maxWidth: "90%", margin: "auto" };
 
+const SHOW_ADDRESS = false;
+
 export default function MPDrawer(props) {
   const { mp, onClose } = props;
   if (!mp) {
@@ -69,9 +71,13 @@ export default function MPDrawer(props) {
 
       <MPDrawerGroup name="Contact Details">
         <ExternalLink title="Phone" mp={mp} />
-        <ExternalLink title="Address" mp={mp} />
+        {SHOW_ADDRESS ? (
+          <ExternalLink title="Address" mp={mp} />
+        ) : null}
         <ExternalLink title="Phone Sitting" mp={mp} />
-        <ExternalLink title="Address Sitting" mp={mp} />
+        {SHOW_ADDRESS ? (
+          <ExternalLink title="Address Sitting" mp={mp} />
+        ) : null}
         <ExternalLink title="Email" mp={mp} />
       </MPDrawerGroup>
 
