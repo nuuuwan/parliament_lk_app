@@ -39,8 +39,8 @@ const TITLE_TO_FUNC_BODY = {
   "Phone Sitting": (mp) => mp.phoneSitting,
   "Address Sitting": (mp) => mp.addressSitting,
   Email: (mp) => mp.email,
-  Wikipedia: (mp) => "Profile Article",
-  "Parliament Website": (mp) => "Profile Page",
+  Wikipedia: (mp) => t("Profile Article"),
+  "Parliament Website": (mp) => t("Profile Page"),
 };
 
 const FIELD_NAME_TO_ICON = {
