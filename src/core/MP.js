@@ -147,6 +147,10 @@ export default class MP extends MPBase {
     return this.initials + "-" + this.lastName.replace(" ", "");
   }
 
+  get lastNameAndFirstNames() {
+    return this.lastName + ", " + this.firstNames;
+  }
+
   get logString() {
     return this.id + "-" + this.nameShort;
   }
@@ -172,6 +176,14 @@ export default class MP extends MPBase {
       yearStart = yearEnd;
     }
     return "Unknown";
+  }
+
+  static cmpName(a, b) {
+    const cmpLastName = a.lastName.localeCompare(b.lastName);
+    if (cmpLastName) {
+      return cmpLastName;
+    }
+    return a.firstNames.localeCompare(b.firstNames);
   }
 
   static cmpParty(a, b) {
