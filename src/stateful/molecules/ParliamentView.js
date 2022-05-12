@@ -6,21 +6,23 @@ import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
+import I18N from "../../base/I18N.js";
 import MP from "../../core/MP.js";
+import Dims from "../../core/Dims.js";
+
 import GridView from "../../nonstate/molecules/GridView.js";
 import CustomBottomNavigation from "../../nonstate/molecules/CustomBottomNavigation.js";
-
 import StatisticalTrendsSwitch from "../../nonstate/molecules/StatisticalTrendsSwitch.js";
 import MPDrawer from "../../nonstate/molecules/MPDrawer.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimPicker from "../../nonstate/atoms/DimPicker.js";
 import VersionWidget from "../../nonstate/atoms/VersionWidget.js";
 import MPSelector from "../../nonstate/atoms/MPSelector.js";
-
-import Dims from "../../core/Dims.js";
+import CustomAppBar from "../../nonstate/molecules/CustomAppBar.js";
 
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
+const DEFAULT_LANG = "en";
 
 const STYLE = {
   margin: 4,
@@ -31,13 +33,22 @@ const STYLE = {
 export default class ParliamentView extends Component {
   constructor(props) {
     super(props);
+    let selectedLang = I18N.getLang();
+    if (!selectedLang) {
+      selectedLang = DEFAULT_LANG;
+    }
     this.state = {
       mpIdx: undefined,
       xDim: DEFAULT_X_DIM,
       yDim: DEFAULT_Y_DIM,
       activeMPId: null,
       showStatisticalTrends: false,
+      selectedLang,
     };
+  }
+
+  onSelectLang(selectedLang) {
+    this.setState({ selectedLang });
   }
 
   onChangeXDim(xDim) {
@@ -122,7 +133,14 @@ export default class ParliamentView extends Component {
   }
 
   render() {
-    const { mpIdx, xDim, yDim, activeMPId, showStatisticalTrends } = this.state;
+    const {
+      mpIdx,
+      xDim,
+      yDim,
+      activeMPId,
+      showStatisticalTrends,
+      selectedLang,
+    } = this.state;
     if (mpIdx === undefined) {
       return <div>Loading...</div>;
     }
@@ -169,6 +187,10 @@ export default class ParliamentView extends Component {
 
     return (
       <Box sx={STYLE}>
+        <CustomAppBar
+          selectedLang={selectedLang}
+          onSelectLang={this.onSelectLang.bind(this)}
+        />
         <Grid container justifyContent="center">
           <MPSelector
             mpIdx={mpIdx}
