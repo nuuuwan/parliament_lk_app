@@ -9,7 +9,7 @@ export default function ElectoralRegionBlurb({ mp }) {
       </Typography>
       {mp.edName === "National List" ? null : (
         <Typography variant="body2" display="block">
-          {t(mp.provinceName)} Province
+          {t(mp.provinceName)} {t("Province")}
         </Typography>
       )}
     </>
