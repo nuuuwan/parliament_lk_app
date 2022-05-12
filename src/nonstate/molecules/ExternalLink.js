@@ -10,6 +10,8 @@ import EmailIcon from "@mui/icons-material/Email";
 import GavelIcon from "@mui/icons-material/Gavel";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 
+import { StringX } from "@nuuuwan/utils-js-dev";
+
 import { t } from "../../base/I18N.js";
 
 const GMAPS_PREFIX = "https://www.google.com/maps/search/";
@@ -37,8 +39,8 @@ const TITLE_TO_FUNC_BODY = {
   "Phone Sitting": (mp) => mp.phoneSitting,
   "Address Sitting": (mp) => mp.addressSitting,
   Email: (mp) => mp.email,
-  Wikipedia: (mp) => "Wikipedia",
-  "Parliament Website": (mp) => "Parliament Website",
+  Wikipedia: (mp) => "Profile Article",
+  "Parliament Website": (mp) => "Profile Page",
 };
 
 const FIELD_NAME_TO_ICON = {
@@ -80,9 +82,10 @@ export default function ExternalLink({ title, mp }) {
           <Icon color="disabled" />
         </ListItemIcon>
         <ListItemText
-          primary={body.split(",").map((line) => (
-            <div>{line},</div>
-          ))}
+          primary={body.split(",").map(function (line, i) {
+            const key = "external-list-" + title + "-" + i;
+            return <div key={key}>{StringX.toTitleCase(line)}</div>;
+          })}
           secondary={t(title)}
         />
       </ListItemButton>
