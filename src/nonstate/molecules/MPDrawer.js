@@ -33,7 +33,9 @@ export default function MPDrawer(props) {
         <QualificationsBlurb body={mp.professionalQualifications} />
       </MPDrawerGroup>
       <MPDrawerGroup name="Voting & Parliamentary Attandance" />
-      <MPDrawerGroup name="Transparency & Corruption" />
+      <MPDrawerGroup name="Transparency & Corruption">
+        <Chip label={t("Assets - " + mp.hasDeclaredAssets)} />
+      </MPDrawerGroup>
       <MPDrawerGroup name="Demographics" />
       <MPDrawerGroup name="Electoral Regions">
         <ElectoralRegionBlurb mp={mp} />
