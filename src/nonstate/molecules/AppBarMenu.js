@@ -52,7 +52,6 @@ export default function AppBarMenu() {
         edge="start"
         color="inherit"
         aria-label="menu"
-        sx={{ mr: 2 }}
         onClick={onClick}
       >
         <MenuIcon />
