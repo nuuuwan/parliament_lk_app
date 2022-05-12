@@ -38,10 +38,12 @@ export default function MPDrawer(props) {
         <TitledChip
           title="Attandance 9th Parliament (2020 - )"
           body={mp.attendance9thPct}
+          disableTranslate
         />
         <TitledChip
           title="Attandance 8th Parliament (2017 - 2020)"
           body={mp.attendance8thPct}
+          disableTranslate
         />
       </MPDrawerGroup>
 
@@ -66,8 +68,12 @@ export default function MPDrawer(props) {
         <TitledChip title="Gender" body={mp.gender} />
         <TitledChip title="Civil Status" body={mp.civilStatus} />
 
-        <TitledChip title="Age" body={mp.ageFloor} />
-        <TitledChip title="Date of Birth" body={mp.dateOfBirth} />
+        <TitledChip title="Age" body={mp.ageFloor} disableTranslate />
+        <TitledChip
+          title="Date of Birth"
+          body={mp.dateOfBirth}
+          disableTranslate
+        />
         <TitledChip title="Generation" body={mp.generation} />
       </MPDrawerGroup>
 
