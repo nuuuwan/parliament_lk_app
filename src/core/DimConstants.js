@@ -15,7 +15,7 @@ export const DIM_GROUP_LIST = [
   new DimGroup("Political Parties", GroupsIcon),
   new DimGroup("Electoral Regions", LocationOnIcon),
   new DimGroup("Voting & Parliamentary Attandance", HowToVoteIcon),
-  new DimGroup("Transparency & Corruption", LocalPoliceIcon),    
+  new DimGroup("Transparency & Corruption", LocalPoliceIcon),
   new DimGroup("Education & Profession", SchoolIcon),
   new DimGroup("Demographics", FamilyRestroomIcon),
   new DimGroup("Religion & Ethnicity", TempleBuddhistIcon),
