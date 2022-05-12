@@ -7,6 +7,7 @@ const STYLE = {
   padding: "5%",
   borderRadius: "30%",
   display: "inline-block",
+  margin: "1%",
 };
 
 export default function TitledChip({ title, body }) {
