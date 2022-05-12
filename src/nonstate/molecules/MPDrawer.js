@@ -10,6 +10,7 @@ import ElectoralRegionBlurb from "../atoms/ElectoralRegionBlurb.js";
 import QualificationsBlurb from "../atoms/QualificationsBlurb.js";
 import MPDrawerGroup from "./MPDrawerGroup.js";
 import ProfileHeader from "./ProfileHeader.js";
+import TitledChip from "./TitledChip.js";
 
 const STYLE_BOX = { padding: 3, maxWidth: "75%" };
 
@@ -28,13 +29,21 @@ export default function MPDrawer(props) {
         <PartyBlurb mp={mp} />
       </MPDrawerGroup>
       <MPDrawerGroup name="Education & Profession">
-        <Chip label={t(mp.academicHighestLevel)} />
+        <TitledChip
+          title="Highest Education Level"
+          body={mp.academicHighestLevel}
+        />
         <QualificationsBlurb body={mp.academicQualifications} />
         <QualificationsBlurb body={mp.professionalQualifications} />
       </MPDrawerGroup>
-      <MPDrawerGroup name="Voting & Parliamentary Attandance" />
+      <MPDrawerGroup name="Voting & Parliamentary Attandance">
+        <TitledChip title="Voting for 20th Amendment" body={mp.vote20A} />
+      </MPDrawerGroup>
       <MPDrawerGroup name="Transparency & Corruption">
-        <Chip label={t("Assets - " + mp.hasDeclaredAssets)} />
+        <TitledChip
+          title="Has Publicly Declared Assets?"
+          body={mp.hasDeclaredAssets}
+        />
       </MPDrawerGroup>
       <MPDrawerGroup name="Demographics" />
       <MPDrawerGroup name="Electoral Regions">
