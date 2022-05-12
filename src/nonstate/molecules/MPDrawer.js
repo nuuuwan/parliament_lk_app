@@ -1,9 +1,7 @@
 import * as React from "react";
 
 import Box from "@mui/material/Box";
-import Chip from "@mui/material/Chip";
 
-import { t } from "../../base/I18N.js";
 import CloseButton from "../atoms/CloseButton.js";
 import PartyBlurb from "../atoms/PartyBlurb.js";
 import ElectoralRegionBlurb from "../atoms/ElectoralRegionBlurb.js";
@@ -46,27 +44,17 @@ export default function MPDrawer(props) {
         />
       </MPDrawerGroup>
       <MPDrawerGroup name="Demographics">
-        <TitledChip
-          title="Gender"
-          body={mp.gender}
-        />
-        <TitledChip
-          title="Age"
-          body={mp.ageFloor}
-        />
-        <TitledChip
-          title="Date of Birth"
-          body={mp.dateOfBirth}
-        />
-        <TitledChip
-          title="Generation"
-          body={mp.generation}
-        />
+        <TitledChip title="Gender" body={mp.gender} />
+        <TitledChip title="Age" body={mp.ageFloor} />
+        <TitledChip title="Date of Birth" body={mp.dateOfBirth} />
+        <TitledChip title="Generation" body={mp.generation} />
       </MPDrawerGroup>
       <MPDrawerGroup name="Electoral Regions">
         <ElectoralRegionBlurb mp={mp} />
       </MPDrawerGroup>
-      <MPDrawerGroup name="Religion & Ethnicity" />
+      <MPDrawerGroup name="Religion & Ethnicity">
+        <TitledChip title="Religion" body={mp.religion} />
+      </MPDrawerGroup>
     </Box>
   );
 }
