@@ -73,6 +73,9 @@ export default function MPDrawer(props) {
         <ExternalLink title="Phone Sitting" mp={mp} />
         <ExternalLink title="Address Sitting" mp={mp} />
         <ExternalLink title="Email" mp={mp} />
+      </MPDrawerGroup>
+
+      <MPDrawerGroup name="External References">
         <ExternalLink title="Parliament Website" mp={mp} />
         <ExternalLink title="Wikipedia" mp={mp} />
       </MPDrawerGroup>
