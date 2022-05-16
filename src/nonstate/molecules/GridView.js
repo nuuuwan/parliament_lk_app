@@ -5,30 +5,37 @@ import Typography from "@mui/material/Typography";
 import { t } from "../../base/I18N.js";
 import StatisticalTrendsBlurb from "./StatisticalTrendsBlurb.js";
 
-const STYLE_GRID = {
+const STYLE_DIV = {
+  overflowX: "scroll",
+};
+
+const STYLE_TABLE = {
   borderCollapse: "collapse",
   tableLayout: "fixed",
+  maxWidth: "100%",
 };
 
 const STYLE_CELL = {
   textAlign: "center",
   borderColor: "#eee",
   borderStyle: "solid",
-  borderWidth: 1,
+  borderWidth: 0.5,
   padding: 3,
+  wordBreak: "normal",
 };
 
 const STYLE_HEADER_CELL = {
   ...STYLE_CELL,
   ...{
     backgroundColor: "#f8f8f8",
+    overflow: "hidden",
   },
 };
 
 function DimWidget({ dim }) {
   return (
     <>
-      <Typography sx={{ fontSize: "x-small" }}>{t(dim)}</Typography>
+      <Typography sx={{ fontSize: "xx-small" }}>{t(dim)}</Typography>
     </>
   );
 }
@@ -40,7 +47,7 @@ function NWidget({ n }) {
 
   return (
     <>
-      <Typography sx={{ fontSize: "small" }}>{n}</Typography>
+      <Typography sx={{ fontSize: "x-small" }}>{n}</Typography>
     </>
   );
 }
@@ -91,75 +98,77 @@ export default function GridView(props) {
 
   return (
     <Paper elevation={0}>
-      <table style={STYLE_GRID}>
-        <tbody>
-          <tr>
-            <td />
-            {xAxisLabels.map(function (xLabel, iX) {
-              const key = `x-label-${iX}`;
+      <div style={STYLE_DIV}>
+        <table style={STYLE_TABLE}>
+          <tbody>
+            <tr>
+              <td />
+              {xAxisLabels.map(function (xLabel, iX) {
+                const key = `x-label-${iX}`;
 
-              const countX = getCountX(iX);
+                const countX = getCountX(iX);
+
+                return (
+                  <th key={key} style={STYLE_HEADER_CELL}>
+                    <DimWidget dim={xLabel} />
+                    <PctWidget n={countX} d={countXY} />
+                  </th>
+                );
+              })}
+            </tr>
+
+            {yAxisLabels.map(function (yLabel, iY) {
+              const key = `row-${iY}`;
+
+              const countY = getCountY(iY);
 
               return (
-                <th key={key} style={STYLE_HEADER_CELL}>
-                  <DimWidget dim={xLabel} />
-                  <PctWidget n={countX} d={countXY} />
-                </th>
+                <tr key={key}>
+                  {
+                    <th style={STYLE_HEADER_CELL}>
+                      <DimWidget dim={yLabel} />
+                      <PctWidget n={countY} d={countXY} />
+                    </th>
+                  }
+                  {xAxisLabels.map(function (xLabel, iX) {
+                    const key = `cell-${iX}-${iY}`;
+                    const cellContents = cells[iX][iY];
+                    const count = cellContents.length;
+
+                    const countX = getCountX(iX);
+
+                    const showStatisticalTrendsInner =
+                      showStatisticalTrends && count > 0;
+
+                    return (
+                      <td key={key} style={{ ...STYLE_CELL }}>
+                        {count > 0 ? (
+                          <Grid
+                            container
+                            alignItems="center"
+                            justifyContent="center"
+                          >
+                            {cellContents}
+                          </Grid>
+                        ) : null}
+                        <NWidget n={count} />
+                        {showStatisticalTrendsInner ? (
+                          <StatisticalTrendsBlurb
+                            countXY={countXY}
+                            countX={countX}
+                            countY={countY}
+                            count={count}
+                          />
+                        ) : null}
+                      </td>
+                    );
+                  })}
+                </tr>
               );
             })}
-          </tr>
-
-          {yAxisLabels.map(function (yLabel, iY) {
-            const key = `row-${iY}`;
-
-            const countY = getCountY(iY);
-
-            return (
-              <tr key={key}>
-                {
-                  <th style={STYLE_HEADER_CELL}>
-                    <DimWidget dim={yLabel} />
-                    <PctWidget n={countY} d={countXY} />
-                  </th>
-                }
-                {xAxisLabels.map(function (xLabel, iX) {
-                  const key = `cell-${iX}-${iY}`;
-                  const cellContents = cells[iX][iY];
-                  const count = cellContents.length;
-
-                  const countX = getCountX(iX);
-
-                  const showStatisticalTrendsInner =
-                    showStatisticalTrends && count > 0;
-
-                  return (
-                    <td key={key} style={{ ...STYLE_CELL }}>
-                      {count > 0 ? (
-                        <Grid
-                          container
-                          alignItems="center"
-                          justifyContent="center"
-                        >
-                          {cellContents}
-                        </Grid>
-                      ) : null}
-                      <NWidget n={count} />
-                      {showStatisticalTrendsInner ? (
-                        <StatisticalTrendsBlurb
-                          countXY={countXY}
-                          countX={countX}
-                          countY={countY}
-                          count={count}
-                        />
-                      ) : null}
-                    </td>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </Paper>
   );
 }
