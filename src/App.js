@@ -8,7 +8,6 @@ const TRACKING_ID = "UA-228120741-2";
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
-  console.debug('window.location.href = ', window.location.href);
   const theme = createTheme({
     typography: {
       fontFamily: ["PT Sans", "sans-serif"].join(","),
