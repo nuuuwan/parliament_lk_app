@@ -17,7 +17,8 @@ export const LANG_INFO_LIST = [
 
 export default class I18N {
   static getLang() {
-    return localStorage.getItem(LOCAL_STORAGE_KEY);
+    const lang = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return lang ? lang : BASE_LANG;
   }
 
   static setLang(lang) {
