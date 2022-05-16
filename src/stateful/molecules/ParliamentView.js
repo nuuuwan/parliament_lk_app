@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
 import History from "../../base/History.js";
+import MathXFuture from "../../base/MathXFuture.js";
 import I18N from "../../base/I18N.js";
 import MP from "../../core/MP.js";
 import Dims from "../../core/Dims.js";
@@ -157,6 +158,18 @@ export default class ParliamentView extends Component {
     }
   }
 
+  onClickShowRandomMP() {
+    const { mpIdx } = this.state;
+    const randomMP = MathXFuture.randomChoice(Object.values(mpIdx));
+    ReactGA.event({
+      category: "MPs",
+      action: "Showed Random MP",
+      label: randomMP.logString,
+      value: 10,
+    });
+    this.setStateWrapper({ activeMPId: randomMP.id });
+  }
+
   async componentDidMount() {
     const mpIdx = await MP.getMPIdx();
     this.setState({ mpIdx });
@@ -267,6 +280,7 @@ export default class ParliamentView extends Component {
         <CustomBottomNavigation
           onClickUndo={this.onClickUndo.bind(this)}
           onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
+          onClickShowRandomMP={this.onClickShowRandomMP.bind(this)}
         />
       </Box>
     );
