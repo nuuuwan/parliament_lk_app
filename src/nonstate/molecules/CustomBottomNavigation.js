@@ -69,7 +69,7 @@ export default function CustomBottomNavigation({
               }
             >
               <BottomNavigationAction
-                label={item.name}
+                label={t(item.name)}
                 icon={<Icon />}
                 onClick={onClick}
               />
