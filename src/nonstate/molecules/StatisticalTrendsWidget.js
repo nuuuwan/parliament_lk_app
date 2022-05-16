@@ -1,12 +1,7 @@
-import Switch from "@mui/material/Switch";
-import Typography from "@mui/material/Typography";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import Stack from "@mui/material/Stack";
 import { t } from "../../base/I18N.js";
-
-const COLOR_SWITCH_ON = "#1976D2";
 
 const TITLE_TEXT = "What are Statistical Trends?";
 const INFO_TEXT_LIST_LIST = [
@@ -31,24 +26,6 @@ export default function StatisticalTrendsWidget({
 }) {
   return (
     <div>
-      <FormControlLabel
-        control={
-          <Switch
-            checked={showStatisticalTrends}
-            onClick={onClickStatisticalTrends}
-          />
-        }
-        label={
-          <Typography
-            variant="subtitle2"
-            color={showStatisticalTrends ? COLOR_SWITCH_ON : "gray"}
-          >
-            {t("Statistical Trends")}
-          </Typography>
-        }
-        sx={{ marginLeft: 1 }}
-      />
-
       {showStatisticalTrends ? (
         <Stack sx={{ maxWidth: 700 }} margin={2}>
           <Alert severity="info">
