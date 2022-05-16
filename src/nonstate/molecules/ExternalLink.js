@@ -3,6 +3,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import Typography from "@mui/material/Typography";
 
 import HomeIcon from "@mui/icons-material/Home";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -13,6 +14,7 @@ import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import { StringX } from "@nuuuwan/utils-js-dev";
 
 import { t } from "../../base/I18N.js";
+import { STYLE_TITLE, STYLE_BODY } from "./ChipOuter.js";
 
 const GMAPS_PREFIX = "https://www.google.com/maps/search/";
 const WIKIPEDIA_PREFIX = "https://en.wikipedia.org/w/index.php?search=";
@@ -86,9 +88,12 @@ export default function ExternalLink({ title, mp, splitBody }) {
     <ListItem disablePadding>
       <ListItemButton component="a" onClick={onClick}>
         <ListItemIcon>
-          <Icon color="disabled" />
+          <Icon color="disabled" sx={{ fontSize: "normal" }} />
         </ListItemIcon>
-        <ListItemText primary={primaryText} secondary={t(title)} />
+        <ListItemText
+          primary={<Typography sx={STYLE_BODY}>{primaryText}</Typography>}
+          secondary={<Typography sx={STYLE_TITLE}>{t(title)}</Typography>}
+        />
       </ListItemButton>
     </ListItem>
   );
