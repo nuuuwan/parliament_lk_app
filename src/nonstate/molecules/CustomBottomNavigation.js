@@ -6,11 +6,23 @@ import Tooltip from "@mui/material/Tooltip";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import LeaderboardIcon from "@mui/icons-material/Leaderboard";
+import UndoIcon from "@mui/icons-material/Undo";
 
 import { t } from "../../base/I18N.js";
 
-export default function CustomBottomNavigation({ onClickStatisticalTrends }) {
+export default function CustomBottomNavigation({
+  onClickUndo,
+  onClickStatisticalTrends,
+}) {
   const BOTTOM_NAVIGATION_ITEMS = [
+    {
+      name: "Undo",
+      details: "Undo last action",
+      Icon: UndoIcon,
+      onClick: onClickUndo,
+      gaCategory: "History",
+      gaLabel: "Undo",
+    },
     {
       name: "Statistical Trends",
       details: "Use Statistical Trends",
