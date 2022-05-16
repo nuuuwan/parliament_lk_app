@@ -9,7 +9,7 @@ import I18N from "../../base/I18N.js";
 import MP from "../../core/MP.js";
 import Dims from "../../core/Dims.js";
 
-import GridView from "../../nonstate/molecules/GridView.js";
+import MPTable from "../../nonstate/molecules/MPTable.js";
 import CustomBottomNavigation from "../../nonstate/molecules/CustomBottomNavigation.js";
 import StatisticalTrendsWidget from "../../nonstate/molecules/StatisticalTrendsWidget.js";
 import MPDrawer from "../../nonstate/molecules/MPDrawer.js";
@@ -244,7 +244,7 @@ export default class ParliamentView extends Component {
           onChangeXDim={this.onChangeXDim.bind(this)}
         />
 
-        <GridView
+        <MPTable
           cells={cells}
           xAxisLabels={xAxisLabels}
           yAxisLabels={yAxisLabels}

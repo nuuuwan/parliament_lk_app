@@ -77,7 +77,7 @@ function PctWidget({ n, d }) {
   );
 }
 
-export default function GridView(props) {
+export default function MPTable(props) {
   const { cells, xAxisLabels, yAxisLabels, showStatisticalTrends } = props;
   const countXY = 225;
 
