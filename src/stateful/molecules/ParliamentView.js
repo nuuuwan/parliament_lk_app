@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
+import History from "../../base/History.js";
 import I18N from "../../base/I18N.js";
 import MP from "../../core/MP.js";
 import Dims from "../../core/Dims.js";
@@ -38,16 +39,35 @@ export default class ParliamentView extends Component {
     }
     this.state = {
       mpIdx: undefined,
+
       xDim: DEFAULT_X_DIM,
       yDim: DEFAULT_Y_DIM,
       activeMPId: null,
       showStatisticalTrends: false,
-      selectedLang,
+      selectedLang: selectedLang,
     };
+    this.history = new History("parliament_lk_all");
+  }
+
+  setStateWrapper(newState) {
+    this.setState(
+      newState,
+      function () {
+        const { xDim, yDim, activeMPId, showStatisticalTrends, selectedLang } =
+          this.state;
+        this.history.setState({
+          xDim,
+          yDim,
+          activeMPId,
+          showStatisticalTrends,
+          selectedLang,
+        });
+      }.bind(this)
+    );
   }
 
   onSelectLang(selectedLang) {
-    this.setState({ selectedLang });
+    this.setStateWrapper({ selectedLang });
   }
 
   onChangeXDim(xDim) {
@@ -58,7 +78,7 @@ export default class ParliamentView extends Component {
       value: 10,
     });
 
-    this.setState({ xDim });
+    this.setStateWrapper({ xDim });
   }
 
   onChangeYDim(yDim) {
@@ -69,7 +89,7 @@ export default class ParliamentView extends Component {
       value: 10,
     });
 
-    this.setState({ yDim });
+    this.setStateWrapper({ yDim });
   }
 
   onClickMP(mpID) {
@@ -81,7 +101,7 @@ export default class ParliamentView extends Component {
       label: mp.logString,
       value: 10,
     });
-    this.setState({ activeMPId: mpID });
+    this.setStateWrapper({ activeMPId: mpID });
   }
 
   onSelectMP(mpID) {
@@ -93,7 +113,7 @@ export default class ParliamentView extends Component {
       label: mp.logString,
       value: 10,
     });
-    this.setState({ activeMPId: mpID });
+    this.setStateWrapper({ activeMPId: mpID });
   }
 
   onDrawerClose() {
@@ -101,15 +121,19 @@ export default class ParliamentView extends Component {
   }
 
   onClickStatisticalTrends() {
-    const oldState = this.state.showStatisticalTrends;
+    const oldShowStatisticalTrends = this.state.showStatisticalTrends;
     ReactGA.event({
       category: "Statistical Trends",
       action: "Clicked Statistical Trends",
-      label: oldState.toString(),
+      label: oldShowStatisticalTrends.toString(),
       value: 10,
     });
 
-    this.setState({ showStatisticalTrends: !oldState });
+    if (!oldShowStatisticalTrends) {
+      this.setStateWrapper({ showStatisticalTrends: true });
+    } else {
+      this.setState({ showStatisticalTrends: false });
+    }
   }
 
   onClickSwapDims(e) {
@@ -120,10 +144,17 @@ export default class ParliamentView extends Component {
       label: `${xDim},${yDim}`,
       value: 10,
     });
-    this.setState({
+    this.setStateWrapper({
       xDim: yDim,
       yDim: xDim,
     });
+  }
+
+  onClickUndo() {
+    const newState = this.history.gotoPrev();
+    if (newState) {
+      this.setState(newState);
+    }
   }
 
   async componentDidMount() {
@@ -227,13 +258,14 @@ export default class ParliamentView extends Component {
           open={activeMPId !== null}
           onClose={this.onDrawerClose.bind(this)}
           PaperProps={{
-            sx: { maxWidth: "90%" },
+            sx: { maxHeight: "90%", maxWidth: "90%" },
           }}
         >
           <MPDrawer mp={activeMP} onClose={this.onDrawerClose.bind(this)} />
         </Drawer>
         <VersionWidget />
         <CustomBottomNavigation
+          onClickUndo={this.onClickUndo.bind(this)}
           onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
         />
       </Box>
