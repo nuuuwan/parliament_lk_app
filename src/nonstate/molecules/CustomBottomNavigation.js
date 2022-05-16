@@ -7,12 +7,14 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import LeaderboardIcon from "@mui/icons-material/Leaderboard";
 import UndoIcon from "@mui/icons-material/Undo";
+import CasinoIcon from "@mui/icons-material/Casino";
 
 import { t } from "../../base/I18N.js";
 
 export default function CustomBottomNavigation({
   onClickUndo,
   onClickStatisticalTrends,
+  onClickShowRandomMP,
 }) {
   const BOTTOM_NAVIGATION_ITEMS = [
     {
@@ -30,6 +32,14 @@ export default function CustomBottomNavigation({
       onClick: onClickStatisticalTrends,
       gaCategory: "Statistical Trends",
       gaLabel: "Statistical Trends",
+    },
+    {
+      name: "Random MP",
+      details: "Show Random MP",
+      Icon: CasinoIcon,
+      onClick: onClickShowRandomMP,
+      gaCategory: "MPs",
+      gaLabel: "Show Random",
     },
   ];
 
