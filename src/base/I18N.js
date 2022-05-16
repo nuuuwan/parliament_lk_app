@@ -10,9 +10,9 @@ const DICTIONARY = {
 };
 
 export const LANG_INFO_LIST = [
-  ["si", "සි", "#8d153a"],
+  ["si", "සිං", "#8d153a"],
   ["ta", "த", "#eb7400"],
-  ["en", "E", "#00534e"],
+  ["en", "En", "#00534e"],
 ];
 
 export default class I18N {
