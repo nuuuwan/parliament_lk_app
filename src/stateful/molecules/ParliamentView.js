@@ -37,13 +37,14 @@ export default class ParliamentView extends Component {
     }
 
     const url = window.location.href;
-    const activeMPId = url.split("#")[1];
+    const activeMPIdHref = url.split("#")[1];
 
     this.state = {
       mpIdx: undefined,
       xDim: DEFAULT_X_DIM,
       yDim: DEFAULT_Y_DIM,
-      activeMPId: activeMPId,
+      activeMPIdHref: activeMPIdHref,
+      activeMPId: null,
       showStatisticalTrends: false,
       selectedLang: selectedLang,
     };
@@ -113,7 +114,7 @@ export default class ParliamentView extends Component {
     });
 
     this.setStateWrapper({ activeMPId: mpID });
-    window.history.pushState({}, null, "#" + mpID);
+    window.history.pushState({}, null, "#" + mp.idHref);
   }
 
   onDrawerClose() {
@@ -169,7 +170,15 @@ export default class ParliamentView extends Component {
 
   async componentDidMount() {
     const mpIdx = await MP.getMPIdx();
-    this.setState({ mpIdx });
+    const mpIdxHref = await MP.getMPIdxHref();
+
+    let { activeMPIdHref, activeMPId } = this.state;
+
+    if (mpIdxHref[activeMPIdHref]) {
+      activeMPId = mpIdxHref[activeMPIdHref].id;
+    }
+
+    this.setState({ mpIdx, mpIdxHref, activeMPId });
   }
 
   render() {
@@ -185,7 +194,7 @@ export default class ParliamentView extends Component {
       return <div>Loading...</div>;
     }
     const activeMP = mpIdx[activeMPId];
-    const isDrawerOpen = activeMPId && activeMPId.length > 1;
+    const isDrawerOpen = activeMP !== undefined;
 
     let activeMPStr = "None";
     if (activeMP) {
