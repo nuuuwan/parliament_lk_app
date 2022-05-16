@@ -42,7 +42,7 @@ export default function AvatarMP({ mp, onClickMP, isActiveMP }) {
             width: avatarSize,
             height: avatarSize,
             borderColor: color,
-            borderWidth: avatarSize / 7,
+            borderWidth: avatarSize / 10,
             borderStyle: "solid",
           }}
         >
