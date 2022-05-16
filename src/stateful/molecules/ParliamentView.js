@@ -160,16 +160,14 @@ export default class ParliamentView extends Component {
     }
   }
 
-  onClickShowRandomMP() {
+  getRandomMP() {
     const { mpIdx } = this.state;
-    const randomMP = MathXFuture.randomChoice(Object.values(mpIdx));
-    ReactGA.event({
-      category: "MPs",
-      action: "Showed Random MP",
-      label: randomMP.logString,
-      value: 10,
-    });
-    this.setStateWrapper({ activeMPId: randomMP.id });
+    return MathXFuture.randomChoice(Object.values(mpIdx));
+  }
+
+  onClickShowRandomMP() {
+    const randomMP = this.getRandomMP();
+    this.setMP(randomMP.id, "Showed Random MP");
   }
 
   async componentDidMount() {
