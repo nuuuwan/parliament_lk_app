@@ -10,11 +10,13 @@ export default function MPDrawerGroup({ name, children }) {
   const dimGroup = DIM_GROUP_IDX[name];
   if (dimGroup) {
     const Icon = dimGroup.Icon;
-    renderedIcon = <Icon sx={{ color: "gray", padding: 0.5 }} />;
+    renderedIcon = (
+      <Icon sx={{ color: "lightgray", padding: 0.5, fontSize: "x-small" }} />
+    );
   }
 
   return (
-    <Card sx={{ marginBottom: 1, padding: 0 }} elevation={1}>
+    <Card sx={{ margin: 1, padding: 0 }} elevation={1}>
       <CardContent sx={{ padding: 0.5, margin: 0.5 }}>
         <div
           style={{
@@ -24,7 +26,7 @@ export default function MPDrawerGroup({ name, children }) {
         >
           {renderedIcon}
           <Typography
-            sx={{ fontSize: "x-small", color: "gray" }}
+            sx={{ fontSize: "x-small", color: "lightgray" }}
             component="span"
           >
             {t(name)}

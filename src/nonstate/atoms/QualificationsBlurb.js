@@ -9,8 +9,9 @@ export default function QualificationsBlurb({ body }) {
       variant="body2"
       sx={{
         maxWidth: 300,
-        fontSize: "small",
-        margin: 1,
+        fontSize: "x-small",
+        color: "gray",
+        margin: 0.5,
         fontStyle: "italic",
       }}
     >

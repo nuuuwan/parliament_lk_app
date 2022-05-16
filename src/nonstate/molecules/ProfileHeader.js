@@ -5,6 +5,8 @@ import Grid from "@mui/material/Grid";
 import { t } from "../../base/I18N.js";
 import { PARTY_IDX } from "../../core/Party.js";
 
+import ThumbsWidget from "./ThumbsWidget.js";
+
 const AVATAR_SIZE = 100;
 
 export default function ProfileHeader({ mp }) {
@@ -31,6 +33,7 @@ export default function ProfileHeader({ mp }) {
       <Typography variant="h6" display="block">
         {t(mp.lastName)}
       </Typography>
+      <ThumbsWidget mp={mp} />
     </Grid>
   );
 }

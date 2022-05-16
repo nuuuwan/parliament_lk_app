@@ -1,9 +1,9 @@
 const STYLE = {
-  backgroundColor: "#f8f8f8",
-  padding: "1%",
-  borderRadius: "5%",
   display: "inline-block",
-  margin: "1%",
+  marginBottom: "1%",
+  marginTop: "1%",
+  marginLeft: "1%",
+  marginRight: "10%",
   maxWidth: 250,
 };
 

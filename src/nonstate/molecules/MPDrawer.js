@@ -9,8 +9,6 @@ import ProfileHeader from "./ProfileHeader.js";
 import ExternalLink from "./ExternalLink.js";
 import TitledChip from "./TitledChip.js";
 
-import ThumbsWidget from "./ThumbsWidget.js";
-
 const STYLE_BOX = {
   padding: 3,
 };
@@ -27,7 +25,6 @@ export default function MPDrawer(props) {
     <Box sx={STYLE_BOX}>
       <CloseButton onClose={onClose} />
       <ProfileHeader mp={mp} />
-      <ThumbsWidget mp={mp} />
 
       <MPDrawerGroup name="Political Parties & Electoral Regions">
         <TitledChip title="Party" body={mp.party} />
@@ -64,8 +61,9 @@ export default function MPDrawer(props) {
           title="Highest Education Level"
           body={mp.academicHighestLevel}
         />
-        <QualificationsBlurb body={mp.academicQualifications} />
         <TitledChip title="Stated Profession" body={mp.profession} />
+
+        <QualificationsBlurb body={mp.academicQualifications} />
         <QualificationsBlurb body={mp.professionalQualifications} />
       </MPDrawerGroup>
 
