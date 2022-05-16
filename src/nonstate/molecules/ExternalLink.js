@@ -53,7 +53,7 @@ const FIELD_NAME_TO_ICON = {
   "Parliament Website": GavelIcon,
 };
 
-export default function ExternalLink({ title, mp }) {
+export default function ExternalLink({ title, mp, splitBody }) {
   const funcBody = TITLE_TO_FUNC_BODY[title];
   const body = funcBody(mp);
   if (!body) {
@@ -75,19 +75,20 @@ export default function ExternalLink({ title, mp }) {
 
   const Icon = FIELD_NAME_TO_ICON[title];
 
+  const primaryText = splitBody
+    ? body.split(",").map(function (line, i) {
+        const key = "external-list-" + title + "-" + i;
+        return <div key={key}>{StringX.toTitleCase(line)}</div>;
+      })
+    : body;
+
   return (
     <ListItem disablePadding>
       <ListItemButton component="a" onClick={onClick}>
         <ListItemIcon>
           <Icon color="disabled" />
         </ListItemIcon>
-        <ListItemText
-          primary={body.split(",").map(function (line, i) {
-            const key = "external-list-" + title + "-" + i;
-            return <div key={key}>{StringX.toTitleCase(line)}</div>;
-          })}
-          secondary={t(title)}
-        />
+        <ListItemText primary={primaryText} secondary={t(title)} />
       </ListItemButton>
     </ListItem>
   );

@@ -88,9 +88,13 @@ export default function MPDrawer(props) {
 
       <MPDrawerGroup name="Contact Details">
         <ExternalLink title="Phone" mp={mp} />
-        {SHOW_ADDRESS ? <ExternalLink title="Address" mp={mp} /> : null}
+        {SHOW_ADDRESS ? (
+          <ExternalLink title="Address" mp={mp} splitBody />
+        ) : null}
         <ExternalLink title="Phone Sitting" mp={mp} />
-        {SHOW_ADDRESS ? <ExternalLink title="Address Sitting" mp={mp} /> : null}
+        {SHOW_ADDRESS ? (
+          <ExternalLink title="Address Sitting" mp={mp} splitBody />
+        ) : null}
         <ExternalLink title="Email" mp={mp} />
       </MPDrawerGroup>
 
