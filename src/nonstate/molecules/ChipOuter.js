@@ -4,7 +4,7 @@ const STYLE = {
   borderRadius: "5%",
   display: "inline-block",
   margin: "1%",
-  maxWidth: 100,
+  maxWidth: 250,
 };
 
 export const STYLE_TITLE = { fontSize: "xx-small", color: "gray" };
