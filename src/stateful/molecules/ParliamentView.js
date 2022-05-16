@@ -38,12 +38,15 @@ export default class ParliamentView extends Component {
     if (!selectedLang) {
       selectedLang = DEFAULT_LANG;
     }
+
+    const url = window.location.href;
+    const activeMPId = url.split("#")[1];
+
     this.state = {
       mpIdx: undefined,
-
       xDim: DEFAULT_X_DIM,
       yDim: DEFAULT_Y_DIM,
-      activeMPId: null,
+      activeMPId: activeMPId,
       showStatisticalTrends: false,
       selectedLang: selectedLang,
     };
@@ -94,27 +97,26 @@ export default class ParliamentView extends Component {
   }
 
   onClickMP(mpID) {
-    const { mpIdx } = this.state;
-    const mp = mpIdx[mpID];
-    ReactGA.event({
-      category: "MPs",
-      action: "Clicked MP",
-      label: mp.logString,
-      value: 10,
-    });
-    this.setStateWrapper({ activeMPId: mpID });
+    this.setMP(mpID, "Clicked MP");
   }
 
   onSelectMP(mpID) {
+    this.setMP(mpID, "Searched MP");
+  }
+
+  setMP(mpID, gaAction) {
     const { mpIdx } = this.state;
     const mp = mpIdx[mpID];
+
     ReactGA.event({
       category: "MPs",
-      action: "Searched MP",
+      action: gaAction,
       label: mp.logString,
       value: 10,
     });
+
     this.setStateWrapper({ activeMPId: mpID });
+    window.history.pushState({}, null, "#" + mpID);
   }
 
   onDrawerClose() {
