@@ -7,4 +7,14 @@ export default class MathXFuture {
       return parseInt(x / a + 0.5) * a;
     }
   }
+
+  static randomInt(min, max) {
+    return parseInt(Math.random() * (max - min)) + min;
+  }
+
+  static randomChoice(arr) {
+    const n = arr.length;
+    const randomI = MathXFuture.randomInt(0, n);
+    return arr[randomI];
+  }
 }
