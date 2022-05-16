@@ -3,7 +3,6 @@ import SchoolIcon from "@mui/icons-material/School";
 import HowToVoteIcon from "@mui/icons-material/HowToVote";
 import LocalPoliceIcon from "@mui/icons-material/LocalPolice";
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import TempleBuddhistIcon from "@mui/icons-material/TempleBuddhist";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 
