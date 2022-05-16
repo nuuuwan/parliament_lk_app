@@ -25,7 +25,7 @@ const INFO_TEXT_LIST_LIST = [
   ],
 ];
 
-export default function StatisticalTrendsSwitch({
+export default function StatisticalTrendsWidget({
   showStatisticalTrends,
   onClickStatisticalTrends,
 }) {

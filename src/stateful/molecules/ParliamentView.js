@@ -12,7 +12,7 @@ import Dims from "../../core/Dims.js";
 
 import GridView from "../../nonstate/molecules/GridView.js";
 import CustomBottomNavigation from "../../nonstate/molecules/CustomBottomNavigation.js";
-import StatisticalTrendsSwitch from "../../nonstate/molecules/StatisticalTrendsSwitch.js";
+import StatisticalTrendsWidget from "../../nonstate/molecules/StatisticalTrendsWidget.js";
 import MPDrawer from "../../nonstate/molecules/MPDrawer.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import DimPicker from "../../nonstate/atoms/DimPicker.js";
@@ -217,7 +217,7 @@ export default class ParliamentView extends Component {
           showStatisticalTrends={showStatisticalTrends}
         />
 
-        <StatisticalTrendsSwitch
+        <StatisticalTrendsWidget
           showStatisticalTrends={showStatisticalTrends}
           onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
         />
