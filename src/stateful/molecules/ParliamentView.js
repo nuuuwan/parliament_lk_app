@@ -31,13 +31,20 @@ const STYLE = {
 export default class ParliamentView extends Component {
   constructor(props) {
     super(props);
-    let selectedLang = I18N.getLang();
+
+    const url = window.location.href;
+    const params = url.split("#");
+
+    let activeMPIdHref;
+    let selectedLang;
+    if (params.length >= 3) {
+      selectedLang = params[1];
+      activeMPIdHref = params[2];
+    }
     if (!selectedLang) {
       selectedLang = DEFAULT_LANG;
     }
-
-    const url = window.location.href;
-    const activeMPIdHref = url.split("#")[1];
+    I18N.setLang(selectedLang);
 
     this.state = {
       mpIdx: undefined,
@@ -103,7 +110,7 @@ export default class ParliamentView extends Component {
   }
 
   setMP(mpID, gaAction) {
-    const { mpIdx } = this.state;
+    const { mpIdx, selectedLang } = this.state;
     const mp = mpIdx[mpID];
 
     ReactGA.event({
@@ -114,7 +121,7 @@ export default class ParliamentView extends Component {
     });
 
     this.setStateWrapper({ activeMPId: mpID });
-    window.history.pushState({}, null, "#" + mp.idHref);
+    window.history.pushState({}, null, "#" + selectedLang + "#" + mp.idHref);
   }
 
   onDrawerClose() {
