@@ -258,7 +258,7 @@ export default class ParliamentView extends Component {
           open={activeMPId !== null}
           onClose={this.onDrawerClose.bind(this)}
           PaperProps={{
-            sx: { maxHeight: "90%", maxWidth: "90%" },
+            sx: { maxWidth: "90%" },
           }}
         >
           <MPDrawer mp={activeMP} onClose={this.onDrawerClose.bind(this)} />
