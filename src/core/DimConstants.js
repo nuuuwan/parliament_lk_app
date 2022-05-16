@@ -12,8 +12,7 @@ import Dim from "./Dim.js";
 import DimGroup from "./DimGroup.js";
 
 export const DIM_GROUP_LIST = [
-  new DimGroup("Political Parties", GroupsIcon),
-  new DimGroup("Electoral Regions", LocationOnIcon),
+  new DimGroup("Political Parties & Electoral Regions", GroupsIcon),
   new DimGroup("Voting & Parliamentary Attandance", HowToVoteIcon),
   new DimGroup("Transparency & Corruption", LocalPoliceIcon),
   new DimGroup("Education & Profession", SchoolIcon),
@@ -64,7 +63,12 @@ export const DIM_LIST = [
 ];
 
 export const DIM_GROUP_NAME_TO_DIM_NAME = {
-  "Political Parties": ["Party"],
+  "Political Parties & Electoral Regions": [
+    "Party",
+    "Is National List?",
+    "Electoral District",
+    "Province",
+  ],
   "Education & Profession": [
     "Highest Education Level",
     "Has Bachelors or higher?",
@@ -86,7 +90,6 @@ export const DIM_GROUP_NAME_TO_DIM_NAME = {
     "Gender",
     "Civil Status",
   ],
-  "Electoral Regions": ["Is National List?", "Electoral District", "Province"],
   "Religion & Ethnicity": ["Religion", "Is Sinhala Buddhist?"],
   "Miscellaneous & Fun": [
     "Last Name",
