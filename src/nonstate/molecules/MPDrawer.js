@@ -26,13 +26,13 @@ export default function MPDrawer(props) {
       <CloseButton onClose={onClose} />
       <ProfileHeader mp={mp} />
 
-      <MPDrawerGroup name="Political Parties">
+      <MPDrawerGroup name="Political Parties & Electoral Regions">
         <TitledChip title="Party" body={mp.party} />
-      </MPDrawerGroup>
+        <TitledChip title="Electoral District" body={mp.edName} />
 
-      <MPDrawerGroup name="Electoral Regions">
-        <TitledChip title="Electoral District" body={mp.edName} titleAtBottom />
-        <TitledChip title="Province" body={mp.provinceName} titleAtBottom />
+        {mp.edName === "National List" ? null : (
+          <TitledChip title="Province" body={mp.provinceName} />
+        )}
       </MPDrawerGroup>
 
       <MPDrawerGroup name="Voting & Parliamentary Attandance">
