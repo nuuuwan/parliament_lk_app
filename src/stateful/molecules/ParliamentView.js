@@ -185,7 +185,7 @@ export default class ParliamentView extends Component {
       return <div>Loading...</div>;
     }
     const activeMP = mpIdx[activeMPId];
-    const isDrawerOpen = activeMPId && activeMPId.length > 1;
+    const isDrawerOpen = activeMPId !== null && activeMPId.length > 1;
 
     let activeMPStr = "None";
     if (activeMP) {
@@ -269,7 +269,7 @@ export default class ParliamentView extends Component {
         </Drawer>
 
         <VersionWidget />
-        
+
         <CustomBottomNavigation
           onClickUndo={this.onClickUndo.bind(this)}
           onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
