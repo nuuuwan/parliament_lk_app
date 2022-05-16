@@ -22,6 +22,7 @@ const STYLE_CELL = {
   borderWidth: 0.5,
   padding: 3,
   wordBreak: "normal",
+  minWidth: 40,
 };
 
 const STYLE_HEADER_CELL = {
