@@ -7,12 +7,12 @@ const STYLE_AVATAR = { width: 100, height: 100 };
 
 export default function ProfileHeader({ mp }) {
   return (
-    <div style={{ margin: 10 }}>
+    <div style={{ margin: 1 }}>
       <Avatar alt={mp.name} src={mp.imageURL} sx={STYLE_AVATAR} />
-      <Typography variant="h6" display="block">
+      <Typography variant="subtitle2" display="block">
         {t(mp.firstNames)}
       </Typography>
-      <Typography variant="h4" display="block">
+      <Typography variant="h6" display="block">
         {t(mp.lastName)}
       </Typography>
     </div>
