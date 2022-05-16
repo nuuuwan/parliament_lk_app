@@ -151,8 +151,12 @@ export default class MP extends MPBase {
     return this.lastName + ", " + this.firstNames;
   }
 
-  get logString() {
+  get idHref() {
     return this.id + "-" + this.nameShort;
+  }
+
+  get logString() {
+    return this.idHref;
   }
 
   get generation() {
@@ -205,6 +209,14 @@ export default class MP extends MPBase {
     const mpList = await MP.getMPList();
     return mpList.reduce(function (mpIdx, mp) {
       mpIdx[mp.id] = mp;
+      return mpIdx;
+    }, {});
+  }
+
+  static async getMPIdxHref() {
+    const mpList = await MP.getMPList();
+    return mpList.reduce(function (mpIdx, mp) {
+      mpIdx[mp.idHref] = mp;
       return mpIdx;
     }, {});
   }
