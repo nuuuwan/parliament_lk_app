@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import ReactGA from "react-ga";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import IconButton from "@mui/material/IconButton";
-import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 
 import History from "../../base/History.js";
 import MathXFuture from "../../base/MathXFuture.js";
@@ -17,9 +14,9 @@ import CustomBottomNavigation from "../../nonstate/molecules/CustomBottomNavigat
 import StatisticalTrendsWidget from "../../nonstate/molecules/StatisticalTrendsWidget.js";
 import MPDrawer from "../../nonstate/molecules/MPDrawer.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
-import DimPicker from "../../nonstate/atoms/DimPicker.js";
 import VersionWidget from "../../nonstate/atoms/VersionWidget.js";
 import CustomAppBar from "../../nonstate/molecules/CustomAppBar.js";
+import DimPanel from "../../nonstate/molecules/DimPanel.js";
 
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
@@ -239,20 +236,13 @@ export default class ParliamentView extends Component {
           onSelectLang={this.onSelectLang.bind(this)}
         />
 
-        <Grid container justifyContent="center">
-          <DimPicker
-            selectedDim={yDim}
-            onChange={this.onChangeYDim.bind(this)}
-          />
-
-          <IconButton onClick={this.onClickSwapDims.bind(this)}>
-            <SwapHorizIcon />
-          </IconButton>
-          <DimPicker
-            selectedDim={xDim}
-            onChange={this.onChangeXDim.bind(this)}
-          />
-        </Grid>
+        <DimPanel
+          xDim={xDim}
+          yDim={yDim}
+          onChangeYDim={this.onChangeYDim.bind(this)}
+          onClickSwapDims={this.onClickSwapDims.bind(this)}
+          onChangeXDim={this.onChangeXDim.bind(this)}
+        />
 
         <GridView
           cells={cells}
@@ -277,7 +267,9 @@ export default class ParliamentView extends Component {
         >
           <MPDrawer mp={activeMP} onClose={this.onDrawerClose.bind(this)} />
         </Drawer>
+
         <VersionWidget />
+        
         <CustomBottomNavigation
           onClickUndo={this.onClickUndo.bind(this)}
           onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
