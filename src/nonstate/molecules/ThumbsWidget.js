@@ -65,8 +65,9 @@ export default function ThumbsWidget({ mp }) {
           });
           setThumbsValueToStorage(value);
         }
+        const key = "thumb-option-" + i;
         return (
-          <Tooltip title={info.tooltip}>
+          <Tooltip key={key} title={info.tooltip}>
             <IconButton onClick={onClick} size="small">
               <Icon fontSize="inherit" sx={{ color: color }} />
             </IconButton>

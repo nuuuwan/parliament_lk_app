@@ -188,6 +188,7 @@ export default class ParliamentView extends Component {
       return <div>Loading...</div>;
     }
     const activeMP = mpIdx[activeMPId];
+    const isDrawerOpen = activeMPId && activeMPId.length > 1;
 
     let activeMPStr = "None";
     if (activeMP) {
@@ -268,7 +269,7 @@ export default class ParliamentView extends Component {
 
         <Drawer
           anchor="right"
-          open={activeMPId !== null}
+          open={isDrawerOpen}
           onClose={this.onDrawerClose.bind(this)}
           PaperProps={{
             sx: { maxWidth: "90%" },
