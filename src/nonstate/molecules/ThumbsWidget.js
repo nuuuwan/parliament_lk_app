@@ -6,7 +6,7 @@ import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 
 export default function ThumbsWidget({ mp }) {
-  const cacheKey = mp.logString + ":" + "Thumbs";
+  const cacheKey = mp.logString + ":Thumbs";
   function getThumbsValueFromStorage() {
     return localStorage.getItem(cacheKey);
   }
