@@ -33,27 +33,41 @@ export default class ParliamentView extends Component {
     super(props);
 
     const url = window.location.href;
-    const params = url.split("#");
 
-    let activeMPIdHref;
     let selectedLang;
-    if (params.length >= 3) {
+    let activeMPIdHref;
+    let xDim;
+    let yDim;
+
+    const params = decodeURI(url).split("#");
+    if (params && params.length >= 5) {
       selectedLang = params[1];
       activeMPIdHref = params[2];
+      xDim = params[3];
+      yDim = params[4];
     }
+
     if (!selectedLang) {
       selectedLang = DEFAULT_LANG;
     }
     I18N.setLang(selectedLang);
 
+    if (!xDim) {
+      xDim = DEFAULT_X_DIM;
+    }
+    if (!yDim) {
+      yDim = DEFAULT_Y_DIM;
+    }
+
     this.state = {
-      mpIdx: undefined,
-      xDim: DEFAULT_X_DIM,
-      yDim: DEFAULT_Y_DIM,
-      activeMPIdHref: activeMPIdHref,
+      activeMPIdHref,
+      selectedLang,
+      xDim,
+      yDim,
+
       activeMPId: null,
+      mpIdx: undefined,
       showStatisticalTrends: false,
-      selectedLang: selectedLang,
     };
     this.history = new History("parliament_lk_all");
   }
@@ -62,8 +76,14 @@ export default class ParliamentView extends Component {
     this.setState(
       newState,
       function () {
-        const { xDim, yDim, activeMPId, showStatisticalTrends, selectedLang } =
-          this.state;
+        const {
+          xDim,
+          yDim,
+          activeMPId,
+          showStatisticalTrends,
+          selectedLang,
+          mpIdx,
+        } = this.state;
         this.history.setState({
           xDim,
           yDim,
@@ -71,6 +91,11 @@ export default class ParliamentView extends Component {
           showStatisticalTrends,
           selectedLang,
         });
+
+        const mp = mpIdx[activeMPId];
+        const idHref = mp ? mp.idHref : null;
+        const paramStr = [selectedLang, idHref, xDim, yDim].join("#");
+        window.history.pushState({}, null, "#" + encodeURI(paramStr));
       }.bind(this)
     );
   }
@@ -110,7 +135,7 @@ export default class ParliamentView extends Component {
   }
 
   setMP(mpID, gaAction) {
-    const { mpIdx, selectedLang } = this.state;
+    const { mpIdx } = this.state;
     const mp = mpIdx[mpID];
 
     ReactGA.event({
@@ -121,7 +146,6 @@ export default class ParliamentView extends Component {
     });
 
     this.setStateWrapper({ activeMPId: mpID });
-    window.history.pushState({}, null, "#" + selectedLang + "#" + mp.idHref);
   }
 
   onDrawerClose() {
