@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReactGA from "react-ga";
-import Box from "@mui/material/Box";
 
 import History from "../../base/History.js";
 import MathXFuture from "../../base/MathXFuture.js";
@@ -8,24 +7,12 @@ import I18N from "../../base/I18N.js";
 import MP from "../../core/MP.js";
 import Dims from "../../core/Dims.js";
 
-import MPTable from "../../nonstate/molecules/MPTable.js";
-import CustomBottomNavigation from "../../nonstate/molecules/CustomBottomNavigation.js";
-import StatisticalTrendsWidget from "../../nonstate/molecules/StatisticalTrendsWidget.js";
-import MPDrawer from "../../nonstate/molecules/MPDrawer.js";
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
-import VersionWidget from "../../nonstate/atoms/VersionWidget.js";
-import CustomAppBar from "../../nonstate/molecules/CustomAppBar.js";
-import DimPanel from "../../nonstate/molecules/DimPanel.js";
+import ParliamentView from "../../nonstate/molecules/ParliamentView.js";
 
 const DEFAULT_X_DIM = "Is Age > 40";
 const DEFAULT_Y_DIM = "Gender";
 const DEFAULT_LANG = "en";
-
-const STYLE = {
-  margin: 4,
-  marginTop: 10,
-  marginBottom: 10,
-};
 
 export default class ParliamentPage extends Component {
   constructor(props) {
@@ -262,50 +249,19 @@ export default class ParliamentPage extends Component {
     );
 
     return (
-      <Box sx={STYLE}>
-        <CustomAppBar
-          mpIdx={mpIdx}
-          activeMPId={activeMPId}
-          selectedLang={selectedLang}
-          onSelectMP={this.onSelectMP.bind(this)}
-          onSelectLang={this.onSelectLang.bind(this)}
-        />
-
-        <DimPanel
-          xDim={xDim}
-          yDim={yDim}
-          onChangeYDim={this.onChangeYDim.bind(this)}
-          onClickSwapDims={this.onClickSwapDims.bind(this)}
-          onChangeXDim={this.onChangeXDim.bind(this)}
-        />
-
-        <MPTable
-          cells={cells}
-          xAxisLabels={xAxisLabels}
-          yAxisLabels={yAxisLabels}
-          onClick={this.onClickMP}
-          showStatisticalTrends={showStatisticalTrends}
-        />
-
-        <StatisticalTrendsWidget
-          showStatisticalTrends={showStatisticalTrends}
-          onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
-        />
-
-        <MPDrawer
-          mp={activeMP}
-          onClose={this.onDrawerClose.bind(this)}
-          isDrawerOpen={isDrawerOpen}
-        />
-
-        <VersionWidget />
-
-        <CustomBottomNavigation
-          onClickUndo={this.onClickUndo.bind(this)}
-          onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
-          onClickShowRandomMP={this.onClickShowRandomMP.bind(this)}
-        />
-      </Box>
+      <ParliamentView
+        selectedLang={selectedLang}
+        activeMPId={activeMPId}
+        xDim={xDim}
+        yDim={yDim}
+        mpIdx={mpIdx}
+        cells={cells}
+        xAxisLabels={xAxisLabels}
+        yAxisLabels={yAxisLabels}
+        showStatisticalTrends={showStatisticalTrends}
+        activeMP={activeMP}
+        isDrawerOpen={isDrawerOpen}
+      />
     );
   }
 }
