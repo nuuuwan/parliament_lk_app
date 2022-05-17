@@ -225,7 +225,7 @@ export default class ParliamentView extends Component {
     }
     const activeMP = mpIdx[activeMPId];
     let activeMPStr = activeMP ? activeMP.logString : "None";
-    const isDrawerOpen = activeMP !== undefined;    
+    const isDrawerOpen = activeMP !== undefined;
 
     ReactGA.event({
       category: "ParliamentView State",
