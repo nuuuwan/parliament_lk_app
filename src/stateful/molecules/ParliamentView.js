@@ -99,6 +99,25 @@ export default class ParliamentView extends Component {
     );
   }
 
+  getRandomMP() {
+    const { mpIdx } = this.state;
+    return MathXFuture.randomChoice(Object.values(mpIdx));
+  }
+
+  setMP(mpID, gaAction) {
+    const { mpIdx } = this.state;
+    const mp = mpIdx[mpID];
+
+    ReactGA.event({
+      category: "MPs",
+      action: gaAction,
+      label: mp.logString,
+      value: 10,
+    });
+
+    this.setStateWrapper({ activeMPId: mpID });
+  }
+
   onSelectLang(selectedLang) {
     this.setStateWrapper({ selectedLang });
   }
@@ -131,20 +150,6 @@ export default class ParliamentView extends Component {
 
   onSelectMP(mpID) {
     this.setMP(mpID, "Searched MP");
-  }
-
-  setMP(mpID, gaAction) {
-    const { mpIdx } = this.state;
-    const mp = mpIdx[mpID];
-
-    ReactGA.event({
-      category: "MPs",
-      action: gaAction,
-      label: mp.logString,
-      value: 10,
-    });
-
-    this.setStateWrapper({ activeMPId: mpID });
   }
 
   onDrawerClose() {
@@ -186,11 +191,6 @@ export default class ParliamentView extends Component {
     if (newState) {
       this.setState(newState);
     }
-  }
-
-  getRandomMP() {
-    const { mpIdx } = this.state;
-    return MathXFuture.randomChoice(Object.values(mpIdx));
   }
 
   onClickShowRandomMP() {
