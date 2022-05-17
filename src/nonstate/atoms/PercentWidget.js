@@ -3,6 +3,8 @@ import Typography from "@mui/material/Typography";
 import MathXFuture from "../../base/MathXFuture.js";
 import MPCountWidget from "./MPCountWidget.js";
 
+const STYLE = { fontSize: "small", fontWeight: "bold" };
+
 export default function PercentWidget({ n, d }) {
   if (d === 0 || n === 0) {
     return null;
@@ -16,7 +18,7 @@ export default function PercentWidget({ n, d }) {
   return (
     <>
       <MPCountWidget mpCount={n} />
-      <Typography sx={{ fontSize: "xx-small" }}>{pStr}</Typography>
+      <Typography sx={STYLE}>{pStr}</Typography>
     </>
   );
 }
