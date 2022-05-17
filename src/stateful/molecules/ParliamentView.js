@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReactGA from "react-ga";
-import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 
 import History from "../../base/History.js";
@@ -297,16 +296,11 @@ export default class ParliamentView extends Component {
           onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
         />
 
-        <Drawer
-          anchor="right"
-          open={isDrawerOpen}
+        <MPDrawer
+          mp={activeMP}
           onClose={this.onDrawerClose.bind(this)}
-          PaperProps={{
-            sx: { maxWidth: "90%" },
-          }}
-        >
-          <MPDrawer mp={activeMP} onClose={this.onDrawerClose.bind(this)} />
-        </Drawer>
+          isDrawerOpen={isDrawerOpen}
+        />
 
         <VersionWidget />
 
