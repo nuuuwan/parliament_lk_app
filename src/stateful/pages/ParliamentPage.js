@@ -261,6 +261,16 @@ export default class ParliamentPage extends Component {
         showStatisticalTrends={showStatisticalTrends}
         activeMP={activeMP}
         isDrawerOpen={isDrawerOpen}
+        onSelectLang={this.onSelectLang.bind(this)}
+        onClickMP={this.onClickMP.bind(this)}
+        onSelectMP={this.onSelectMP.bind(this)}
+        onChangeXDim={this.onChangeXDim.bind(this)}
+        onChangeYDim={this.onChangeYDim.bind(this)}
+        onClickSwapDims={this.onClickSwapDims.bind(this)}
+        onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
+        onClickUndo={this.onClickUndo.bind(this)}
+        onDrawerClose={this.onDrawerClose.bind(this)}
+        onClickShowRandomMP={this.onClickShowRandomMP.bind(this)}
       />
     );
   }

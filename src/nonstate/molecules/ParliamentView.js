@@ -27,6 +27,17 @@ export default function ParliamentView({
   showStatisticalTrends,
   activeMP,
   isDrawerOpen,
+
+  onSelectLang,
+  onClickMP,
+  onSelectMP,
+  onChangeXDim,
+  onChangeYDim,
+  onClickSwapDims,
+  onClickStatisticalTrends,
+  onClickUndo,
+  onDrawerClose,
+  onClickShowRandomMP,
 }) {
   return (
     <Box sx={STYLE}>
@@ -34,43 +45,43 @@ export default function ParliamentView({
         mpIdx={mpIdx}
         activeMPId={activeMPId}
         selectedLang={selectedLang}
-        onSelectMP={this.onSelectMP.bind(this)}
-        onSelectLang={this.onSelectLang.bind(this)}
+        onSelectMP={onSelectMP}
+        onSelectLang={onSelectLang}
       />
 
       <DimPanel
         xDim={xDim}
         yDim={yDim}
-        onChangeYDim={this.onChangeYDim.bind(this)}
-        onClickSwapDims={this.onClickSwapDims.bind(this)}
-        onChangeXDim={this.onChangeXDim.bind(this)}
+        onChangeYDim={onChangeYDim}
+        onClickSwapDims={onClickSwapDims}
+        onChangeXDim={onChangeXDim}
       />
 
       <MPTable
         cells={cells}
         xAxisLabels={xAxisLabels}
         yAxisLabels={yAxisLabels}
-        onClick={this.onClickMP}
+        onClick={onClickMP}
         showStatisticalTrends={showStatisticalTrends}
       />
 
       <StatisticalTrendsWidget
         showStatisticalTrends={showStatisticalTrends}
-        onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
+        onClickStatisticalTrends={onClickStatisticalTrends}
       />
 
       <MPDrawer
         mp={activeMP}
-        onClose={this.onDrawerClose.bind(this)}
+        onClose={onDrawerClose}
         isDrawerOpen={isDrawerOpen}
       />
 
       <VersionWidget />
 
       <CustomBottomNavigation
-        onClickUndo={this.onClickUndo.bind(this)}
-        onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
-        onClickShowRandomMP={this.onClickShowRandomMP.bind(this)}
+        onClickUndo={onClickUndo}
+        onClickStatisticalTrends={onClickStatisticalTrends}
+        onClickShowRandomMP={onClickShowRandomMP}
       />
     </Box>
   );
