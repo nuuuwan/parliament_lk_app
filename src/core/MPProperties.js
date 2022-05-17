@@ -1,6 +1,5 @@
 import { TimeX } from "@nuuuwan/utils-js-dev";
 import { SECONDS_IN } from "../base/TimeXFuture.js";
-import MPBase from "./MPBase.js";
 
 const NO_DATA = "No Data";
 
@@ -25,7 +24,7 @@ function getAttendanceGroup(present, absent) {
   return `${pLower} - ${pHigher}%`;
 }
 
-export default class MPProperties extends MPBase {
+export default class MPProperties {
   get age() {
     const utNow = TimeX.getUnixTime();
     const age = (utNow - this.dateOfBirthUT) / SECONDS_IN.YEAR;

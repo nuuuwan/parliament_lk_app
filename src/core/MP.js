@@ -1,7 +1,6 @@
-import MPProperties from "./MPProperties.js";
 import MPBase from "./MPBase.js";
 
-export default class MP extends MPProperties {
+export default class MP extends MPBase {
   static cmpName(a, b) {
     const cmpLastName = a.lastName.localeCompare(b.lastName);
     if (cmpLastName) {

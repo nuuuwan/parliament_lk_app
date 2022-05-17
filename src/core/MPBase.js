@@ -1,12 +1,14 @@
 import { WWW } from "@nuuuwan/utils-js-dev";
+import MPProperties from "./MPProperties.js";
 
 const URL_MP_LIST =
   "https://raw.githubusercontent.com/" +
   "nuuuwan/parliament_lk/data/" +
   "expanded_mp_list.json";
 
-export default class MPBase {
+export default class MPBase extends MPProperties {
   constructor(d) {
+    super();
     this.d = d;
 
     this.id = parseInt(d.id);
