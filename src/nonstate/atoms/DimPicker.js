@@ -9,10 +9,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Typography from "@mui/material/Typography";
 import { t } from "../../base/I18N.js";
 
-import {
-  DIM_GROUP_LIST,
-  DIM_GROUP_NAME_TO_DIM_LIST,
-} from "../../core/DimConstants.js";
+import { DIM_GROUP_LIST } from "../../core/DimGroup.js";
+
+import { DIM_GROUP_NAME_TO_DIM_LIST } from "../../core/DimTree.js";
 
 export default function DimPicker(props) {
   const { label, selectedDim, onChange } = props;

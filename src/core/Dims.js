@@ -1,5 +1,5 @@
 import DataStructuresFuture from "../base/DataStructuresFuture.js";
-import { DIM_IDX } from "./DimConstants.js";
+import { DIM_IDX } from "./Dim.js";
 import MP from "../core/MP.js";
 
 function expandDimInfo(mpList, dimName) {
