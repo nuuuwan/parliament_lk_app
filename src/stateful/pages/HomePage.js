@@ -2,7 +2,7 @@ import { Component } from "react";
 import * as React from "react";
 import ReactGA from "react-ga";
 
-import ParliamentView from "../molecules/ParliamentView.js";
+import ParliamentPage from "./ParliamentPage.js";
 
 export default class HomePage extends Component {
   componentDidMount() {
@@ -12,7 +12,7 @@ export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <ParliamentView />
+        <ParliamentPage />
       </div>
     );
   }
