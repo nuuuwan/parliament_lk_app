@@ -1,9 +1,9 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import { t } from "../../base/I18N.js";
 import StatisticalTrendsBlurb from "./StatisticalTrendsBlurb.js";
+import MPCountWidget from "../atoms/MPCountWidget.js";
+import MPTableHeaderWidget, { STYLE_CELL } from "./MPTableHeaderWidget.js";
 
 const STYLE_DIV = {
   overflowX: "scroll",
@@ -14,68 +14,6 @@ const STYLE_TABLE = {
   tableLayout: "fixed",
   maxWidth: "100%",
 };
-
-const STYLE_CELL = {
-  textAlign: "center",
-  borderColor: "#eee",
-  borderStyle: "solid",
-  borderWidth: 0.5,
-  padding: 3,
-  wordBreak: "normal",
-  minWidth: 40,
-};
-
-const STYLE_HEADER_CELL = {
-  ...STYLE_CELL,
-  ...{
-    backgroundColor: "#f8f8f8",
-    overflow: "hidden",
-  },
-};
-
-function DimWidget({ dim }) {
-  return (
-    <>
-      <Typography sx={{ fontSize: "xx-small" }}>{t(dim)}</Typography>
-    </>
-  );
-}
-
-function NWidget({ n }) {
-  if (n === 0) {
-    return null;
-  }
-
-  return (
-    <>
-      <Typography sx={{ fontSize: "x-small" }}>{n}</Typography>
-    </>
-  );
-}
-
-function PctWidget({ n, d }) {
-  if (n === 0) {
-    return null;
-  }
-
-  const p = n / d;
-  let pStr;
-  if (p > 0.1) {
-    pStr = parseInt(100 * p + 0.5) + "%";
-  } else if (p > 0.01) {
-    pStr = parseInt(100 * p * 10 + 0.5) / 10 + "%";
-  } else if (p > 0.001) {
-    pStr = parseInt(100 * p * 100 + 0.5) / 100 + "%";
-  } else {
-    pStr = "<0.1%";
-  }
-  return (
-    <>
-      <NWidget n={n} />
-      <Typography sx={{ fontSize: "xx-small" }}>{pStr}</Typography>
-    </>
-  );
-}
 
 export default function MPTable(props) {
   const { cells, xAxisLabels, yAxisLabels, showStatisticalTrends } = props;
@@ -106,14 +44,15 @@ export default function MPTable(props) {
               <td />
               {xAxisLabels.map(function (xLabel, iX) {
                 const key = `x-label-${iX}`;
-
                 const countX = getCountX(iX);
 
                 return (
-                  <th key={key} style={STYLE_HEADER_CELL}>
-                    <DimWidget dim={xLabel} />
-                    <PctWidget n={countX} d={countXY} />
-                  </th>
+                  <MPTableHeaderWidget
+                    key={key}
+                    dim={xLabel}
+                    mpCount={countX}
+                    totalMPCount={countXY}
+                  />
                 );
               })}
             </tr>
@@ -126,16 +65,17 @@ export default function MPTable(props) {
               return (
                 <tr key={key}>
                   {
-                    <th style={STYLE_HEADER_CELL}>
-                      <DimWidget dim={yLabel} />
-                      <PctWidget n={countY} d={countXY} />
-                    </th>
+                    <MPTableHeaderWidget
+                      key={""}
+                      dim={yLabel}
+                      mpCount={countY}
+                      totalMPCount={countXY}
+                    />
                   }
                   {xAxisLabels.map(function (xLabel, iX) {
                     const key = `cell-${iX}-${iY}`;
                     const cellContents = cells[iX][iY];
                     const count = cellContents.length;
-
                     const countX = getCountX(iX);
 
                     const showStatisticalTrendsInner =
@@ -152,7 +92,7 @@ export default function MPTable(props) {
                             {cellContents}
                           </Grid>
                         ) : null}
-                        <NWidget n={count} />
+                        <MPCountWidget mpCount={count} />
                         {showStatisticalTrendsInner ? (
                           <StatisticalTrendsBlurb
                             countXY={countXY}
