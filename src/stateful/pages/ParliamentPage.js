@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ReactGA from "react-ga";
 
-import History from "../../base/History.js";
 import { MathX } from "@nuuuwan/utils-js-dev";
 import MP from "../../core/MP.js";
 import Dims from "../../core/Dims.js";
@@ -37,7 +36,6 @@ export default class ParliamentPage extends Component {
       mpIdx: undefined,
       showStatisticalTrends: false,
     };
-    this.history = new History("parliament_lk_all");
   }
 
   setStateWrapper(newState) {
@@ -51,14 +49,6 @@ export default class ParliamentPage extends Component {
           showStatisticalTrends,
           selectedLang,
         } = this.state;
-
-        this.history.setState({
-          xDim,
-          yDim,
-          activeMPId,
-          showStatisticalTrends,
-          selectedLang,
-        });
 
         const paramStr = [selectedLang, activeMPId, xDim, yDim].join("#");
         window.history.pushState({}, null, "#" + encodeURI(paramStr));
@@ -153,11 +143,7 @@ export default class ParliamentPage extends Component {
     });
   }
 
-  onClickUndo() {
-    const newState = this.history.gotoPrev();
-    if (newState) {
-      this.setState(newState);
-    }
+  onClickUndo() {    
   }
 
   onClickShowRandomMP() {
