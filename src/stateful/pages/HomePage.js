@@ -10,7 +10,7 @@ export default class HomePage extends Component {
   }
 
   render() {
-    const {selectedLang, activeMPId, xDim, yDim} = this.props;
+    const { selectedLang, activeMPId, xDim, yDim } = this.props;
     return (
       <div>
         <ParliamentPage
