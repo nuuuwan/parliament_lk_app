@@ -143,7 +143,9 @@ export default class ParliamentPage extends Component {
     });
   }
 
-  onClickUndo() {    
+  onClickUndo() {
+    window.history.back();
+    window.location.reload(false);
   }
 
   onClickShowRandomMP() {
