@@ -107,6 +107,10 @@ export default class ParliamentPage extends Component {
     this.setState({ activeMPId: null });
   }
 
+  onDrawerRefresh() {
+    this.onClickShowRandomMP();
+  }
+
   onClickStatisticalTrends() {
     const oldShowStatisticalTrends = this.state.showStatisticalTrends;
     ReactGA.event({
@@ -225,6 +229,7 @@ export default class ParliamentPage extends Component {
         onClickStatisticalTrends={this.onClickStatisticalTrends.bind(this)}
         onClickUndo={this.onClickUndo.bind(this)}
         onDrawerClose={this.onDrawerClose.bind(this)}
+        onDrawerRefresh={this.onDrawerRefresh.bind(this)}
         onClickShowRandomMP={this.onClickShowRandomMP.bind(this)}
       />
     );

@@ -38,6 +38,7 @@ export default function ParliamentView({
   onClickStatisticalTrends,
   onClickUndo,
   onDrawerClose,
+  onDrawerRefresh,
   onClickShowRandomMP,
 }) {
   return (
@@ -74,6 +75,7 @@ export default function ParliamentView({
       <MPDrawer
         mp={activeMP}
         onClose={onDrawerClose}
+        onRefresh={onDrawerRefresh}
         isDrawerOpen={isDrawerOpen}
       />
 

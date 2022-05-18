@@ -3,6 +3,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CloseButton from "../atoms/CloseButton.js";
+import RefreshButton from "../atoms/RefreshButton.js";
 import QualificationsBlurb from "../atoms/QualificationsBlurb.js";
 import MPDrawerGroup from "./MPDrawerGroup.js";
 import ProfileHeader from "./ProfileHeader.js";
@@ -16,10 +17,12 @@ const STYLE_BOX = {
 const SHOW_ADDRESS = false;
 
 export default function MPDrawer(props) {
-  const { mp, isDrawerOpen, onClose } = props;
+  const { mp, isDrawerOpen, onClose, onRefresh } = props;
   if (!mp) {
     return null;
   }
+
+  const width = window.innerWidth < 500 ? "90%" : "30%";
 
   return (
     <Drawer
@@ -27,11 +30,12 @@ export default function MPDrawer(props) {
       open={isDrawerOpen}
       onClose={onClose}
       PaperProps={{
-        sx: { maxWidth: "90%" },
+        sx: { width: width },
       }}
     >
       <Box sx={STYLE_BOX}>
         <CloseButton onClose={onClose} />
+        <RefreshButton onRefresh={onRefresh} />
         <ProfileHeader mp={mp} />
 
         <MPDrawerGroup name="Political Parties & Electoral Regions">
