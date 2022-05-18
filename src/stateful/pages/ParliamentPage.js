@@ -207,6 +207,7 @@ export default class ParliamentPage extends Component {
       showStatisticalTrends,
       selectedLang,
     } = this.state;
+
     if (mpIdx === undefined) {
       return <div>Loading...</div>;
     }
