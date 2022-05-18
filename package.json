@@ -16,6 +16,7 @@
     "gh-pages": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-ga": "^3.3.0",
     "react-scripts": "^5.0.1",
     "stylelint-config-hudochenkov": "^7.0.1",
     "stylelint-order": "^5.0.0",
@@ -40,5 +41,5 @@
     ">0.2%",
     "not dead",
     "not op_mini all"
-  ]  
+  ]
 }
