@@ -1,3 +1,4 @@
+import React from "react";
 import Box from "@mui/material/Box";
 
 import MPTable from "../../nonstate/molecules/MPTable.js";

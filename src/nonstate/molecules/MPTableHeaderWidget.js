@@ -1,3 +1,4 @@
+import React from "react";
 import DimLabel from "../atoms/DimLabel.js";
 import PercentWidget from "../atoms/PercentWidget.js";
 

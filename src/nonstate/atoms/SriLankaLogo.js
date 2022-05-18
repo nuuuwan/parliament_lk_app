@@ -1,3 +1,5 @@
+import React from "react";
+
 const STYLE_L = {
   color: "#8d153a",
 };

@@ -1,3 +1,4 @@
+import React from "react";
 import Typography from "@mui/material/Typography";
 
 import MathXFuture from "../../base/MathXFuture.js";
