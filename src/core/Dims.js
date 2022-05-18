@@ -33,7 +33,7 @@ export default class Dims {
         cells[iX][iY].push(mp);
         return cells;
       },
-      DataStructures.initArray2D(nX, nY, (iX, iY) => [])      
+      DataStructures.initArray2D(nX, nY, (iX, iY) => [])
     );
 
     const cells = mpCells.map(function (mpCellsX, iX) {
