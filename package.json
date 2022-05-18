@@ -9,7 +9,7 @@
     "@mui/icons-material": "^5.8.0",
     "@mui/material": "^5.8.0",
     "@mui/styled-engine-sc": "^5.8.0",
-    "@nuuuwan/utils-js-dev": "^1.0.8-a",
+    "@nuuuwan/utils-js-dev": "^1.0.8-b",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
