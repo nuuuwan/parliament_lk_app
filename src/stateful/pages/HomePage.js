@@ -10,9 +10,15 @@ export default class HomePage extends Component {
   }
 
   render() {
+    const {selectedLang, activeMPId, xDim, yDim} = this.props;
     return (
       <div>
-        <ParliamentPage />
+        <ParliamentPage
+          selectedLang={selectedLang}
+          activeMPId={activeMPId}
+          xDim={xDim}
+          yDim={yDim}
+        />
       </div>
     );
   }

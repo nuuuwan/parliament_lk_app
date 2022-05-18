@@ -3,7 +3,6 @@ import ReactGA from "react-ga";
 
 import History from "../../base/History.js";
 import { MathX } from "@nuuuwan/utils-js-dev";
-import I18N from "../../base/I18N.js";
 import MP from "../../core/MP.js";
 import Dims from "../../core/Dims.js";
 
@@ -17,27 +16,11 @@ const DEFAULT_LANG = "en";
 export default class ParliamentPage extends Component {
   constructor(props) {
     super(props);
-
-    const url = window.location.href;
-
-    let selectedLang;
-    let activeMPIdHref;
-    let xDim;
-    let yDim;
-
-    const params = decodeURI(url).split("#");
-    if (params && params.length >= 5) {
-      selectedLang = params[1];
-      activeMPIdHref = params[2];
-      xDim = params[3];
-      yDim = params[4];
-    }
+    let {selectedLang, activeMPId, xDim, yDim} = this.props;
 
     if (!selectedLang) {
       selectedLang = DEFAULT_LANG;
     }
-    I18N.setLang(selectedLang);
-
     if (!xDim) {
       xDim = DEFAULT_X_DIM;
     }
@@ -46,12 +29,11 @@ export default class ParliamentPage extends Component {
     }
 
     this.state = {
-      activeMPIdHref,
+      activeMPId,
       selectedLang,
       xDim,
       yDim,
 
-      activeMPId: null,
       mpIdx: undefined,
       showStatisticalTrends: false,
     };
@@ -68,8 +50,8 @@ export default class ParliamentPage extends Component {
           activeMPId,
           showStatisticalTrends,
           selectedLang,
-          mpIdx,
         } = this.state;
+
         this.history.setState({
           xDim,
           yDim,
@@ -78,9 +60,7 @@ export default class ParliamentPage extends Component {
           selectedLang,
         });
 
-        const mp = mpIdx[activeMPId];
-        const idHref = mp ? mp.idHref : null;
-        const paramStr = [selectedLang, idHref, xDim, yDim].join("#");
+        const paramStr = [selectedLang, activeMPId, xDim, yDim].join("#");
         window.history.pushState({}, null, "#" + encodeURI(paramStr));
       }.bind(this)
     );
@@ -187,15 +167,7 @@ export default class ParliamentPage extends Component {
 
   async componentDidMount() {
     const mpIdx = await MP.getMPIdx();
-    const mpIdxHref = await MP.getMPIdxHref();
-
-    let { activeMPIdHref, activeMPId } = this.state;
-
-    if (mpIdxHref[activeMPIdHref]) {
-      activeMPId = mpIdxHref[activeMPIdHref].id;
-    }
-
-    this.setState({ mpIdx, mpIdxHref, activeMPId });
+    this.setState({ mpIdx});
   }
 
   render() {
