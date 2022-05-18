@@ -15,7 +15,7 @@ const DEFAULT_LANG = "en";
 export default class ParliamentPage extends Component {
   constructor(props) {
     super(props);
-    let {selectedLang, activeMPId, xDim, yDim} = this.props;
+    let { selectedLang, activeMPId, xDim, yDim } = this.props;
 
     if (!selectedLang) {
       selectedLang = DEFAULT_LANG;
@@ -42,13 +42,7 @@ export default class ParliamentPage extends Component {
     this.setState(
       newState,
       function () {
-        const {
-          xDim,
-          yDim,
-          activeMPId,
-          showStatisticalTrends,
-          selectedLang,
-        } = this.state;
+        const { xDim, yDim, activeMPId, selectedLang } = this.state;
 
         const paramStr = [selectedLang, activeMPId, xDim, yDim].join("#");
         window.history.pushState({}, null, "#" + encodeURI(paramStr));
@@ -155,7 +149,7 @@ export default class ParliamentPage extends Component {
 
   async componentDidMount() {
     const mpIdx = await MP.getMPIdx();
-    this.setState({ mpIdx});
+    this.setState({ mpIdx });
   }
 
   render() {
