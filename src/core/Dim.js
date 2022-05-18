@@ -1,4 +1,4 @@
-import DataStructuresFuture from "../base/DataStructuresFuture.js";
+import { DataStructures } from "@nuuuwan/utils-js-dev";
 
 export default class Dim {
   constructor(name, func, isSorted = false) {
@@ -55,7 +55,4 @@ export const DIM_LIST = [
   true,
 ];
 
-export const DIM_IDX = DataStructuresFuture.buildIndex(
-  DIM_LIST,
-  (dim) => dim.name
-);
+export const DIM_IDX = DataStructures.buildIndex(DIM_LIST, (dim) => dim.name);

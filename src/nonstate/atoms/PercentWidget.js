@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 
-import MathXFuture from "../../base/MathXFuture.js";
+import { MathX } from "@nuuuwan/utils-js-dev";
 import MPCountWidget from "./MPCountWidget.js";
 
 const STYLE = { fontSize: "small", fontWeight: "bold" };
@@ -14,7 +14,7 @@ export default function PercentWidget({ n, d }) {
   const p = n / d;
 
   const a = p > 0.1 ? 1 : 0.1;
-  const pStr = MathXFuture.round(p * 100, a) + "%";
+  const pStr = MathX.round(p * 100, a) + "%";
 
   return (
     <>

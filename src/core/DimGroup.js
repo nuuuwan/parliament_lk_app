@@ -6,7 +6,7 @@ import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import TempleBuddhistIcon from "@mui/icons-material/TempleBuddhist";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 
-import DataStructuresFuture from "../base/DataStructuresFuture.js";
+import { DataStructures } from "@nuuuwan/utils-js-dev";
 
 export default class DimGroup {
   constructor(name, Icon) {
@@ -27,7 +27,7 @@ export const DIM_GROUP_LIST = [
   new DimGroup("Miscellaneous & Fun", CelebrationIcon),
 ];
 
-export const DIM_GROUP_IDX = DataStructuresFuture.buildIndex(
+export const DIM_GROUP_IDX = DataStructures.buildIndex(
   DIM_GROUP_LIST,
   (dimGroup) => dimGroup.name
 );

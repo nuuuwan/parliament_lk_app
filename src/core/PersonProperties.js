@@ -1,7 +1,7 @@
 import { TimeX } from "@nuuuwan/utils-js-dev";
-import { SECONDS_IN } from "../base/TimeXFuture.js";
 
 const NO_DATA = "No Data";
+const SECONDS_IN_YEAR = 86400 * 365.25;
 
 export default class PersonProperties {
   // Profile
@@ -23,7 +23,7 @@ export default class PersonProperties {
   // Demographics
   get age() {
     const utNow = TimeX.getUnixTime();
-    const age = (utNow - this.dateOfBirthUT) / SECONDS_IN.YEAR;
+    const age = (utNow - this.dateOfBirthUT) / SECONDS_IN_YEAR;
     return age;
   }
 

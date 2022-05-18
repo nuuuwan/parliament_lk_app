@@ -1,4 +1,4 @@
-import DataStructuresFuture from "../base/DataStructuresFuture.js";
+import { DataStructures } from "@nuuuwan/utils-js-dev";
 
 class Party {
   constructor(name, color) {
@@ -32,7 +32,7 @@ export const PARTY_LIST = [
   new Party("ACMC", "darkgreen"),
 ];
 
-export const PARTY_IDX = DataStructuresFuture.buildIndex(
+export const PARTY_IDX = DataStructures.buildIndex(
   PARTY_LIST,
   (party) => party.name
 );

@@ -1,4 +1,4 @@
-import DataStructuresFuture from "../base/DataStructuresFuture.js";
+import { DataStructures } from "@nuuuwan/utils-js-dev";
 import { DIM_IDX } from "./Dim.js";
 import MP from "../core/MP.js";
 
@@ -8,12 +8,12 @@ function expandDimInfo(mpList, dimName) {
 
   let xAxisLabels;
   if (dim.isSorted) {
-    xAxisLabels = DataStructuresFuture.uniqueSorted(xValues);
+    xAxisLabels = DataStructures.uniqueSorted(xValues);
   } else {
-    const xAxisLabelAndCount = DataStructuresFuture.keyAndCount(xValues);
+    const xAxisLabelAndCount = DataStructures.keyAndCount(xValues);
     xAxisLabels = xAxisLabelAndCount.map((x) => x[0]);
   }
-  const xToIX = DataStructuresFuture.buildReverseIndex(xAxisLabels);
+  const xToIX = DataStructures.buildReverseIndex(xAxisLabels);
 
   return [xAxisLabels, xAxisLabels.length, xToIX];
 }
@@ -33,7 +33,7 @@ export default class Dims {
         cells[iX][iY].push(mp);
         return cells;
       },
-      DataStructuresFuture.initArray2D(nX, nY, (iX, iY) => [])
+      DataStructures.initArray2D(nX, nY, (iX, iY) => [])
     );
 
     const cells = mpCells.map(function (mpCellsX, iX) {

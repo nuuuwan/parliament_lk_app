@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactGA from "react-ga";
 
 import History from "../../base/History.js";
-import MathXFuture from "../../base/MathXFuture.js";
+import { MathX } from "@nuuuwan/utils-js-dev";
 import I18N from "../../base/I18N.js";
 import MP from "../../core/MP.js";
 import Dims from "../../core/Dims.js";
@@ -88,7 +88,7 @@ export default class ParliamentPage extends Component {
 
   getRandomMP() {
     const { mpIdx } = this.state;
-    return MathXFuture.randomChoice(Object.values(mpIdx));
+    return MathX.randomChoice(Object.values(mpIdx));
   }
 
   setMP(mpID, gaAction) {

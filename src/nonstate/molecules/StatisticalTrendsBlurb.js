@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import { t } from "../../base/I18N.js";
-import MathXFuture from "../../base/MathXFuture.js";
+import { MathX } from "@nuuuwan/utils-js-dev";
 const COLOR_SWITCH_ON = "#1976D2";
 
 function getHumanText(z) {
@@ -21,7 +21,7 @@ function getBoundsStr(meanCount, stdevCount) {
   ];
 
   const [lowerBoundStr, upperBoundStr] = [lowerBound, upperBound].map((x) =>
-    MathXFuture.round(x, 1)
+    MathX.round(x, 1)
   );
 
   if (lowerBound === upperBound) {
@@ -42,7 +42,7 @@ export default function StatisticalTrendsBlurb({
   const z = (count - meanCount) / stdevCount;
   const humanText = getHumanText(z);
   const boundsStr = getBoundsStr(meanCount, stdevCount);
-  const zStr = MathXFuture.round(z, 0.1);
+  const zStr = MathX.round(z, 0.1);
   return (
     <>
       <Typography variant="caption" component="div" color={COLOR_SWITCH_ON}>
