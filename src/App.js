@@ -17,9 +17,29 @@ export default class App extends Component {
       },
     });
 
+    const url = window.location.href;
+
+    let selectedLang;
+    let activeMPId;
+    let xDim;
+    let yDim;
+
+    const params = decodeURI(url).split("#");
+    if (params && params.length >= 5) {
+      selectedLang = params[1];
+      activeMPId = params[2];
+      xDim = params[3];
+      yDim = params[4];
+    }
+
     return (
       <ThemeProvider theme={theme}>
-        <HomePage />
+        <HomePage
+          selectedLang={selectedLang}
+          activeMPId={activeMPId}
+          xDim={xDim}
+          yDim={yDim}
+        />
       </ThemeProvider>
     );
   }
