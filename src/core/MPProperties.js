@@ -1,5 +1,5 @@
 import PersonProperties from "./PersonProperties.js";
-
+const NA = "NA";
 function getPct(present, absent) {
   if (!present) {
     return null;
@@ -19,6 +19,13 @@ function getAttendanceGroup(present, absent) {
   const pLower = parseInt((p * 100) / Q) * Q;
   const pHigher = pLower + Q;
   return `${pLower} - ${pHigher}%`;
+}
+
+function getCabinet(cabinetData) {
+  if (!cabinetData || cabinetData === NA) {
+    return "No";
+  }
+  return "Yes";
 }
 
 export default class MPProperties extends PersonProperties {
@@ -63,5 +70,18 @@ export default class MPProperties extends PersonProperties {
 
   get attendance9thPct() {
     return getPct(this.attendance9thPresent, this.attendance9thAbsent);
+  }
+
+  get cabinet201911() {
+    return getCabinet(this.cabinet201911Data);
+  }
+  get cabinet202008() {
+    return getCabinet(this.cabinet202008Data);
+  }
+  get cabinet202204() {
+    return getCabinet(this.cabinet202204Data);
+  }
+  get cabinet202205() {
+    return getCabinet(this.cabinet202205Data);
   }
 }
