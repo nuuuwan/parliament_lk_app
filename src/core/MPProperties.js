@@ -21,11 +21,11 @@ function getAttendanceGroup(present, absent) {
   return `${pLower} - ${pHigher}%`;
 }
 
-function getCabinet(cabinetData) {
+function getCabinet(cabinetData, cabinetLabel) {
   if (!cabinetData || cabinetData === NA) {
-    return "No";
+    return "Not in the " + cabinetLabel + " Cabinet";
   }
-  return "Yes";
+  return "In the " + cabinetLabel + " Cabinet";
 }
 
 export default class MPProperties extends PersonProperties {
@@ -73,15 +73,15 @@ export default class MPProperties extends PersonProperties {
   }
 
   get cabinet201911() {
-    return getCabinet(this.cabinet201911Data);
+    return getCabinet(this.cabinet201911Data, "2019 November");
   }
   get cabinet202008() {
-    return getCabinet(this.cabinet202008Data);
+    return getCabinet(this.cabinet202008Data, "2020 August");
   }
   get cabinet202204() {
-    return getCabinet(this.cabinet202204Data);
+    return getCabinet(this.cabinet202204Data, "2022 April");
   }
   get cabinet202205() {
-    return getCabinet(this.cabinet202205Data);
+    return getCabinet(this.cabinet202205Data, "2022 May");
   }
 }
