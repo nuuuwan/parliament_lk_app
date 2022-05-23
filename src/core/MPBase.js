@@ -45,11 +45,16 @@ export default class MPBase extends MPProperties {
 
     this.sourceURL = d.source_url;
 
+    this.attendance8thPresent = d.attendance_8th_present;
+    this.attendance8thAbsent = d.attendance_8th_absent;
+
     this.attendance9thPresent = d.attendance_9th_present;
     this.attendance9thAbsent = d.attendance_9th_absent;
 
-    this.attendance8thPresent = d.attendance_8th_present;
-    this.attendance8thAbsent = d.attendance_8th_absent;
+    this.cabinet201911Data = d.cabinet_201911;
+    this.cabinet202008Data = d.cabinet_202008;
+    this.cabinet202204Data = d.cabinet_202204;
+    this.cabinet202205Data = d.cabinet_202205;
   }
 
   static async getRawMPList() {
