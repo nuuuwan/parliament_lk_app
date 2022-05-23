@@ -13,10 +13,14 @@ export const DIM_GROUP_NAME_TO_DIM_NAME = {
     "Has Advanced Levels or higher?",
     "Profession",
   ],
-  "Voting & Parliamentary Attandance": [
+  "Voting & Parliamentary Participation": [
     "Voting for 20th Amendment",
     "Attandance 9th Parliament (2020 - )",
     "Attandance 8th Parliament (2017 - 2020)",
+    "Was in 2019 Nov Cabinet?",
+    "Was in 2020 Aug Cabinet?",
+    "Was in 2022 Apr Cabinet?",
+    "Was in 2022 May Cabinet?",
   ],
   "Transparency & Corruption": ["Has Publicly Declared Assets?"],
   Demographics: [
