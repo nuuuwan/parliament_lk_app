@@ -19,7 +19,7 @@ export default class DimGroup {
 
 export const DIM_GROUP_LIST = [
   new DimGroup("Political Parties & Electoral Regions", GroupsIcon),
-  new DimGroup("Voting & Parliamentary Attandance", HowToVoteIcon),
+  new DimGroup("Voting & Parliamentary Participation", HowToVoteIcon),
   new DimGroup("Transparency & Corruption", LocalPoliceIcon),
   new DimGroup("Education & Profession", SchoolIcon),
   new DimGroup("Demographics", FamilyRestroomIcon),
