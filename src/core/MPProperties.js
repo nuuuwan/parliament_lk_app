@@ -84,4 +84,14 @@ export default class MPProperties extends PersonProperties {
   get cabinet202205() {
     return getCabinet(this.cabinet202205Data, "2022 May");
   }
+
+  get numberOfCabinets() {
+    let n = 0;
+    for (let cabinet of [this.cabinet201911Data, this.cabinet202008Data, this.cabinet202204Data, this.cabinet202205Data]) {
+      if (cabinet !== NA) {
+        n += 1;
+      }
+    }
+    return `${n} of the last 4 cabinets`;
+  }
 }

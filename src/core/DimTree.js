@@ -17,6 +17,7 @@ export const DIM_GROUP_NAME_TO_DIM_NAME = {
     "Voting for 20th Amendment",
     "Attandance 9th Parliament (2020 - )",
     "Attandance 8th Parliament (2017 - 2020)",
+    "Number of Cabinets (since 2019 Nov)",
     "Was in 2019 Nov Cabinet?",
     "Was in 2020 Aug Cabinet?",
     "Was in 2022 Apr Cabinet?",
