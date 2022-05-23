@@ -49,11 +49,45 @@ export default function MPDrawer(props) {
 
         <MPDrawerGroup name="Voting & Parliamentary Attandance">
           <TitledChip title="Voting for 20th Amendment" body={mp.vote20A} />
+
+          {mp.cabinet202205Data !== "NA" ? (
+            <TitledChip
+              title="2022 May Cabinet"
+              body={mp.cabinet202205Data}
+              disableTranslate
+            />
+          ) : null}
+
+          {mp.cabinet202204Data !== "NA" ? (
+            <TitledChip
+              title="2022 April Cabinet"
+              body={mp.cabinet202204Data}
+              disableTranslate
+            />
+          ) : null}
+
+          {mp.cabinet202008Data !== "NA" ? (
+            <TitledChip
+              title="2020 August Cabinet"
+              body={mp.cabinet202008Data}
+              disableTranslate
+            />
+          ) : null}
+
+          {mp.cabinet201911Data !== "NA" ? (
+            <TitledChip
+              title="2019 November Cabinet"
+              body={mp.cabinet201911Data}
+              disableTranslate
+            />
+          ) : null}
+
           <TitledChip
             title="Attandance 9th Parliament (2020 - )"
             body={mp.attendance9thPct}
             disableTranslate
           />
+
           <TitledChip
             title="Attandance 8th Parliament (2017 - 2020)"
             body={mp.attendance8thPct}
