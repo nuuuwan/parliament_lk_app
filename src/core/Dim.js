@@ -31,6 +31,11 @@ export const DIM_LIST = [
     (mp) => mp.attendance8th,
     true
   ),
+  new Dim("Was in 2019 Nov Cabinet?", mp => mp.cabinet201911),
+  new Dim("Was in 2020 Aug Cabinet?", mp => mp.cabinet202008),
+  new Dim("Was in 2022 Apr Cabinet?", mp => mp.cabinet202204),
+  new Dim("Was in 2022 May Cabinet?", mp => mp.cabinet202205),
+
   new Dim("Has Publicly Declared Assets?", (mp) => mp.hasDeclaredAssets),
   new Dim("Age Group (5 year)", (mp) => mp.getAgeGroup(5), true),
   new Dim("Age Group (10 year)", (mp) => mp.getAgeGroup(10), true),
