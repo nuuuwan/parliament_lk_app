@@ -161,6 +161,7 @@ Charles Nirmalanathan
 Christianity (All)
 Civil Engineer
 Civil Status
+Code
 Colombo
 Company Chairman
 Company Director
@@ -174,6 +175,8 @@ D. V.
 D. V. Chanaka
 D. Weerasingha
 Dasanayake
+Data - The Parliament of Sri Lanka
+Data - Transparency International - Sri Lanka
 Data from
 Date of Birth
 Dayasiri
@@ -184,6 +187,7 @@ Demographics
 Denipitiya
 Dental Surgeon
 Devananda
+Dhammika Perera
 Dharmalingam
 Dharmalingam Sithadthan
 Dharmasena
@@ -293,6 +297,7 @@ Has Publicly Declared Assets?
 Hashim
 Hector
 Hector Appuhamy
+Help
 Herath
 Hesha
 Hesha Withanage
@@ -332,6 +337,7 @@ Jagath
 Jagath Kumara
 Jagath Kumara Sumithraarachchi
 Jagath Pushpakumara
+Jagath Samarawickrama
 Janaka
 Janaka Bandara
 Janaka Bandara Thennakoon
@@ -443,6 +449,7 @@ Mahindananda
 Mahindananda Aluthgamage
 Maithreepala
 Maithreepala Sirisena
+Major Pradeep Undugoda
 Male
 Manjula
 Manjula Dissanayake
@@ -520,6 +527,7 @@ Northern
 Not Declared
 Not Sinhala Buddhist
 Not Sitting
+Number of Cabinets (since 2019 Nov)
 Nuwara-Eliya
 OPPP
 Other or Unknown
@@ -804,15 +812,22 @@ Vote for 20th Amendment
 Voted Against
 Voted: In Favour
 Voting & Parliamentary Attandance
+Voting & Parliamentary Participation
 Voting Record
 Voting for 20th Amendment
+Voting for 22nd Amendment
 W. H. M.
 W. H. M. Dharmasena
+Wajira Abeywardana
 Wakkumbura
 Waleboda
 Wanniarachchi
 Waruna
 Waruna Liyanage
+Was in 2019 Nov Cabinet?
+Was in 2020 Aug Cabinet?
+Was in 2022 Apr Cabinet?
+Was in 2022 May Cabinet?
 Wasantha
 Wasantha Yapabandara
 Wedaarachchi
