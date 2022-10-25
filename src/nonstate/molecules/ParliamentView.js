@@ -1,13 +1,14 @@
 import React from "react";
+
 import Box from "@mui/material/Box";
 
-import MPTable from "../../nonstate/molecules/MPTable.js";
-import CustomBottomNavigation from "../../nonstate/molecules/CustomBottomNavigation.js";
-import StatisticalTrendsWidget from "../../nonstate/molecules/StatisticalTrendsWidget.js";
-import MPDrawer from "../../nonstate/molecules/MPDrawer.js";
 import VersionWidget from "../../nonstate/atoms/VersionWidget.js";
 import CustomAppBar from "../../nonstate/molecules/CustomAppBar.js";
+import CustomBottomNavigation from "../../nonstate/molecules/CustomBottomNavigation.js";
 import DimPanel from "../../nonstate/molecules/DimPanel.js";
+import MPDrawer from "../../nonstate/molecules/MPDrawer.js";
+import MPTable from "../../nonstate/molecules/MPTable.js";
+import StatisticalTrendsWidget from "../../nonstate/molecules/StatisticalTrendsWidget.js";
 
 const STYLE = {
   margin: 4,

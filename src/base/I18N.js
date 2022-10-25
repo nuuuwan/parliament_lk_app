@@ -1,5 +1,6 @@
 import SINHALA_DICTIONARY from "./SINHALA_DICTIONARY.js";
 import TAMIL_DICTIONARY from "./TAMIL_DICTIONARY.js";
+
 const BASE_LANG = "en";
 
 const LOCAL_STORAGE_KEY = "parliament_lk_app.lang";

@@ -1,7 +1,9 @@
 import React from "react";
+
 import Typography from "@mui/material/Typography";
 
 import { MathX } from "@nuuuwan/utils-js-dev";
+
 import MPCountWidget from "./MPCountWidget.js";
 
 const STYLE = { fontSize: "small", fontWeight: "bold" };

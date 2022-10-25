@@ -1,7 +1,9 @@
 import React from "react";
-import { t } from "../../base/I18N.js";
-import TextField from "@mui/material/TextField";
+
 import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
+
+import { t } from "../../base/I18N.js";
 import MP from "../../core/MP.js";
 
 export default function MPSelector({ mpIdx, activeMPId, onSelectMP }) {

@@ -1,5 +1,7 @@
 import React from "react";
+
 import Typography from "@mui/material/Typography";
+
 import { t } from "../../base/I18N.js";
 
 const STYLE = {

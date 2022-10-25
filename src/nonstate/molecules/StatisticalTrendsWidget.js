@@ -1,7 +1,9 @@
 import React from "react";
+
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import Stack from "@mui/material/Stack";
+
 import { t } from "../../base/I18N.js";
 
 const TITLE_TEXT = "What are Statistical Trends?";

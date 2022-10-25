@@ -2,12 +2,13 @@ import React from "react";
 
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
+
 import CloseButton from "../atoms/CloseButton.js";
-import RefreshButton from "../atoms/RefreshButton.js";
 import QualificationsBlurb from "../atoms/QualificationsBlurb.js";
+import RefreshButton from "../atoms/RefreshButton.js";
+import ExternalLink from "./ExternalLink.js";
 import MPDrawerGroup from "./MPDrawerGroup.js";
 import ProfileHeader from "./ProfileHeader.js";
-import ExternalLink from "./ExternalLink.js";
 import TitledChip from "./TitledChip.js";
 
 const STYLE_BOX = {

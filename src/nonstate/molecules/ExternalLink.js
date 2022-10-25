@@ -1,20 +1,21 @@
 import React from "react";
 import ReactGA from "react-ga";
+
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
-
-import HomeIcon from "@mui/icons-material/Home";
-import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import GavelIcon from "@mui/icons-material/Gavel";
+import HomeIcon from "@mui/icons-material/Home";
+import PhoneIcon from "@mui/icons-material/Phone";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 
 import { StringX } from "@nuuuwan/utils-js-dev";
 
 import { t } from "../../base/I18N.js";
+
 import { STYLE_TITLE, STYLE_BODY } from "./ChipOuter.js";
 
 const GMAPS_PREFIX = "https://www.google.com/maps/search/";

@@ -1,16 +1,16 @@
 import React from "react";
 import ReactGA from "react-ga";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
+
 import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import ListItemText from "@mui/material/ListItemText";
+import InputLabel from "@mui/material/InputLabel";
 import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
+
 import { t } from "../../base/I18N.js";
-
 import { DIM_GROUP_LIST } from "../../core/DimGroup.js";
-
 import { DIM_GROUP_NAME_TO_DIM_LIST } from "../../core/DimTree.js";
 
 export default function DimPicker(props) {

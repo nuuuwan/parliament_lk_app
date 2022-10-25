@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import App from "./App.js";
+
 import { DATE_LAST_UPDATE } from "./constants/Constants.js";
+
+import App from "./App.js";
 
 jest.setTimeout(20_000);
 

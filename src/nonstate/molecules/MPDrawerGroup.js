@@ -1,9 +1,10 @@
 import React from "react";
+
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { t } from "../../base/I18N.js";
 
+import { t } from "../../base/I18N.js";
 import { DIM_GROUP_IDX } from "../../core/DimGroup.js";
 
 export default function MPDrawerGroup({ name, children }) {

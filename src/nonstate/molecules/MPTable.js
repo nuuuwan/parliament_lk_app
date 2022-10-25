@@ -1,9 +1,11 @@
 import React from "react";
+
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import StatisticalTrendsBlurb from "./StatisticalTrendsBlurb.js";
+
 import MPCountWidget from "../atoms/MPCountWidget.js";
 import MPTableHeaderWidget, { STYLE_CELL } from "./MPTableHeaderWidget.js";
+import StatisticalTrendsBlurb from "./StatisticalTrendsBlurb.js";
 
 const STYLE_DIV = {
   overflowX: "scroll",

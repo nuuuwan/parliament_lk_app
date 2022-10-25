@@ -1,14 +1,14 @@
 import React from "react";
 import ReactGA from "react-ga";
 
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import Tooltip from "@mui/material/Tooltip";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import Paper from "@mui/material/Paper";
+import Tooltip from "@mui/material/Tooltip";
+import Typography from "@mui/material/Typography";
+import CasinoIcon from "@mui/icons-material/Casino";
 import LeaderboardIcon from "@mui/icons-material/Leaderboard";
 import UndoIcon from "@mui/icons-material/Undo";
-import CasinoIcon from "@mui/icons-material/Casino";
 
 import { t } from "../../base/I18N.js";
 

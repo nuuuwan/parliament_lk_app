@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import ReactGA from "react-ga";
 
 import { MathX } from "@nuuuwan/utils-js-dev";
-import MP from "../../core/MP.js";
+
 import Dims from "../../core/Dims.js";
+import MP from "../../core/MP.js";
 
 import AvatarMP from "../../nonstate/atoms/AvatarMP.js";
 import ParliamentView from "../../nonstate/molecules/ParliamentView.js";

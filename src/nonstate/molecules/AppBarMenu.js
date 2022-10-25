@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import ReactGA from "react-ga";
+
 import IconButton from "@mui/material/IconButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemIcon from "@mui/material/ListItemIcon";
+import GavelIcon from "@mui/icons-material/Gavel";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import HelpIcon from "@mui/icons-material/Help";
 import MenuIcon from "@mui/icons-material/Menu";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import GavelIcon from "@mui/icons-material/Gavel";
-import HelpIcon from "@mui/icons-material/Help";
 
 import { t } from "../../base/I18N.js";
 

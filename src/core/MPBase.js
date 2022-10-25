@@ -1,4 +1,5 @@
 import { WWW } from "@nuuuwan/utils-js-dev";
+
 import MPProperties from "./MPProperties.js";
 
 const URL_MP_LIST =

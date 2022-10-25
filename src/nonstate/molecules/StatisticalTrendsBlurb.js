@@ -1,7 +1,11 @@
 import React from "react";
+
 import Typography from "@mui/material/Typography";
-import { t } from "../../base/I18N.js";
+
 import { MathX } from "@nuuuwan/utils-js-dev";
+
+import { t } from "../../base/I18N.js";
+
 const COLOR_SWITCH_ON = "#1976D2";
 
 function getHumanText(z) {

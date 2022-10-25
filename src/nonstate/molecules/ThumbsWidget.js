@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import ReactGA from "react-ga";
-import Stack from "@mui/material/Stack";
+
 import IconButton from "@mui/material/IconButton";
-import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
-import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
-import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
+import Stack from "@mui/material/Stack";
 import Tooltip from "@mui/material/Tooltip";
+import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
+import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
+import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 
 const COLOR_NONE_CHOSSEN = "#808080";
 const COLOR_NOT_CHOSSEN = "#f0f0f0";

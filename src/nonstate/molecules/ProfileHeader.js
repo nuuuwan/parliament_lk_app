@@ -1,7 +1,8 @@
 import React from "react";
+
 import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 import { t } from "../../base/I18N.js";
 import { PARTY_IDX } from "../../core/Party.js";

@@ -2,13 +2,14 @@ import React from "react";
 import ReactGA from "react-ga";
 
 import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
+import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import AppBarMenu from "./AppBarMenu.js";
-import MPSelector from "../../nonstate/atoms/MPSelector.js";
 
 import I18N, { LANG_INFO_LIST, t } from "../../base/I18N.js";
+
+import MPSelector from "../../nonstate/atoms/MPSelector.js";
+import AppBarMenu from "./AppBarMenu.js";
 
 const STYLE = {
   backgroundColor: "lightgray",

@@ -1,4 +1,5 @@
 import PersonProperties from "./PersonProperties.js";
+
 const NA = "NA";
 function getPct(present, absent) {
   if (!present) {
@@ -87,7 +88,12 @@ export default class MPProperties extends PersonProperties {
 
   get numberOfCabinets() {
     let n = 0;
-    for (let cabinet of [this.cabinet201911Data, this.cabinet202008Data, this.cabinet202204Data, this.cabinet202205Data]) {
+    for (let cabinet of [
+      this.cabinet201911Data,
+      this.cabinet202008Data,
+      this.cabinet202204Data,
+      this.cabinet202205Data,
+    ]) {
       if (cabinet !== NA) {
         n += 1;
       }

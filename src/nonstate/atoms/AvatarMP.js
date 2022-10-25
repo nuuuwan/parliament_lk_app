@@ -1,7 +1,9 @@
 import React from "react";
+
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
+
 import { t } from "../../base/I18N.js";
 import { PARTY_IDX } from "../../core/Party.js";
 
