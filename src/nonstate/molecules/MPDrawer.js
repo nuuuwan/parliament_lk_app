@@ -50,6 +50,7 @@ export default function MPDrawer(props) {
 
         <MPDrawerGroup name="Voting & Parliamentary Attandance">
           <TitledChip title="Voting for 20th Amendment" body={mp.vote20A} />
+          <TitledChip title="Voting for 22nd Amendment" body={mp.vote22A} />
 
           {mp.cabinet202205Data !== "NA" ? (
             <TitledChip

@@ -15,6 +15,7 @@ export const DIM_GROUP_NAME_TO_DIM_NAME = {
   ],
   "Voting & Parliamentary Participation": [
     "Voting for 20th Amendment",
+    "Voting for 22nd Amendment",
     "Attandance 9th Parliament (2020 - )",
     "Attandance 8th Parliament (2017 - 2020)",
     "Number of Cabinets (since 2019 Nov)",

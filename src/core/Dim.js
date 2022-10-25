@@ -21,6 +21,7 @@ export const DIM_LIST = [
   new Dim("Has Advanced Levels or higher?", (mp) => mp.isALevelsOrHigher),
   new Dim("Profession", (mp) => mp.profession),
   new Dim("Voting for 20th Amendment", (mp) => mp.vote20A),
+  new Dim("Voting for 22nd Amendment", (mp) => mp.vote22A),
   new Dim(
     "Attandance 9th Parliament (2020 - )",
     (mp) => mp.attendance9th,
